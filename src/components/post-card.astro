@@ -1,0 +1,11 @@
+---
+const { title, date, description } = Astro.props;
+---
+
+<a class="block p-4 cursor-pointer hover:bg-current transition">
+  <article>
+    <h2 class="font-sans text-[28px] font-black text-pink">{title}</h2>
+    <p class="text-[13px]">{date}</p>
+    <p class="mt-1">{description}</p>
+  </article>
+</a>
