@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["montserrat", ...defaultTheme.fontFamily.sans],
-        serif: ["merriweather", ...defaultTheme.fontFamily.serif],
+        sans: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
+        serif: ["Merriweather", ...defaultTheme.fontFamily.serif],
       },
     },
   },
