@@ -3,6 +3,20 @@ import "@fontsource-variable/montserrat";
 import "@fontsource/merriweather/400.css";
 import "@fontsource/merriweather/400-italic.css";
 import PostCard from "../components/post-card.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("posts");
+
+function getDescription(content: string) {
+  let moreMark = content.indexOf("<!--more-->");
+  if (moreMark === -1) {
+    moreMark = content.indexOf("<!-- more -->");
+  }
+  if (moreMark === -1) {
+    return content.slice(0, 50) + "...";
+  }
+  return content.slice(0, moreMark);
+}
 ---
 
 <html lang="en">
@@ -21,16 +35,15 @@ import PostCard from "../components/post-card.astro";
       <p class="italic">by BlockLune</p>
     </header>
     <main>
-      <PostCard
-        title="Hello, Astro!"
-        date="2021-10-01"
-        description="Welcome to Astro!"
-      />
-      <PostCard
-        title="Astro is out of this world!"
-        date="2021-10-02"
-        description="Astro is a new static site generator."
-      />
+      {
+        allPosts.map((post) => (
+          <PostCard
+            title={post.data.title}
+            date={post.data.date.toISOString().slice(0, 10)}
+            description={getDescription(post.body)}
+          />
+        ))
+      }
     </main>
   </body>
 </html>
