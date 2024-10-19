@@ -1,3 +1,5 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -15,7 +17,12 @@ export default {
       red: "#FF5555",
       yellow: "#F1FA8C",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["montserrat", ...defaultTheme.fontFamily.sans],
+        serif: ["merriweather", ...defaultTheme.fontFamily.serif],
+      },
+    },
   },
   plugins: [],
 };
