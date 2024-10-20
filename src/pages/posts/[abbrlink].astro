@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostLayout from "../../layouts/PostLayout.astro";
+import { getCollection, render } from "astro:content";
+const { abbrlink } = Astro.params;
+const allPosts = await getCollection("posts");
+const post = allPosts.find((post) => post.data.abbrlink === abbrlink);
+const { Content } = await render(post);
+
+export async function getStaticPaths() {
+    const allPosts = await getCollection("posts");
+    return allPosts.map((post) => ({
+        params: { abbrlink: post.data.abbrlink },
+        props: { post },
+    }));
+}
+---
+
+<BaseLayout>
+    <PostLayout title={post?.data.title} date={post?.data.date}>
+        <Content />
+    </PostLayout>
+</BaseLayout>

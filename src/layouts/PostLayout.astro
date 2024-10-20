@@ -1,0 +1,11 @@
+---
+const { title, date } = Astro.props;
+---
+
+<article>
+    <h1 class="text-[40px] font-black leading-[44px] font-sans">{title}</h1>
+    <p class="mt-2 text-[13px]">{date.toISOString().slice(0, 10)}</p>
+    <div class="mt-10 markdown">
+        <slot />
+    </div>
+</article>
