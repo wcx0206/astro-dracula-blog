@@ -1,11 +1,16 @@
 ---
-const { title, date, description, href } = Astro.props;
+const { title, date, description, tags, href } = Astro.props;
 ---
 
 <a class="block p-4 cursor-pointer hover:bg-current transition" href={href}>
   <article>
-    <h2 class="font-sans text-[28px] font-black text-pink">{title}</h2>
-    <p class="text-[13px]">{date}</p>
+    <h2>{title}</h2>
+    <div class="flex items-baseline gap-4">
+      <p class="mt-2 text-sm">{date}</p>
+      <div class="flex gap-2 items-center">
+        {tags.map((tag: string) => <code class="inline-block">{tag}</code>)}
+      </div>
+    </div>
     <p class="mt-1">{description}</p>
   </article>
 </a>

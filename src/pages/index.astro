@@ -27,6 +27,7 @@ function getDescription(content: string) {
       <PostCard
         title={post.data.title}
         date={post.data.date.toISOString().slice(0, 10)}
+        tags={post.data.tags}
         href={`/posts/${post.data.abbrlink}`}
         description={getDescription(post.body)}
       />
