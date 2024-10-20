@@ -1,10 +1,18 @@
 ---
-const { title, date } = Astro.props;
+import "../styles/markdown.css";
+const { title, date, tags } = Astro.props;
 ---
 
-<article>
-    <h1 class="text-[40px] font-black leading-[44px] font-sans">{title}</h1>
-    <p class="mt-2 text-[13px]">{date.toISOString().slice(0, 10)}</p>
+<article class="px-4">
+    <h1 class="leading-[2.75rem]">{title}</h1>
+
+    <div class="flex items-baseline gap-4">
+        <p class="mt-2">{date.toISOString().slice(0, 10)}</p>
+        <div class="flex gap-2 items-center">
+            {tags.map((tag: string) => <code class="inline-block">{tag}</code>)}
+        </div>
+    </div>
+
     <div class="mt-10 markdown">
         <slot />
     </div>

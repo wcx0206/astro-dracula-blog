@@ -19,10 +19,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
-        serif: ["Merriweather", ...defaultTheme.fontFamily.serif],
-      },
-    },
+        code: ["Fira Code", ...defaultTheme.fontFamily.mono],
+      }
+    }
   },
   plugins: [],
 };

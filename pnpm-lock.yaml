@@ -14,7 +14,16 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.2
         version: 5.1.2(astro@4.16.6(rollup@4.24.0)(typescript@5.6.3))(tailwindcss@3.4.14)
+      '@fontsource-variable/fira-code':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource-variable/montserrat':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource-variable/noto-sans-sc':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource-variable/noto-serif-sc':
         specifier: ^5.1.0
         version: 5.1.0
       '@fontsource/merriweather':
@@ -337,8 +346,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource-variable/fira-code@5.1.0':
+    resolution: {integrity: sha512-fwJbJLvyZ2BhgBSPYCNsrQ6IFQTpRu9GWXY8N20wHTpbhV0Ro5QJihiZV060Ay3kVR6IVH/oSVe/cr7Ube28gg==}
+
   '@fontsource-variable/montserrat@5.1.0':
     resolution: {integrity: sha512-1bloVBKJx/ABBmF+/VzhJZDLzaDNUxw/8Pt5AOgfKL6N3t1fAhwtJBb1gdqU7ABckSNLsKf572A5Inv9YneRug==}
+
+  '@fontsource-variable/noto-sans-sc@5.1.0':
+    resolution: {integrity: sha512-PnnGFWTVyoSdiZU/QvH3w8NroJkBazLWEzrrfqdGX/S6txq6iDoNMG+bolTsAQ4dXbdvfKBTyX6kw/xg5bmdcg==}
+
+  '@fontsource-variable/noto-serif-sc@5.1.0':
+    resolution: {integrity: sha512-C/8NjFRJ9L8I2kEJ4PDI38HF9ih12EeUlIgE1W9PmTCEqhbovGDjYU9kCR+4r7YvuO62Bt8ysLxKgP2cswORzQ==}
 
   '@fontsource/merriweather@5.1.0':
     resolution: {integrity: sha512-CliXFoCACKkrx8G93xGw6cD7RYCOytuY/Afe1W/htsRRlaSyGA6HGNQzQJc6NKzjs9XenBH2CcMQsONyppd+uQ==}
@@ -2477,7 +2495,13 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
+  '@fontsource-variable/fira-code@5.1.0': {}
+
   '@fontsource-variable/montserrat@5.1.0': {}
+
+  '@fontsource-variable/noto-sans-sc@5.1.0': {}
+
+  '@fontsource-variable/noto-serif-sc@5.1.0': {}
 
   '@fontsource/merriweather@5.1.0': {}
 
