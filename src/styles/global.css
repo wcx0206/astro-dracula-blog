@@ -66,11 +66,11 @@ code {
 }
 
 :not(pre) > code {
-    @apply bg-current text-purple px-2 inline-block leading-normal;
+    @apply bg-current/50 text-purple px-2 inline-block leading-normal;
 }
 
 pre {
-    @apply bg-current overflow-y-auto p-4 text-base;
+    @apply bg-current/30 overflow-y-auto p-4 text-base !important;
 }
 
 a {
