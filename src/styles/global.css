@@ -6,73 +6,79 @@
 @import "@fontsource-variable/fira-code";
 
 h1 {
-    @apply text-pink font-black text-4xl;
+  @apply text-pink font-black text-4xl;
 }
 
 h2 {
-    @apply text-pink font-bold text-3xl;
+  @apply text-pink font-bold text-3xl;
 }
 
 h3 {
-    @apply text-pink font-bold text-2xl;
+  @apply text-pink font-bold text-2xl;
 }
 
 h4 {
-    @apply text-pink font-bold text-xl;
+  @apply text-pink font-bold text-xl;
 }
 
 h5 {
-    @apply text-pink font-bold text-xl;
+  @apply text-pink font-bold text-xl;
 }
 
 h6 {
-    @apply text-pink font-bold text-lg;
+  @apply text-pink font-bold text-lg;
 }
 
 p {
-    @apply text-lg leading-loose;
+  @apply text-lg leading-loose;
 }
 
-em, strong {
-    @apply text-purple;
+em,
+strong {
+  @apply text-purple;
 }
 
 del {
-    @apply text-comment;
+  @apply text-comment;
 }
 
 ul {
-    @apply list-disc space-y-2 list-inside ;
+  @apply list-disc space-y-2 list-inside;
 }
 
 ol {
-    @apply list-decimal space-y-2 list-inside;
+  @apply list-decimal space-y-2 list-inside;
 }
 
 li {
-    @apply ml-6;
+  @apply ml-6;
 }
 
 blockquote {
-  @apply  pl-6 border-l-4 border-orange;
+  @apply pl-6 border-l-4 border-orange;
 }
 
 blockquote li {
-    @apply list-inside;
+  @apply list-inside;
 }
 
 code {
-    @apply font-code;
+  @apply font-code;
 }
 
 :not(pre) > code {
-    @apply bg-current/50 text-purple px-2 inline-block leading-normal;
+  @apply bg-current/50 text-purple px-2 inline-block leading-normal;
 }
 
 pre {
-    @apply bg-current/30 overflow-y-auto p-4 text-base !important;
+  @apply bg-current/30 overflow-y-auto p-4 text-base !important;
 }
 
 a {
-    @apply inline-block;
+  @apply inline-block;
 }
+
+.copy-code {
+  @apply absolute top-0 right-0 bg-orange/90 hover:bg-orange px-2 py-1 text-xs text-foreground;
+}
+
