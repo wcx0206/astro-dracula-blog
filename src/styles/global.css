@@ -43,11 +43,11 @@ del {
 }
 
 ul {
-  @apply list-disc space-y-2 list-inside;
+  @apply list-disc space-y-2;
 }
 
 ol {
-  @apply list-decimal space-y-2 list-inside;
+  @apply list-decimal space-y-2;
 }
 
 li {
@@ -56,10 +56,6 @@ li {
 
 blockquote {
   @apply pl-6 border-l-4 border-orange;
-}
-
-blockquote li {
-  @apply list-inside;
 }
 
 code {
@@ -81,4 +77,3 @@ a {
 .copy-code {
   @apply absolute top-0 right-0 bg-orange/90 hover:bg-orange px-2 py-1 text-xs text-foreground;
 }
-
