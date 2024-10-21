@@ -21,3 +21,10 @@ export const SOCIALS = [
         linkTitle: `Send an email to ${AUTHOR.name}`,
     },
 ];
+
+export const MISC = {
+    more: {
+        marks: ["<!--more-->", "<!-- more -->"],
+        limitWhenNoMark: 30,
+    }
+}

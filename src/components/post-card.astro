@@ -1,15 +1,18 @@
 ---
+import { MISC } from "../config";
+
 const { post } = Astro.props;
 
 function getDescription(content: string) {
-  let moreMark = content.indexOf("<!--more-->");
-  if (moreMark === -1) {
-    moreMark = content.indexOf("<!-- more -->");
+  let moreMarkIndex = -1;
+  for (let mark in MISC.more.marks) {
+    let moreMarkIndex = content.indexOf(mark);
+    if (moreMarkIndex != -1) break;
   }
-  if (moreMark === -1) {
-    return content.slice(0, 50) + "...";
+  if (moreMarkIndex === -1) {
+    return content.slice(0, MISC.more.limitWhenNoMark) + "...";
   }
-  return content.slice(0, moreMark);
+  return content.slice(0, moreMarkIndex);
 }
 
 const title = post.data.title;
