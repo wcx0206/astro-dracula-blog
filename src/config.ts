@@ -1,6 +1,6 @@
 export const SITE = {
-    title: "AstroBlog",
-    description: "BlockLune's blog about development and life, built with Astro.",
+    title: "BlockLune's Blog",
+    description: "A blog about development and life, powered by Astro.",
 };
 
 export const AUTHOR = {

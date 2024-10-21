@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import { SITE, AUTHOR } from "../config";
+import Moon from "../components/moon.astro";
+import { SITE } from "../config";
 ---
 
 <html lang="en">
@@ -13,18 +14,23 @@ import { SITE, AUTHOR } from "../config";
     <title>{SITE.title} | {SITE.description}</title>
   </head>
   <body class="bg-background text-foreground mx-auto max-w-3xl py-12">
-    <header class="mb-14 flex place-content-between">
-      <a href="/">
+    <header class="mb-14 flex justify-between items-center">
+      <a
+        href="/"
+        class="flex items-center gap-2 font-black text-2xl text-foreground"
+      >
+        <Moon />
         <h1 class="font-black text-2xl text-foreground">
           {SITE.title}
         </h1>
       </a>
-      <p class="italic">
-        by
-        <a href={AUTHOR.link} target="_blank" rel="noopener noreferrer">
-          {AUTHOR.name}
-        </a>
-      </p>
+      <div
+        class="flex items-center gap-4 underline underline-offset-4 text-comment"
+      >
+        <a class="hover:text-foreground transition" href="/">Home</a>
+        <a class="hover:text-foreground transition" href="/tags">Tags</a>
+        <a class="hover:text-foreground transition" href="/about">About</a>
+      </div>
     </header>
     <main>
       <slot />
