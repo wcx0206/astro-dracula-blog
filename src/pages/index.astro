@@ -1,9 +1,9 @@
 ---
-import PostCard from "../components/post-card.astro";
+import PostStack from "../components/post-stack.astro";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const allPosts = await getCollection("posts");
+const posts = await getCollection("posts");
 ---
 
 <BaseLayout
@@ -11,5 +11,5 @@ const allPosts = await getCollection("posts");
   author="BlockLune"
   authorLink="https://github.com/BlockLune"
 >
-  {allPosts.map((post) => <PostCard post={post} />)}
+  <PostStack posts={posts} />
 </BaseLayout>

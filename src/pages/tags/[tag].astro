@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PostCard from "../../components/post-card.astro";
+import PostStack from "../../components/post-stack.astro";
 import { getCollection } from "astro:content";
 
 const { tag } = Astro.params;
@@ -21,8 +21,6 @@ export async function getStaticPaths() {
       Posts with tag
       <code>{tag}</code>
     </h1>
-    <div class="flex flex-col">
-      {filteredPosts.map((post) => <PostCard post={post} />)}
-    </div>
+    <PostStack posts={filteredPosts} />
   </article>
 </BaseLayout>
