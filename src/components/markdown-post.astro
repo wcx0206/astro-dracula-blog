@@ -2,7 +2,7 @@
 import TagLink from "./tag-link.astro";
 import DateTag from "./date-tag.astro";
 import { render } from "astro:content";
-
+import { uniqueLowerCaseTags } from "../scripts/utils";
 const { post } = Astro.props;
 const { Content } = await render(post);
 ---
@@ -12,7 +12,11 @@ const { Content } = await render(post);
 
   <div class="flex items-center gap-2 mt-2">
     <DateTag date={post.data.date} />
-    {post.data.tags.map((tag: string) => <TagLink tag={tag} />)}
+    {
+      uniqueLowerCaseTags(post.data.tags).map((tag: string) => (
+        <TagLink tag={tag} />
+      ))
+    }
   </div>
 
   <div class="mt-10 markdown">

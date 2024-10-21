@@ -3,6 +3,8 @@ title: Full Markdown Example
 date: 2024-10-20
 tags:
   - example
+  - config
+  - Config
 ---
 
 From [here](https://gist.githubusercontent.com/allysonsilva/85fff14a22bbdf55485be947566cc09e/raw/fa8048a906ebed3c445d08b20c9173afd1b4a1e5/Full-Markdown.md)
