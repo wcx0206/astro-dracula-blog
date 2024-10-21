@@ -1,19 +1,20 @@
 ---
 import "../styles/markdown.css";
+import TagLink from "../components/tag-link.astro";
 const { title, date, tags } = Astro.props;
 ---
 
 <article class="px-4">
-    <h1 class="leading-[2.75rem]">{title}</h1>
+  <h1 class="leading-[2.75rem]">{title}</h1>
 
-    <div class="flex items-baseline gap-4">
-        <p class="mt-2">{date.toISOString().slice(0, 10)}</p>
-        <div class="flex gap-2 items-center">
-            {tags.map((tag: string) => <code class="inline-block">{tag}</code>)}
-        </div>
+  <div class="flex items-baseline gap-4">
+    <p class="mt-2">{date.toISOString().slice(0, 10)}</p>
+    <div class="flex gap-2 items-center">
+      {tags.map((tag: string) => <TagLink tag={tag} />)}
     </div>
+  </div>
 
-    <div class="mt-10 markdown">
-        <slot />
-    </div>
+  <div class="mt-10 markdown">
+    <slot />
+  </div>
 </article>
