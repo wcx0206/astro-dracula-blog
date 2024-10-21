@@ -82,6 +82,34 @@ a {
   @apply inline-block;
 }
 
+table {
+  @apply bg-current/30 w-full;
+}
+
+table th {
+  @apply bg-current/40 text-left font-bold px-4 py-2;
+}
+
+table td {
+  @apply px-4 py-1;
+}
+
+table tbody tr:first-child td {
+  @apply pt-2;
+}
+
+table tbody tr:last-child td {
+  @apply pb-2;
+}
+
+table td {
+  @apply px-4;
+}
+
+table tbody tr:nth-child(odd) {
+  @apply bg-current/15;
+}
+
 .copy-code {
   @apply absolute top-0 right-0 bg-orange/90 hover:bg-orange px-2 py-1 text-xs text-foreground;
 }
