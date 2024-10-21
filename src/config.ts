@@ -25,7 +25,7 @@ export const SOCIALS = [
 export const MISC = {
     more: {
         marks: ["<!--more-->", "<!-- more -->"],
-        limitWhenNoMark: 30,
+        limitWhenNoMark: 100,
     },
     dateTag: {
         daysToBeGreen: 7,
