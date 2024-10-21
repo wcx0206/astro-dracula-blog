@@ -1,5 +1,6 @@
 ---
 import TagLink from "./tag-link.astro";
+import DateTag from "./date-tag.astro";
 import { render } from "astro:content";
 
 const { post } = Astro.props;
@@ -9,11 +10,9 @@ const { Content } = await render(post);
 <article class="px-4">
   <h1 class="leading-[2.75rem]">{post.data.title}</h1>
 
-  <div class="flex items-baseline gap-4">
-    <p class="mt-2">{post.data.date.toISOString().slice(0, 10)}</p>
-    <div class="flex gap-2 items-center">
-      {post.data.tags.map((tag: string) => <TagLink tag={tag} />)}
-    </div>
+  <div class="flex items-center gap-2 mt-2">
+    <DateTag date={post.data.date} />
+    {post.data.tags.map((tag: string) => <TagLink tag={tag} />)}
   </div>
 
   <div class="mt-10 markdown">

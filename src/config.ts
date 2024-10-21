@@ -26,5 +26,8 @@ export const MISC = {
     more: {
         marks: ["<!--more-->", "<!-- more -->"],
         limitWhenNoMark: 30,
+    },
+    dateTag: {
+        daysToBeGreen: 7,
     }
 }

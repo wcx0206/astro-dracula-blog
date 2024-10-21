@@ -1,0 +1,16 @@
+---
+import { MISC } from "../config";
+const { date } = Astro.props;
+
+const now = new Date();
+const target = new Date(date);
+const diffInMilliseconds: number = now.getTime() - target.getTime();
+const diffInDays = Math.round(diffInMilliseconds / (1000 * 60 * 60 * 24));
+
+const color =
+  diffInDays > MISC.dateTag.daysToBeGreen ? "text-orange" : "text-green";
+
+const formattedDate = new Date(date).toISOString().slice(0, 10);
+---
+
+<code class=`inline-block ${color}`>{formattedDate}</code>
