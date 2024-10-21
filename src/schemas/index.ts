@@ -6,4 +6,5 @@ export const PostSchema = z.object({
   categories: z.array(z.string()).optional(),
   abbrlink: z.string().optional(),
   date: z.date(),
+  updated: z.date().optional(),
 })
