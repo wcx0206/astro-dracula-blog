@@ -6,10 +6,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const posts = await getCollection("posts");
 ---
 
-<BaseLayout
-  title="Astro Blog"
-  author="BlockLune"
-  authorLink="https://github.com/BlockLune"
->
+<BaseLayout>
   <PostStack posts={posts} />
 </BaseLayout>
