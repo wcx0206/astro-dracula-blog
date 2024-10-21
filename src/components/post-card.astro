@@ -18,8 +18,14 @@ function getDescription(content: string) {
   return content.slice(0, moreMarkIndex);
 }
 
+function getDateString() {
+  const pubDate = post.data.date;
+  const updatedDate = post.data.updated;
+  return updatedDate ? updatedDate : pubDate;
+}
+
 const title = post.data.title;
-const date = post.data.date.toISOString().slice(0, 10);
+const date = new Date(getDateString()).toISOString().slice(0, 10);
 const tags = uniqueLowerCaseTags(post.data.tags);
 const href = `/posts/${post.slug}`;
 const description = getDescription(post.body);
