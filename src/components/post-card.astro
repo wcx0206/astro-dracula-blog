@@ -1,6 +1,7 @@
 ---
 import { MISC } from "../config";
 import DateTag from "./date-tag.astro";
+import Tag from "./tag.astro";
 
 const { post } = Astro.props;
 
@@ -28,7 +29,7 @@ const description = getDescription(post.body);
     <h2>{title}</h2>
     <div class="flex gap-2 mt-1">
       <DateTag date={date} />
-      {tags.map((tag: string) => <code class="inline-block">{tag}</code>)}
+      {tags.map((tag: string) => <Tag tag={tag} />)}
     </div>
     <p class="mt-1">{description}</p>
   </article>
