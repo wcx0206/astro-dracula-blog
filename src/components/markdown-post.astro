@@ -1,0 +1,58 @@
+---
+import TagLink from "./tag-link.astro";
+import { render } from "astro:content";
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<article class="px-4">
+  <h1 class="leading-[2.75rem]">{post.data.title}</h1>
+
+  <div class="flex items-baseline gap-4">
+    <p class="mt-2">{post.data.date.toISOString().slice(0, 10)}</p>
+    <div class="flex gap-2 items-center">
+      {post.data.tags.map((tag: string) => <TagLink tag={tag} />)}
+    </div>
+  </div>
+
+  <div class="mt-10 markdown">
+    <Content />
+  </div>
+</article>
+
+<script>
+  let copyButtonLabel = "Copy";
+  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+  for (let codeBlock of codeBlocks) {
+    let wrapper = document.createElement("div");
+    wrapper.style.position = "relative";
+    let copyButton = document.createElement("button");
+    copyButton.className = "copy-code";
+    copyButton.innerHTML = copyButtonLabel;
+
+    codeBlock.setAttribute("tabindex", "0");
+    codeBlock.appendChild(copyButton);
+
+    codeBlock.parentNode!.insertBefore(wrapper, codeBlock);
+    wrapper.appendChild(codeBlock);
+
+    copyButton.addEventListener("click", async () => {
+      await copyCode(codeBlock, copyButton);
+    });
+  }
+
+  async function copyCode(block: HTMLElement, button: HTMLElement) {
+    let code = block.querySelector("code");
+    let text = code?.innerText || "";
+
+    await navigator.clipboard.writeText(text);
+
+    button.innerText = "Copied";
+
+    setTimeout(() => {
+      button.innerText = copyButtonLabel;
+    }, 1000);
+  }
+</script>

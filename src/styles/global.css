@@ -77,3 +77,19 @@ a {
 .copy-code {
   @apply absolute top-0 right-0 bg-orange/90 hover:bg-orange px-2 py-1 text-xs text-foreground;
 }
+
+.markdown a {
+  @apply text-purple underline underline-offset-4 hover:text-purple;
+}
+
+.markdown :is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre) {
+  @apply mb-6;
+}
+
+.markdown h2 {
+  @apply mt-16;
+}
+
+.markdown h3 {
+  @apply mt-12;
+}
