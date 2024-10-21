@@ -42,6 +42,10 @@ del {
   @apply text-comment;
 }
 
+input {
+  @apply bg-current placeholder-comment text-foreground focus:outline-none px-4 py-2;
+}
+
 ul {
   @apply list-disc space-y-2;
 }
