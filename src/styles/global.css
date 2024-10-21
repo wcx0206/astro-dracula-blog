@@ -66,6 +66,10 @@ code {
   @apply bg-current/50 text-purple px-2 inline-block leading-normal;
 }
 
+li > code {
+  @apply text-sm;
+}
+
 pre {
   @apply bg-current/30 overflow-y-auto p-4 text-base !important;
 }
@@ -79,7 +83,7 @@ a {
 }
 
 .markdown a {
-  @apply text-purple underline underline-offset-4 hover:text-purple;
+  @apply text-purple/80 underline underline-offset-4 hover:text-purple transition;
 }
 
 .markdown :is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre) {
