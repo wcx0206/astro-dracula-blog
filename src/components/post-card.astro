@@ -1,5 +1,22 @@
 ---
-const { title, date, description, tags, href } = Astro.props;
+const { post } = Astro.props;
+
+function getDescription(content: string) {
+  let moreMark = content.indexOf("<!--more-->");
+  if (moreMark === -1) {
+    moreMark = content.indexOf("<!-- more -->");
+  }
+  if (moreMark === -1) {
+    return content.slice(0, 50) + "...";
+  }
+  return content.slice(0, moreMark);
+}
+
+const title = post.data.title;
+const date = post.data.date.toISOString().slice(0, 10);
+const tags = post.data.tags;
+const href = `/posts/${post.data.abbrlink}`;
+const description = getDescription(post.body);
 ---
 
 <a class="block p-4 cursor-pointer hover:bg-current transition" href={href}>

@@ -4,17 +4,6 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("posts");
-
-function getDescription(content: string) {
-  let moreMark = content.indexOf("<!--more-->");
-  if (moreMark === -1) {
-    moreMark = content.indexOf("<!-- more -->");
-  }
-  if (moreMark === -1) {
-    return content.slice(0, 50) + "...";
-  }
-  return content.slice(0, moreMark);
-}
 ---
 
 <BaseLayout
@@ -22,15 +11,5 @@ function getDescription(content: string) {
   author="BlockLune"
   authorLink="https://github.com/BlockLune"
 >
-  {
-    allPosts.map((post) => (
-      <PostCard
-        title={post.data.title}
-        date={post.data.date.toISOString().slice(0, 10)}
-        tags={post.data.tags}
-        href={`/posts/${post.data.abbrlink}`}
-        description={getDescription(post.body)}
-      />
-    ))
-  }
+  {allPosts.map((post) => <PostCard post={post} />)}
 </BaseLayout>
