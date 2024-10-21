@@ -43,7 +43,7 @@ del {
 }
 
 input {
-  @apply bg-current placeholder-comment text-foreground focus:outline-none px-4 py-2;
+  @apply bg-current/20 placeholder-comment text-foreground focus:outline-none focus:bg-current hover:bg-current px-4 py-2 transition;
 }
 
 ul {

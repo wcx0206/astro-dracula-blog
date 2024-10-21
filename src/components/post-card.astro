@@ -25,7 +25,10 @@ const href = `/posts/${post.slug}`;
 const description = getDescription(post.body);
 ---
 
-<a class="block p-4 cursor-pointer hover:bg-current transition" href={href}>
+<a
+  class="block p-4 cursor-pointer bg-current/20 hover:bg-current transition"
+  href={href}
+>
   <article>
     <h2>{title}</h2>
     <div class="flex gap-2 mt-1">

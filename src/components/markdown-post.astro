@@ -7,7 +7,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<article class="px-4">
+<article>
   <h1 class="leading-[2.75rem]">{post.data.title}</h1>
 
   <div class="flex items-center gap-2 mt-2">
