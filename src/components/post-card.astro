@@ -1,22 +1,9 @@
 ---
-import { MISC } from "../config";
 import DateTag from "./date-tag.astro";
 import Tag from "./tag.astro";
 import { uniqueLowerCaseTags } from "../scripts/utils";
 
 const { post } = Astro.props;
-
-function getDescription(content: string) {
-  let moreMarkIndex = -1;
-  for (let mark in MISC.more.marks) {
-    let moreMarkIndex = content.indexOf(mark);
-    if (moreMarkIndex != -1) break;
-  }
-  if (moreMarkIndex === -1) {
-    return content.slice(0, MISC.more.limitWhenNoMark) + "...";
-  }
-  return content.slice(0, moreMarkIndex);
-}
 
 function getDateString() {
   const pubDate = post.data.date;
@@ -28,7 +15,7 @@ const title = post.data.title;
 const date = new Date(getDateString()).toISOString().slice(0, 10);
 const tags = uniqueLowerCaseTags(post.data.tags);
 const href = `/posts/${post.slug}`;
-const description = getDescription(post.body);
+const description = post.body.slice(0, post.body.indexOf("<!--more-->"));
 ---
 
 <a
@@ -41,6 +28,6 @@ const description = getDescription(post.body);
       <DateTag date={date} />
       {tags.map((tag: string) => <Tag tag={tag} />)}
     </div>
-    <p class="mt-1">{description}</p>
+    <p class="mt-1 overflow-ellipsis break-all line-clamp-3">{description}</p>
   </article>
 </a>
