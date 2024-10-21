@@ -15,7 +15,7 @@ function getDescription(content: string) {
 const title = post.data.title;
 const date = post.data.date.toISOString().slice(0, 10);
 const tags = post.data.tags;
-const href = `/posts/${post.data.abbrlink}`;
+const href = `/posts/${post.slug}`;
 const description = getDescription(post.body);
 ---
 
