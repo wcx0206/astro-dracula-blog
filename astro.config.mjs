@@ -9,6 +9,10 @@ export default defineConfig({
     shikiConfig: {
       theme: "dracula",
       wrap: true,
+      langAlias: {
+        "C": "c",
+        "zshrc": "zsh",
+      }
     },
   },
   integrations: [tailwind()]
