@@ -101,3 +101,7 @@ a {
 .markdown h3 {
   @apply mt-12;
 }
+
+.markdown hr {
+  @apply my-12;
+}
