@@ -11,6 +11,10 @@ import { SITE } from "../config";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={SITE.description} />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id={import.meta.env.UMAMI_DATA_WEBSITE_ID}></script>
     <title>{SITE.title} | {SITE.description}</title>
   </head>
   <body
