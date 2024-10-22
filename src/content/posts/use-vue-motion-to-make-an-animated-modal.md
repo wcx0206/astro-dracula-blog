@@ -16,7 +16,7 @@ date: 2024-10-17 17:06:23
 
 首先，让我们来创建一个 Modal，核心部分如下（略去了自定义类的具体内容，可以在最终代码处查看）：
 
-```html
+```vue
 <!-- Modal.vue -->
 <script setup lang="ts">
   import { ref, onMounted, onUnmounted } from "vue";
@@ -64,7 +64,7 @@ date: 2024-10-17 17:06:23
 
 下面让我们来制作动画。背景动画比较简单，我们直接使用 Vue 提供的 [`Transition`](https://cn.vuejs.org/guide/built-ins/transition) 组件将原来的 `modal-background` 包裹，并添加相应的 CSS 即可：
 
-```html
+```vue
 <template>
   <!-- ... -->
   <Transition name="fade">
@@ -107,7 +107,7 @@ app.mount("#app");
 
 OK，可以开始使用了。但是简单地为 `modal-container` 添加 `v-motion` 并不足够：
 
-```html
+```vue
 <!-- error -->
 <template>
   <!-- ... -->
@@ -135,7 +135,7 @@ OK，可以开始使用了。但是简单地为 `modal-container` 添加 `v-moti
 
 如何解决呢？这个 [Demo](https://vueuse-motion-demo.netlify.app/) 演示了这一点，可以配合 `Transition` 使用：
 
-```html
+```vue
 <script setup lang="ts">
   import { useMotions } from "@vueuse/motion";
   const motions = useMotions();

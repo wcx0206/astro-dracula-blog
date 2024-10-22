@@ -88,7 +88,7 @@ provide shell access.
 
 You can now override your SSH settings to force any connection to GitHub.com to run through that server and port. Edit `~/.ssh/config` and add this section:
 
-```config
+```text
 Host github.com
     Hostname ssh.github.com
     Port 443

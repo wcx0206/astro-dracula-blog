@@ -169,7 +169,7 @@ Many tmux users started out using GNU-Screen, which uses `Ctrl`-`a` for its comm
 
 To redefine our tmux prefix to `Ctrl`-`a`, add this code to our `.tmux.conf` file:
 
-```conf
+```text
 set-option -g prefix C-a
 # or
 set -g prefix C-a
@@ -179,7 +179,7 @@ where the `-g` switch, for "global", sets the option for al tmux sessions we cre
 
 We can use the `unbind-key` or `unbind` command to remove a keybinding:
 
-```conf
+```text
 unbind C-b
 ```
 
@@ -193,7 +193,7 @@ source-file ~/.tmux.conf
 
 tmux adds a very small delay when sending commands, and this delay can interfere with other programs such as the Vim text editor. We can set this delay so it's much more responsive:
 
-```conf
+```text
 set -sg escape-time 1
 ```
 
@@ -201,7 +201,7 @@ set -sg escape-time 1
 
 The default index starts at zero. We can set it to one:
 
-```conf
+```text
 set -g base-index 1         # for windows
 setw -g pane-base-index 1   # for panes
 ```
@@ -212,7 +212,7 @@ where `setw` is the shortened version of `set-window-option`.
 
 We can use the `bind` command to define a new keybinding. Here we set `Prefix` `r` so it reloads our main `.tmux.conf` file in the current session:
 
-```conf
+```text
 bind r source-file ~/.tmux.conf
 ```
 
@@ -220,7 +220,7 @@ Don't forget to type `source-file ~/.tmux.conf` to apply the configuration.
 
 We can use the `display` command to put a message in the status line when we the reloading finished:
 
-```conf
+```text
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 ```
 
@@ -228,7 +228,7 @@ You can see that we can bind a series of commands by separating the commands wit
 
 **(Not suggested)** We can define keybindings that don't require a prefix. For example, this makes `Ctrl`-`r` reload the configuration file:
 
-```conf
+```text
 bind-key -n C-r source-file ~/.tmux.conf
 ```
 
@@ -236,7 +236,7 @@ bind-key -n C-r source-file ~/.tmux.conf
 
 We've remapped `Ctrl`-`a` as our `Prefix`, but programs such as Vim, Emacs and even the regular Bash shell also use that combination. **We need to configure tmux to let us send that command through when we need it.** We can also do that by binding the `send-prefix` command to a keystroke, like this:
 
-```conf
+```text
 bind C-a send-prefix
 ```
 
@@ -244,7 +244,7 @@ bind C-a send-prefix
 
 The default keys for splitting panes can be difficult to remember, so let's set our own keys that we won't be able to forget. We'll set the horizontal split to `Prefix` `|` and the vertical split to `Prefix` `-`.
 
-```conf
+```text
 bind | split-window -h
 bind - split-window -v
 ```
@@ -255,7 +255,7 @@ bind - split-window -v
 
 To use `h`, `j`, `k`, `l` as movement keys:
 
-```conf
+```text
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
@@ -264,7 +264,7 @@ bind l select-pane -R
 
 To use `Prefix` `Ctrl`-`h` and `Prefix` `Ctrl`-`l` to cycle through the windows:
 
-```conf
+```text
 bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 ```
@@ -273,7 +273,7 @@ bind -r C-l select-window -t :+
 
 To define `Prefix` `H`, `Prefix` `J`, `Prefix` `K` and `Prefix` `L` to change the size of the panes:
 
-```conf
+```text
 bind -r H resize-pane -L 5
 bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
@@ -288,7 +288,7 @@ The default repeat limit is 500 milliseconds, and we can change that by setting 
 
 To enable mouse mode:
 
-```conf
+```text
 setw -g mode-mouse on
 set -g mouse-select-pane on
 set -g mouse-resize-pane on
