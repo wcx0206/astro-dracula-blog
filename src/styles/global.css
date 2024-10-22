@@ -5,127 +5,18 @@
 @import "@fontsource-variable/noto-serif-sc";
 @import "@fontsource-variable/fira-code";
 
-h1 {
-  @apply text-dracula-pink font-black text-4xl;
-}
-
-h2 {
-  @apply text-dracula-pink font-bold text-3xl;
-}
-
-h3 {
-  @apply text-dracula-pink font-bold text-2xl;
-}
-
-h4 {
-  @apply text-dracula-pink font-bold text-xl;
-}
-
-h5 {
-  @apply text-dracula-pink font-bold text-xl;
-}
-
-h6 {
-  @apply text-dracula-pink font-bold text-lg;
-}
-
-p {
-  @apply text-lg leading-loose;
-}
-
-em,
-strong {
-  @apply text-dracula-purple;
-}
-
 del {
   @apply text-dracula-blue;
-}
-
-input {
-  @apply bg-dracula-dark/20 placeholder-dracula-blue text-dracula-light focus:outline-none focus:bg-dracula-dark hover:bg-dracula-dark px-4 py-2 transition;
-}
-
-ul {
-  @apply list-disc space-y-2;
-}
-
-ol {
-  @apply list-decimal space-y-2;
-}
-
-li {
-  @apply ml-6;
-}
-
-blockquote {
-  @apply pl-6 border-l-4 border-dracula-orange;
 }
 
 code {
   @apply font-code;
 }
 
-:not(pre) > code {
-  @apply bg-dracula-dark/50 text-dracula-purple px-2 inline-block leading-normal;
-}
-
-li > code {
-  @apply text-sm;
-}
-
 pre {
-  @apply bg-dracula-dark/30 overflow-y-auto p-4 text-base !important;
-}
-
-table {
-  @apply bg-dracula-dark/30 w-full;
-}
-
-table th {
-  @apply bg-dracula-dark/40 text-left font-bold px-4 py-2;
-}
-
-table td {
-  @apply px-4 py-1;
-}
-
-table tbody tr:first-child td {
-  @apply pt-2;
-}
-
-table tbody tr:last-child td {
-  @apply pb-2;
-}
-
-table td {
-  @apply px-4;
-}
-
-table tbody tr:nth-child(odd) {
-  @apply bg-dracula-dark/15;
+  @apply bg-dracula-dark/30 rounded-none !important;
 }
 
 .copy-code {
   @apply absolute top-0 right-0 bg-dracula-orange/90 hover:bg-dracula-orange px-2 py-1 text-xs text-dracula-light;
-}
-
-.markdown a {
-  @apply text-dracula-purple/80 underline underline-offset-4 hover:text-dracula-purple transition;
-}
-
-.markdown :is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre) {
-  @apply mb-6;
-}
-
-.markdown h2 {
-  @apply mt-16;
-}
-
-.markdown h3 {
-  @apply mt-12;
-}
-
-.markdown hr {
-  @apply my-12;
 }

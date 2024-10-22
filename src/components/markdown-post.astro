@@ -1,6 +1,7 @@
 ---
 import TagLink from "./tag-link.astro";
 import DateTag from "./date-tag.astro";
+import Prose from "./prose.astro";
 import { render } from "astro:content";
 import { uniqueLowerCaseTags } from "../scripts/utils";
 const { post } = Astro.props;
@@ -8,7 +9,7 @@ const { Content } = await render(post);
 ---
 
 <article>
-  <h1 class="leading-[2.75rem]">{post.data.title}</h1>
+  <h1 class="text-dracula-pink font-black text-4xl">{post.data.title}</h1>
 
   <div class="flex items-center gap-2 mt-2">
     <DateTag date={post.data.date} />
@@ -19,8 +20,10 @@ const { Content } = await render(post);
     }
   </div>
 
-  <div class="mt-10 markdown">
-    <Content />
+  <div class="mt-10">
+    <Prose>
+      <Content />
+    </Prose>
   </div>
 </article>
 

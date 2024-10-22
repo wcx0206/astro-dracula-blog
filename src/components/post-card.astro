@@ -22,12 +22,12 @@ const description = post.body.slice(0, post.body.indexOf("<!--more-->"));
   class="block p-4 cursor-pointer bg-dracula-dark/20 hover:bg-dracula-dark transition"
   href={href}
 >
-  <article>
-    <h2>{title}</h2>
-    <div class="flex flex-wrap gap-2 mt-1">
+  <article class="space-y-2">
+    <h2 class="text-dracula-pink font-bold text-3xl">{title}</h2>
+    <div class="flex flex-wrap gap-2">
       <DateTag date={date} />
       {tags.map((tag: string) => <Tag tag={tag} />)}
     </div>
-    <p class="mt-1 overflow-ellipsis break-all line-clamp-3">{description}</p>
+    <p class="overflow-ellipsis break-all line-clamp-3">{description}</p>
   </article>
 </a>
