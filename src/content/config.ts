@@ -6,6 +6,11 @@ const postsCollection = defineCollection({
     schema: PostSchema,
 });
 
+const infoCollection = defineCollection({
+    type: 'content',
+})
+
 export const collections = {
     'posts': postsCollection,
+    'info': infoCollection,
 };

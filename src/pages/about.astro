@@ -1,5 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Prose from "../components/prose.astro";
+import { getEntry, render } from "astro:content";
+
+const about = await getEntry("info", "about");
+const { Content } = await render(about);
 ---
 
-<BaseLayout> TODO </BaseLayout>
+<BaseLayout>
+    <Prose>
+        <Content />
+    </Prose>
+</BaseLayout>
