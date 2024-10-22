@@ -11,7 +11,7 @@ const { Content } = await render(post);
 <article>
   <h1 class="text-dracula-pink font-black text-4xl">{post.data.title}</h1>
 
-  <div class="flex items-center gap-2 mt-2">
+  <div class="flex items-center gap-2 mt-4">
     <DateTag date={post.data.date} />
     {
       uniqueLowerCaseTags(post.data.tags).map((tag: string) => (
