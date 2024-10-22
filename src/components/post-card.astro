@@ -15,7 +15,7 @@ function getDateString() {
 function getDescription() {
   let content = post.body;
   while (content.startsWith("\n")) content = content.slice(1);
-  return content.slice(0, content.indexOf("\n"));
+  return content.trim().slice(0, content.indexOf("\n"));
 }
 
 const title = post.data.title;
@@ -24,18 +24,19 @@ const tags = uniqueLowerCaseTags(post.data.tags);
 const href = `/posts/${post.slug}`;
 ---
 
-<a
-  class="block p-8 cursor-pointer bg-dracula-dark/20 hover:bg-dracula-dark transition"
-  href={href}
+<div
+  class="p-8 bg-dracula-dark/20 hover:bg-dracula-dark transition
+flex flex-col gap-4"
 >
-  <article class="space-y-2">
-    <h2 class="text-dracula-pink font-bold text-3xl">{title}</h2>
-    <div class="flex flex-wrap gap-2">
-      <DateTag date={date} />
-      {tags.map((tag: string) => <Tag tag={tag} />)}
-    </div>
-    <p class="overflow-ellipsis break-all line-clamp-3">
-      <Markdown.Inline of={getDescription()} />
-    </p>
-  </article>
-</a>
+  <a
+    class="text-dracula-pink font-bold text-3xl cursor-pointer hover:underline hover:underline-offset-4 mb-2 transition"
+    href={href}>{title}</a
+  >
+  <div class="flex flex-wrap gap-2">
+    <DateTag date={date} />
+    {tags.map((tag: string) => <Tag tag={tag} />)}
+  </div>
+  <p class="overflow-ellipsis break-all line-clamp-3">
+    <Markdown.Inline of={getDescription()} class="inline" />
+  </p>
+</div>
