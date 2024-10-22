@@ -8,7 +8,9 @@ const diffInMilliseconds: number = now.getTime() - target.getTime();
 const diffInDays = Math.round(diffInMilliseconds / (1000 * 60 * 60 * 24));
 
 const color =
-  diffInDays > MISC.dateTag.daysToBeGreen ? "text-orange" : "text-green";
+  diffInDays > MISC.dateTag.daysToBeGreen
+    ? "text-dracula-orange"
+    : "text-dracula-green";
 
 const formattedDate = new Date(date).toISOString().slice(0, 10);
 ---

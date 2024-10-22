@@ -6,27 +6,27 @@
 @import "@fontsource-variable/fira-code";
 
 h1 {
-  @apply text-pink font-black text-4xl;
+  @apply text-dracula-pink font-black text-4xl;
 }
 
 h2 {
-  @apply text-pink font-bold text-3xl;
+  @apply text-dracula-pink font-bold text-3xl;
 }
 
 h3 {
-  @apply text-pink font-bold text-2xl;
+  @apply text-dracula-pink font-bold text-2xl;
 }
 
 h4 {
-  @apply text-pink font-bold text-xl;
+  @apply text-dracula-pink font-bold text-xl;
 }
 
 h5 {
-  @apply text-pink font-bold text-xl;
+  @apply text-dracula-pink font-bold text-xl;
 }
 
 h6 {
-  @apply text-pink font-bold text-lg;
+  @apply text-dracula-pink font-bold text-lg;
 }
 
 p {
@@ -35,15 +35,15 @@ p {
 
 em,
 strong {
-  @apply text-purple;
+  @apply text-dracula-purple;
 }
 
 del {
-  @apply text-comment;
+  @apply text-dracula-blue;
 }
 
 input {
-  @apply bg-current/20 placeholder-comment text-foreground focus:outline-none focus:bg-current hover:bg-current px-4 py-2 transition;
+  @apply bg-dracula-dark/20 placeholder-dracula-blue text-dracula-light focus:outline-none focus:bg-dracula-dark hover:bg-dracula-dark px-4 py-2 transition;
 }
 
 ul {
@@ -59,7 +59,7 @@ li {
 }
 
 blockquote {
-  @apply pl-6 border-l-4 border-orange;
+  @apply pl-6 border-l-4 border-dracula-orange;
 }
 
 code {
@@ -67,7 +67,7 @@ code {
 }
 
 :not(pre) > code {
-  @apply bg-current/50 text-purple px-2 inline-block leading-normal;
+  @apply bg-dracula-dark/50 text-dracula-purple px-2 inline-block leading-normal;
 }
 
 li > code {
@@ -75,15 +75,15 @@ li > code {
 }
 
 pre {
-  @apply bg-current/30 overflow-y-auto p-4 text-base !important;
+  @apply bg-dracula-dark/30 overflow-y-auto p-4 text-base !important;
 }
 
 table {
-  @apply bg-current/30 w-full;
+  @apply bg-dracula-dark/30 w-full;
 }
 
 table th {
-  @apply bg-current/40 text-left font-bold px-4 py-2;
+  @apply bg-dracula-dark/40 text-left font-bold px-4 py-2;
 }
 
 table td {
@@ -103,15 +103,15 @@ table td {
 }
 
 table tbody tr:nth-child(odd) {
-  @apply bg-current/15;
+  @apply bg-dracula-dark/15;
 }
 
 .copy-code {
-  @apply absolute top-0 right-0 bg-orange/90 hover:bg-orange px-2 py-1 text-xs text-foreground;
+  @apply absolute top-0 right-0 bg-dracula-orange/90 hover:bg-dracula-orange px-2 py-1 text-xs text-dracula-light;
 }
 
 .markdown a {
-  @apply text-purple/80 underline underline-offset-4 hover:text-purple transition;
+  @apply text-dracula-purple/80 underline underline-offset-4 hover:text-dracula-purple transition;
 }
 
 .markdown :is(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre) {

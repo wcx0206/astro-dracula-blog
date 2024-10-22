@@ -6,7 +6,7 @@ import { uniqueLowerCaseTags } from "../../scripts/utils";
 
 const { tag } = Astro.params;
 const filteredPosts = await getCollection("posts", (post) =>
-  uniqueLowerCaseTags(post.data.tags).includes(tag!),
+  uniqueLowerCaseTags(post.data.tags).includes(tag!)
 );
 
 export async function getStaticPaths() {
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
 <BaseLayout>
   <article>
-    <h1 class="mb-10 mx-auto text-foreground">
+    <h1 class="mb-10 mx-auto text-dracula-light">
       Posts with tag
       <code>{tag}</code>
     </h1>

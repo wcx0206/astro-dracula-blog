@@ -11,6 +11,6 @@ export default {
     }
   },
   plugins: [
-    require('tailwind-dracula')(),
+    require('tailwind-dracula')('dracula'),
   ],
 };
