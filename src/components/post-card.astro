@@ -2,7 +2,7 @@
 import DateTag from "./date-tag.tsx";
 import Tag from "./tag.astro";
 import { uniqueLowerCaseTags } from "../scripts/utils";
-import { Markdown } from "@astropub/md";
+import { render } from "astro:content";
 
 const { post } = Astro.props;
 
@@ -12,31 +12,24 @@ function getDateString() {
   return updatedDate || pubDate;
 }
 
-function getDescription() {
-  let content = post.body;
-  while (content.startsWith("\n")) content = content.slice(1);
-  return content.trim().slice(0, content.indexOf("\n"));
-}
-
 const title = post.data.title;
 const date = new Date(getDateString()).toISOString().slice(0, 10);
 const tags = uniqueLowerCaseTags(post.data.tags);
 const href = `/posts/${post.slug}`;
+
+const { remarkPluginFrontmatter } = await render(post);
 ---
 
-<div
-  class="p-8 bg-dracula-dark/20 hover:bg-dracula-dark transition
-flex flex-col gap-4"
+<a
+  href={href}
+  class="p-8 bg-dracula-dark/20 hover:bg-dracula-dark transition cursor-pointer text-pretty flex flex-col gap-4"
 >
-  <a
-    class="text-dracula-pink font-bold text-3xl cursor-pointer hover:underline hover:underline-offset-4 mb-2 transition"
-    href={href}>{title}</a
-  >
+  <h2 class="font-bold text-3xl text-dracula-pink">{title}</h2>
   <div class="flex flex-wrap gap-2">
     <DateTag date={date} />
     {tags.map((tag: string) => <Tag tag={tag} />)}
   </div>
   <p class="overflow-ellipsis break-all line-clamp-3">
-    <Markdown.Inline of={getDescription()} class="inline" />
+    {remarkPluginFrontmatter.desc}
   </p>
-</div>
+</a>
