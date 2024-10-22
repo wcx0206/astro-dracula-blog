@@ -2,7 +2,9 @@ Greetings! Welcome to my blog.
 
 ## About the Author
 
-Hello, I'm BlockLune. The origin of my username is quite simple: As a child, I was fascinated by the world of Minecraft, where the protagonist is a character made of "blocks". This affection for the game inspired the nickname I use today.
+Hello, I'm BlockLune. I'm a student who loves programming and embraces open source.
+
+The origin of my username is quite simple: As a child, I was fascinated by the world of Minecraft, where the protagonist is a character made of "blocks". This affection for the game inspired the nickname I use today.
 
 ## About the Blog
 
