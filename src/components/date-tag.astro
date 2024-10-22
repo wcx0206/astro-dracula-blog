@@ -1,6 +1,6 @@
 ---
 import { MISC } from "../config";
-const { date } = Astro.props;
+const { date, type } = Astro.props;
 
 const now = new Date();
 const target = new Date(date);
@@ -15,6 +15,39 @@ const color =
 const formattedDate = new Date(date).toISOString().slice(0, 10);
 ---
 
-<code class=`inline-block bg-dracula-dark/80 px-2 py-1 ${color}`
-  >{formattedDate}</code
->
+{
+  /**
+   * Valid types: published, updated
+   *
+   * If type is given, it will display the type and the date.
+   * The published type label is green, updated is orange.
+   *
+   * Otherwise, it will only display the date.
+   * If the date is more than 7 days ago, it will be orange, otherwise green.
+   */
+}
+
+<div class="flex items-center">
+  {
+    type ? (
+      <code class="inline-block bg-dracula-dark/80 px-2 py-1">
+        <>
+          <span
+            class={
+              type === "published"
+                ? "text-dracula-orange"
+                : "text-dracula-green"
+            }
+          >
+            <span class="capitalize">{type}</span> at
+          </span>
+          <span>{formattedDate}</span>
+        </>
+      </code>
+    ) : (
+      <code class={`inline-block bg-dracula-dark/80 px-2 py-1 ${color}`}>
+        {formattedDate}
+      </code>
+    )
+  }
+</div>
