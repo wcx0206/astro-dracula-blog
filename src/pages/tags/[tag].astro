@@ -18,9 +18,9 @@ export async function getStaticPaths() {
 
 <BaseLayout>
   <article>
-    <h1 class="mb-10 mx-auto text-dracula-light">
+    <h1 class="text-4xl font-black text-dracula-light mb-10 mx-auto">
       Posts with tag
-      <code>{tag}</code>
+      <code class="bg-dracula-dark text-dracula-purple px-4 py-2">{tag}</code>
     </h1>
     <PostStack posts={filteredPosts} />
   </article>
