@@ -15,7 +15,7 @@ const { Content } = await render(post);
     <DateTag date={post.data.date} type="published" />
     {post.data.updated && <DateTag date={post.data.updated} type="updated" />}
     {
-      uniqueLowerCaseTags(post.data.tags).map((tag: string) => (
+      Array.from(uniqueLowerCaseTags(post.data.tags).keys()).map((tag) => (
         <TagLink tag={tag} />
       ))
     }

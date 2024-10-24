@@ -10,6 +10,12 @@ const tags = uniqueLowerCaseTags(allPosts.map((post) => post.data.tags).flat());
 
 <BaseLayout>
   <div class="flex flex-wrap gap-2">
-    {tags.map((tag) => <TagLink class="block" tag={tag} />)}
+    {
+      Array.from(tags.entries())
+        .sort((a, b) => b[1] - a[1])
+        .map(([tag, count]) => (
+          <TagLink class="block" tag={tag} count={count} />
+        ))
+    }
   </div>
 </BaseLayout>
