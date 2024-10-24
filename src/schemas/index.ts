@@ -16,5 +16,14 @@ export const PostSchema = z.object({
   body: z.string(),
 });
 
+export const PostSearchItemSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  tags: z.array(z.string()),
+  slug: z.string(),
+  href: z.string(),
+});
+
 export type PostFrontmatter = z.infer<typeof PostFrontmatterSchema>;
 export type Post = z.infer<typeof PostSchema>;
+export type PostSearchItem = z.infer<typeof PostSearchItemSchema>;
