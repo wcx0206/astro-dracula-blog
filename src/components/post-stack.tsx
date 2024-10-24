@@ -43,7 +43,7 @@ export default function PostStack({ posts }: { posts: Post[] }) {
                     onChange={handleOnSearch}
                 />
             </div>
-            {results.length > 0 ? results.map((post, index) => <PostCard post={post} key={index} />) : <p>No results found</p>}
+            {results.length > 0 ? results.map((post) => <PostCard post={post} key={post.slug} />) : <p>No results found</p>}
         </div>
     );
 }

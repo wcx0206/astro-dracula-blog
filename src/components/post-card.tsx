@@ -19,7 +19,7 @@ export default function PostCard({ post }: { post: Post }) {
             <h2 className="font-bold text-3xl text-dracula-pink">{title}</h2>
             <div className="flex flex-wrap gap-2">
                 <DateTag date={date} />
-                {tags.map((tag) => <LabelTag label={tag} />)}
+                {tags.map((tag, index) => <LabelTag label={tag} key={index} />)}
             </div>
             <p className="overflow-ellipsis break-all line-clamp-3">{desc}</p>
         </a>
