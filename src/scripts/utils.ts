@@ -1,4 +1,5 @@
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
+import { getDescFromString } from "./markdown";
 import Fuse from "fuse.js";
 
 export interface SearchItem {
@@ -14,16 +15,14 @@ export interface SearchItem {
  */
 export async function createSearchIndex() {
   const posts = await getCollection("posts");
-  const searchItems: SearchItem[] = await Promise.all(posts.map(async (post) => {
-    const { remarkPluginFrontmatter } = await render(post);
+  const searchItems: SearchItem[] = posts.map((post) => {
     return {
       title: post.data.title,
-      description: remarkPluginFrontmatter.desc,
+      description: getDescFromString(post.body),
       slug: post.slug,
       tags: post.data.tags,
     };
-  })
-  );
+  });
 
   const fuse = new Fuse(searchItems, {
     keys: ["title", "description", "slug", "tags"],

@@ -1,5 +1,5 @@
 ---
-import PostStack from "../components/post-stack.astro";
+import PostStack from "../components/post-stack.tsx";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/base-layout.astro";
 
@@ -7,5 +7,5 @@ const posts = await getCollection("posts");
 ---
 
 <BaseLayout>
-  <PostStack posts={posts} />
+  <PostStack posts={posts} client:load />
 </BaseLayout>
