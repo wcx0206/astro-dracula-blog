@@ -2,12 +2,16 @@
 import BaseLayout from "../../layouts/base-layout.astro";
 import PostStack from "../../components/post-stack.tsx";
 import { getCollection } from "astro:content";
-import { getUniqueLowerCaseTagMap } from "../../scripts/utils";
+import {
+  getUniqueLowerCaseTagMap,
+  getSortedPostSearchItems,
+} from "../../scripts/utils";
 
 const { tag } = Astro.params;
 const filteredPosts = await getCollection("posts", (post) =>
   getUniqueLowerCaseTagMap(post.data.tags).get(tag),
 );
+const filteredPostSearchItems = await getSortedPostSearchItems(filteredPosts);
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -24,6 +28,6 @@ export async function getStaticPaths() {
       Posts with tag
       <code class="bg-dracula-dark text-dracula-purple px-4 py-2">{tag}</code>
     </h1>
-    <PostStack posts={filteredPosts} client:load />
+    <PostStack sortedPostSearchItems={filteredPostSearchItems} client:load />
   </article>
 </BaseLayout>

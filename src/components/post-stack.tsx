@@ -1,26 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
 import PostCard from "./post-card";
-import type { Post, PostSearchItem } from "../schemas";
-import { getSortedPostSearchItems } from "../scripts/utils";
+import type { PostSearchItem } from "../schemas";
 
 const fuseOptions = {
     keys: ["slug", "title", "description", "tags"]
 }
 
-export default function PostStack({ posts }: { posts: Post[] }) {
+export default function PostStack({ sortedPostSearchItems }: { sortedPostSearchItems: PostSearchItem[] }) {
     const [query, setQuery] = useState("");
     const [debouncedQuery] = useDebounce(query, 300);
-    const [sortedPostSearchItems, setSortedPostSearchItems] = useState<PostSearchItem[]>([]);
-
-    useEffect(() => {
-        async function fetchSortedItems() {
-            const sortedItems = await getSortedPostSearchItems(posts);
-            setSortedPostSearchItems(sortedItems);
-        }
-        fetchSortedItems();
-    }, [posts]);
 
     let results: PostSearchItem[] = [];
     if (debouncedQuery === "") {
@@ -49,8 +39,7 @@ export default function PostStack({ posts }: { posts: Post[] }) {
                     onChange={handleOnSearch}
                 />
             </div>
-            {sortedPostSearchItems.length === 0 ? <p>Fetching posts...</p> : (
-                results.length > 0 ? results.map((postSearchItem) => <PostCard postSearchItem={postSearchItem} key={postSearchItem.slug} />) : <p>No results found</p>)}
+            {results.length > 0 ? results.map((postSearchItem) => <PostCard postSearchItem={postSearchItem} key={postSearchItem.slug} />) : <p>No results found</p>}
         </div>
     );
 }

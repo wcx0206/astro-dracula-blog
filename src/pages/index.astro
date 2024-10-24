@@ -2,10 +2,12 @@
 import PostStack from "../components/post-stack.tsx";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/base-layout.astro";
+import { getSortedPostSearchItems } from "../scripts/utils";
 
 const posts = await getCollection("posts");
+const sortedPostSearchItems = await getSortedPostSearchItems(posts);
 ---
 
 <BaseLayout>
-  <PostStack posts={posts} client:load />
+  <PostStack sortedPostSearchItems={sortedPostSearchItems} client:load />
 </BaseLayout>
