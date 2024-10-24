@@ -1,6 +1,6 @@
 ---
 import DateTag from "./date-tag.tsx";
-import Tag from "./tag.astro";
+import LabelTag from "./label-tag.tsx";
 import { uniqueLowerCaseTags } from "../scripts/utils";
 import { render } from "astro:content";
 
@@ -27,7 +27,7 @@ const { remarkPluginFrontmatter } = await render(post);
   <h2 class="font-bold text-3xl text-dracula-pink">{title}</h2>
   <div class="flex flex-wrap gap-2">
     <DateTag date={date} />
-    {Array.from(tags.keys()).map((tag) => <Tag tag={tag} />)}
+    {Array.from(tags.keys()).map((tag) => <LabelTag label={tag} />)}
   </div>
   <p class="overflow-ellipsis break-all line-clamp-3">
     {remarkPluginFrontmatter.desc}

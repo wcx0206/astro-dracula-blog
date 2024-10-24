@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/base-layout.astro";
-import TagLink from "../../components/tag-link.astro";
+import LabelTag from "../../components/label-tag.tsx";
 import { getCollection } from "astro:content";
 import { uniqueLowerCaseTags } from "../../scripts/utils";
 
@@ -14,7 +14,7 @@ const tags = uniqueLowerCaseTags(allPosts.map((post) => post.data.tags).flat());
       Array.from(tags.entries())
         .sort((a, b) => b[1] - a[1])
         .map(([tag, count]) => (
-          <TagLink class="block" tag={tag} count={count} />
+          <LabelTag label={tag} count={count} type="link" />
         ))
     }
   </div>

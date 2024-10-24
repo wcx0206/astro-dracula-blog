@@ -1,6 +1,6 @@
 ---
-import TagLink from "./tag-link.astro";
 import DateTag from "./date-tag.tsx";
+import LabelTag from "./label-tag.tsx";
 import Prose from "./prose.astro";
 import { render } from "astro:content";
 import { uniqueLowerCaseTags } from "../scripts/utils";
@@ -16,7 +16,7 @@ const { Content } = await render(post);
     {post.data.updated && <DateTag date={post.data.updated} type="updated" />}
     {
       Array.from(uniqueLowerCaseTags(post.data.tags).keys()).map((tag) => (
-        <TagLink tag={tag} />
+        <LabelTag label={tag} type="link" />
       ))
     }
   </div>
