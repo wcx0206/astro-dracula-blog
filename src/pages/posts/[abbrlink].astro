@@ -26,6 +26,6 @@ export async function getStaticPaths() {
 }
 ---
 
-<BaseLayout>
+<BaseLayout title={post!.data.title}>
   <MarkdownPost post={post} />
 </BaseLayout>

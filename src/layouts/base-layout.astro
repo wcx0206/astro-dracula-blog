@@ -2,6 +2,11 @@
 import "../styles/global.css";
 import Moon from "../components/moon.astro";
 import { SITE } from "../config";
+
+const { title } = Astro.props;
+const pageTitle = title
+  ? `${title} | ${SITE.title}`
+  : `${SITE.title} | ${SITE.description}`;
 ---
 
 <html lang="en">
@@ -15,7 +20,7 @@ import { SITE } from "../config";
       defer
       src="https://cloud.umami.is/script.js"
       data-website-id={import.meta.env.UMAMI_DATA_WEBSITE_ID}></script>
-    <title>{SITE.title} | {SITE.description}</title>
+    <title>{pageTitle}</title>
   </head>
   <body
     class="bg-dracula-darker text-dracula-light mx-4 md:mx-auto max-w-3xl py-12"
