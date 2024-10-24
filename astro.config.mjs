@@ -4,7 +4,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import markdownIntegration from '@astropub/md'
 import react from "@astrojs/react";
-import purgecss from "astro-purgecss";
 
 import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 
@@ -21,5 +20,5 @@ export default defineConfig({
     },
     remarkPlugins: [remarkDescPlugin],
   },
-  integrations: [tailwind(), markdownIntegration(), react(), purgecss()]
+  integrations: [tailwind(), markdownIntegration(), react()]
 });
