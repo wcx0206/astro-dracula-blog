@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 import markdownIntegration from '@astropub/md'
 import preact from "@astrojs/preact";
 
-import { remarkDesc } from "./src/scripts/remark-desc.mjs";
+import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,7 +18,7 @@ export default defineConfig({
         "zshrc": "zsh",
       }
     },
-    remarkPlugins: [remarkDesc],
+    remarkPlugins: [remarkDescPlugin],
   },
   integrations: [tailwind(), markdownIntegration(), preact()]
 });

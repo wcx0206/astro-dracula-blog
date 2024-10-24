@@ -14,8 +14,7 @@ export interface SearchItem {
  */
 export async function createSearchIndex() {
   const posts = await getCollection("posts");
-
-  const searchItems: SearchItem[] = posts.map(async (post) => {
+  const searchItems: SearchItem[] = await Promise.all(posts.map(async (post) => {
     const { remarkPluginFrontmatter } = await render(post);
     return {
       title: post.data.title,
@@ -23,7 +22,8 @@ export async function createSearchIndex() {
       slug: post.slug,
       tags: post.data.tags,
     };
-  });
+  })
+  );
 
   const fuse = new Fuse(searchItems, {
     keys: ["title", "description", "slug", "tags"],
@@ -39,9 +39,9 @@ export async function createSearchIndex() {
  */
 export const uniqueLowerCaseTags = (tags: string[]): Map<string, number> => {
   const tagCounts = new Map<string, number>();
-    tags.forEach(tag => {
-        const lowercaseTag = tag.toLowerCase();
-        tagCounts.set(lowercaseTag, (tagCounts.get(lowercaseTag) || 0) + 1);
-    });
-    return tagCounts;
+  tags.forEach(tag => {
+    const lowercaseTag = tag.toLowerCase();
+    tagCounts.set(lowercaseTag, (tagCounts.get(lowercaseTag) || 0) + 1);
+  });
+  return tagCounts;
 };
