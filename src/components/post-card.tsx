@@ -1,7 +1,7 @@
 import DateTag from "./date-tag";
 import LabelTag from "./label-tag";
 import type { Post } from "../schemas";
-import { getDescFromString } from "../scripts/markdown";
+import { getDescFromMdString } from "../scripts/markdown";
 import { getUniqueLowerCaseTagMap, getCloserFormattedDate } from "../scripts/utils";
 
 export default function PostCard({ post }: { post: Post }) {
@@ -9,7 +9,7 @@ export default function PostCard({ post }: { post: Post }) {
     const title = post.data.title;
     const date = getCloserFormattedDate(post.data.date.toISOString(), post.data.updated?.toISOString())!;
     const tags = Array.from(getUniqueLowerCaseTagMap(post.data.tags).keys());
-    const desc = getDescFromString(post.body);
+    const desc = getDescFromMdString(post.body);
 
     return (
         <a

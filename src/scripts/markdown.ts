@@ -1,13 +1,16 @@
+import { fromMarkdown } from "mdast-util-from-markdown";
 import { toString } from "mdast-util-to-string";
 
-export function getDescFromString(content: string) {
-    const pos = content.indexOf("<!--more-->");
-    return content.slice(0, pos);
+export function getDescFromMdString(mdString: string) {
+    const mdast = fromMarkdown(mdString);
+    const desc = toString(mdast);
+    const pos = desc.indexOf("<!--more-->");
+    return desc.slice(0, pos);
 }
 
 export function remarkDescPlugin() {
     return function (tree: any, { data }: any) {
         let textOnPage = toString(tree);
-        data.astro.frontmatter.desc = getDescFromString(textOnPage);
+        data.astro.frontmatter.desc = getDescFromMdString(textOnPage);
     };
 }

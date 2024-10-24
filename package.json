@@ -21,6 +21,7 @@
     "@fontsource/merriweather": "^5.1.0",
     "astro": "^4.16.6",
     "fuse.js": "^7.0.0",
+    "mdast-util-from-markdown": "^2.0.1",
     "mdast-util-to-string": "^4.0.0",
     "preact": "^10.24.3",
     "tailwindcss": "^3.4.14",

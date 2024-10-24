@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import { getDescFromString } from "./markdown";
+import { getDescFromMdString } from "./markdown";
 import Fuse from "fuse.js";
 
 export interface SearchItem {
@@ -18,7 +18,7 @@ export async function createSearchIndex() {
   const searchItems: SearchItem[] = posts.map((post) => {
     return {
       title: post.data.title,
-      description: getDescFromString(post.body),
+      description: getDescFromMdString(post.body),
       slug: post.slug,
       tags: post.data.tags,
     };
