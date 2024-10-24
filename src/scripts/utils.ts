@@ -37,7 +37,7 @@ export async function createSearchIndex() {
  * @param tags - An array of tags.
  * @returns A Map of tags with their lowercase versions as keys and counts as values.
  */
-export const uniqueLowerCaseTags = (tags: string[]): Map<string, number> => {
+export const getUniqueLowerCaseTagMap = (tags: string[]): Map<string, number> => {
   const tagCounts = new Map<string, number>();
   tags.forEach(tag => {
     const lowercaseTag = tag.toLowerCase();
@@ -45,3 +45,20 @@ export const uniqueLowerCaseTags = (tags: string[]): Map<string, number> => {
   });
   return tagCounts;
 };
+
+/**
+ * Returns the closer date from two date strings.
+ * @param dateStringA - The first date string.
+ * @param dateStringB - The second date string.
+ * @returns The closest date to the current date.
+ */
+export const getCloserFormattedDate = (dateStringA?: string, dateStringB?: string) => {
+  if (!dateStringA && !dateStringB) return undefined;
+  if (!dateStringA) return dateStringB;
+  if (!dateStringB) return dateStringA;
+
+  const dateA = new Date(dateStringA);
+  const dateB = new Date(dateStringB);
+  const dateToReturn = dateA < dateB ? dateA : dateB;
+  return dateToReturn.toISOString().slice(0, 10);
+}

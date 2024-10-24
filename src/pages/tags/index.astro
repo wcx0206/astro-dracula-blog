@@ -2,10 +2,12 @@
 import BaseLayout from "../../layouts/base-layout.astro";
 import LabelTag from "../../components/label-tag.tsx";
 import { getCollection } from "astro:content";
-import { uniqueLowerCaseTags } from "../../scripts/utils";
+import { getUniqueLowerCaseTagMap } from "../../scripts/utils";
 
 const allPosts = await getCollection("posts");
-const tags = uniqueLowerCaseTags(allPosts.map((post) => post.data.tags).flat());
+const tags = getUniqueLowerCaseTagMap(
+  allPosts.map((post) => post.data.tags).flat(),
+);
 ---
 
 <BaseLayout>

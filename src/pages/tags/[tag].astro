@@ -2,16 +2,18 @@
 import BaseLayout from "../../layouts/base-layout.astro";
 import PostStack from "../../components/post-stack.astro";
 import { getCollection } from "astro:content";
-import { uniqueLowerCaseTags } from "../../scripts/utils";
+import { getUniqueLowerCaseTagMap } from "../../scripts/utils";
 
 const { tag } = Astro.params;
 const filteredPosts = await getCollection("posts", (post) =>
-  uniqueLowerCaseTags(post.data.tags).get(tag)
+  getUniqueLowerCaseTagMap(post.data.tags).get(tag),
 );
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
-  const tags = uniqueLowerCaseTags(posts.map((post) => post.data.tags).flat());
+  const tags = getUniqueLowerCaseTagMap(
+    posts.map((post) => post.data.tags).flat(),
+  );
   return Array.from(tags.keys()).map((tag) => ({ params: { tag } }));
 }
 ---

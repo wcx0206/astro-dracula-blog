@@ -1,7 +1,7 @@
 ---
 import DateTag from "./date-tag.tsx";
 import LabelTag from "./label-tag.tsx";
-import { uniqueLowerCaseTags } from "../scripts/utils";
+import { getUniqueLowerCaseTagMap } from "../scripts/utils";
 import { render } from "astro:content";
 
 const { post } = Astro.props;
@@ -14,7 +14,7 @@ function getDateString() {
 
 const title = post.data.title;
 const date = new Date(getDateString()).toISOString().slice(0, 10);
-const tags = uniqueLowerCaseTags(post.data.tags);
+const tags = getUniqueLowerCaseTagMap(post.data.tags);
 const href = `/posts/${post.slug}`;
 
 const { remarkPluginFrontmatter } = await render(post);
