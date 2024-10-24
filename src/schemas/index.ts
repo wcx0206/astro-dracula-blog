@@ -22,6 +22,7 @@ export const PostSearchItemSchema = z.object({
   tags: z.array(z.string()),
   slug: z.string(),
   href: z.string(),
+  date: z.string(),
 });
 
 export type PostFrontmatter = z.infer<typeof PostFrontmatterSchema>;

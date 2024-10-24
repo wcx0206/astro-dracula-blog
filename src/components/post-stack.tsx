@@ -1,26 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
 import PostCard from "./post-card";
-import type { Post } from "../schemas";
+import type { Post, PostSearchItem } from "../schemas";
+import { getSortedPostSearchItems } from "../scripts/utils";
+
 const fuseOptions = {
-    keys: ["data.title", "data.description", "data.tags", "slug"],
+    keys: ["slug", "title", "description", "tags"]
 }
 
 export default function PostStack({ posts }: { posts: Post[] }) {
     const [query, setQuery] = useState("");
-    const [debouncedQuery] = useDebounce(query, 1000);
+    const [debouncedQuery] = useDebounce(query, 300);
+    const [sortedPostSearchItems, setSortedPostSearchItems] = useState<PostSearchItem[]>([]);
 
-    let results: Post[] = [];
+    useEffect(() => {
+        async function fetchSortedItems() {
+            const sortedItems = await getSortedPostSearchItems(posts);
+            setSortedPostSearchItems(sortedItems);
+        }
+        fetchSortedItems();
+    }, [posts]);
+
+    let results: PostSearchItem[] = [];
     if (debouncedQuery === "") {
-        results = posts
-            .sort((a, b) => {
-                const dateA = a.data.updated || a.data.date;
-                const dateB = b.data.updated || b.data.date;
-                return dateB.getTime() - dateA.getTime();
-            })
+        results = sortedPostSearchItems;
     } else {
-        const fuse = new Fuse(posts, fuseOptions);
+        const fuse = new Fuse(sortedPostSearchItems, fuseOptions);
         results = fuse.search(debouncedQuery).map((result) => result.item).slice(0, 5);
     }
 
@@ -43,7 +49,8 @@ export default function PostStack({ posts }: { posts: Post[] }) {
                     onChange={handleOnSearch}
                 />
             </div>
-            {results.length > 0 ? results.map((post) => <PostCard post={post} key={post.slug} />) : <p>No results found</p>}
+            {sortedPostSearchItems.length === 0 ? <p>Fetching posts...</p> : (
+                results.length > 0 ? results.map((postSearchItem) => <PostCard postSearchItem={postSearchItem} key={postSearchItem.slug} />) : <p>No results found</p>)}
         </div>
     );
 }

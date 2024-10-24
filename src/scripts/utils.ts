@@ -12,11 +12,12 @@ export const getSortedPostSearchItems = async (posts: Post[]): Promise<PostSearc
     const dateB = b.data.updated || b.data.date;
     return dateB.getTime() - dateA.getTime();
   }).map(post => ({
+    href: `/posts/${post.slug}`,
     title: post.data.title,
+    date: getCloserFormattedDate(post.data.updated?.toISOString(), post.data.date.toISOString())!,
     description: getDescFromMdString(post.body),
     slug: post.slug,
-    tags: post.data.tags,
-    href: `/posts/${post.slug}`,
+    tags: Array.from(getUniqueLowerCaseTagMap(post.data.tags).keys()),
   }));
 }
 
