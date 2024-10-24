@@ -1,34 +1,23 @@
-import { getCollection } from "astro:content";
+import type { PostSearchItem, Post } from "../schemas";
 import { getDescFromMdString } from "./markdown";
-import Fuse from "fuse.js";
-
-export interface SearchItem {
-  title: string;
-  description: string;
-  slug: string;
-  tags: string[];
-}
 
 /**
- * Creates a search index for the posts.
- * @returns A Fuse instance for searching the posts.
+ * Returns a sorted array of PostSearchItem objects, sorted by date.
+ * @param posts - An array of Post objects.
+ * @returns A sorted array of PostSearchItem objects.
  */
-export async function createSearchIndex() {
-  const posts = await getCollection("posts");
-  const searchItems: SearchItem[] = posts.map((post) => {
-    return {
-      title: post.data.title,
-      description: getDescFromMdString(post.body),
-      slug: post.slug,
-      tags: post.data.tags,
-    };
-  });
-
-  const fuse = new Fuse(searchItems, {
-    keys: ["title", "description", "slug", "tags"],
-  });
-
-  return fuse;
+export const getSortedPostSearchItems = async (posts: Post[]): Promise<PostSearchItem[]> => {
+  return posts.sort((a, b) => {
+    const dateA = a.data.updated || a.data.date;
+    const dateB = b.data.updated || b.data.date;
+    return dateB.getTime() - dateA.getTime();
+  }).map(post => ({
+    title: post.data.title,
+    description: getDescFromMdString(post.body),
+    slug: post.slug,
+    tags: post.data.tags,
+    href: `/posts/${post.slug}`,
+  }));
 }
 
 /**
