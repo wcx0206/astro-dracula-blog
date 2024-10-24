@@ -14,14 +14,14 @@ export default function PostCard({ post }: { post: Post }) {
     return (
         <a
             href={href}
-            class="p-8 bg-dracula-dark/20 hover:bg-dracula-dark transition cursor-pointer text-pretty flex flex-col gap-4"
+            className="p-8 bg-dracula-dark/20 hover:bg-dracula-dark transition cursor-pointer text-pretty flex flex-col gap-4"
         >
-            <h2 class="font-bold text-3xl text-dracula-pink">{title}</h2>
-            <div class="flex flex-wrap gap-2">
+            <h2 className="font-bold text-3xl text-dracula-pink">{title}</h2>
+            <div className="flex flex-wrap gap-2">
                 <DateTag date={date} />
                 {tags.map((tag) => <LabelTag label={tag} />)}
             </div>
-            <p class="overflow-ellipsis break-all line-clamp-3">{desc}</p>
+            <p className="overflow-ellipsis break-all line-clamp-3">{desc}</p>
         </a>
     );
 }

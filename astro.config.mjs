@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 import markdownIntegration from '@astropub/md'
-import preact from "@astrojs/preact";
+import react from "@astrojs/react";
 
 import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 
@@ -20,5 +20,5 @@ export default defineConfig({
     },
     remarkPlugins: [remarkDescPlugin],
   },
-  integrations: [tailwind(), markdownIntegration(), preact()]
+  integrations: [tailwind(), markdownIntegration(), react()]
 });

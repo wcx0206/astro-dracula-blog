@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useState } from "react";
 import Fuse from "fuse.js";
 import PostCard from "./post-card";
 import type { Post } from "../schemas";
@@ -22,20 +22,19 @@ export default function PostStack({ posts }: { posts: Post[] }) {
         results = fuse.search(query).map((result) => result.item).slice(0, 5);
     }
 
-    function handleOnSearch(e: Event) {
-        const target = e.target as HTMLInputElement;
-        setQuery(target.value);
+    function handleOnSearch(event: React.ChangeEvent<HTMLInputElement>) {
+        setQuery(event.target.value);
     }
 
     return (
-        <div class="flex flex-col gap-4">
-            <div class="flex flex-col">
-                <label class="sr-only" for="search">Search</label>
+        <div className="flex flex-col gap-4">
+            <div className="flex flex-col">
+                <label className="sr-only" htmlFor="search">Search</label>
                 <input
                     id="search"
                     type="text"
                     placeholder="Search..."
-                    class="bg-dracula-dark/20 placeholder-dracula-blue 
+                    className="bg-dracula-dark/20 placeholder-dracula-blue 
                     text-dracula-light focus:outline-none focus:bg-dracula-dark 
                     hover:bg-dracula-dark px-8 py-4 transition"
                     value={query}

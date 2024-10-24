@@ -21,24 +21,24 @@ export default function DateTag({ date, type }: { date: string, type?: "publishe
    * If the date is more than 7 days ago, it will be orange, otherwise green.
    */
   return (
-    <div class="flex items-center">
+    <div className="flex items-center">
       {
         type ? (
-          <code class="inline-block bg-dracula-dark/80 px-2 py-1">
+          <code className="inline-block bg-dracula-dark/80 px-2 py-1">
             <span
-              class={
+              className={
                 type === "published"
                   ? "text-dracula-orange"
                   : "text-dracula-green"
               }
             >
-              <span class="capitalize">{type}</span> at
+              <span className="capitalize">{type}</span> at
             </span>
             &nbsp;
             <span>{formattedDate}</span>
           </code>
         ) : (
-          <code class={`inline-block bg-dracula-dark/80 px-2 py-1 ${color}`}>
+          <code className={`inline-block bg-dracula-dark/80 px-2 py-1 ${color}`}>
             {formattedDate}
           </code>
         )
