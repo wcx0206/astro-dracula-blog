@@ -1,6 +1,6 @@
 import { MISC } from "../config";
 
-export default function DateTag({ date, type }: { date: string, type?: string }) {
+export default function DateTag({ date, type }: { date: string, type?: "published" | "updated" }) {
   const now = new Date();
   const target = new Date(date);
   const diffInMilliseconds: number = now.getTime() - target.getTime();
@@ -14,15 +14,12 @@ export default function DateTag({ date, type }: { date: string, type?: string })
   const formattedDate = new Date(date).toISOString().slice(0, 10);
 
   /**
-   * Valid types: published, updated
-   *
    * If type is given, it will display the type and the date.
    * The published type label is green, updated is orange.
    *
    * Otherwise, it will only display the date.
    * If the date is more than 7 days ago, it will be orange, otherwise green.
    */
-
   return (
     <div class="flex items-center">
       {
