@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
 import PostCard from "./post-card";
 import type { Post } from "../schemas";
@@ -8,9 +9,10 @@ const fuseOptions = {
 
 export default function PostStack({ posts }: { posts: Post[] }) {
     const [query, setQuery] = useState("");
+    const [debouncedQuery] = useDebounce(query, 1000);
 
     let results: Post[] = [];
-    if (query === "") {
+    if (debouncedQuery === "") {
         results = posts
             .sort((a, b) => {
                 const dateA = a.data.updated || a.data.date;
@@ -19,7 +21,7 @@ export default function PostStack({ posts }: { posts: Post[] }) {
             })
     } else {
         const fuse = new Fuse(posts, fuseOptions);
-        results = fuse.search(query).map((result) => result.item).slice(0, 5);
+        results = fuse.search(debouncedQuery).map((result) => result.item).slice(0, 5);
     }
 
     function handleOnSearch(event: React.ChangeEvent<HTMLInputElement>) {
