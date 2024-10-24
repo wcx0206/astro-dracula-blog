@@ -58,6 +58,6 @@ export const getCloserFormattedDate = (dateStringA?: string, dateStringB?: strin
 
   const dateA = new Date(dateStringA);
   const dateB = new Date(dateStringB);
-  const dateToReturn = dateA < dateB ? dateA : dateB;
+  const dateToReturn = dateA < dateB ? dateB : dateA;
   return dateToReturn.toISOString().slice(0, 10);
 }
