@@ -17,5 +17,6 @@ export async function GET(context) {
             pubDate: post.data.date,
             link: `/posts/${post.slug}`,
         })),
+        stylesheet: '/pretty-feed-v3.xsl',
     });
 }
