@@ -1,10 +1,13 @@
+import { motion } from "framer-motion";
+
 export default function LabelTag(
-    { label, count = 1, type = "tag", size = "normal" }:
+    { label, count = 1, type = "tag", size = "normal", animate = false }:
         {
             label: string,
             count?: number,
             type?: "tag" | "link",
-            size?: "normal" | "large"
+            size?: "normal" | "large",
+            animate?: boolean
         }
 ) {
     const text = count > 1 ? `${label} (${count})` : label;
@@ -15,5 +18,9 @@ export default function LabelTag(
                 hover:bg-dracula-dark transition`}>
         {text}
     </code>);
-    return type === "link" ? <a href={`/tags/${label}`}>{tagComponent}</a> : tagComponent;
+    let linkTagOrNot = type === "link" ? <a href={`/tags/${label}`}>{tagComponent}</a> : tagComponent;
+    let animatedLinkTagOrNot = animate ?
+        <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }}>{linkTagOrNot}</motion.div>
+        : linkTagOrNot;
+    return animatedLinkTagOrNot;
 }

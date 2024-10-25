@@ -38,11 +38,11 @@ export default function TagGroup({ tagMap }: { tagMap: Map<string, number> }) {
                         Array.from(tagMap.entries())
                             .sort((a, b) => b[1] - a[1])
                             .map(([tag, count]) => (
-                                <LabelTag label={tag} count={count} type="link" key={tag} />
+                                <LabelTag label={tag} count={count} type="link" key={tag} animate={true} />
                             ))
                         :
                         results.map((tag) => (
-                            <LabelTag label={tag} count={tagMap.get(tag)} type="link" key={tag} />
+                            <LabelTag label={tag} count={tagMap.get(tag)} type="link" key={tag} animate={true} />
                         ))
                 }
             </div>

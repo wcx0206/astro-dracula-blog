@@ -1,9 +1,10 @@
+import { motion } from "framer-motion";
 import DateTag from "./date-tag";
 import LabelTag from "./label-tag";
 import type { PostSearchItem } from "../schemas";
 
-export default function PostCard({ postSearchItem }: { postSearchItem: PostSearchItem }) {
-    return (
+export default function PostCard({ postSearchItem, animate = false }: { postSearchItem: PostSearchItem, animate?: boolean }) {
+    let component =
         <a
             href={postSearchItem.href}
             className="p-8 bg-dracula-dark/20 hover:bg-dracula-dark transition cursor-pointer text-pretty flex flex-col gap-4"
@@ -14,6 +15,6 @@ export default function PostCard({ postSearchItem }: { postSearchItem: PostSearc
                 {postSearchItem.tags.map((tag, index) => <LabelTag label={tag} key={index} />)}
             </div>
             <p className="overflow-ellipsis break-all line-clamp-3">{postSearchItem.description}</p>
-        </a>
-    );
+        </a>;
+    return animate ? <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }}>{component}</motion.div> : component;
 }
