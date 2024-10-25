@@ -20,3 +20,7 @@ pre {
 .copy-code {
   @apply absolute top-0 right-0 bg-dracula-dark/80 hover:bg-dracula-dark px-2 py-1 text-xs text-dracula-light;
 }
+
+::selection {
+  @apply bg-dracula-blue ;
+}
