@@ -1,14 +1,17 @@
 ---
+abbrlink: f17b3e8b
+categories:
+- CS
+- AI
+date: 2022-10-15 20:36:02
+tags:
+- ai
+- machine-learning
+- novelai
+- waifu-generation
+- image-generation
 title: 挖老婆矿！—— NovelAI 初试
 toc: true
-tags:
-  - NovelAI
-  - AI
-categories:
-  - CS
-  - AI
-abbrlink: f17b3e8b
-date: 2022-10-15 20:36:02
 ---
 
 最近一段时间，感觉突然之间，就有很多很多将现实图片二次元化啊，按照每句歌词生成一副画作啊的 AI 绘画应用的图文视频出现。和室友聊天还说是不是最近一段时间 AI 技术突破什么瓶颈突飞猛进了。后来才知道，原来是 NovelAI 泄露了... 这样一来，本地部署方便了起来，于是整了一个玩玩。由于跑 AI 嘛，GPU 比较呼啸，跟挖矿一样，我就戏称我这是在“挖老婆矿”了。

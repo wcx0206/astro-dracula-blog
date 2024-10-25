@@ -1,19 +1,19 @@
 ---
-title: "Notes for Nand2Tetris: Boolean Arithmetic and the ALU"
+abbrlink: f0f4eaec
+categories:
+- CS
+- Computing System
+- Nand2Tetris
+date: 2023-07-08 22:17:06
 katex: true
 mathjax: true
 tags:
-  - Coursera
-  - Nand2Tetris
-  - Boolean Arithmetic
-  - ALU
-  - Note
-categories:
-  - CS
-  - Computing System
-  - Nand2Tetris
-abbrlink: f0f4eaec
-date: 2023-07-08 22:17:06
+- nand2tetris
+- algorithm
+- hardware-design
+- digital-logic
+- coursera
+title: 'Notes for Nand2Tetris: Boolean Arithmetic and the ALU'
 ---
 
 This is a note for Nand2Tetris Unit 2.

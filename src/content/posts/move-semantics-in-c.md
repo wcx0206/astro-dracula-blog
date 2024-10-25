@@ -1,15 +1,17 @@
 ---
-title: Move Semantics in C++
-tags:
-  - CS106L
-  - C & C++
-  - Note
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: d5786049
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2023-05-30 22:14:00
+tags:
+- cpp
+- move-semantics
+- r-value-reference
+- special-member-functions
+- programming-language
+title: Move Semantics in C++
 ---
 
 This is a note for Lecture 13, [CS106L](https://web.stanford.edu/class/cs106l/index.html), Spring 2023.

@@ -1,12 +1,16 @@
 ---
-title: Tmux Quick Start
-tags:
-  - Tmux
 abbrlink: c99a1d40
 categories:
-  - CS
-  - Tools
+- CS
+- Tools
 date: 2023-08-04 23:05:19
+tags:
+- terminal
+- tool
+- unix
+- productivity
+- session-management
+title: Tmux Quick Start
 ---
 
 Chinese translation for _[How to Install and Use Tmux](https://tmuxcheatsheet.com/how-to-install-tmux/)_.

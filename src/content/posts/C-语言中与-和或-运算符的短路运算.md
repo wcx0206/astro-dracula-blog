@@ -1,13 +1,17 @@
 ---
-title: C 语言中与(&&)和或(||)运算符的短路运算
-tags:
-  - C & C++
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: 13d09bbb
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2022-10-11 21:23:55
+tags:
+- c
+- cpp
+- programming-language
+- short-circuit-evaluation
+- logical-operators
+title: C 语言中与(&&)和或(||)运算符的短路运算
 ---
 
 此篇笔记来源于下边的这个题目。

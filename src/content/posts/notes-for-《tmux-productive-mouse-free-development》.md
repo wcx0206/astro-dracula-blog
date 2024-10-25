@@ -1,12 +1,16 @@
 ---
-title: Notes for 《tmux Productive Mouse-Free Development》
-tags:
-  - Tmux
-categories:
-  - CS
-  - Tools
 abbrlink: 53957db4
+categories:
+- CS
+- Tools
 date: 2023-08-05 11:47:53
+tags:
+- tmux
+- terminal
+- unix
+- productivity
+- shell
+title: Notes for 《tmux Productive Mouse-Free Development》
 ---
 
 Notes for _tmux Productive Mouse-Free Development_ written by Brian P. Hogan.

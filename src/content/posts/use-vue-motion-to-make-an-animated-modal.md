@@ -1,13 +1,16 @@
 ---
-title: 使用 Vue 和 @vueuse/motion 制作带动画的模态框
-tags:
-  - Vue
-  - Web
-categories:
-  - CS
-  - Web
 abbrlink: 6633c011
+categories:
+- CS
+- Web
 date: 2024-10-17 17:06:23
+tags:
+- vue
+- typescript
+- javascript
+- web
+- modal-animation
+title: 使用 Vue 和 @vueuse/motion 制作带动画的模态框
 ---
 
 本文介绍了如何使用 [Vue](https://cn.vuejs.org/) 和 [@vueuse/motion](https://motion.vueuse.org/) 创建一个带有动画的模态框。你可以在 [这里](https://github.com/BlockLune/modal-animation-demo/tree/main/modal-animation-demo-vue) 找到最终代码。

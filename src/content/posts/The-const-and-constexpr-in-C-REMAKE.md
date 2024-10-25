@@ -1,15 +1,17 @@
 ---
+abbrlink: 3358bcc1
+categories:
+- CS
+- Languages
+- C & Cpp
+date: 2023-03-24 21:21:42
+tags:
+- cpp
+- programming-language
+- const-usage
+- constexpr
 title: The const and constexpr in C++ (REMAKE)
 toc: true
-tags:
-  - C & C++
-  - const
-categories:
-  - CS
-  - Languages
-  - C & Cpp
-abbrlink: 3358bcc1
-date: 2023-03-24 21:21:42
 ---
 
 I have written a post about `const` in C++ in Chinese before, but [it](/posts/7ec6ba38.html) was too verbose and unclear. :( So, I decided to rewrite it.

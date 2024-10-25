@@ -1,15 +1,18 @@
 ---
-title: LaTeX 公式基础
-toc: true
+abbrlink: 848a7d31
+categories:
+- CS
+- Tools
+date: 2022-09-15 14:11:07
 mathjax: true
 tags:
-  - Mathematics
-  - LaTeX
-categories:
-  - CS
-  - Tools
-abbrlink: 848a7d31
-date: 2022-09-15 14:11:07
+- latex
+- math
+- note
+- programming-language
+- mathjax
+title: LaTeX 公式基础
+toc: true
 ---
 
 用 LaTeX 写数学公式的时候，总记不住一些写法，故在此记录学习笔记。

@@ -1,15 +1,17 @@
 ---
-title: Getter and Setter in Python
-tags:
-  - Python
-  - Object-oriented Programming
-  - Translation
-categories:
-  - CS
-  - Languages
-  - Python
 abbrlink: 9b4ad8c6
+categories:
+- CS
+- Languages
+- Python
 date: 2023-10-17 16:01:54
+tags:
+- python
+- object-oriented-programming
+- getter-setter
+- property-decorator
+- data-encapsulation
+title: Getter and Setter in Python
 ---
 
 Chinese translation for _[Getter and Setter in Python](https://www.geeksforgeeks.org/getter-and-setter-in-python/)_.

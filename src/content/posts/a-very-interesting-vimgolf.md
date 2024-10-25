@@ -1,13 +1,16 @@
 ---
-title: A very interesting VimGolf
-tags:
-  - Vim
-  - VimGolf
-categories:
-  - CS
-  - Tools
 abbrlink: 6023bfa0
+categories:
+- CS
+- Tools
 date: 2024-01-28 12:32:52
+tags:
+- vim
+- algorithm
+- tool
+- quicksort
+- vimgolf
+title: A very interesting VimGolf
 ---
 
 [VimGolf.com](https://www.vimgolf.com/) is a good place for vimers to practice and improve their vim skills. This post records my experience of solving a very interesting VimGolf game -- [Quicksort](https://www.vimgolf.com/challenges/9v00651eb20100000000025b).

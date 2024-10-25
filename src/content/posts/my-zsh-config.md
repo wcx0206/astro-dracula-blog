@@ -1,13 +1,16 @@
 ---
-title: Zsh 简明配置指南
-tags:
-  - Config
-  - Zsh
-categories:
-  - CS
-  - Tools
 abbrlink: 3e5630f
+categories:
+- CS
+- Tools
 date: 2024-01-26 12:14:40
+tags:
+- terminal
+- zsh
+- oh-my-zsh
+- shell-configuration
+- iterm2
+title: Zsh 简明配置指南
 updated: 2024-10-21 20:55:00
 ---
 

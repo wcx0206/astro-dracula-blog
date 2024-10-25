@@ -1,14 +1,17 @@
 ---
+abbrlink: ca05bed5
+categories:
+- CS
+- Tools
+date: 2022-10-13 19:33:49
+tags:
+- windows
+- terminal
+- encoding
+- vscode
+- cmd
 title: VS Code 中文乱码问题
 toc: true
-tags:
-  - VS Code
-  - C & C++
-categories:
-  - CS
-  - Tools
-abbrlink: ca05bed5
-date: 2022-10-13 19:33:49
 ---
 
 **2023 年 1 月 12 日更新：** 找到了方便地改变 Windows 中终端默认编码的方法，所以原来的改变 C/C++ 文件默认编码的方法可以淘汰了。

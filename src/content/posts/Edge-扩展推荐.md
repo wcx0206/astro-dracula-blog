@@ -1,14 +1,17 @@
 ---
+abbrlink: 3c91f84e
+categories:
+- CS
+- Tools
+date: 2022-08-25 21:06:12
+tags:
+- tool
+- web
+- chrome-extension
+- edge-browser
+- browser-extension
 title: Edge 扩展推荐
 toc: true
-tags:
-  - Edge
-  - Browser
-categories:
-  - CS
-  - Tools
-abbrlink: 3c91f84e
-date: 2022-08-25 21:06:12
 ---
 
 2019 年 7 月写过一篇 Chrome 插件推荐的文章，那时候我还在用 Chrome 作为我的主要浏览器。一晃三年过去了，我也早已从 Google Chrome 转入全新 Chromium 内核构建的 Edge 浏览器。微软倒蛮有意思，自己从头开发的东西不咋地，在别人的平台上倒是表现得相当好。由于国内的水土不服啊，我用 Chrome 时总会遇到同步不了的情况，这点的体验在 Edge 这儿得到了很好的改善，也是我用 Edge 的主要原因吧。前些天帮很多同学做新机开荒，也推荐他们就用这款“Win11 原装”浏览器。当然一个浏览器肯定是离不开扩展的，趁着帮他们开荒这个机会，也顺便整理了我认为必备的一些浏览器扩展。

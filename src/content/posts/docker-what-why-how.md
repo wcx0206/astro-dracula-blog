@@ -1,14 +1,16 @@
 ---
-title: "Docker: 是什么? 为什么? 怎么用?"
-tags:
-  - Docker
-  - 容器化
-  - DevOps
-categories:
-  - CS
-  - Tools
 abbrlink: 86a70735
+categories:
+- CS
+- Tools
 date: 2024-09-03 16:35:32
+tags:
+- docker
+- containerization
+- software-engineering
+- tool
+- devops
+title: 'Docker: 是什么? 为什么? 怎么用?'
 ---
 
 作为一个喜欢折腾新玩意儿的人，在网上冲浪时，我经常会去寻找各种各样新式的软件或服务。如果你和我一样也喜欢寻找这些软件，那你可能也会注意到，在安装指南中，越来越多的软件提供了一种使用 **Docker** 的安装或部署方法。这是什么东西？为什么现在流行使用它？我们又能如何使用它？这篇文章，带你入门 Docker 。

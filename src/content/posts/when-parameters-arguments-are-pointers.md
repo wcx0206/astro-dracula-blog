@@ -1,14 +1,16 @@
 ---
-title: 当形参、实参是指针变量...
-tags:
-  - C & C++
-  - Pointer
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: 1ef1e20b
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2022-11-16 14:46:44
+tags:
+- c
+- cpp
+- pointer-passing
+- function-parameters
+title: 当形参、实参是指针变量...
 ---
 
 接[《一个有关指针传参的问题》](/posts/50c16b14.html)，再理一理这里边的一些问题...

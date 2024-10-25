@@ -1,15 +1,16 @@
 ---
-title: >-
-  Uses std::cin.ignore() to keep the user typing until the input meets the
-  requirements
-tags:
-  - C & C++
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: f96b3358
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2023-03-25 20:12:40
+tags:
+- cpp
+- c
+- input-validation
+- std-cin
+title: Uses std::cin.ignore() to keep the user typing until the input meets the requirements
 ---
 
 I used to control users' input by making the input a string and process it later. But today, my friend posed this question to me: Can we control input without a char array or string class?

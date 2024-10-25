@@ -1,14 +1,16 @@
 ---
-title: C 语言文件操作
-tags:
-  - C & C++
-  - File
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: 914118ff
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2023-01-12 14:53:51
+tags:
+- c
+- programming-language
+- file-io
+- stdio
+title: C 语言文件操作
 ---
 
 简单记录一下 C 语言的文件操作的相关内容。

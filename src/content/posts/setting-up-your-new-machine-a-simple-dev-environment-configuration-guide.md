@@ -1,15 +1,17 @@
 ---
-title: Setting up your new machine - A simple dev environment configuration guide
-tags:
-  - Environment
-  - Config
-  - Tutorial
-  - Guide
-categories:
-  - CS
-  - Tools
 abbrlink: 183d7426
+categories:
+- CS
+- Tools
 date: 2024-09-02 15:53:08
+tags:
+- development-environment
+- unix
+- windows
+- terminal
+- productivity
+- software-engineering
+title: Setting up your new machine - A simple dev environment configuration guide
 ---
 
 As developers, we interact with all kinds of machines every day. A well-configured development environment can significantly boost productivity and make coding more enjoyable. This comprehensive guide will help you set up a comfortable and efficient workspace. It's mainly for beginners, but experienced developers may also find some useful tips.

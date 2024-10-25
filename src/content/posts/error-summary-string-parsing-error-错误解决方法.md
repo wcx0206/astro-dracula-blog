@@ -1,19 +1,18 @@
 ---
-title: "error: summary string parsing error 错误解决方法"
-tags:
-  - Issue
-  - Solved
-  - Debug
-  - LLDB
-  - LLVM
-  - Clang
-toc: true
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: 78dc947f
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2023-01-11 12:34:16
+tags:
+- c
+- cpp
+- clang
+- lldb
+- debugging
+title: 'error: summary string parsing error 错误解决方法'
+toc: true
 ---
 
 直接先说解决方法：在使用 clang 工具链进行编译的时候，添加编译选项 `-fstandalone-debug`。

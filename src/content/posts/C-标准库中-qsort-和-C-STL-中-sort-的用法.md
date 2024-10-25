@@ -1,16 +1,18 @@
 ---
+abbrlink: eab95d6e
+categories:
+- CS
+- Languages
+- C & Cpp
+date: 2022-12-08 21:41:18
+tags:
+- c
+- cpp
+- algorithm
+- programming-language
+- sorting
 title: C 标准库中 qsort 和 C++ STL 中 sort 的用法
 toc: true
-tags:
-  - Sorting
-  - C & C++
-  - STL
-categories:
-  - CS
-  - Languages
-  - C & Cpp
-abbrlink: eab95d6e
-date: 2022-12-08 21:41:18
 ---
 
 虽然到现在还是不能完全理解 `qsort` 和 `sort` 这两个函数的底层原理，但至少，先学会如何使用吧。

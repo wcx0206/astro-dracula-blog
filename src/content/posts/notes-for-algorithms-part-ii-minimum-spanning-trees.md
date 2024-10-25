@@ -1,16 +1,17 @@
 ---
-title: "Notes for Algorithms, Part II: Minimum Spanning Trees"
+abbrlink: 8ca4a3fd
+categories:
+- CS
+- Algorithms & Data structures
+date: 2023-08-03 21:17:06
 mathjax: true
 tags:
-  - Algorithm
-  - Coursera
-  - Minimum Spanning Trees
-  - Note
-categories:
-  - CS
-  - Algorithms & Data structures
-abbrlink: 8ca4a3fd
-date: 2023-08-03 21:17:06
+- algorithm
+- data-structure
+- java
+- coursera
+- minimum-spanning-tree
+title: 'Notes for Algorithms, Part II: Minimum Spanning Trees'
 ---
 
 This is a note for 4.3 Minimum Spanning Trees, _[Algorithms, Part II](https://www.coursera.org/learn/algorithms-part2/)_.

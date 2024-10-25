@@ -1,14 +1,16 @@
 ---
-title: Managing Multiple Python Versions with pyenv and conda
-tags:
-  - Python
-  - conda
-  - pyenv
-categories:
-  - CS
-  - Tools
 abbrlink: c7d1762
+categories:
+- CS
+- Tools
 date: 2024-02-20 15:32:11
+tags:
+- python
+- tool
+- environment-management
+- pyenv
+- conda
+title: Managing Multiple Python Versions with pyenv and conda
 ---
 
 As a CS student, I often find myself working on projects that require different Python versions, each with its own set of dependencies and libraries. In such scenarios, having a reliable and efficient method for managing these versions becomes crucial. Inspired by _[pyenv 与 conda 双轨制：管理 Python 版本和环境](https://blog.yfi.moe/post/pyenv-conda-together/)_, this blog post aims to document my experience with managing multiple versions of Python using pyenv and conda.

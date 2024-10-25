@@ -1,19 +1,19 @@
 ---
-title: "Notes for Nand2Tetris: Virtual Machine I: Stack Arithmetic"
+abbrlink: d8b14680
+categories:
+- CS
+- Computing System
+- Nand2Tetris
+date: 2023-07-19 11:25:49
 katex: true
 mathjax: true
 tags:
-  - Coursera
-  - Nand2Tetris
-  - Virtual Machine
-  - Stack Arithmetic
-  - Note
-categories:
-  - CS
-  - Computing System
-  - Nand2Tetris
-abbrlink: d8b14680
-date: 2023-07-19 11:25:49
+- nand2tetris
+- programming-language
+- software-engineering
+- vm-abstraction
+- stack-machine
+title: 'Notes for Nand2Tetris: Virtual Machine I: Stack Arithmetic'
 ---
 
 This is a note for Nand2Tetris unit 7 (Part II, Unit 1).
@@ -147,4 +147,3 @@ VM Translator:
 ## Unit 7.5
 
 Implementing **local**
-

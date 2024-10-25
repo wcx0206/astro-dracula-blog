@@ -1,15 +1,18 @@
 ---
-title: Matching IPv4 addresses with RegExp
-mathjax: true
-katex: true
-tags:
-  - RegExp
-  - IPv4
-categories:
-  - CS
-  - Tools
 abbrlink: 1d74bec6
+categories:
+- CS
+- Tools
 date: 2023-07-04 16:03:46
+katex: true
+mathjax: true
+tags:
+- python
+- regex
+- software-engineering
+- programming-language
+- ipv4
+title: Matching IPv4 addresses with RegExp
 ---
 
 While solving [the NUM3RS problem of CS50P](https://cs50.harvard.edu/python/2022/psets/7/numb3rs/), I was asked to match IPv4 addresses with RegExp.

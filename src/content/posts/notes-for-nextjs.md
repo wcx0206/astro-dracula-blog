@@ -1,13 +1,16 @@
 ---
-title: NextJS 笔记
-tags:
-  - React
-  - Next.js
-categories:
-  - CS
-  - Web
 abbrlink: cca59e58
+categories:
+- CS
+- Web
 date: 2024-09-06 11:35:57
+tags:
+- nextjs
+- react
+- full-stack
+- web-development
+- server-components
+title: NextJS 笔记
 ---
 
 这是一篇课堂笔记，课程为 Udemy [React - The Complete Guide 2024](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)。该笔记包含了该课程中有关 NextJS 的部分内容。

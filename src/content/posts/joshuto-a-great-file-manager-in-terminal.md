@@ -1,12 +1,16 @@
 ---
-title: "joshuto: A great file manager in terminal"
+abbrlink: '348795e3'
 categories:
-  - CS
-  - Tools
-tags:
-  - joshuto
-abbrlink: "348795e3"
+- CS
+- Tools
 date: 2023-07-12 11:39:18
+tags:
+- terminal
+- tool
+- rust
+- file-manager
+- vim-like
+title: 'joshuto: A great file manager in terminal'
 ---
 
 When in a terminal, sometimes it's really annoying to keep on typing in `cd` or something else to browse the files and directories. Can we do it just like what we do in GUI? Then joshuto may be helpful to you.

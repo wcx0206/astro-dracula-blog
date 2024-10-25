@@ -1,12 +1,16 @@
 ---
-title: Better right-click menu in Win11
-tags:
-  - Windows
-categories:
-  - CS
-  - Tools
 abbrlink: 798c36fc
+categories:
+- CS
+- Tools
 date: 2023-06-22 22:11:51
+tags:
+- windows
+- tool
+- right-click-menu
+- context-menu
+- customization
+title: Better right-click menu in Win11
 ---
 
 When the Windows system was updated to version 11, the right-click menu was completely redesigned. Microsoft is apparently trying to make it simpler and more modern, but the way they have chosen to do it is really brute force: hiding everything useful in the secondary menu! I find this really annoying. Luckily, we have a way to bring back the classic, and even customize it and make it better! (This post is in Chinese.)

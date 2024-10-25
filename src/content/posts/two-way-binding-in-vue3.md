@@ -1,15 +1,16 @@
 ---
-title: Two Way Binding in Vue3
-tags:
-  - Html
-  - JS
-  - Vue.js
-  - Web
-categories:
-  - CS
-  - Web
 abbrlink: 8fc81ed9
+categories:
+- CS
+- Web
 date: 2024-01-26 13:24:50
+tags:
+- vue
+- typescript
+- javascript
+- component-v-model
+- vue3
+title: Two Way Binding in Vue3
 ---
 
 A simple two way binding example in vue3.

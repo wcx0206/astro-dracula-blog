@@ -1,14 +1,18 @@
 ---
+abbrlink: a4746c9
+categories:
+- CS
+- Languages
+- Java
+date: 2023-03-15 22:46:17
+tags:
+- java
+- programming-language
+- software-engineering
+- java-io
+- java-lang
 title: Useful packages in Java
 toc: true
-tags:
-  - Java
-categories:
-  - CS
-  - Languages
-  - Java
-abbrlink: a4746c9
-date: 2023-03-15 22:46:17
 ---
 
 A simple conclusion of some useful packages in java.

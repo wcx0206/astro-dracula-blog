@@ -1,15 +1,16 @@
 ---
-title: Note for Intro to Machine Learning
-tags:
-  - AI
-  - Kaggle
-  - ML
-  - Note
-categories:
-  - CS
-  - AI
 abbrlink: d1584ae1
+categories:
+- CS
+- AI
 date: 2023-11-12 19:20:26
+tags:
+- python
+- machine-learning
+- decision-tree
+- random-forest
+- mean-absolute-error
+title: Note for Intro to Machine Learning
 ---
 
 This is a note for the course on Kaggle: _[Intro to Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning)_.

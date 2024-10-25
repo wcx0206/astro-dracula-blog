@@ -1,15 +1,17 @@
 ---
-title: Python libraries mentioned in CS50P
-tags:
-  - Python
-  - CS50P
-  - pip
-categories:
-  - CS
-  - Languages
-  - Python
 abbrlink: 22098b25
+categories:
+- CS
+- Languages
+- Python
 date: 2023-07-07 11:27:54
+tags:
+- python
+- programming-language
+- software-engineering
+- tool
+- cs50p
+title: Python libraries mentioned in CS50P
 ---
 
 This is a list of some Python libraries mentioned in CS50P 2022.

@@ -1,13 +1,16 @@
 ---
-title: Simple CMake Examples
-tags:
-  - Compiling
-  - CMake
-categories:
-  - CS
-  - Tools
 abbrlink: badca0d4
+categories:
+- CS
+- Tools
 date: 2023-12-03 12:30:07
+tags:
+- c
+- data-structure
+- cmake
+- software-engineering
+- build-system
+title: Simple CMake Examples
 ---
 
 Some simple CMake examples for reviewing.

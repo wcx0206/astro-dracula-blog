@@ -1,13 +1,16 @@
 ---
-title: The chmod command in Linux
-tags:
-  - Linux
-  - chmod
-categories:
-  - CS
-  - Tools
 abbrlink: a9dc5c1e
+categories:
+- CS
+- Tools
 date: 2023-03-23 22:27:08
+tags:
+- unix
+- terminal
+- linux
+- chmod
+- permission-management
+title: The chmod command in Linux
 ---
 
 I accidentally ran a wrong `chmod` command in my Linux, and it messed up everything! I hate the permission management in Linux. :|

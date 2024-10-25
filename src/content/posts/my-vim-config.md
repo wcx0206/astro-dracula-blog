@@ -1,13 +1,16 @@
 ---
-title: 我的 Vim (以及 NeoVim) 配置
-tags:
-  - Vim
-  - Config
-categories:
-  - CS
-  - Tools
 abbrlink: 96f7ff9f
+categories:
+- CS
+- Tools
 date: 2023-04-22 10:27:09
+tags:
+- vim
+- neovim
+- ide
+- text-editor
+- command-line
+title: 我的 Vim (以及 NeoVim) 配置
 updated: 2024-10-18 17:00:00
 ---
 

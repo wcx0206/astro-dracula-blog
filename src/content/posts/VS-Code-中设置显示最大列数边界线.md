@@ -1,12 +1,16 @@
 ---
-title: VS Code 中设置显示最大列数边界线
-tags:
-  - VS Code
-categories:
-  - CS
-  - Tools
 abbrlink: bb929dc9
+categories:
+- CS
+- Tools
 date: 2023-01-13 10:30:04
+tags:
+- software-engineering
+- tool
+- vscode
+- editor-rulers
+- coding-style
+title: VS Code 中设置显示最大列数边界线
 ---
 
 很多时候我们会避免一行代码过长，常见的限制有 80 字符、120 个字符等。我希望能在 VS Code 中显示一条边界线来提醒我已经到达这个限制了，需要换行。下边是设置的方法。

@@ -1,15 +1,17 @@
 ---
-title: My personal summary of Stanford CS106L
-tags:
-  - C & C++
-  - CS106L
-  - Online course summary
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: b16dfec9
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2023-06-01 23:09:45
+tags:
+- cpp
+- modern-cpp
+- stanford
+- programming-language
+- software-engineering
+title: My personal summary of Stanford CS106L
 ---
 
 This is [CS106L](https://web.stanford.edu/class/cs106l/index.html), an in-depth modern C++ language course from Stanford. I enrolled in it at the beginning of April and almost finished it today.

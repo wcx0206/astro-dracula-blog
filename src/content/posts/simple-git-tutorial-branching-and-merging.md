@@ -1,14 +1,17 @@
 ---
-title: "Simple Git Tutorial: Branching and Merging"
-tags:
-  - Git
-  - Version Control
-categories:
-  - CS
-  - Tools
-  - vcs
 abbrlink: aa010e90
+categories:
+- CS
+- Tools
+- vcs
 date: 2024-01-29 13:37:07
+tags:
+- git
+- software-engineering
+- version-control
+- branching
+- merging
+title: 'Simple Git Tutorial: Branching and Merging'
 ---
 
 Git's powerful branching and merging capabilities can help you deal with parallel collaborative development processes. Let's take a look.

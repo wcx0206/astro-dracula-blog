@@ -1,17 +1,21 @@
 ---
-title: "Notes for Machine Learning"
+abbrlink: a6f57fef
+categories:
+- CS
+- AI
+date: 2023-07-14 11:59:14
 katex: true
 mathjax: true
 tags:
-  - AI
-  - Andrew Ng
-  - ML
-  - Note
-categories:
-  - CS
-  - AI
-abbrlink: a6f57fef
-date: 2023-07-14 11:59:14
+- ai
+- machine-learning
+- coursera
+- note
+- python
+- octave
+- linear-regression
+- logistic-regression
+title: Notes for Machine Learning
 ---
 
 Here are my notes for course [Machine Learning](https://study.163.com/course/courseMain.htm?courseId=1210076550) taught by Andrew Ng.

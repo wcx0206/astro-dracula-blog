@@ -1,20 +1,17 @@
 ---
-title: "Notes for Machine Learning Specialization: Vectorization"
+abbrlink: 266471d7
+categories:
+- CS
+- AI
+date: 2023-08-09 10:56:35
 mathjax: true
 tags:
-  - AI
-  - Coursera
-  - ML
-  - Machine Learning Specialization
-  - Note
-  - NumPy
-  - Python
-  - Vectorization
-categories:
-  - CS
-  - AI
-abbrlink: 266471d7
-date: 2023-08-09 10:56:35
+- ai
+- machine-learning
+- python
+- vectorization
+- linear-algebra
+title: 'Notes for Machine Learning Specialization: Vectorization'
 ---
 
 This is a note for the [Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction).

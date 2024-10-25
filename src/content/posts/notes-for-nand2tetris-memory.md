@@ -1,23 +1,18 @@
 ---
-title: "Notes for Nand2Tetris: Memory"
+abbrlink: 28d92424
+categories:
+- CS
+- Computing System
+- Nand2Tetris
+date: 2023-07-09 19:44:36
 katex: true
 mathjax: true
 tags:
-  - Coursera
-  - Nand2Tetris
-  - Memory
-  - RAM
-  - Register
-  - Counter
-  - Sequential Logic
-  - DFF
-  - Note
-categories:
-  - CS
-  - Computing System
-  - Nand2Tetris
-abbrlink: 28d92424
-date: 2023-07-09 19:44:36
+- nand2tetris
+- note
+- computer-architecture
+- digital-logic
+title: 'Notes for Nand2Tetris: Memory'
 ---
 
 This is a note for Nand2Tetris unit 3.

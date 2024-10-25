@@ -1,12 +1,16 @@
 ---
-title: Installing Ubuntu
-categories:
-  - CS
-  - Tools
 abbrlink: ca281680
+categories:
+- CS
+- Tools
 date: 2023-04-27 23:41:50
 tags:
-  - Linux
+- software-engineering
+- unix
+- terminal
+- ubuntu-installation
+- linux-setup
+title: Installing Ubuntu
 ---
 
 This is NOT a tutorial on how to install Ubuntu. I am just documenting some problems I encountered during my installation.

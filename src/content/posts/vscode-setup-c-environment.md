@@ -1,14 +1,17 @@
 ---
+abbrlink: a7a0ce82
+categories:
+- CS
+- Tools
+date: 2022-09-17 13:13:18
+tags:
+- vscode
+- cpp
+- windows
+- tool
+- beginner-friendly
 title: VS Code 的安装与配置基础 C/C++ 开发环境
 toc: true
-categories:
-  - CS
-  - Tools
-tags:
-  - VS Code
-  - C & C++
-abbrlink: a7a0ce82
-date: 2022-09-17 13:13:18
 ---
 
 我以前学习 C++ 的时候，使用的是 DevCpp 。这个软件让我这个初学者比较舒服的点是，我不用太过详细地考虑编译的过程——新建一个 cpp 文件，写一点小程序，按下 F11，程序运行。我不需要管选择编译器啊、配置编译命令啊啥啥的。但是到 VS Code 这边，这都要我自己做了，对于新手并不是那么友好。这里记录一下我配置 VS Code 的 C/C++ 环境的完整过程，希望对你有所帮助。需要注意的是：学习一下基本的编译链接指令还是很有必要的！

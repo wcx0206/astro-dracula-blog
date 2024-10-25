@@ -1,14 +1,17 @@
 ---
-title: Set up a blog with Hexo
-tags:
-  - Web
-  - Hexo
-toc: true
-categories:
-  - CS
-  - Web
 abbrlink: 4ef0ac98
+categories:
+- CS
+- Web
 date: 2023-04-15 13:16:06
+tags:
+- hexo
+- blog-setup
+- web
+- github-pages
+- next-theme
+title: Set up a blog with Hexo
+toc: true
 ---
 
 This is a simple record of my further attempt to set up a blog with Hexo. I built one on GitHub Page before, using Hexo with the Icarus theme. This time I want to try something different. I also cleaned up my old blog and selectively migrated some old posts here.

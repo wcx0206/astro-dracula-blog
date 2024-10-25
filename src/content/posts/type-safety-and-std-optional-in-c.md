@@ -1,15 +1,17 @@
 ---
-title: "Type Safety and std::optional in C++"
-tags:
-  - C & C++
-  - CS106L
-  - Note
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: ab76f233
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2023-05-31 11:35:00
+tags:
+- cpp
+- const-correctness
+- type-safety
+- software-engineering
+- programming-language
+title: Type Safety and std::optional in C++
 ---
 
 This is a note for Lecture 14, [CS106L](https://web.stanford.edu/class/cs106l/index.html), Spring 2023.

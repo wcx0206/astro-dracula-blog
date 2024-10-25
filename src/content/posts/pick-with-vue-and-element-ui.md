@@ -1,16 +1,16 @@
 ---
-title: 补记一个用 Vue.js 和 ElementUI 实现的在线抽奖网页
-tags:
-  - Vue.js
-  - Element UI
-  - Html
-  - JS
-  - Web
-categories:
-  - CS
-  - Web
 abbrlink: 6a8a1633
+categories:
+- CS
+- Web
 date: 2022-08-26 14:58:40
+tags:
+- web
+- vue
+- javascript
+- element-ui
+- online-lottery
+title: 补记一个用 Vue.js 和 ElementUI 实现的在线抽奖网页
 ---
 
 这件事儿发生在我的高中某个新学期开始，新来了一个电脑老师。有点打赌或者考验我的性质吧，ta 说 ta 弄了随机数点名的小网页，还能用同学的照片进行抽取，问我能不能实现一个。ta 的实现方法是 jQuery，技术上比较老，界面也不太好看。我想去尝试一下别的方法，正好也试试略微学了一点的 Vue.js，为了好看，用了 Element UI。

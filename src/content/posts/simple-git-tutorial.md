@@ -1,17 +1,18 @@
 ---
+abbrlink: '9363e311'
+categories:
+- CS
+- Tools
+- vcs
+date: 2023-03-11 17:55:55
+tags:
+- git
+- version-control
+- software-engineering
+- tool
+- collaboration
 title: Simple Git Tutorial
 toc: true
-tags:
-  - Git
-  - GitHub
-  - Version Control
-  - VCS
-categories:
-  - CS
-  - Tools
-  - vcs
-abbrlink: "9363e311"
-date: 2023-03-11 17:55:55
 ---
 
 This is mainly a simple tutorial of Git. Some info about GitHub also included. You may also read _[Simple GitHub Tutorial](/posts/1cce885f.html)_.

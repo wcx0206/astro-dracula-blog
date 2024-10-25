@@ -1,15 +1,18 @@
 ---
+abbrlink: 7ec6ba38
+categories:
+- CS
+- Languages
+- C & Cpp
+date: 2022-11-17 20:05:00
+tags:
+- cpp
+- const
+- c
+- programming-language
+- const-qualifier
 title: C++ const 用法汇总
 toc: true
-tags:
-  - C & C++
-  - const
-categories:
-  - CS
-  - Languages
-  - C & Cpp
-abbrlink: 7ec6ba38
-date: 2022-11-17 20:05:00
 ---
 
 最开始只是用 const 来定义常量，学到了指针传参的时候又知道了用 const 来防止一些值的修改，学到类的时候又看到非静态成员函数后边加个 const 来干嘛干嘛，然后么又听说什么顶层 const、底层 const... 真是越学越迷糊了，赶紧做一波整理。

@@ -1,14 +1,17 @@
 ---
+abbrlink: 72a59031
+categories:
+- CS
+- Tools
+date: 2019-07-13 22:00:00
+tags:
+- chrome-extension
+- tool
+- bilibili
+- web
+- chrome
 title: Chrome 插件推荐
 toc: true
-tags:
-  - Chrome
-  - Browser
-categories:
-  - CS
-  - Tools
-abbrlink: 72a59031
-date: 2019-07-13 22:00:00
 ---
 
 你可能常年使用着国产的一些浏览器，却也常年遭受着各种弹窗、全家桶的侵扰...

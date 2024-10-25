@@ -1,13 +1,17 @@
 ---
-title: C/C++ 中赋值语句的返回值问题
-tags:
-  - C & C++
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: 9693ba6
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2022-10-27 19:52:56
+tags:
+- c
+- cpp
+- programming-language
+- assignment-operator
+- loop-control
+title: C/C++ 中赋值语句的返回值问题
 ---
 
 我曾经一直以为 C/C++ 中赋值语句的返回值不是 0 就是 1 —— 成功执行赋值操作返回 1，没有成功执行就返回 0。直到今天课上的一个例子，才让我知道，原来**赋值语句的返回值就是赋的值的大小**！

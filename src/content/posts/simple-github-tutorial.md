@@ -1,14 +1,17 @@
 ---
-title: Simple GitHub Tutorial
-tags:
-  - GitHub
-  - Version Control
-categories:
-  - CS
-  - Tools
-  - vcs
 abbrlink: 1cce885f
+categories:
+- CS
+- Tools
+- vcs
 date: 2024-01-27 12:50:29
+tags:
+- git
+- software-engineering
+- ssh
+- github
+- version-control
+title: Simple GitHub Tutorial
 ---
 
 I have posted a tutorial of Git (See _[Simple Git Tutorial](/posts/9363e311.html)_). But it mixed up using Git and using GitHub together. I post this new tutorial to draw a line and make things clear.

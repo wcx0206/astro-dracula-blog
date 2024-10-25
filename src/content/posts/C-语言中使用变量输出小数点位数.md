@@ -1,13 +1,16 @@
 ---
-title: C 语言中使用变量输出小数点位数
-tags:
-  - C & C++
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: 45e2d42
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2022-11-05 16:15:25
+tags:
+- c
+- programming-language
+- printf-formatting
+- dynamic-array
+title: C 语言中使用变量输出小数点位数
 ---
 
 这事儿要从一周前讲起，有人在群里问了这么一道题，要求用 C 实现：

@@ -1,14 +1,16 @@
 ---
-title: Makefile 简单笔记
-tags:
-  - Makefile
-  - GNU Make
-  - Compiling
-categories:
-  - CS
-  - Tools
 abbrlink: b5f1b38d
+categories:
+- CS
+- Tools
 date: 2023-01-08 10:52:48
+tags:
+- c
+- cpp
+- makefile
+- software-engineering
+- build-tool
+title: Makefile 简单笔记
 ---
 
 这是一篇笔记，原视频是 [@于仕琪](https://space.bilibili.com/519963684) 老师的 [《Makefile 20 分钟入门，简简单单，展示如何使用 Makefile 管理和编译 C++ 代码》](https://www.bilibili.com/video/BV188411L7d2)。

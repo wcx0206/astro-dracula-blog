@@ -1,19 +1,18 @@
 ---
+abbrlink: a336c1b8
+categories:
+- CS
+- Algorithms & Data structures
+date: 2022-11-22 14:25:21
+katex: true
+mathjax: true
+tags:
+- algorithm
+- data-structure
+- graph-traversal
+- stack-queue
 title: 初探深度优先搜索（DFS）和广度优先搜索（BFS）
 toc: true
-mathjax: true
-katex: true
-tags:
-  - Algorithm
-  - BFS
-  - DFS
-  - Note
-  - Searching
-categories:
-  - CS
-  - Algorithms & Data structures
-abbrlink: a336c1b8
-date: 2022-11-22 14:25:21
 ---
 
 **深度优先搜索**（DFS，Depth First Search）和**广度优先搜索**（BFS，Breadth First Search），我从来没弄明白过。是时候努力去好好理解一下了。

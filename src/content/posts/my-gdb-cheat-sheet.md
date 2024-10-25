@@ -1,14 +1,16 @@
 ---
-title: My GDB Cheat Sheet
-tags:
-  - GDB
-  - GNU Debugger
-  - Cheat Sheet
-categories:
-  - CS
-  - Tools
 abbrlink: e87455d1
+categories:
+- CS
+- Tools
 date: 2024-03-09 14:16:24
+tags:
+- c
+- cpp
+- tool
+- gdb
+- debugging
+title: My GDB Cheat Sheet
 ---
 
 The GNU debugger is a powerful tool for the debugging of (mainly) C/C++ programs. In this post I document the common operations of gdb and some useful learning resources.

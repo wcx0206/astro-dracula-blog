@@ -1,15 +1,17 @@
 ---
-title: static_cast and const_cast in C++
-tags:
-  - CS106L
-  - C & C++
-  - const
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: f5746381
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2023-05-30 15:44:00
+tags:
+- cpp
+- programming-language
+- software-engineering
+- const-cast
+- static-cast
+title: static_cast and const_cast in C++
 ---
 
 This is a note for Lecture 8, [CS106L](https://web.stanford.edu/class/cs106l/index.html), Spring 2023.

@@ -1,13 +1,17 @@
 ---
-title: 使用 Rust 写一个简单的线程池
-tags:
-  - Rust
-categories:
-  - CS
-  - Languages
-  - Rust
 abbrlink: 118aec2d
+categories:
+- CS
+- Languages
+- Rust
 date: 2024-10-17 13:03:29
+tags:
+- rust
+- concurrency
+- thread-pool
+- web-server
+- software-engineering
+title: 使用 Rust 写一个简单的线程池
 ---
 
 线程池是一种多线程处理形式，它通过将任务分配给事先创建好的线程以进行重用，提高了并发性能。本文是一篇阅读笔记，原材料为 [Rust 语言圣经 - 进阶实战 1 实现一个 Web 服务器](https://course.rs/advance-practice1/intro.html)。

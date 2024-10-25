@@ -1,19 +1,19 @@
 ---
-title: "Notes for Nand2Tetris: Assembler"
+abbrlink: 869cdee6
+categories:
+- CS
+- Computing System
+- Nand2Tetris
+date: 2023-07-17 20:28:42
 katex: true
 mathjax: true
 tags:
-  - Coursera
-  - Nand2Tetris
-  - Assembler
-  - Assembly Language
-  - Note
-abbrlink: 869cdee6
-categories:
-  - CS
-  - Computing System
-  - Nand2Tetris
-date: 2023-07-17 20:28:42
+- nand2tetris
+- python
+- assembler
+- programming-language
+- software-engineering
+title: 'Notes for Nand2Tetris: Assembler'
 ---
 
 This is a note for Nand2Tetris Unit 6.

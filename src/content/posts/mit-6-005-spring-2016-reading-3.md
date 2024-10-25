@@ -1,14 +1,17 @@
 ---
-title: 阅读材料 3 - 测试 | MIT 6.005
-tags:
-  - Software Engineering
-  - MIT 6.005
-categories:
-  - CS
-  - Software Engineering
-mathjax: true
 abbrlink: 4457dd63
+categories:
+- CS
+- Software Engineering
 date: 2024-09-11 14:56:57
+mathjax: true
+tags:
+- software-engineering
+- testing
+- unit-testing
+- regression-testing
+- test-coverage
+title: 阅读材料 3 - 测试 | MIT 6.005
 ---
 
 MIT 6.005 Spring 2016 的 [OCW](https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/) 版本的学习笔记。此篇笔记涉及的内容为 Reading 3 Testing。

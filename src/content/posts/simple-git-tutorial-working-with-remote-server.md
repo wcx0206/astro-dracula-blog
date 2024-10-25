@@ -1,14 +1,17 @@
 ---
-title: 'Simple Git Tutorial: Working with Remote Server'
-tags:
-  - Git
-  - Version Control
-categories:
-  - CS
-  - Tools
-  - vcs
 abbrlink: 85390c91
+categories:
+- CS
+- Tools
+- vcs
 date: 2024-01-29 14:05:25
+tags:
+- git
+- software-engineering
+- collaboration
+- remote-server
+- version-control
+title: 'Simple Git Tutorial: Working with Remote Server'
 ---
 
 Use remote servers to work with collaborators better.

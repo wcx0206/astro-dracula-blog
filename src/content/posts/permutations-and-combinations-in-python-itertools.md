@@ -1,14 +1,17 @@
 ---
-title: Permutations and Combinations in Python (itertools)
-tags:
-  - Python
-  - itertools
-categories:
-  - CS
-  - Languages
-  - Python
 abbrlink: cf2f01b2
+categories:
+- CS
+- Languages
+- Python
 date: 2023-05-28 16:42:00
+tags:
+- python
+- algorithm
+- data-structure
+- itertools
+- permutations-combinations
+title: Permutations and Combinations in Python (itertools)
 ---
 
 Extracted from _[itertools — Functions creating iterators for efficient looping — Python 3.11.3 documentation](https://docs.python.org/3/library/itertools.html)_

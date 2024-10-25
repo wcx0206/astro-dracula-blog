@@ -1,18 +1,20 @@
 ---
+abbrlink: 4ee6ac78
+categories:
+- CS
+- Tools
+date: 2023-03-11 14:23:18
+tags:
+- 'Here are the tags for the article:
+
+
+  `unix'
+- tool
+- package-manager
+- linux
+- apt`
 title: Package managers in Linux (To be continued)
 toc: true
-tags:
-  - Linux
-  - Package manager
-  - ArchLinux
-  - Ubuntu
-  - pacman
-  - APT
-categories:
-  - CS
-  - Tools
-abbrlink: 4ee6ac78
-date: 2023-03-11 14:23:18
 ---
 
 This post tries to simply introduce some package managers and their basic usage.

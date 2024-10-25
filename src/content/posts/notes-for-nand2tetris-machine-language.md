@@ -1,17 +1,17 @@
 ---
-title: "Notes for Nand2Tetris: Machine Language"
-tags:
-  - Coursera
-  - Nand2Tetris
-  - Assembly Language
-  - Machine Language
-  - Note
-categories:
-  - CS
-  - Computing System
-  - Nand2Tetris
 abbrlink: a4422da3
+categories:
+- CS
+- Computing System
+- Nand2Tetris
 date: 2023-07-11 16:49:01
+tags:
+- nand2tetris
+- programming-language
+- assembly
+- software-engineering
+- algorithm
+title: 'Notes for Nand2Tetris: Machine Language'
 ---
 
 This is a note for Nand2Tetris unit 4.

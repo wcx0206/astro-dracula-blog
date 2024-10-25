@@ -1,15 +1,18 @@
 ---
+abbrlink: b4e7acd7
+categories:
+- CS
+- Languages
+- C & Cpp
+date: 2022-10-19 20:19:14
+tags:
+- c
+- cpp
+- programming-language
+- iomanip
+- input-output
 title: C/C++ 格式化输入输出汇总
 toc: true
-tags:
-  - iomanip
-  - C & C++
-categories:
-  - CS
-  - Languages
-  - C & Cpp
-abbrlink: b4e7acd7
-date: 2022-10-19 20:19:14
 ---
 
 本文汇总一下 C 语言 `scanf` 和 `printf` 的格式控制方法以及 C++ 的 `<iomanip>` 库。

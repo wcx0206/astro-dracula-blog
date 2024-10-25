@@ -1,23 +1,19 @@
 ---
-title: "Notes for Nand2Tetris: Computer Architecture"
+abbrlink: 9a8ff4a5
+categories:
+- CS
+- Computing System
+- Nand2Tetris
+date: 2023-07-12 11:57:51
 katex: true
 mathjax: true
 tags:
-  - Coursera
-  - Nand2Tetris
-  - Computer Architecture
-  - Fetch-execute cycle
-  - Date bus
-  - Instruction bus
-  - CPU
-  - Computer design
-  - Note
-categories:
-  - CS
-  - Computing System
-  - Nand2Tetris
-abbrlink: 9a8ff4a5
-date: 2023-07-12 11:57:51
+- nand2tetris
+- computer-architecture
+- hardware-design
+- assembly-language
+- coursera
+title: 'Notes for Nand2Tetris: Computer Architecture'
 ---
 
 This is a note for Nand2Tetris Unit 5.

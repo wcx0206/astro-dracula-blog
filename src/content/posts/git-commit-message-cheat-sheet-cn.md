@@ -1,14 +1,17 @@
 ---
-title: Git Commit Message Cheat Sheet (CN)
-tags:
-  - Git
-  - Version Control
-categories:
-  - CS
-  - Tools
-  - vcs
 abbrlink: 8a5a50bb
+categories:
+- CS
+- Tools
+- vcs
 date: 2024-01-27 18:09:10
+tags:
+- git
+- software-engineering
+- commit-message
+- cheat-sheet
+- chinese
+title: Git Commit Message Cheat Sheet (CN)
 ---
 
 A Git commit message cheat sheet in Chinese.

@@ -1,22 +1,18 @@
 ---
-title: "Notes for Algorithms, Part II: Undirected Graphs"
+abbrlink: d3e12860
+categories:
+- CS
+- Algorithms & Data structures
+date: 2023-07-27 16:28:42
 katex: true
 mathjax: true
 tags:
-  - Algorithm
-  - BFS
-  - Connected Component
-  - Coursera
-  - DFS
-  - Euler Cycle
-  - Euler Tour
-  - Note
-  - Undirected Graph
-categories:
-  - CS
-  - Algorithms & Data structures
-abbrlink: d3e12860
-date: 2023-07-27 16:28:42
+- algorithm
+- data-structure
+- java
+- coursera
+- graph-theory
+title: 'Notes for Algorithms, Part II: Undirected Graphs'
 ---
 
 This is a note for 4.1 Undirected Graphs, _[Algorithms, Part II](https://www.coursera.org/learn/algorithms-part2/)_.

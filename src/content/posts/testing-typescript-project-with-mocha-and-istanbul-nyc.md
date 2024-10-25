@@ -1,18 +1,16 @@
 ---
-title: Testing Typescript project with Mocha and Istanbul NYC
-tags:
-  - Chai
-  - Istanbul NYC
-  - Mocha
-  - TS
-  - Test First Programming
-  - Typescript
-  - tsx
-categories:
-  - CS
-  - Web
 abbrlink: 402d9408
+categories:
+- CS
+- Web
 date: 2024-02-08 12:00:07
+tags:
+- typescript
+- javascript
+- testing
+- mocha
+- nyc
+title: Testing Typescript project with Mocha and Istanbul NYC
 ---
 
 [Mocha](https://mochajs.org/) is a popular JS test framework, and [Istanbul](https://istanbul.js.org/) is a popular JS test coverage tool. How to use them when it comes to Typescript? This post shows a simple demo.

@@ -1,12 +1,16 @@
 ---
-title: Awesome CLI Apps
-tags:
-  - CLI
-categories:
-  - CS
-  - Tools
 abbrlink: d64ccd8c
+categories:
+- CS
+- Tools
 date: 2023-10-09 18:10:26
+tags:
+- unix
+- terminal
+- tool
+- cli
+- command-line
+title: Awesome CLI Apps
 ---
 
 This is a list of some awesome CLI (command-line interface) apps.

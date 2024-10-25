@@ -1,16 +1,19 @@
 ---
+abbrlink: 504f038d
+categories:
+- CS
+- Algorithms & Data structures
+date: 2022-12-04 19:37:17
+katex: true
+mathjax: true
+tags:
+- algorithm
+- data-structure
+- cpp
+- gcd-algorithm
+- euclidean-algorithm
 title: 求解最大公约数的四种算法
 toc: true
-mathjax: true
-katex: true
-tags:
-  - GCD
-  - Algorithm
-categories:
-  - CS
-  - Algorithms & Data structures
-abbrlink: 504f038d
-date: 2022-12-04 19:37:17
 ---
 
 这是一次计算机导论课的作业。本来对于最大公约数的求解算法，我就只知道一个**辗转相除法**。原来，其实还有别的一些 ...

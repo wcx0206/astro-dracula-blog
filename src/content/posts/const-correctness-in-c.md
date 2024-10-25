@@ -1,16 +1,17 @@
 ---
-title: Const Correctness in C++
-tags:
-  - C & C++
-  - const
-  - CS106L
-  - Note
-categories:
-  - CS
-  - Languages
-  - C & Cpp
 abbrlink: 4eb7504e
+categories:
+- CS
+- Languages
+- C & Cpp
 date: 2023-06-01 14:57:37
+tags:
+- cpp
+- software-engineering
+- const-interface
+- const-correctness
+- cpp-programming
+title: Const Correctness in C++
 ---
 
 This is a note for Lecture 8, [CS106L](https://web.stanford.edu/class/cs106l/index.html), Spring 2023.

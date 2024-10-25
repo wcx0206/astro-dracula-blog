@@ -1,20 +1,17 @@
 ---
-title: >-
-  Notes for Machine Learning Specialization: More numerically accurate code
-  examples
-tags:
-  - AI
-  - Coursera
-  - ML
-  - Machine Learning Specialization
-  - Note
-  - Python
-  - TensorFlow
+abbrlink: '44801878'
 categories:
-  - CS
-  - AI
-abbrlink: "44801878"
+- CS
+- AI
 date: 2023-08-14 11:03:44
+tags:
+- ai
+- machine-learning
+- tensorflow
+- coursera
+- softmax
+title: 'Notes for Machine Learning Specialization: More numerically accurate code
+  examples'
 ---
 
 This is a note for the [Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction).

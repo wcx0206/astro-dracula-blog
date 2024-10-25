@@ -1,13 +1,16 @@
 ---
-title: Introducing hexo-blockquote2note
-tags:
-  - Hexo
-  - Plugin
-categories:
-  - CS
-  - Web
 abbrlink: 55f9ebd1
+categories:
+- CS
+- Web
 date: 2024-02-04 17:54:49
+tags:
+- software-engineering
+- tool
+- markdown
+- hexo
+- next-theme
+title: Introducing hexo-blockquote2note
 ---
 
 I use Hexo with the NexT theme to build my blog. I wrote this plugin to solve a pain point I've encountered in this workflow.

@@ -1,14 +1,16 @@
 ---
-title: "My personal summary of Algorithms, Part I on Coursera"
-tags:
-  - Coursera
-  - Algorithm
-  - Online course summary
-categories:
-  - CS
-  - Algorithms & Data structures
 abbrlink: 94efd546
+categories:
+- CS
+- Algorithms & Data structures
 date: 2023-05-12 18:27:12
+tags:
+- algorithm
+- data-structure
+- coursera
+- princeton
+- online-course
+title: My personal summary of Algorithms, Part I on Coursera
 ---
 
 As the title says, this is my personal summary of [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1) on [Coursera](https://www.coursera.org).

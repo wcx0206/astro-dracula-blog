@@ -1,15 +1,18 @@
 ---
+abbrlink: 10d14c30
+categories:
+- CS
+- Languages
+- C & Cpp
+date: 2022-10-06 12:07:45
+tags:
+- cpp
+- game
+- algorithm
+- data-structure
+- programming-language
 title: 补记一个用 C++ 实现的 2048 小游戏
 toc: true
-tags:
-  - C & C++
-  - Game
-categories:
-  - CS
-  - Languages
-  - C & Cpp
-abbrlink: 10d14c30
-date: 2022-10-06 12:07:45
 ---
 
 校科协的加入有条件，面试前一步是笔试。免去笔试的方法也不是没有，可以做免试题。看了各个组的免试题，发现都好难好难，只有前端组的 2048 敢去尝试尝试。但我有没怎么学过 JS，便想着先用 C++ 实现一下逻辑，再把代码改过去。

@@ -1,21 +1,18 @@
 ---
-title: "Notes for Algorithms, Part II: Directed Graphs"
+abbrlink: 5b849ae3
+categories:
+- CS
+- Algorithms & Data structures
+date: 2023-07-29 09:34:51
 katex: true
 mathjax: true
 tags:
-  - Algorithm
-  - BFS
-  - Coursera
-  - DFS
-  - Directed Graph
-  - Note
-  - Strong Components
-  - Topological Sort
-categories:
-  - CS
-  - Algorithms & Data structures
-abbrlink: 5b849ae3
-date: 2023-07-29 09:34:51
+- algorithm
+- data-structure
+- java
+- digraph
+- coursera
+title: 'Notes for Algorithms, Part II: Directed Graphs'
 ---
 
 This is a note for 4.2 Directed Graphs, _[Algorithms, Part II](https://www.coursera.org/learn/algorithms-part2/)_.
