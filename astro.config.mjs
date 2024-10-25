@@ -8,6 +8,7 @@ import react from "@astrojs/react";
 import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +22,7 @@ export default defineConfig({
       }
     },
     remarkPlugins: [remarkDescPlugin, remarkMath],
-    rehypePlugins: [rehypeMathjax],
+    rehypePlugins: [rehypeMathjax, rehypeExternalLinks],
 
   },
   integrations: [tailwind(), markdownIntegration(), react()]
