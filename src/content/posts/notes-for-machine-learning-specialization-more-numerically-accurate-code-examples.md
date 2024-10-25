@@ -10,6 +10,7 @@ tags:
 - tensorflow
 - coursera
 - softmax
+- note
 title: 'Notes for Machine Learning Specialization: More numerically accurate code
   examples'
 ---

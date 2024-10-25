@@ -11,6 +11,7 @@ tags:
 - data-structure
 - itertools
 - permutations-combinations
+- programming-language
 title: Permutations and Combinations in Python (itertools)
 ---
 

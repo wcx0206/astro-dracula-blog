@@ -12,6 +12,7 @@ tags:
 - java
 - coursera
 - graph-theory
+- note
 title: 'Notes for Algorithms, Part II: Undirected Graphs'
 ---
 

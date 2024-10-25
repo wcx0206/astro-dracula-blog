@@ -12,6 +12,7 @@ tags:
 - java
 - digraph
 - coursera
+- note
 title: 'Notes for Algorithms, Part II: Directed Graphs'
 ---
 

@@ -6,7 +6,6 @@ categories:
 date: 2022-10-15 20:36:02
 tags:
 - ai
-- machine-learning
 - novelai
 - waifu-generation
 - image-generation

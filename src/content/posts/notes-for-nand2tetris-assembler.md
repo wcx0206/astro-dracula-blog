@@ -13,6 +13,7 @@ tags:
 - assembler
 - programming-language
 - software-engineering
+- note
 title: 'Notes for Nand2Tetris: Assembler'
 ---
 

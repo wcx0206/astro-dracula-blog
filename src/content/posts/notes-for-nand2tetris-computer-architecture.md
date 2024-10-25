@@ -13,6 +13,7 @@ tags:
 - hardware-design
 - assembly-language
 - coursera
+- note
 title: 'Notes for Nand2Tetris: Computer Architecture'
 ---
 

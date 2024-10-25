@@ -10,6 +10,7 @@ tags:
 - coursera
 - graph-theory
 - spanning-tree
+- note
 title: 'Notes for Algorithms, Part II: Shortest Paths'
 ---
 

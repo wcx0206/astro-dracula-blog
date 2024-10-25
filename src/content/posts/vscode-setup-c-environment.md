@@ -9,7 +9,7 @@ tags:
 - cpp
 - windows
 - tool
-- beginner-friendly
+- configuration
 title: VS Code 的安装与配置基础 C/C++ 开发环境
 toc: true
 ---

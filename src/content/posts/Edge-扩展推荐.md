@@ -6,10 +6,9 @@ categories:
 date: 2022-08-25 21:06:12
 tags:
 - tool
-- web
 - chrome-extension
 - edge-browser
-- browser-extension
+- browser
 title: Edge 扩展推荐
 toc: true
 ---

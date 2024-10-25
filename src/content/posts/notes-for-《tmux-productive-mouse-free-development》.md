@@ -10,6 +10,7 @@ tags:
 - unix
 - productivity
 - shell
+- note
 title: Notes for 《tmux Productive Mouse-Free Development》
 ---
 

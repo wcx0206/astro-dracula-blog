@@ -5,11 +5,9 @@ categories:
 - Tools
 date: 2023-01-13 10:30:04
 tags:
-- software-engineering
 - tool
 - vscode
-- editor-rulers
-- coding-style
+- configuration
 title: VS Code 中设置显示最大列数边界线
 ---
 

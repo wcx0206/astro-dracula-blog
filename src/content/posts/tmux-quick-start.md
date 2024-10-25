@@ -9,7 +9,6 @@ tags:
 - tool
 - unix
 - productivity
-- session-management
 title: Tmux Quick Start
 ---
 

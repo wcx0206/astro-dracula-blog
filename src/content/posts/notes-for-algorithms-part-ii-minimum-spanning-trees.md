@@ -11,6 +11,7 @@ tags:
 - java
 - coursera
 - minimum-spanning-tree
+- note
 title: 'Notes for Algorithms, Part II: Minimum Spanning Trees'
 ---
 

@@ -6,7 +6,6 @@ categories:
 date: 2024-01-28 12:32:52
 tags:
 - vim
-- algorithm
 - tool
 - quicksort
 - vimgolf

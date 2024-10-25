@@ -7,9 +7,6 @@ date: 2024-01-26 13:24:50
 tags:
 - vue
 - typescript
-- javascript
-- component-v-model
-- vue3
 title: Two Way Binding in Vue3
 ---
 

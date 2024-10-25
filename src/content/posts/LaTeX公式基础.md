@@ -10,7 +10,6 @@ tags:
 - math
 - note
 - programming-language
-- mathjax
 title: LaTeX 公式基础
 toc: true
 ---

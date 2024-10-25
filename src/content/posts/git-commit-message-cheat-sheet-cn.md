@@ -10,7 +10,6 @@ tags:
 - software-engineering
 - commit-message
 - cheat-sheet
-- chinese
 title: Git Commit Message Cheat Sheet (CN)
 ---
 

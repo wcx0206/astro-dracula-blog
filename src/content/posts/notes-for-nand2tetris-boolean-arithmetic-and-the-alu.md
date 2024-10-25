@@ -13,6 +13,7 @@ tags:
 - hardware-design
 - digital-logic
 - coursera
+- note
 title: 'Notes for Nand2Tetris: Boolean Arithmetic and the ALU'
 ---
 

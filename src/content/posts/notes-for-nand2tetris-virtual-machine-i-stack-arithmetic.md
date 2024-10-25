@@ -13,6 +13,7 @@ tags:
 - software-engineering
 - vm-abstraction
 - stack-machine
+- note
 title: 'Notes for Nand2Tetris: Virtual Machine I: Stack Arithmetic'
 ---
 

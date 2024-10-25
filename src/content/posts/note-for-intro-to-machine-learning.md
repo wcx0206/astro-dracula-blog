@@ -10,6 +10,7 @@ tags:
 - decision-tree
 - random-forest
 - mean-absolute-error
+- note
 title: Note for Intro to Machine Learning
 ---
 

@@ -10,7 +10,7 @@ tags:
 - software-engineering
 - const-interface
 - const-correctness
-- cpp-programming
+- programming-language
 title: Const Correctness in C++
 ---
 

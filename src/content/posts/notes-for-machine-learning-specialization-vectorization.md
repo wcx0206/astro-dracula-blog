@@ -11,6 +11,7 @@ tags:
 - python
 - vectorization
 - linear-algebra
+- note
 title: 'Notes for Machine Learning Specialization: Vectorization'
 ---
 

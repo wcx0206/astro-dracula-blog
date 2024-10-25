@@ -10,6 +10,7 @@ tags:
 - full-stack
 - web-development
 - server-components
+- note
 title: NextJS 笔记
 ---
 

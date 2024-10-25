@@ -11,6 +11,7 @@ tags:
 - thread-pool
 - web-server
 - software-engineering
+- programming-language
 title: 使用 Rust 写一个简单的线程池
 ---
 

@@ -5,14 +5,11 @@ categories:
 - Tools
 date: 2023-03-11 14:23:18
 tags:
-- 'Here are the tags for the article:
-
-
-  `unix'
+- unix
 - tool
 - package-manager
 - linux
-- apt`
+- apt
 title: Package managers in Linux (To be continued)
 toc: true
 ---

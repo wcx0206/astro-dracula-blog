@@ -9,7 +9,8 @@ tags:
 - neovim
 - ide
 - text-editor
-- command-line
+- terminal
+- configuration
 title: 我的 Vim (以及 NeoVim) 配置
 updated: 2024-10-18 17:00:00
 ---

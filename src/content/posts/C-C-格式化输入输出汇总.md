@@ -9,8 +9,7 @@ tags:
 - c
 - cpp
 - programming-language
-- iomanip
-- input-output
+- io
 title: C/C++ 格式化输入输出汇总
 toc: true
 ---

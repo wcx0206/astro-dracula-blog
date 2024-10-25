@@ -11,6 +11,7 @@ tags:
 - assembly
 - software-engineering
 - algorithm
+- note
 title: 'Notes for Nand2Tetris: Machine Language'
 ---
 

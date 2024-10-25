@@ -5,12 +5,13 @@ categories:
 - Tools
 date: 2024-09-02 15:53:08
 tags:
-- development-environment
 - unix
 - windows
 - terminal
 - productivity
 - software-engineering
+- configuration
+- tool
 title: Setting up your new machine - A simple dev environment configuration guide
 ---
 

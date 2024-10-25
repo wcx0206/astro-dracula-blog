@@ -7,10 +7,9 @@ categories:
 date: 2023-10-17 16:01:54
 tags:
 - python
-- object-oriented-programming
+- oop
 - getter-setter
 - property-decorator
-- data-encapsulation
 title: Getter and Setter in Python
 ---
 
