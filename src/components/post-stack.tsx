@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDebounce } from 'use-debounce';
+import { motion } from "framer-motion";
 import Fuse from "fuse.js";
 import PostCard from "./post-card";
 import type { PostSearchItem } from "../schemas";
@@ -39,7 +40,11 @@ export default function PostStack({ sortedPostSearchItems }: { sortedPostSearchI
                     onChange={handleOnSearch}
                 />
             </div>
-            {results.length > 0 ? results.map((postSearchItem) => <PostCard postSearchItem={postSearchItem} key={postSearchItem.slug} />) : <p>No results found</p>}
+            {results.length > 0 ? results.map((postSearchItem) =>
+                <motion.div key={postSearchItem.slug} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }}>
+                    <PostCard postSearchItem={postSearchItem} />
+                </motion.div>
+            ) : <p>No results found</p>}
         </div>
     );
 }
