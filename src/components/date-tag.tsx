@@ -24,7 +24,7 @@ export default function DateTag({ date, type }: { date: string, type?: "publishe
     <div className="flex items-center">
       {
         type ? (
-          <code className="inline-block bg-dracula-dark/80 px-2 py-1">
+          <code className="inline-block bg-dracula-dark/30 px-2 py-1">
             <span
               className={
                 type === "published"
@@ -38,7 +38,7 @@ export default function DateTag({ date, type }: { date: string, type?: "publishe
             <span>{formattedDate}</span>
           </code>
         ) : (
-          <code className={`inline-block bg-dracula-dark/80 px-2 py-1 ${color}`}>
+          <code className={`inline-block bg-dracula-dark/30 px-2 py-1 ${color}`}>
             {formattedDate}
           </code>
         )

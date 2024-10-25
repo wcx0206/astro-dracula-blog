@@ -39,10 +39,11 @@ const pageTitle = title
       <div class="flex gap-2 itmes-center justify-center">
         <a
           href="/"
-          class="flex items-center justify-center md:justify-start gap-2 font-black text-2xl text-dracula-light"
+          class="flex items-center justify-center md:justify-start gap-2 font-black text-2xl
+          text-dracula-light hover:text-dracula-pink transition"
         >
           <Moon />
-          <h1 class="font-black text-2xl text-dracula-light">
+          <h1 class="font-black text-2xl">
             {SITE.title}
           </h1>
         </a>
@@ -55,11 +56,12 @@ const pageTitle = title
         </a>
       </div>
       <div
-        class="flex justify-center md:justify-end items-center gap-4 underline underline-offset-4 text-dracula-blue"
+        class="flex justify-center md:justify-end items-center gap-4 text-dracula-light
+        underline underline-offset-4"
       >
-        <a class="hover:text-dracula-light transition" href="/">Home</a>
-        <a class="hover:text-dracula-light transition" href="/tags">Tags</a>
-        <a class="hover:text-dracula-light transition" href="/about">About</a>
+        <a class="hover:text-dracula-pink transition" href="/">Home</a>
+        <a class="hover:text-dracula-pink transition" href="/tags">Tags</a>
+        <a class="hover:text-dracula-pink transition" href="/about">About</a>
       </div>
     </header>
     <main>

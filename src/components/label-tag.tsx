@@ -14,7 +14,7 @@ export default function LabelTag(
     const className = size === "large" ? "text-4xl px-4 py-2" : "px-2 py-1";
     const tagComponent = (<code
         className={`inline-block ${className}
-                text-dracula-purple bg-dracula-dark/80 
+                text-dracula-purple bg-dracula-dark/30
                 hover:bg-dracula-dark transition`}>
         {text}
     </code>);
