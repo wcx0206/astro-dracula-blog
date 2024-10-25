@@ -1,6 +1,7 @@
 export const SITE = {
     title: "BlockLune's Blog",
     description: "A blog about development and life, powered by Astro.",
+    url: "https://blocklune.cc",
 };
 
 export const AUTHOR = {
