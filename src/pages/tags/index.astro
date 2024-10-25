@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/base-layout.astro";
-import LabelTag from "../../components/label-tag.tsx";
+import TagGroup from "../../components/tag-group.tsx";
 import { getCollection } from "astro:content";
 import { getUniqueLowerCaseTagMap } from "../../scripts/utils";
 
@@ -11,13 +11,5 @@ const tags = getUniqueLowerCaseTagMap(
 ---
 
 <BaseLayout>
-  <div class="flex flex-wrap gap-2">
-    {
-      Array.from(tags.entries())
-        .sort((a, b) => b[1] - a[1])
-        .map(([tag, count]) => (
-          <LabelTag label={tag} count={count} type="link" />
-        ))
-    }
-  </div>
+  <TagGroup tagMap={tags} client:load />
 </BaseLayout>
