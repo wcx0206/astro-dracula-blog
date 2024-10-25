@@ -156,14 +156,11 @@ What is `std::optional<T>`?
 
 - `std::optional` is a template class which will either contain a value of type T or contain nothing (expressed as `nullopt`)
 
-<!--blockquote2note:warning,,-->
-
+> [!WARNING]
 > Pay attention to `nullopt`! That's NOT `nullptr`!
 >
 > - `nullptr`: an object that can be converted to a value of any **pointer** type
 > - `nullopt`: an object that can be converted to a value of any **optional** type
-
-<!--end-blockquote2note-->
 
 Look at the code below:
 

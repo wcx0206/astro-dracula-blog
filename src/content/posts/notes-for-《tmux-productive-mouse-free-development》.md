@@ -122,8 +122,8 @@ Press `Prefix` `&` or type `exit` to close the current window.
 
 ### Working with Panes
 
-<!--blockquote2note:info,,Difference between panes and windows.-->
 
+> [!INFO]
 > **What's the difference between panes and windows?**
 >
 > ChatGPT:
@@ -134,8 +134,6 @@ Press `Prefix` `&` or type `exit` to close the current window.
 > 2. Panes: A pane, on the other hand, is a subdivision of a window. It allows you to split a window into multiple resizable and scrollable regions. Each pane within a window can run its own command or application, effectively allowing you to work on multiple tasks simultaneously within a single window. Panes can be split both horizontally and vertically, and you can resize, rearrange, and interact with them independently.
 >
 > To summarize, **windows are the main containers that hold one or more panes, while panes are the subdivisions within a window where you can run different commands or applications.** Windows provide a way to switch between different contexts or tasks, while panes enable multitasking within a single window.
-
-<!--end-blockquote2note-->
 
 `Prefix` `%` splits the current pane with horizontal layout.
 

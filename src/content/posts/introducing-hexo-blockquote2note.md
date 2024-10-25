@@ -26,6 +26,9 @@ npm install hexo-blockquote2note --save
 
 ## Examples and Previews
 
+> [!NOTE]
+> The following examples can't be rendered in a non-hexo environment. So you are not visiting the hexo version of the blog, you can't see it.
+
 ```text
 <!--blockquote2note-->
 > Welcome to using [hexo-blockquote2note](https://github.com/BlockLune/hexo-blockquote2note)!

@@ -21,8 +21,7 @@ date: 2022-09-17 13:13:18
 
 ![](https://b316f18.webp.li/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/1.png)
 
-<!--blockquote2note:success,,国内 VS Code 下载速度慢的解决方案-->
-
+> [!TIP]
 > #### 国内 VS Code 下载速度慢的解决方案
 >
 > 此方法来自：[https://zhuanlan.zhihu.com/p/112215618](https://zhuanlan.zhihu.com/p/112215618)
@@ -30,8 +29,6 @@ date: 2022-09-17 13:13:18
 > 在你的下载软件处（我这里是 IDM，你如果是浏览器下载的就去浏览器的下载管理器里找），找到下载地址。将下载地址中的 `az764295.vo.msecnd.net` 替换为 `vscode.cdn.azure.cn`，然后取消原任务，用修改过的下载链接新建一个下载。
 >
 > ![修改前](https://b316f18.webp.li/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/2.png)
-
-<!--end-blockquote2note-->
 
 打开安装包，一路下一步，直到下面这个界面，按照下边的进行选择，直到安装完毕。
 
@@ -50,8 +47,7 @@ DevCpp 安装的时候也帮我们安装好了编译器，但 VS Code 并没有�
 
 参考 [MSYS2 官网](https://www.msys2.org/#installation)下载安装和安装。
 
-<!--blockquote2note:success,,国内 MSYS2 下载速度慢的解决方案-->
-
+> [!TIP]
 > #### 国内 MSYS2 下载速度慢的解决方案
 >
 > 在这个按钮上右键，选择`复制链接`。
@@ -61,8 +57,6 @@ DevCpp 安装的时候也帮我们安装好了编译器，但 VS Code 并没有�
 > 然后前往[https://ghproxy.com/](https://ghproxy.com/)这个网站，粘贴上面复制的下载链接，点击下载。
 >
 > ![](https://b316f18.webp.li/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/8.png)
-
-<!--end-blockquote2note-->
 
 打开安装包，一路默认下一步。耐心等待（国内网络可以！只要耐心等！）直到出现下面的界面：
 
@@ -144,8 +138,7 @@ $ pacman -S mingw-w64-x86_64-gdb
 
 然后在 VS Code 中搜索并安装 `C/C++ Runner` 插件。
 
-<!--blockquote2note:success,,安装 C/C++ Runner 插件时其依赖项 CodeLLDB 无法安装的解决方案-->
-
+> [!TIP]
 > #### 安装 C/C++ Runner 插件时其依赖项 CodeLLDB 无法安装的解决方案
 >
 > 按照右下角的提示手动下载 `codelldb-x86_64-windows.vsix`文件。
@@ -154,7 +147,6 @@ $ pacman -S mingw-w64-x86_64-gdb
 >
 > ![](https://b316f18.webp.li/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/19.png)
 
-<!--end-blockquote2note-->
 
 安装完成后，左下角点击 `Select folder.`，选择当前文件夹。
 

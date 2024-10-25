@@ -9,6 +9,7 @@ import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
 import rehypeExternalLinks from 'rehype-external-links';
+import { rehypeGithubAlerts } from 'rehype-github-alerts';
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,7 +23,7 @@ export default defineConfig({
       }
     },
     remarkPlugins: [remarkDescPlugin, remarkMath],
-    rehypePlugins: [rehypeMathjax, rehypeExternalLinks],
+    rehypePlugins: [rehypeMathjax, rehypeExternalLinks, rehypeGithubAlerts],
 
   },
   integrations: [tailwind(), markdownIntegration(), react()]

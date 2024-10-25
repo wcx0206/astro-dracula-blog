@@ -116,17 +116,12 @@ First, install `cross-env` and `tsx`:
 npm install --save-dev cross-env tsx
 ```
 
-<!--blockquote2note:info,no-icon,-->
-
+> [!INFO]
 > [cross-env](https://www.npmjs.com/package/cross-env) is a useful tool for setting environment variables across platforms.
 
-<!--end-blockquote2note-->
 
-<!--blockquote2note:warning,no-icon,-->
-
+> [!WARNING]
 > I tried [ts-node](https://github.com/TypeStrong/ts-node) just like the [example](https://github.com/mochajs/mocha-examples/tree/master/packages/typescript) provided by Mocha but I encountered an `ERR_UNKNOWN_FILE_EXTENSION` like [this](https://github.com/TypeStrong/ts-node/issues/1997). Finally I use [tsx](https://github.com/privatenumber/tsx) and it works.
-
-<!--end-blockquote2note-->
 
 Update `package.json` to be like this:
 

@@ -31,8 +31,7 @@ In archlinux, I choose to use `yay`. Run the command below and keep hitting Ente
 yay -S joshuto
 ```
 
-<!--blockquote2note:info,,How to install Yay?-->
-
+> [!TIP]
 > How to install Yay from source?
 >
 > First, run:
@@ -58,8 +57,6 @@ yay -S joshuto
 > ```bash
 > makepkg -si
 > ```
-
-<!--end-blockquote2note-->
 
 ### Ubuntu
 

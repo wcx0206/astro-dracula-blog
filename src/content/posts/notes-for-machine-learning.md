@@ -528,8 +528,8 @@ The hint says that:
 
 where `ddof` means Delta Degrees of Freedom. The divisor used in calculation is `N - ddof`, where `N` represents the number of elements. By default `ddof` is zero.
 
-<!--blockquote2note:info,,-->
 
+> [!INFO]
 > 这实际上就是总体标准差和样本标准差的区别：
 >
 > 总体标准差：
@@ -543,8 +543,6 @@ where `ddof` means Delta Degrees of Freedom. The divisor used in calculation is 
 > $$
 > S = \sqrt{\frac{\sum^n_{i=1}(x_i-\bar{x})^2}{n-1}}
 > $$
-
-<!--end-blockquote2note-->
 
 ```python
 import numpy as np

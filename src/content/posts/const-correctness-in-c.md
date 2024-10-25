@@ -158,15 +158,12 @@ void Student::setAge(int age) {
 
 Let's make `StrVector`'s const-interface!
 
-<!--blockquote2note:info,,-->
-
+> [!TIP]
 > Questions to ask whether a function should be a const-interface:
 >
 > 1. Should this function be able available to a const object?
 >    1.1. Can I mark the function const as is (i.e. the function doesn't modify the object)?
 >    1.2. Otherwise, can I make a const version of the function?
-
-<!--end-blockquote2note-->
 
 ```cpp
 class StrVector {

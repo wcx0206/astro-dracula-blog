@@ -91,8 +91,8 @@ git brach --unset-upstream <branch>
 git push origin --delete <branch_name>
 ```
 
-<!--blockquote2note:info,no-icon,Commands to rename a remote branch-->
 
+> [!INFO]
 > There is no direct command to rename a remote branch. But you can do it like this:
 >
 > ```bash
@@ -101,8 +101,6 @@ git push origin --delete <branch_name>
 > git branch -m <old_branch_name> <new_branch_name>
 > git push -u origin <new_branch_name>
 > ```
-
-<!--end-blockquote2note-->
 
 ## Merging
 

@@ -49,11 +49,8 @@ git config --global user.name "<your_name>"
 git config --global user.email "<your_email@example.com>"
 ```
 
-<!--blockquote2note:success,,-->
-
+> [!TIP]
 > It's highly recommended that you set `<your_name>` to be your GitHub username and set `<your_email@example.com>` to be your GitHub no-reply email, which looks like `ID+USERNAME@users.noreply.github.com`. You can find the no-reply email [here](https://github.com/settings/emails) (under the `Primary email address` section).
-
-<!--end-blockquote2note-->
 
 Learn more:
 
@@ -145,11 +142,9 @@ git restore --staged :/      # unstage all files
 git rm --cached <file>
 ```
 
-<!--blockquote2note:info,,-->
 
+> [!INFO]
 > `git reset` is equivalent to `git restore --staged :/`. `git reset <file>` is equivalent to `git restore --staged <file>`. But `git rm --cached <file>` is unique. Actually, it means remove `<file>` from the `Staging Area`, while the other two commands move `<file>` in the `Staging Area` back to the `Working Directory`.
-
-<!--end-blockquote2note-->
 
 ## Checking Status
 
@@ -227,14 +222,12 @@ git add <all_tracked_files_that_have_been_modified>
 git commit
 ```
 
-<!--blockquote2note:info,,How to write better commit messages?-->
 
+> [!INFO]
 > The links below maybe helpful if you want to write better commit messages:
 >
 > - \_[How to Write Better Git Commit Messages – A Step-By-Step Guide](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
 > - _[ohmyzsh/plugins/git-commit at master · ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-commit)_
-
-<!--end-blockquote2note-->
 
 ## History
 
@@ -261,11 +254,8 @@ git log
 
 ## Discarding Changes in Working
 
-<!--blockquote2note:danger,,-->
-
+> [!DANGER]
 > In Git, it's usually easy to restore the files have been committed, but usually **very hard** to restore the files haven't been committed.
-
-<!--end-blockquote2note-->
 
 To discard changes in working, run:
 
