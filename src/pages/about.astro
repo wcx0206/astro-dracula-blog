@@ -2,12 +2,16 @@
 import BaseLayout from "../layouts/base-layout.astro";
 import Prose from "../components/prose.astro";
 import { getEntry, render } from "astro:content";
+import BusinessCard from "../components/business-card.tsx";
 
 const about = await getEntry("info", "about");
 const { Content } = await render(about);
 ---
 
 <BaseLayout>
+  <div class="flex mb-12">
+    <BusinessCard client:load />
+  </div>
   <Prose>
     <Content />
   </Prose>

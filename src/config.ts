@@ -8,6 +8,7 @@ export const AUTHOR = {
     name: "BlockLune",
     link: "https://github.com/BlockLune",
     email: "i@blocklune.cc",
+    bio: "A student majoring in computer science and technology."
 }
 
 export const SOCIALS = [
@@ -17,7 +18,7 @@ export const SOCIALS = [
         linkTitle: `${AUTHOR.name} on Github`,
     },
     {
-        name: "Mail",
+        name: "Email",
         href: `mailto:${AUTHOR.email}`,
         linkTitle: `Send an email to ${AUTHOR.name}`,
     },
