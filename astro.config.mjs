@@ -2,8 +2,9 @@
 import { defineConfig } from 'astro/config';
 import { SITE } from './src/config.ts';
 
-import tailwind from '@astrojs/tailwind';
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+import tailwind from '@astrojs/tailwind';
 
 import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 import remarkMath from 'remark-math';
@@ -21,11 +22,16 @@ export default defineConfig({
       langAlias: {
         "C": "c",
         "zshrc": "zsh",
+        "hdl": "text",
       }
     },
     remarkPlugins: [remarkDescPlugin, remarkMath],
     rehypePlugins: [rehypeMathjax, rehypeExternalLinks, rehypeGithubAlerts],
 
   },
-  integrations: [tailwind(), react()]
+  integrations: [
+    react(),
+    sitemap(),
+    tailwind(),
+  ]
 });
