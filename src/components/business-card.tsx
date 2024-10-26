@@ -7,7 +7,7 @@ export default function BusinessCard() {
     return (
         <motion.div
             initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }}
-            className="p-8 bg-dracula-dark/20 text-pretty flex gap-12 items-center w-full md:w-2/3"
+            className="p-8 bg-dracula-dark/20 text-pretty flex flex-col sm:flex-row gap-12 items-center w-full md:w-2/3"
         >
             <motion.img
                 src={avatarImage.src}
@@ -15,12 +15,12 @@ export default function BusinessCard() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
             />
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 text-center sm:text-left">
                 <h2 className="font-bold text-3xl text-dracula-pink">{AUTHOR.name}</h2>
                 <p className="text-pretty">
                     {AUTHOR.bio}
                 </p>
-                <p className="flex gap-4">
+                <p className="flex gap-4 justify-center sm:justify-start">
                     {
                         SOCIALS.map((social) =>
                             <a
