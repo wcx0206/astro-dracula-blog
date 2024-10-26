@@ -2,15 +2,16 @@
 import { defineConfig } from 'astro/config';
 import { SITE } from './src/config.ts';
 
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
-import tailwind from '@astrojs/tailwind';
-
 import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
 import rehypeExternalLinks from 'rehype-external-links';
 import { rehypeGithubAlerts } from 'rehype-github-alerts';
+
+import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+import tailwind from '@astrojs/tailwind';
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,16 +23,11 @@ export default defineConfig({
       langAlias: {
         "C": "c",
         "zshrc": "zsh",
-        "hdl": "text",
       }
     },
     remarkPlugins: [remarkDescPlugin, remarkMath],
     rehypePlugins: [rehypeMathjax, rehypeExternalLinks, rehypeGithubAlerts],
 
   },
-  integrations: [
-    react(),
-    sitemap(),
-    tailwind(),
-  ]
+  integrations: [react(), sitemap(), tailwind(), partytown()]
 });
