@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 import { SITE } from './src/config.ts';
 
 import tailwind from '@astrojs/tailwind';
-import markdownIntegration from '@astropub/md'
 import react from "@astrojs/react";
 
 import { remarkDescPlugin } from "./src/scripts/markdown.ts";
@@ -28,5 +27,5 @@ export default defineConfig({
     rehypePlugins: [rehypeMathjax, rehypeExternalLinks, rehypeGithubAlerts],
 
   },
-  integrations: [tailwind(), markdownIntegration(), react()]
+  integrations: [tailwind(), react()]
 });
