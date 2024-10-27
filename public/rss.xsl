@@ -69,7 +69,7 @@ See:
                         <p>
                             <xsl:value-of select="/rss/channel/description" />
                         </p>
-                        <a class="head_link" target="_blank">
+                        <a class="head_link">
                             <xsl:attribute name="href">
                                 <xsl:value-of select="/rss/channel/link" />
                             </xsl:attribute>
@@ -90,8 +90,9 @@ See:
                             </p>
                             <p> If you don't know what a RSS reader is, you can read my friend's
                                 article: <a
-                                    href="http://yfi.moe/post/all-about-rss/" target="_blank">RSS:
-                                是什么？为什么？怎么用？</a>。 </p>
+                                    href="http://yfi.moe/post/all-about-rss/" target="_blank"
+                                    rel="nofollow">RSS:
+                                    是什么？为什么？怎么用？</a>。 </p>
                         </div>
                     </div>
                     <h2>Recent Items</h2>
@@ -99,7 +100,7 @@ See:
                         <div class="card"
                             style="padding: 0.5rem 1rem 0.5rem; margin: 0.5rem 0rem;">
                             <h3 style="margin: 0rem; font-size: 1rem;">
-                                <a target="_blank">
+                                <a>
                                     <xsl:attribute name="href">
                                         <xsl:value-of select="link" />
                                     </xsl:attribute>
