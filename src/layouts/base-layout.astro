@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import "../styles/global.css";
 import "../styles/rehype-github-alerts.css";
 import Moon from "../components/icons/moon.astro";
@@ -47,6 +48,7 @@ const pageTitle = title
       src="https://cloud.umami.is/script.js"
       data-website-id={import.meta.env.UMAMI_DATA_WEBSITE_ID}></script>
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body
     class="bg-dracula-darker text-dracula-light mx-4 md:mx-auto max-w-3xl py-12"
