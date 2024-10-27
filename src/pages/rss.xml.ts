@@ -4,7 +4,7 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { getDescFromMdString } from '../scripts/markdown.ts';
 
-export async function GET(context) {
+export async function GET(context: any) {
     const posts = await getCollection('posts');
     return rss({
         title: SITE.title,
@@ -17,6 +17,6 @@ export async function GET(context) {
             pubDate: post.data.date,
             link: `/posts/${post.slug}`,
         })),
-        stylesheet: '/pretty-feed-v3.xsl',
+        stylesheet: '/rss.xsl',
     });
 }
