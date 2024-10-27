@@ -25,6 +25,10 @@ const pageTitle = title
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={SITE.description} />
+    <meta
+      name="msvalidate.01"
+      content={import.meta.env.BING_WEBMASTER_VALIDATE}
+    />
     <script
       is:inline
       type="text/partytown"
