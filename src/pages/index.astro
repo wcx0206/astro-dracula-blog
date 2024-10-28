@@ -3,9 +3,17 @@ import PostStack from "../components/post-stack.tsx";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/base-layout.astro";
 import { getSortedPostSearchItems } from "../scripts/utils";
+import { getLangFromUrl } from "../i18n/utils";
 
+const currentLang = getLangFromUrl(Astro.url.pathname);
 const posts = await getCollection("posts");
-const sortedPostSearchItems = await getSortedPostSearchItems(posts);
+
+// TODO
+const currentLangPosts = posts.filter((post) =>
+  post.slug.startsWith(currentLang),
+);
+
+const sortedPostSearchItems = await getSortedPostSearchItems(currentLangPosts);
 ---
 
 <BaseLayout>

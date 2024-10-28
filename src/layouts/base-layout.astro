@@ -5,14 +5,23 @@ import "../styles/rehype-github-alerts.css";
 import Moon from "../components/icons/moon.astro";
 import Rss from "../components/icons/rss.astro";
 import { SITE } from "../config";
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../i18n/utils";
+import LanguagePicker from "../components/language-picker.astro";
 
 const { title } = Astro.props;
+const lang = getLangFromUrl(Astro.url.pathname);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 const pageTitle = title
   ? `${title} | ${SITE.title}`
   : `${SITE.title} | ${SITE.description}`;
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -70,9 +79,22 @@ const pageTitle = title
         class="flex justify-center md:justify-end items-center gap-4 text-dracula-light
         underline underline-offset-4"
       >
-        <a class="hover:text-dracula-pink transition" href="/">Home</a>
-        <a class="hover:text-dracula-pink transition" href="/tags">Tags</a>
-        <a class="hover:text-dracula-pink transition" href="/about">About</a>
+        <a class="hover:text-dracula-pink transition" href={translatePath("/")}>
+          {t("nav.home")}
+        </a>
+        <a
+          class="hover:text-dracula-pink transition"
+          href={translatePath("/tags")}
+        >
+          {t("nav.tags")}
+        </a>
+        <a
+          class="hover:text-dracula-pink transition"
+          href={translatePath("/about")}
+        >
+          {t("nav.about")}
+        </a>
+        <LanguagePicker />
       </div>
     </header>
     <main>
