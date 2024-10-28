@@ -2,6 +2,17 @@ export const SITE = {
     title: "BlockLune's Blog",
     description: "A blog about development and life, powered by Astro.",
     url: "https://blocklune.cc",
+    analytics: {
+        "umami": {
+            id: "ab70a625-ed64-484a-9c34-803e1c598bf9"
+        }
+    },
+    searchEngine: {
+        "bing": "90E919A44E934714DF5640B4D8631CC9",
+        "baidu": "codeva-IdRrdx3ejJ",
+        "sogou": "d61GLZA6rw",
+        "threeSixZero": "3df8dc4fd80a1899f65048a77e408c40"
+    }
 };
 
 export const AUTHOR = {

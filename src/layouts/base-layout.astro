@@ -26,27 +26,18 @@ const pageTitle = title
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={SITE.description} />
-    <meta
-      name="msvalidate.01"
-      content={import.meta.env.BING_WEBMASTER_VALIDATE}
-    />
-    <meta
-      name="baidu-site-verification"
-      content={import.meta.env.BAIDU_SITE_VERIFICATION}
-    />
-    <meta
-      name="sogou_site_verification"
-      content={import.meta.env.SOGOU_SITE_VERIFICATION}
-    />
+    <meta name="msvalidate.01" content={SITE.searchEngine.bing} />
+    <meta name="baidu-site-verification" content={SITE.searchEngine.baidu} />
+    <meta name="sogou_site_verification" content={SITE.searchEngine.sogou} />
     <meta
       name="360-site-verification"
-      content={import.meta.env.THREE_SIX_ZERO_SITE_VERIFICATION}
+      content={SITE.searchEngine.threeSixZero}
     />
     <script
       is:inline
       type="text/partytown"
       src="https://cloud.umami.is/script.js"
-      data-website-id={import.meta.env.UMAMI_DATA_WEBSITE_ID}></script>
+      data-website-id={SITE.analytics.umami.id}></script>
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
