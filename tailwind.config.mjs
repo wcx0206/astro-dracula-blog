@@ -14,7 +14,7 @@ export default {
             '--tw-prose-body': theme('colors.dracula-light.DEFAULT'),
             '--tw-prose-headings': theme('colors.dracula-pink.DEFAULT'),
             '--tw-prose-lead': theme('colors.dracula-pink.DEFAULT'),
-            '--tw-prose-links': theme('colors.dracula-purple.DEFAULT'),
+            '--tw-prose-links': theme('colors.dracula-cyan.DEFAULT'),
             '--tw-prose-bold': theme('colors.dracula-purple.DEFAULT'),
             '--tw-prose-counters': theme('colors.dracula-pink.DEFAULT'),
             '--tw-prose-bullets': theme('colors.dracula-pink.DEFAULT'),
