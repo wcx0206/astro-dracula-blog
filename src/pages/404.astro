@@ -3,13 +3,15 @@ import BaseLayout from "../layouts/base-layout.astro";
 ---
 
 <BaseLayout>
-  <div class="w-full flex flex-col items-center justify-center">
-    <h1 class="text-9xl mb-5">404</h1>
+  <div class="w-full flex flex-col items-center justify-center mt-32">
+    <h1 class="text-9xl mb-5 font-black text-dracula-pink font-mono">404</h1>
     <p class="text-4xl font-bold">PAGE NOT FOUND</p>
     <a
       href="/"
-      class="text-lg underline underline-offset-4 text-dracula-pink mt-10"
-      >返回首页</a
+      class="text-lg underline underline-offset-4 text-dracula-cyan mt-10
+                hover:text-dracula-purple transition-colors"
     >
+      Go Back Home
+    </a>
   </div>
 </BaseLayout>
