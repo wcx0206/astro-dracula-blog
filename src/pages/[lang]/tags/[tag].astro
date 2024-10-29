@@ -1,52 +1,38 @@
 ---
-import BaseLayout from "@layouts/base-layout.astro";
-import PostStack from "@components/post-stack.tsx";
-import LabelTag from "@components/label-tag.tsx";
 import { getCollection } from "astro:content";
-import {
-  getUniqueLowerCaseTagMap,
-  getSortedPostSearchItemsWithLang,
-} from "@scripts/utils";
-import { ui } from "@i18n/ui";
-import type { PostSearchItem } from "@schemas/index";
-const { lang, tag } = Astro.params;
-const { relatedPosts } = Astro.props;
+import BaseLayout from "@/layouts/base-layout.astro";
+import PostStack from "@/components/post-stack.tsx";
+import LabelTag from "@/components/label-tag.tsx";
+import { getUniqueLowerCaseTagMap, getSnapshots } from "@/utils/post";
+import { ui, type Lang } from "@/utils/i18n";
+import type { PostSnapshot } from "@/schemas/post";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
-  const paths: {
-    params: {
-      lang: keyof typeof ui;
-      tag: string;
-    };
-    props: {
-      relatedPosts: PostSearchItem[];
-    };
+
+  let paths: {
+    params: { lang: Lang; tag: string };
+    props: PostSnapshot[];
   }[] = [];
 
-  const allTags = getUniqueLowerCaseTagMap(
-    (await getSortedPostSearchItemsWithLang(posts, Object.keys(ui)[0]))
-      .map((post) => post.tags)
-      .flat(),
-  );
-
-  for (const tag of allTags.keys()) {
-    for (const lang of Object.keys(ui)) {
-      const postSearchItemsWithLang = await getSortedPostSearchItemsWithLang(
-        posts,
-        lang,
-      );
-      const relatedPosts = postSearchItemsWithLang.filter((item) =>
-        item.tags.includes(tag),
-      );
+  Object.keys(ui).forEach(async (lang) => {
+    const snapshots = await getSnapshots(posts, lang as Lang);
+    const tags = getUniqueLowerCaseTagMap(
+      snapshots.map((post) => post.tags).flat(),
+    );
+    Array.from(tags.keys()).forEach((tag) => {
       paths.push({
-        params: { lang: lang as keyof typeof ui, tag },
-        props: { relatedPosts },
+        params: { lang: lang as Lang, tag },
+        props: snapshots,
       });
-    }
-  }
+    });
+  });
+
   return paths;
 }
+
+const { lang, tag } = Astro.params;
+const snapshots = Astro.props;
 ---
 
 <BaseLayout>
@@ -55,6 +41,6 @@ export async function getStaticPaths() {
       Posts with tag
       <LabelTag lang={lang} label={tag} size="large" />
     </h1>
-    <PostStack lang={lang} sortedPostSearchItems={relatedPosts} client:load />
+    <PostStack lang={lang} snapshots={snapshots} />
   </article>
 </BaseLayout>

@@ -1,7 +1,7 @@
 import type { Post, PureSlug } from "@/schemas/post";
 import { getDescFromMdString } from "@/utils/markdown";
 import { defaultLang, type Lang } from "@/utils/i18n";
-
+import type { PostSnapshot } from "@/schemas/post";
 
 export const getLangFromSlug = (slug: string): Lang => {
     const [lang] = slug.split("/");
@@ -50,7 +50,7 @@ export const makeUniqueByLang = (posts: Post[], expectedLang: Lang) => {
 /**
  * Gets the snapshots of posts. They are unique to languages, and sorted by date.
  */
-export const getSnapshots = async (posts: Post[], expectedLang: Lang) => {
+export const getSnapshots = async (posts: Post[], expectedLang: Lang): Promise<PostSnapshot[]> => {
     const uniquePosts = makeUniqueByLang(posts, expectedLang);
     const sorted = uniquePosts.sort((a, b) => {
         const dateA = a.data.updated || a.data.date;
@@ -58,14 +58,15 @@ export const getSnapshots = async (posts: Post[], expectedLang: Lang) => {
         return dateB.getTime() - dateA.getTime();
     });
     return sorted.map((post) => {
-        const [lang, ...rest] = post.slug.split("/");
-        const slugWithoutLang = rest.join("/");
+        const lang = getLangFromSlug(post.slug);
+        const pureSlug = getPureSlugFromSlug(post.slug);
+
         return {
-            href: `/${lang}/posts/${slugWithoutLang}`,
+            href: `/${lang}/posts/${pureSlug}`,
             title: post.data.title,
             date: getCloserFormattedDate(post.data.updated?.toISOString(), post.data.date.toISOString())!,
             description: getDescFromMdString(post.body),
-            slugWithoutLang: slugWithoutLang,
+            pureSlug: pureSlug,
             tags: Array.from(getUniqueLowerCaseTagMap(post.data.tags).keys()),
         }
     })

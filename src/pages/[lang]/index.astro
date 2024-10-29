@@ -1,30 +1,23 @@
 ---
-import PostStack from "@components/post-stack.tsx";
 import { getCollection } from "astro:content";
-import BaseLayout from "@layouts/base-layout.astro";
-import { getSortedPostSearchItemsWithLang } from "@scripts/utils";
-import { ui } from "@i18n/ui";
+import BaseLayout from "@/layouts/base-layout.astro";
+import PostStack from "@/components/post-stack.tsx";
+import { getSnapshots } from "@/utils/post";
+import { ui, type Lang } from "@/utils/i18n";
 
 const posts = await getCollection("posts");
 
 const { lang } = Astro.props;
-const sortedPostSearchItems = await getSortedPostSearchItemsWithLang(
-  posts,
-  lang,
-);
+const snapshots = await getSnapshots(posts, lang);
 
 export function getStaticPaths() {
   return Object.keys(ui).map((lang) => ({
-    params: { lang: lang as keyof typeof ui },
-    props: { lang: lang as keyof typeof ui },
+    params: { lang: lang as Lang },
+    props: { lang: lang as Lang },
   }));
 }
 ---
 
 <BaseLayout>
-  <PostStack
-    lang={lang}
-    sortedPostSearchItems={sortedPostSearchItems}
-    client:load
-  />
+  <PostStack lang={lang} snapshots={snapshots} />
 </BaseLayout>

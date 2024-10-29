@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { ui } from "@i18n/ui";
+import type { Lang } from "@/utils/i18n";
 
 export default function LabelTag(
     { lang, label, count = 1, type = "tag", size = "normal", animate = false }:
         {
-            lang: keyof typeof ui,
+            lang: Lang,
             label: string,
             count?: number,
             type?: "tag" | "link",

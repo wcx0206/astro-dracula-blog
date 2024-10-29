@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
+
 import PostCard from "./post-card";
-import type { PostSearchItem } from "../schemas";
-import { ui } from "@i18n/ui";
+import type { PostSnapshot } from "@/schemas/post";
+import type { Lang } from "@/utils/i18n";
 
 const fuseOptions = {
     keys: ["slug", "title", "description", "tags"]
@@ -11,19 +12,19 @@ const fuseOptions = {
 
 export default function PostStack({
     lang,
-    sortedPostSearchItems,
+    snapshots,
 }: {
-    lang: keyof typeof ui;
-    sortedPostSearchItems: PostSearchItem[];
+    lang: Lang,
+    snapshots: PostSnapshot[],
 }) {
     const [query, setQuery] = useState("");
     const [debouncedQuery] = useDebounce(query, 300);
 
-    let results: PostSearchItem[] = [];
+    let results: PostSnapshot[] = [];
     if (debouncedQuery === "") {
-        results = sortedPostSearchItems;
+        results = snapshots;
     } else {
-        const fuse = new Fuse(sortedPostSearchItems, fuseOptions);
+        const fuse = new Fuse(snapshots, fuseOptions);
         results = fuse.search(debouncedQuery).map((result) => result.item).slice(0, 5);
     }
 
@@ -46,8 +47,8 @@ export default function PostStack({
                     onChange={handleOnSearch}
                 />
             </div>
-            {results.length > 0 ? results.map((postSearchItem) =>
-                <PostCard postSearchItem={postSearchItem} animate={true} key={postSearchItem.slugWithoutLang} />
+            {results.length > 0 ? results.map((snapshot) =>
+                <PostCard lang={lang} snapshot={snapshot} animate={true} key={snapshot.pureSlug} />
             ) : <p>No results found</p>}
         </div>
     );

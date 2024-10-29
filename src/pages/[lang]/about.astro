@@ -1,9 +1,9 @@
 ---
-import BaseLayout from "@layouts/base-layout.astro";
-import Prose from "@components/prose.astro";
 import { getEntry, render } from "astro:content";
-import BusinessCard from "@components/business-card.tsx";
-import { ui } from "@i18n/ui";
+import BaseLayout from "@/layouts/base-layout.astro";
+import Prose from "@/components/prose.astro";
+import BusinessCard from "@/components/business-card.tsx";
+import { ui, type Lang } from "@/utils/i18n";
 
 const { lang } = Astro.props;
 const about = await getEntry("info", `${lang}/about`);
@@ -11,8 +11,8 @@ const { Content } = await render(about);
 
 export function getStaticPaths() {
   return Object.keys(ui).map((lang) => ({
-    params: { lang: lang as keyof typeof ui },
-    props: { lang: lang as keyof typeof ui },
+    params: { lang: lang as Lang },
+    props: { lang: lang as Lang },
   }));
 }
 ---

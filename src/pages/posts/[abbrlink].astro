@@ -1,7 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import { getPostsFilteredByLang } from "@scripts/utils";
-import { defaultLang } from "@i18n/ui";
+import {
+  getLangFromSlug,
+  getPureSlugFromSlug,
+  makeUniqueByLang,
+} from "@/utils/post";
+import { defaultLang } from "@/utils/i18n";
 
 export async function getStaticPaths() {
   const postsWithAbbrlink = await getCollection(
@@ -9,14 +13,13 @@ export async function getStaticPaths() {
     (post) => post.data.abbrlink,
   );
 
-  const filtered = await getPostsFilteredByLang(postsWithAbbrlink, defaultLang);
-
-  const paths = filtered.map((post) => {
-    const [lang, ...rest] = post.slug.split("/");
-    const slugWithoutLang = rest.join("/");
+  const uniquePosts = makeUniqueByLang(postsWithAbbrlink, defaultLang);
+  const paths = uniquePosts.map((post) => {
+    const lang = getLangFromSlug(post.slug);
+    const pureSlug = getPureSlugFromSlug(post.slug);
     return {
       params: { abbrlink: post.data.abbrlink },
-      props: { to: `${lang}/posts/${slugWithoutLang}` },
+      props: { to: `${lang}/posts/${pureSlug}` },
     };
   });
 

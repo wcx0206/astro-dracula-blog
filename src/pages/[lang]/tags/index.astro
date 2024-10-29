@@ -1,20 +1,14 @@
 ---
-import BaseLayout from "@layouts/base-layout.astro";
-import TagGroup from "@components/tag-group.tsx";
 import { getCollection } from "astro:content";
-import {
-  getUniqueLowerCaseTagMap,
-  getSortedPostSearchItemsWithLang,
-} from "@scripts/utils";
-import { ui } from "@i18n/ui";
-import type { PostSearchItem } from "@schemas/index";
+import BaseLayout from "@/layouts/base-layout.astro";
+import TagGroup from "@/components/tag-group.tsx";
+import { getUniqueLowerCaseTagMap, getSnapshots } from "@/utils/post";
+import { ui } from "@/utils/i18n";
 
 const { lang } = Astro.props;
-const allPosts = await getCollection("posts");
+const posts = await getCollection("posts");
 const tags = getUniqueLowerCaseTagMap(
-  (await getSortedPostSearchItemsWithLang(allPosts, lang))
-    .map((post: PostSearchItem) => post.tags)
-    .flat(),
+  (await getSnapshots(posts, lang)).map((post) => post.tags).flat(),
 );
 
 export function getStaticPaths() {
