@@ -18,8 +18,9 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props;
+const { lang } = Astro.params;
 ---
 
 <BaseLayout title={post.data.title}>
-  <MarkdownPost post={post} />
+  <MarkdownPost post={post} lang={lang} />
 </BaseLayout>

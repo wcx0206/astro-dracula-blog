@@ -7,13 +7,12 @@ import { ui, type Lang } from "@/utils/i18n";
 
 const posts = await getCollection("posts");
 
-const { lang } = Astro.props;
+const { lang } = Astro.params;
 const snapshots = await getSnapshots(posts, lang);
 
 export function getStaticPaths() {
   return Object.keys(ui).map((lang) => ({
     params: { lang: lang as Lang },
-    props: { lang: lang as Lang },
   }));
 }
 ---
