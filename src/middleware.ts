@@ -4,7 +4,7 @@ import { middleware } from "astro:i18n";
 export const userMiddleware = defineMiddleware(async (ctx, next) => {
     const path = ctx.url.pathname;
     const response = await next();
-    if (path.startsWith("/en") || path.startsWith("/zh")) {
+    if (path.startsWith("/en") || path.startsWith("/zh") || path.startsWith("/posts")) {
         return response;
     }
     const locale = ctx.preferredLocale === "zh" ? "zh": "en";

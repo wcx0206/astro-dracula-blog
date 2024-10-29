@@ -18,6 +18,29 @@ export const getPostSupportedLangsMap = (posts: Post[]) => {
 }
 
 /**
+ * Returns a list of posts filtered by the expected language.
+ * If the expected language is not supported, the default language is used.
+ * If the default language is not supported, the first supported language is used.
+ * @param posts - An array of Post objects.
+ * @param expectedLang - The expected language of the posts.
+ * @returns A list of filtered posts.
+ */
+export const getPostsFilteredByLang = async (posts: Post[], expectedLang: string) => {
+  const supportedLangsMap = getPostSupportedLangsMap(posts);
+
+  return posts.filter(post => {
+    const [, ...rest] = post.slug.split("/");
+    const slugWithoutLang = rest.join("/");
+    const supportedLangs = supportedLangsMap.get(slugWithoutLang) || [];
+    const [postLang] = post.slug.split("/");
+    
+    return postLang === expectedLang ||
+      (!supportedLangs.includes(expectedLang) && postLang === defaultLang) ||
+      (!supportedLangs.includes(expectedLang) && !supportedLangs.includes(defaultLang) && postLang === supportedLangs[0]);
+  });
+}
+
+/**
  * Returns a list of PostSearchItem objects, sorted by date.
  * The posts are filtered by the expected language.
  * If the expected language is not supported, the default language is used.
@@ -28,19 +51,8 @@ export const getPostSupportedLangsMap = (posts: Post[]) => {
  */
 export const getSortedPostSearchItemsWithLang = async (posts: Post[], expectedLang: string): Promise<PostSearchItem[]> => {
   const supportedLangsMap = getPostSupportedLangsMap(posts);
-  
-  const filteredPosts = posts.filter(post => {
-    const [, ...rest] = post.slug.split("/");
-    const slugWithoutLang = rest.join("/");
-    const supportedLangs = supportedLangsMap.get(slugWithoutLang) || [];
-    const [postLang] = post.slug.split("/");
-    
-    return postLang === expectedLang ||
-      (!supportedLangs.includes(expectedLang) && postLang === defaultLang) ||
-      (!supportedLangs.includes(expectedLang) && !supportedLangs.includes(defaultLang) && postLang === supportedLangs[0]);
-  });
 
-  return filteredPosts.sort((a, b) => {
+  return (await getPostsFilteredByLang(posts, expectedLang)).sort((a, b) => {
     const dateA = a.data.updated || a.data.date;
     const dateB = b.data.updated || b.data.date;
     return dateB.getTime() - dateA.getTime();
