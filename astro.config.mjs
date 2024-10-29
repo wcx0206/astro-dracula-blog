@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { SITE } from './src/config.ts';
-
+import { ui, defaultLang } from './src/i18n/ui.ts';
 import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
@@ -16,6 +16,11 @@ import partytown from "@astrojs/partytown";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.url,
+  i18n: {
+    defaultLocale: defaultLang,
+    locales: Object.keys(ui),
+    routing: "manual"
+  },
   markdown: {
     shikiConfig: {
       theme: "dracula",
