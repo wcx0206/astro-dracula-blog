@@ -1,5 +1,5 @@
 import type { PostSearchItem, Post } from "../schemas";
-import { getDescFromMdString } from "./markdown";
+import { getDescFromMdString } from "../utils/markdown";
 import { defaultLang } from "../i18n/ui";
 
 /**
@@ -33,7 +33,7 @@ export const getPostsFilteredByLang = async (posts: Post[], expectedLang: string
     const slugWithoutLang = rest.join("/");
     const supportedLangs = supportedLangsMap.get(slugWithoutLang) || [];
     const [postLang] = post.slug.split("/");
-    
+
     return postLang === expectedLang ||
       (!supportedLangs.includes(expectedLang) && postLang === defaultLang) ||
       (!supportedLangs.includes(expectedLang) && !supportedLangs.includes(defaultLang) && postLang === supportedLangs[0]);
@@ -60,7 +60,7 @@ export const getSortedPostSearchItemsWithLang = async (posts: Post[], expectedLa
     const [, ...rest] = post.slug.split("/");
     const slugWithoutLang = rest.join("/");
     const supportedLangs = supportedLangsMap.get(slugWithoutLang) || [];
-    
+
     let lang = expectedLang;
     if (!supportedLangs.includes(expectedLang)) {
       lang = supportedLangs.includes(defaultLang) ? defaultLang : supportedLangs[0];

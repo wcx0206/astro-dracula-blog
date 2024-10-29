@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import { SITE } from './src/config.ts';
 import { ui, defaultLang } from './src/i18n/ui.ts';
-import { remarkDescPlugin } from "./src/scripts/markdown.ts";
+import { remarkDescPlugin } from "./src/utils/markdown.ts";
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
 import rehypeExternalLinks from 'rehype-external-links';
