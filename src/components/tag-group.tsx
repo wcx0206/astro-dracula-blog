@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
 import LabelTag from "./label-tag";
-import type { Lang } from "@/utils/i18n";
+import { type Lang, useTranslations } from "@/utils/i18n";
 
 export default function TagGroup({ lang, tagMap }: { lang: Lang, tagMap: Map<string, number> }) {
+    const t = useTranslations(lang);
     const [query, setQuery] = useState("");
     const [debouncedQuery] = useDebounce(query, 300);
 
@@ -25,7 +26,7 @@ export default function TagGroup({ lang, tagMap }: { lang: Lang, tagMap: Map<str
                 <input
                     id="search"
                     type="text"
-                    placeholder="Search..."
+                    placeholder={t("search.placeholder")}
                     className="bg-dracula-dark/20 placeholder-dracula-blue 
                     text-dracula-light focus:outline-none focus:bg-dracula-dark 
                     hover:bg-dracula-dark px-8 py-4 transition"
