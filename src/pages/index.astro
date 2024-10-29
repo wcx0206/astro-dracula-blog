@@ -1,10 +1,5 @@
 ---
 import { defaultLang, useTranslatedPath } from "@/utils/i18n";
 const translatedPath = useTranslatedPath(defaultLang);
+return Astro.rewrite(translatedPath("/"));
 ---
-
-<html>
-    <head>
-        <meta http-equiv="refresh" content={`0; url=${translatedPath("/")}`} />
-    </head>
-</html>

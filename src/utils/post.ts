@@ -16,6 +16,11 @@ export const getPureSlugFromSlug = (slug: string): PureSlug => {
     return rest.join("/");
 }
 
+/**
+ * Returns a map of which 
+ * - keys are pure slugs and 
+ * - values are posts with that pure slug
+ */
 export const classifyByLangs = (posts: Post[]) => {
     const map = new Map<PureSlug, Post[]>();
     posts.forEach(post => {
