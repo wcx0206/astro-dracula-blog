@@ -1,16 +1,16 @@
 ---
-import PostStack from "../../components/post-stack.tsx";
+import PostStack from "@components/post-stack.tsx";
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/base-layout.astro";
-import { getSortedPostSearchItemsWithLang } from "../../scripts/utils";
-import { ui } from "../../i18n/ui";
+import BaseLayout from "@layouts/base-layout.astro";
+import { getSortedPostSearchItemsWithLang } from "@scripts/utils";
+import { ui } from "@i18n/ui";
 
 const posts = await getCollection("posts");
 
 const { lang } = Astro.props;
 const sortedPostSearchItems = await getSortedPostSearchItemsWithLang(
   posts,
-  lang
+  lang,
 );
 
 export function getStaticPaths() {

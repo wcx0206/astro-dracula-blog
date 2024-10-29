@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
 import LabelTag from "./label-tag";
-import { ui } from "../i18n/ui";
+import { ui } from "@i18n/ui";
 
 export default function TagGroup({ lang, tagMap }: { lang: keyof typeof ui, tagMap: Map<string, number> }) {
     const [query, setQuery] = useState("");

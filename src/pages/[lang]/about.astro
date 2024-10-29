@@ -1,9 +1,9 @@
 ---
-import BaseLayout from "../../layouts/base-layout.astro";
-import Prose from "../../components/prose.astro";
+import BaseLayout from "@layouts/base-layout.astro";
+import Prose from "@components/prose.astro";
 import { getEntry, render } from "astro:content";
-import BusinessCard from "../../components/business-card.tsx";
-import { ui } from "../../i18n/ui";
+import BusinessCard from "@components/business-card.tsx";
+import { ui } from "@i18n/ui";
 
 const { lang } = Astro.props;
 const about = await getEntry("info", `${lang}/about`);

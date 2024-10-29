@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ui } from "../i18n/ui";
+import { ui } from "@i18n/ui";
 
 export default function LabelTag(
     { lang, label, count = 1, type = "tag", size = "normal", animate = false }:

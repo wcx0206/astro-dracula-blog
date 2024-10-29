@@ -1,6 +1,6 @@
 ---
-import { languages } from "../i18n/ui";
-import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+import { languages } from "@i18n/ui";
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
 
 const [lang, urlWithoutLang] = getLangFromUrl(Astro.url.pathname);
 const translatePath = useTranslatedPath(lang as keyof typeof languages);

@@ -3,21 +3,21 @@ import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
 import PostCard from "./post-card";
 import type { PostSearchItem } from "../schemas";
-import { ui } from "../i18n/ui";
+import { ui } from "@i18n/ui";
 
 const fuseOptions = {
     keys: ["slug", "title", "description", "tags"]
 }
 
 export default function PostStack({
-  lang,
-  sortedPostSearchItems,
+    lang,
+    sortedPostSearchItems,
 }: {
-  lang: keyof typeof ui;
-  sortedPostSearchItems: PostSearchItem[];
+    lang: keyof typeof ui;
+    sortedPostSearchItems: PostSearchItem[];
 }) {
-  const [query, setQuery] = useState("");
-  const [debouncedQuery] = useDebounce(query, 300);
+    const [query, setQuery] = useState("");
+    const [debouncedQuery] = useDebounce(query, 300);
 
     let results: PostSearchItem[] = [];
     if (debouncedQuery === "") {

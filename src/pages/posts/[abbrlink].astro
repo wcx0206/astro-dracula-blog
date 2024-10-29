@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import { getPostsFilteredByLang } from "../../scripts/utils";
-import { defaultLang } from "../../i18n/ui";
+import { getPostsFilteredByLang } from "@scripts/utils";
+import { defaultLang } from "@i18n/ui";
 
 export async function getStaticPaths() {
   const postsWithAbbrlink = await getCollection(
     "posts",
-    (post) => post.data.abbrlink
+    (post) => post.data.abbrlink,
   );
 
   const filtered = await getPostsFilteredByLang(postsWithAbbrlink, defaultLang);
