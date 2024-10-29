@@ -41,6 +41,6 @@ const snapshots = Astro.props;
       Posts with tag
       <LabelTag lang={lang} label={tag} size="large" />
     </h1>
-    <PostStack lang={lang} snapshots={snapshots} />
+    <PostStack lang={lang} snapshots={snapshots} client:load />
   </article>
 </BaseLayout>
