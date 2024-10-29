@@ -1,0 +1,10 @@
+---
+import { defaultLang, useTranslatedPath } from "@/utils/i18n";
+const translatedPath = useTranslatedPath(defaultLang);
+---
+
+<html>
+    <head>
+        <meta http-equiv="refresh" content={`0; url=${translatedPath("/")}`} />
+    </head>
+</html>
