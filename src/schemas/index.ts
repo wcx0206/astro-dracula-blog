@@ -20,7 +20,7 @@ export const PostSearchItemSchema = z.object({
   title: z.string(),
   description: z.string(),
   tags: z.array(z.string()),
-  slug: z.string(),
+  slugWithoutLang: z.string(),
   href: z.string(),
   date: z.string(),
 });

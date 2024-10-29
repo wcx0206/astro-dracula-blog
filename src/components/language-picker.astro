@@ -2,16 +2,16 @@
 import { languages } from "../i18n/ui";
 import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
 
-const lang = getLangFromUrl(Astro.url.pathname);
-const translatePath = useTranslatedPath(lang);
+const [lang, urlWithoutLang] = getLangFromUrl(Astro.url.pathname);
+const translatePath = useTranslatedPath(lang as keyof typeof languages);
 ---
 
 <ul>
-    {
-        Object.entries(languages).map(([lang, label]) => (
-            <li>
-                <a href={translatePath("/", lang)}>{label}</a>
-            </li>
-        ))
-    }
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a href={translatePath(`/${urlWithoutLang}`, lang)}>{label}</a>
+      </li>
+    ))
+  }
 </ul>

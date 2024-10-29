@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
 import LabelTag from "./label-tag";
+import { ui } from "../i18n/ui";
 
-export default function TagGroup({ tagMap }: { tagMap: Map<string, number> }) {
+export default function TagGroup({ lang, tagMap }: { lang: keyof typeof ui, tagMap: Map<string, number> }) {
     const [query, setQuery] = useState("");
     const [debouncedQuery] = useDebounce(query, 300);
 
@@ -38,11 +39,11 @@ export default function TagGroup({ tagMap }: { tagMap: Map<string, number> }) {
                         Array.from(tagMap.entries())
                             .sort((a, b) => b[1] - a[1])
                             .map(([tag, count]) => (
-                                <LabelTag label={tag} count={count} type="link" key={tag} animate={true} />
+                                <LabelTag lang={lang} label={tag} count={count} type="link" key={tag} animate={true} />
                             ))
                         :
                         results.map((tag) => (
-                            <LabelTag label={tag} count={tagMap.get(tag)} type="link" key={tag} animate={true} />
+                            <LabelTag lang={lang} label={tag} count={tagMap.get(tag)} type="link" key={tag} animate={true} />
                         ))
                 }
             </div>

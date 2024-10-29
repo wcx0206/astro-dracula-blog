@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../../layouts/base-layout.astro";
+import PostStack from "../../../components/post-stack.tsx";
+import LabelTag from "../../../components/label-tag.tsx";
+import { getCollection } from "astro:content";
+import {
+  getUniqueLowerCaseTagMap,
+  getSortedPostSearchItemsWithLang,
+} from "../../../scripts/utils";
+import { ui } from "../../../i18n/ui";
+import type { PostSearchItem } from "../../../schemas";
+const { lang, tag } = Astro.params;
+const { relatedPosts } = Astro.props;
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  const paths: {
+    params: {
+      lang: keyof typeof ui;
+      tag: string;
+    };
+    props: {
+      relatedPosts: PostSearchItem[];
+    };
+  }[] = [];
+
+  const allTags = getUniqueLowerCaseTagMap(
+    (await getSortedPostSearchItemsWithLang(posts, Object.keys(ui)[0]))
+      .map((post) => post.tags)
+      .flat()
+  );
+
+  for (const tag of allTags.keys()) {
+    for (const lang of Object.keys(ui)) {
+      const postSearchItemsWithLang = await getSortedPostSearchItemsWithLang(
+        posts,
+        lang
+      );
+      const relatedPosts = postSearchItemsWithLang.filter((item) =>
+        item.tags.includes(tag)
+      );
+      paths.push({
+        params: { lang: lang as keyof typeof ui, tag },
+        props: { relatedPosts },
+      });
+    }
+  }
+  return paths;
+}
+---
+
+<BaseLayout>
+  <article>
+    <h1 class="text-4xl font-black text-dracula-light mb-10 mx-auto">
+      Posts with tag
+      <LabelTag lang={lang} label={tag} size="large" />
+    </h1>
+    <PostStack lang={lang} sortedPostSearchItems={relatedPosts} client:load />
+  </article>
+</BaseLayout>

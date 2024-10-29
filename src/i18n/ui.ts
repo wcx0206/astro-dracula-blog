@@ -4,7 +4,6 @@ export const languages = {
 };
 
 export const defaultLang = "en";
-export const showDefaultLang = false;
 
 export const ui = {
     en: {
@@ -16,5 +15,5 @@ export const ui = {
         "nav.home": "首页",
         "nav.tags": "标签",
         "nav.about": "关于",
-    }
+  },
 } as const;
