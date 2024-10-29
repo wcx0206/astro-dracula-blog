@@ -10,11 +10,13 @@ export const ui = {
         "nav.home": "Home",
         "nav.tags": "Tags",
         "nav.about": "About",
+        "search.placeholder": "Search...",
     },
     zh: {
         "nav.home": "首页",
         "nav.tags": "标签",
         "nav.about": "关于",
+        "search.placeholder": "搜索...",
     },
 } as const;
 
