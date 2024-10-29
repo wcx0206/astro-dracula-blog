@@ -9,6 +9,7 @@ import {
   makeUniqueByLang,
 } from "@/utils/post";
 import { ui, type Lang } from "@/utils/i18n";
+import { useTranslations } from "@/utils/i18n";
 
 export const getStaticPaths = async () => {
   const paths = await Promise.all(
@@ -29,12 +30,15 @@ const filteredPosts = await getCollection("posts", (post) =>
   getUniqueLowerCaseTagMap(post.data.tags).get(tag),
 );
 const filteredSnapshots = await getSnapshots(filteredPosts, lang as Lang);
+const t = useTranslations(lang as Lang);
 ---
 
 <BaseLayout>
   <article>
-    <h1 class="text-4xl font-black text-dracula-light mb-10 mx-auto">
-      Posts with tag
+    <h1
+      class="text-4xl font-black text-dracula-light mb-10 mx-auto leading-loose"
+    >
+      {t("postsWithTag")}
       <LabelTag lang={lang as Lang} label={tag} size="large" />
     </h1>
     <PostStack lang={lang as Lang} snapshots={filteredSnapshots} client:load />

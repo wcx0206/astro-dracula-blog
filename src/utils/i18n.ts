@@ -11,15 +11,16 @@ export const ui = {
         "nav.tags": "Tags",
         "nav.about": "About",
         "search.placeholder": "Search...",
-        "search.noResults": "No results found"
-
+        "search.noResults": "No results found",
+        "postsWithTag": "Posts with tag",
     },
     zh: {
         "nav.home": "首页",
         "nav.tags": "标签",
         "nav.about": "关于",
         "search.placeholder": "搜索...",
-        "search.noResults": "没有找到结果"
+        "search.noResults": "没有找到结果",
+        "postsWithTag": "带有以下标签的文章",
     },
 } as const;
 
