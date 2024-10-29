@@ -11,12 +11,15 @@ export const ui = {
         "nav.tags": "Tags",
         "nav.about": "About",
         "search.placeholder": "Search...",
+        "search.noResults": "No results found"
+
     },
     zh: {
         "nav.home": "首页",
         "nav.tags": "标签",
         "nav.about": "关于",
         "search.placeholder": "搜索...",
+        "search.noResults": "没有找到结果"
     },
 } as const;
 

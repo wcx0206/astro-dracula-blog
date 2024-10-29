@@ -4,7 +4,7 @@ import Fuse from "fuse.js";
 
 import PostCard from "./post-card";
 import type { PostSnapshot } from "@/schemas/post";
-import { ui, useTranslations, type Lang } from "@/utils/i18n";
+import { useTranslations, type Lang } from "@/utils/i18n";
 
 const fuseOptions = {
     keys: ["slug", "title", "description", "tags"]
@@ -50,7 +50,7 @@ export default function PostStack({
             </div>
             {results.length > 0 ? results.map((snapshot) =>
                 <PostCard lang={lang} snapshot={snapshot} animate={true} key={snapshot.pureSlug} />
-            ) : <p>No results found</p>}
+            ) : <p>{t('search.noResults')}</p>}
         </div>
     );
 }
