@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import avatarImage from "../assets/avatar.png";
+import avatarImage from "@/assets/avatar.png";
 import { AUTHOR, SOCIALS } from "../config";
 
 export default function BusinessCard() {

@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { PostFrontmatterSchema } from '../schemas';
+import { PostFrontmatterSchema } from '@/schemas/post';
 
 const postsCollection = defineCollection({
     type: 'content',

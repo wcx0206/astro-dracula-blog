@@ -1,22 +1,31 @@
 import { useState } from "react";
 import { useDebounce } from 'use-debounce';
 import Fuse from "fuse.js";
+
 import PostCard from "./post-card";
-import type { PostSearchItem } from "../schemas";
+import type { PostSnapshot } from "@/schemas/post";
+import { useTranslations, type Lang } from "@/utils/i18n";
 
 const fuseOptions = {
     keys: ["slug", "title", "description", "tags"]
 }
 
-export default function PostStack({ sortedPostSearchItems }: { sortedPostSearchItems: PostSearchItem[] }) {
+export default function PostStack({
+    lang,
+    snapshots,
+}: {
+    lang: Lang,
+    snapshots: PostSnapshot[],
+}) {
+    const t = useTranslations(lang);
     const [query, setQuery] = useState("");
     const [debouncedQuery] = useDebounce(query, 300);
 
-    let results: PostSearchItem[] = [];
+    let results: PostSnapshot[] = [];
     if (debouncedQuery === "") {
-        results = sortedPostSearchItems;
+        results = snapshots;
     } else {
-        const fuse = new Fuse(sortedPostSearchItems, fuseOptions);
+        const fuse = new Fuse(snapshots, fuseOptions);
         results = fuse.search(debouncedQuery).map((result) => result.item).slice(0, 5);
     }
 
@@ -31,7 +40,7 @@ export default function PostStack({ sortedPostSearchItems }: { sortedPostSearchI
                 <input
                     id="search"
                     type="text"
-                    placeholder="Search..."
+                    placeholder={t('search.placeholder')}
                     className="bg-dracula-dark/20 placeholder-dracula-blue 
                     text-dracula-light focus:outline-none focus:bg-dracula-dark 
                     hover:bg-dracula-dark px-8 py-4 transition"
@@ -39,9 +48,9 @@ export default function PostStack({ sortedPostSearchItems }: { sortedPostSearchI
                     onChange={handleOnSearch}
                 />
             </div>
-            {results.length > 0 ? results.map((postSearchItem) =>
-                <PostCard postSearchItem={postSearchItem} animate={true} key={postSearchItem.slug} />
-            ) : <p>No results found</p>}
+            {results.length > 0 ? results.map((snapshot) =>
+                <PostCard lang={lang} snapshot={snapshot} animate={true} key={snapshot.pureSlug} />
+            ) : <p>{t('search.noResults')}</p>}
         </div>
     );
 }

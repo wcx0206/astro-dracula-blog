@@ -1,18 +1,30 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import "../styles/global.css";
-import "../styles/rehype-github-alerts.css";
-import Moon from "../components/icons/moon.astro";
-import Rss from "../components/icons/rss.astro";
+
+import "@/styles/global.css";
+import "@/styles/rehype-github-alerts.css";
+import Moon from "@/components/icons/moon.astro";
+import Rss from "@/components/icons/rss.astro";
+import LanguagePicker from "@/components/language-picker.astro";
+
 import { SITE } from "../config";
+import {
+  ui,
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@/utils/i18n";
 
 const { title } = Astro.props;
+const [lang] = getLangFromUrl(Astro.url.pathname);
+const t = useTranslations(lang as keyof typeof ui);
+const translatePath = useTranslatedPath(lang as keyof typeof ui);
 const pageTitle = title
   ? `${title} | ${SITE.title}`
   : `${SITE.title} | ${SITE.description}`;
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -49,7 +61,7 @@ const pageTitle = title
     >
       <div class="flex gap-2 itmes-center justify-center">
         <a
-          href="/"
+          href={translatePath("/")}
           class="flex items-center justify-center md:justify-start gap-2 font-black text-2xl
           text-dracula-light hover:text-dracula-pink transition"
         >
@@ -70,13 +82,40 @@ const pageTitle = title
         class="flex justify-center md:justify-end items-center gap-4 text-dracula-light
         underline underline-offset-4"
       >
-        <a class="hover:text-dracula-pink transition" href="/">Home</a>
-        <a class="hover:text-dracula-pink transition" href="/tags">Tags</a>
-        <a class="hover:text-dracula-pink transition" href="/about">About</a>
+        <a class="hover:text-dracula-pink transition" href={translatePath("/")}>
+          {t("nav.home")}
+        </a>
+        <a
+          class="hover:text-dracula-pink transition"
+          href={translatePath("/tags")}
+        >
+          {t("nav.tags")}
+        </a>
+        <a
+          class="hover:text-dracula-pink transition"
+          href={translatePath("/about")}
+        >
+          {t("nav.about")}
+        </a>
       </div>
     </header>
     <main>
       <slot />
     </main>
+    <footer class="mt-14 flex flex-col items-center gap-2 w-full">
+      <h4 class="text-lg">
+        {SITE.title}
+      </h4>
+      <p class="text-sm">
+        Powered by
+        <a
+          href="https://astro.build/"
+          target="_blank"
+          rel="nofollow"
+          class="hover:text-dracula-pink transition">Astro</a
+        >
+      </p>
+      <LanguagePicker />
+    </footer>
   </body>
 </html>

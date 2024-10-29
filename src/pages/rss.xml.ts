@@ -2,7 +2,7 @@ import { SITE } from '../config.ts';
 import { AUTHOR } from '../config.ts';
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { getDescFromMdString } from '../scripts/markdown.ts';
+import { getDescFromMdString } from 'src/utils/markdown.ts';
 
 export async function GET(context: any) {
     const posts = await getCollection('posts');

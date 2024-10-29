@@ -1,8 +1,5 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import { SITE } from './src/config.ts';
-
-import { remarkDescPlugin } from "./src/scripts/markdown.ts";
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -13,9 +10,18 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from '@astrojs/tailwind';
 import partytown from "@astrojs/partytown";
 
+import { SITE } from './src/config.ts';
+import { defaultLang, ui } from './src/utils/i18n.ts';
+import { remarkDescPlugin } from "./src/utils/markdown.ts";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.url,
+  i18n: {
+    defaultLocale: defaultLang,
+    locales: Object.keys(ui),
+    routing: "manual"
+  },
   markdown: {
     shikiConfig: {
       theme: "dracula",

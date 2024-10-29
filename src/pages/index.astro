@@ -1,13 +1,10 @@
 ---
-import PostStack from "../components/post-stack.tsx";
-import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/base-layout.astro";
-import { getSortedPostSearchItems } from "../scripts/utils";
-
-const posts = await getCollection("posts");
-const sortedPostSearchItems = await getSortedPostSearchItems(posts);
+import { defaultLang, useTranslatedPath } from "@/utils/i18n";
+const translatedPath = useTranslatedPath(defaultLang);
 ---
 
-<BaseLayout>
-  <PostStack sortedPostSearchItems={sortedPostSearchItems} client:load />
-</BaseLayout>
+<html>
+    <head>
+        <meta http-equiv="refresh" content={`0; url=${translatedPath("/")}`} />
+    </head>
+</html>
