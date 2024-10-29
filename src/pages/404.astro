@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "@/layouts/base-layout.astro";
+import { defaultLang, useTranslatedPath } from "@/utils/i18n";
+const translatePath = useTranslatedPath(defaultLang);
 ---
 
 <BaseLayout>
@@ -7,7 +9,7 @@ import BaseLayout from "@/layouts/base-layout.astro";
     <h1 class="text-9xl mb-5 font-black text-dracula-pink font-mono">404</h1>
     <p class="text-4xl font-bold">PAGE NOT FOUND</p>
     <a
-      href="/"
+      href={translatePath("/")}
       class="text-lg underline underline-offset-4 text-dracula-cyan mt-10
                 hover:text-dracula-purple transition-colors"
     >
