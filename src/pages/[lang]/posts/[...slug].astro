@@ -1,24 +1,37 @@
 ---
 import MarkdownPost from "@/components/markdown-post.astro";
 import BaseLayout from "@/layouts/base-layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
+import { classifyByLangs } from "@/utils/post";
+import { ui, defaultLang, getLangFromUrl } from "@/utils/i18n";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
+  const classified = classifyByLangs(posts);
 
-  const paths = posts.map((post) => {
-    const [lang, ...slug] = post.slug.split("/");
-    return {
-      params: { lang, slug: slug.join("/") || undefined },
-      props: post,
-    };
-  });
-
+  const paths = [];
+  for (const lang of Object.keys(ui)) {
+    for (const pureSlug of classified.keys()) {
+      paths.push({
+        params: { lang, slug: pureSlug },
+        props: { post: await getEntry("posts", `${lang}/${pureSlug}`) },
+      });
+    }
+  }
   return paths;
 }
 
-const post = Astro.props;
-const { lang } = Astro.params;
+const { post } = Astro.props;
+const { lang, slug } = Astro.params;
+const [currentLang] = getLangFromUrl(Astro.url.pathname);
+
+// TODO: support more langs
+if (!post) {
+  if (currentLang !== defaultLang) {
+    return Astro.redirect(`/${defaultLang}/posts/${slug}`);
+  }
+  return Astro.redirect(`/zh/posts/${slug}`);
+}
 ---
 
 <BaseLayout title={post.data.title}>

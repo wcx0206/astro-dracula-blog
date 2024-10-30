@@ -40,7 +40,7 @@ export function getLangFromUrl(url: string) {
     return [defaultLang as keyof typeof ui, urlWithoutLang];
 }
 
-export function useTranslations(lang: keyof typeof ui) {
+export function useTranslations(lang: Lang) {
     return function t(key: keyof typeof ui[typeof lang]) {
         return ui[lang][key] || ui[defaultLang][key];
     }
