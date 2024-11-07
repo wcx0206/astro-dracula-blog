@@ -8,12 +8,13 @@ My blog built with Astro.
 - [x] :star: Simple & Clean Design
 - [x] :iphone: Responsive Design
 - [x] :vampire_man: Dracula Theme
-- [x] :zap: Animations created with Framer Motion
-- [x] :mag: Fuzzy Search
+- [x] :zap: Animations created with [Framer Motion](https://www.framer.com/motion/)
+- [x] :mag: Fuzzy Search built with [fuse.js](https://www.fusejs.io/)
 - [x] :world_map: Sitemap & RSS Feed
 - [x] :spider_web: SEO-Friendly
 - [x] :earth_asia: I18n-Supported (`zh` & `en`)
 - [x] :triangular_ruler: Mathjax Supported
+- [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
 - [ ] :book: TOC
 
 ## The Story
