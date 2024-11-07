@@ -1,17 +1,20 @@
-# Astro Blog
+# Astro Dracula Blog
 
 My blog built with Astro.
 
 ## Features
 
-- :rocket: Fast & High Performance
-- :star: Simple, Clean & Fluent Design
-- :iphone: Responsive Design
-- :vampire_man: Dracula Theme
-- :mag: Fuzzy Search
-- :world_map: Sitemap & RSS Feed
-- :spider_web: SEO-Friendly
-- :earth_asia: I18n-Supported (`zh` & `en`)
+- [x] :rocket: Fast & High Performance
+- [x] :star: Simple & Clean Design
+- [x] :iphone: Responsive Design
+- [x] :vampire_man: Dracula Theme
+- [x] :zap: Animations created with Framer Motion
+- [x] :mag: Fuzzy Search
+- [x] :world_map: Sitemap & RSS Feed
+- [x] :spider_web: SEO-Friendly
+- [x] :earth_asia: I18n-Supported (`zh` & `en`)
+- [x] :triangular_ruler: Mathjax Supported
+- [ ] :book: TOC
 
 ## The Story
 
