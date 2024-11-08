@@ -35,7 +35,7 @@ export default function TocCard({ headings, lang }: { headings: MarkdownHeading[
     return (
         <div className="flex p-8 bg-dracula-dark/20 flex-col gap-4">
             <h2 className="text-2xl font-bold">{t('toc')}</h2>
-            <ul className="space-y-2">
+            <ul className="space-y-2 max-h-96 overflow-y-auto">
                 {filtered.map((heading, index) => (
                     <li key={index} style={{ marginLeft: `${heading.depth - 2}rem` }}>
                         <a
