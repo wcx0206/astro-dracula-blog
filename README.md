@@ -15,7 +15,7 @@ My blog built with Astro.
 - [x] :earth_asia: I18n-Supported (`zh` & `en`)
 - [x] :triangular_ruler: Mathjax Supported
 - [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
-- [ ] :book: TOC
+- [x] :book: TOC
 
 ## The Story
 
