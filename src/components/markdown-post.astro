@@ -22,9 +22,13 @@ const { Content } = await render(post);
     }
   </div>
 
-  <div class="flex 2xl:hidden mt-10">
-    <TocCard headings={headings} lang={lang} client:load />
-  </div>
+  {
+    headings && headings.length > 0 && (
+      <div class="flex 2xl:hidden mt-10">
+        <TocCard headings={headings} lang={lang} client:load />
+      </div>
+    )
+  }
 
   <div class="mt-10">
     <Prose>
