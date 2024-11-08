@@ -1,9 +1,10 @@
 ---
 import MarkdownPost from "@/components/markdown-post.astro";
+import TocCard from "@/components/toc-card.tsx";
 import BaseLayout from "@/layouts/base-layout.astro";
 import { getCollection, getEntry } from "astro:content";
 import { classifyByLangs } from "@/utils/post";
-import { ui, defaultLang, getLangFromUrl } from "@/utils/i18n";
+import { ui, defaultLang, getLangFromUrl, type Lang } from "@/utils/i18n";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -12,16 +13,18 @@ export async function getStaticPaths() {
   const paths = [];
   for (const lang of Object.keys(ui)) {
     for (const pureSlug of classified.keys()) {
+      const entry = await getEntry("posts", `${lang}/${pureSlug}`);
+      const headings = (await entry?.render())?.headings || [];
       paths.push({
         params: { lang, slug: pureSlug },
-        props: { post: await getEntry("posts", `${lang}/${pureSlug}`) },
+        props: { post: entry, headings },
       });
     }
   }
   return paths;
 }
 
-const { post } = Astro.props;
+const { post, headings } = Astro.props;
 const { lang, slug } = Astro.params;
 const [currentLang] = getLangFromUrl(Astro.url.pathname);
 
@@ -35,5 +38,10 @@ if (!post) {
 ---
 
 <BaseLayout title={post.data.title}>
-  <MarkdownPost post={post} lang={lang} />
+  <div class="relative">
+    <div class="hidden xl:block fixed right-72 top-30 w-72">
+      <TocCard headings={headings} lang={lang as Lang} client:load />
+    </div>
+    <MarkdownPost post={post} lang={lang} />
+  </div>
 </BaseLayout>
