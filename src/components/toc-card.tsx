@@ -12,7 +12,6 @@ export default function TocCard({ headings, lang }: { headings: MarkdownHeading[
         const callback = (entries: IntersectionObserverEntry[]) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    console.log(entry.target.id);
                     setActiveId(entry.target.id);
                 }
             });
