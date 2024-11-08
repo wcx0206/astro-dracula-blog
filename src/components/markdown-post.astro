@@ -2,9 +2,10 @@
 import { render } from "astro:content";
 import DateTag from "./date-tag.tsx";
 import LabelTag from "./label-tag.tsx";
+import TocCard from "./toc-card";
 import Prose from "./prose.astro";
 import { getUniqueLowerCaseTagMap } from "@/utils/post";
-const { lang, post } = Astro.props;
+const { lang, post, headings } = Astro.props;
 const { Content } = await render(post);
 ---
 
@@ -19,6 +20,10 @@ const { Content } = await render(post);
         <LabelTag lang={lang} label={tag} type="link" />
       ))
     }
+  </div>
+
+  <div class="flex 2xl:hidden mt-10">
+    <TocCard headings={headings} lang={lang} client:load />
   </div>
 
   <div class="mt-10">

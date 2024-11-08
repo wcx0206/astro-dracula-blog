@@ -39,9 +39,9 @@ if (!post) {
 
 <BaseLayout title={post.data.title}>
   <div class="relative">
-    <div class="hidden xl:block fixed right-10 top-10 w-72">
+    <div class="hidden 2xl:block fixed right-10 top-10 w-72">
       <TocCard headings={headings} lang={lang as Lang} client:load />
     </div>
-    <MarkdownPost post={post} lang={lang} />
+    <MarkdownPost post={post} lang={lang} headings={headings} />
   </div>
 </BaseLayout>
