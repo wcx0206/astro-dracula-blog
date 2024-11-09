@@ -202,7 +202,7 @@ update-alternatives --config editor # 并在菜单中选择 vim
 
 - Java: [`sdkman`](https://sdkman.io/) 等
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm) 等
-- Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/) 等（我也写了一篇[博客文章](/posts/c7d1762.html)关于这个）。
+- Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/) 等（关于这个我也写了一篇[文章](/posts/managing-multiple-python-versions-with-pyenv-and-conda)）。
 
 ### Dotfiles：持久化您的应用配置
 
