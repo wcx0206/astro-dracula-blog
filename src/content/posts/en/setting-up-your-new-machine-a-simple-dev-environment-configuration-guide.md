@@ -74,8 +74,8 @@ adduser username sudo
 A good programming font can make a world of difference. Look for fonts with features like:
 
 - Mono spacing
-- Easily distinguishable characters (so that you can easily tell the difference between `l` and `I`, `O` and `0`, etc.)
-- Ligature support
+- Easily distinguishable characters (so that you can easily tell the difference between `1`, `l` and `I`, `O` and `0`, etc.)
+- Ligature support (Optional)
 
 Moreover, a font collection called "[Nerd Fonts](https://www.nerdfonts.com/)" provides many patched fonts with icons, which are very useful in the terminal.
 
@@ -141,8 +141,7 @@ If you want to install `bash` on Windows, you may use [`git bash`](https://git-s
 
 I haven't yet found a good way to install `fish` on Windows. If you know how to do that, please let me know by leaving a comment or sending me an [email](mailto:i@blocklune.cc).
 
-
-> [!DANGER]
+> [!Caution]
 > Another thing you may need to attention is the character set used on your Windows platform. If you are a Chinese CS student using Chinese Windows, the default character set of your system is usually not UTF-8. So you may encounter a [mojibake](https://en.wikipedia.org/wiki/Mojibake) issue. You can add the lines to the very head of your `~/.zshrc` which enables UTF-8 in your terminal to fix this issue:
 >
 > ```text
@@ -170,8 +169,7 @@ On the Mac, however, you need to download and install a package manager. The mos
 
 The concept of "package manager" explained above is really dirty and loose. To be more precise, the above package managers are system-wide. There are many more package managers in various tech stacks. For example, `npm` in node.js projects and `cargo` in rust projects, etc.
 
-
-> [!TIP]
+> [!Tip]
 > For Chinese users, a common headache is the physical distance from the server, which leads to problems such as poor network signal and consequently slow download speeds, or even timeouts, and ultimately the inability to download packages properly using a package manager. In this case, you can use a mirror site. In the past, we had to manually modify a bunch of configuration files for different package managers. But now you can use a tool called [`chsrc`](https://github.com/RubyMetric/chsrc).
 
 ### Gsudo: A Third Party `sudo` for Windows
@@ -230,6 +228,9 @@ ssh username@hostname
 
 By default, you must enter the password each time you connect to the server. You can omit this annoying step by using SSH keys. To do this: use the `ssh-keygen` command to generate a pair of keys on your local machine, and use the `ssh-copy-id` command to copy the public key to the server. You will be prompted to enter the password for the last time. You can then connect to the server without entering the password.
 
-
-> [!INFO]
+> [!Note]
 > Note: I put the section about SSH in the server-side configuration, but the commands we use here are supposed to be run on the client side.
+
+## Summary
+
+Configuring an efficient development environment is an ongoing process. Over time, you will discover new tools and methods to further optimize your workflow. I hope this guide has provided you with a good starting point and helped make your development process more efficient and enjoyable. If you have any questions or suggestions, feel free to contact me via [email](mailto:i@blocklune.cc). Have fun coding!

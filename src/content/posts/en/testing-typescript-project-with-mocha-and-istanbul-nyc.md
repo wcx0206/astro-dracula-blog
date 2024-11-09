@@ -114,7 +114,7 @@ First, install `cross-env` and `tsx`:
 npm install --save-dev cross-env tsx
 ```
 
-> [!INFO]
+> [!Note]
 > [cross-env](https://www.npmjs.com/package/cross-env) is a useful tool for setting environment variables across platforms.
 
 

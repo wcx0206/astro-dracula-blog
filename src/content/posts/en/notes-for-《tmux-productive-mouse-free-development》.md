@@ -128,7 +128,7 @@ Press `Prefix` `&` or type `exit` to close the current window.
 ### Working with Panes
 
 
-> [!INFO]
+> [!Note]
 > **What's the difference between panes and windows?**
 >
 > ChatGPT:

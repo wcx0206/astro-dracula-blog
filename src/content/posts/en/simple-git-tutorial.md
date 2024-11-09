@@ -144,7 +144,7 @@ git rm --cached <file>
 ```
 
 
-> [!INFO]
+> [!Note]
 > `git reset` is equivalent to `git restore --staged :/`. `git reset <file>` is equivalent to `git restore --staged <file>`. But `git rm --cached <file>` is unique. Actually, it means remove `<file>` from the `Staging Area`, while the other two commands move `<file>` in the `Staging Area` back to the `Working Directory`.
 
 ## Checking Status
@@ -224,7 +224,7 @@ git commit
 ```
 
 
-> [!INFO]
+> [!Note]
 > The links below maybe helpful if you want to write better commit messages:
 >
 > - \_[How to Write Better Git Commit Messages – A Step-By-Step Guide](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
@@ -255,7 +255,7 @@ git log
 
 ## Discarding Changes in Working
 
-> [!DANGER]
+> [!Caution]
 > In Git, it's usually easy to restore the files have been committed, but usually **very hard** to restore the files haven't been committed.
 
 To discard changes in working, run:

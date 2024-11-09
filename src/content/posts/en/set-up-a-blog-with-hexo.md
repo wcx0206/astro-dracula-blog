@@ -422,7 +422,7 @@ Here are some old content migrated from my previous Icarus blog.
   ```
 
 
-> [!DANGER]
+> [!Caution]
 > This operation modifies the node module! So it's NOT recommended.
 
 - Officially supported tags in Icarus

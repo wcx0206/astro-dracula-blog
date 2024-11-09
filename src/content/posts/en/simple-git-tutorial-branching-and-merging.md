@@ -95,7 +95,7 @@ git push origin --delete <branch_name>
 ```
 
 
-> [!INFO]
+> [!Note]
 > There is no direct command to rename a remote branch. But you can do it like this:
 >
 > ```bash
