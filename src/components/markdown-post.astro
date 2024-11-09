@@ -24,7 +24,7 @@ const { Content } = await render(post);
 
   {
     headings && headings.length > 0 && (
-      <div class="flex 2xl:hidden mt-10">
+      <div class="block 2xl:hidden mt-10">
         <TocCard headings={headings} lang={lang} client:load />
       </div>
     )
