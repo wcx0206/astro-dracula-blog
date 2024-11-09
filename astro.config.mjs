@@ -29,7 +29,6 @@ export default defineConfig({
       langAlias: {
         "C": "c",
         "zshrc": "zsh",
-        "hdl": "plaintext",
       }
     },
     remarkPlugins: [remarkDescPlugin, remarkMath],
