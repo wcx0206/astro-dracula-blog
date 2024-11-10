@@ -79,24 +79,28 @@ const pageTitle = title
         </a>
       </div>
       <div
-        class="flex justify-center md:justify-end items-center gap-4 text-dracula-light
-        underline underline-offset-4"
+        class="flex justify-center md:justify-end items-center gap-4 text-dracula-light"
       >
-        <a class="hover:text-dracula-pink transition" href={translatePath("/")}>
+        <a
+          class="hover:text-dracula-pink transition underline underline-offset-4"
+          href={translatePath("/")}
+        >
           {t("nav.home")}
         </a>
         <a
-          class="hover:text-dracula-pink transition"
+          class="hover:text-dracula-pink transition underline underline-offset-4"
           href={translatePath("/tags")}
         >
           {t("nav.tags")}
         </a>
         <a
-          class="hover:text-dracula-pink transition"
+          class="hover:text-dracula-pink transition underline underline-offset-4"
           href={translatePath("/about")}
         >
           {t("nav.about")}
         </a>
+        |
+        <LanguagePicker />
       </div>
     </header>
     <main>
@@ -115,7 +119,6 @@ const pageTitle = title
           class="hover:text-dracula-pink transition">Astro</a
         >
       </p>
-      <LanguagePicker />
     </footer>
   </body>
 </html>
