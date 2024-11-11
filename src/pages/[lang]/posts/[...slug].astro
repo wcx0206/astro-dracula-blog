@@ -31,9 +31,9 @@ const [currentLang] = getLangFromUrl(Astro.url.pathname);
 // TODO: support more langs
 if (!post) {
   if (currentLang !== defaultLang) {
-    return Astro.redirect(`/${defaultLang}/posts/${slug}`);
+    return Astro.rewrite(`/${defaultLang}/posts/${slug}`);
   }
-  return Astro.redirect(`/zh/posts/${slug}`);
+  return Astro.rewrite(`/zh/posts/${slug}`);
 }
 ---
 

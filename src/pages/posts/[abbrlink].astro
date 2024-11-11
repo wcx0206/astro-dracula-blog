@@ -10,7 +10,7 @@ import { defaultLang } from "@/utils/i18n";
 export async function getStaticPaths() {
   const postsWithAbbrlink = await getCollection(
     "posts",
-    (post) => post.data.abbrlink,
+    (post) => post.data.abbrlink
   );
 
   const uniquePosts = makeUniqueByLang(postsWithAbbrlink, defaultLang);

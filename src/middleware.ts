@@ -1,5 +1,4 @@
 import { defineMiddleware, sequence } from "astro:middleware";
-import { middleware } from "astro:i18n";
 import { defaultLang } from "@/utils/i18n";
 
 export const userMiddleware = defineMiddleware(async (ctx, next) => {
@@ -16,12 +15,6 @@ export const userMiddleware = defineMiddleware(async (ctx, next) => {
   return ctx.rewrite(`/${defaultLang}${path}`);
 });
 
-
 export const onRequest = sequence(
-  userMiddleware,
-  middleware({
-    redirectToDefaultLocale: false,
-    prefixDefaultLocale: true,
-    fallbackType: "rewrite"
-  })
+  userMiddleware
 )
