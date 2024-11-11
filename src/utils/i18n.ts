@@ -14,6 +14,8 @@ export const ui = {
         "search.noResults": "No results found",
         "postsWithTag": "Posts with tag",
         "toc": "Table of Content",
+        "pageNotFound": "PAGE NOT FOUND",
+        "goBackHome": "Go Back Home",
     },
     zh: {
         "nav.home": "首页",
@@ -23,6 +25,8 @@ export const ui = {
         "search.noResults": "没有找到结果",
         "postsWithTag": "带有以下标签的文章",
         "toc": "目录",
+        "pageNotFound": "未找到此页面",
+        "goBackHome": "返回首页",
     },
 } as const;
 
