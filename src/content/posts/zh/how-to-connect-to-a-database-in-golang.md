@@ -4,6 +4,7 @@ tags:
 - programming-language
 - golang
 - database
+date: 2024-11-11 19:05:00
 ---
 
 本文以 MySQL 和 PostgreSQL 为例，介绍了如何在 Golang 中连接数据库。
@@ -138,7 +139,6 @@ func initDb() {
     if err != nil {
        panic(err)
     }
-    defer db.Close()
 
     // check the connection
     err = db.Ping()
@@ -150,6 +150,10 @@ func initDb() {
 
 func main() {
     initDb()
+
+    // do something ...
+
+    db.Close()
 }
 ```
 
@@ -238,7 +242,7 @@ VALUES ('i@blocklune.cc', 'password123');
 首先是 MySQL：
 
 ```go
-func insertData(email, password string) {
+func insertData(email, password string) error {
     query := `
     INSERT INTO users (email, password)
     VALUES (?, ?)
@@ -246,15 +250,17 @@ func insertData(email, password string) {
 
     _, err := db.Exec(query, email, password)
     if err != nil {
-        panic(err)
+        return err
     }
+
+    return nil
 }
 ```
 
 接着是 PostgreSQL：
 
 ```go
-func insertData(email, password string) {
+func insertData(email, password string) error {
     query := `
     INSERT INTO users (email, password)
     VALUES ($1, $2)
@@ -262,24 +268,26 @@ func insertData(email, password string) {
 
     _, err := db.Exec(query, email, password)
     if err != nil {
-        panic(err)
+        return err
     }
+
+    return nil
 }
 ```
 
-可以看到 MySQL 中使用 `?` 作为占位符，而 PostgreSQL 中用的是 `$1`, `$2` 等。
+可以看到 MySQL 中使用 `?` 作为占位符，而 PostgreSQL 中用的是 `$1`, `$2` 等。从现在开始，下面的代码均 **默认使用 MySQL 语句**，您需要替换占位符以适配 PostgreSQL。
 
 事实上，`Exec()` 的执行结果返回了两个值。我们上面一直只使用了第二个 `error` 类型的值，判断语句执行是否出错。而第一个值的类型为 [`Result`](https://pkg.go.dev/database/sql#Result)，借助它，我们可以获取诸如 “最后插入记录的 ID” 等信息：
 
 ```go
 result, err := db.Exec(query, email, password)
 if err != nil {
-    panic(err)
+    return err
 }
 
 userId, err := result.LastInsertId()
 if err != nil {
-    panic(err)
+    return err
 }
 ```
 
@@ -290,22 +298,133 @@ if err != nil {
 ```go
 stmt, err := db.Prepare(query)
 if err != nil {
-    panic(err)
+    return err
 }
 defer stmt.Close()
 
 // assumming that there are a lot of records to insert
 _, err = stmt.Exec(email, password)
 if err != nil {
-    panic(err)
+    return err
 }
 ```
 
 ### Read
 
+可以使用 [`Query()`](https://pkg.go.dev/database/sql#DB.Query) 或 [`QueryRow()`](https://pkg.go.dev/database/sql#DB.QueryRow) 来进行查询，区别在于前者返回任意多行，后者返回至多一行：
+
+```go
+func getUsers() ([]User, error) {
+    query := `
+    SELECT id, email, password
+    FROM users
+    `
+
+    rows, err := db.Query(query)
+    if err != nil {
+        return nil, err
+    }
+    defer rows.Close()
+
+    var users []User
+    for rows.Next() {
+        var user User
+        err := rows.Scan(&user.ID, &user.Email, &user.Password)
+        if err != nil {
+            return nil, err
+        }
+        users = append(users, user)
+    }
+
+    if err = rows.Err(); err != nil {
+        return nil, err
+    }
+
+    return users, nil
+}
+```
+
+```go
+func getUserByEmail(email string) (*User, error) {
+    query := `
+    SELECT id, email, password
+    FROM users
+    WHERE email = ?
+    `
+
+    row := db.QueryRow(query, email)
+
+    var user User
+    err := row.Scan(&user.ID, &user.Email, &user.Password)
+    if err != nil {
+        return nil, err
+    }
+
+    return &user, nil
+}
+```
+
 ### Update
 
+```go
+func updateUserPassword(email, newPassword string) error {
+    query := `
+    UPDATE users
+    SET password = ?
+    WHERE email = ?
+    `
+
+    _, err := db.Exec(query, newPassword, email)
+    if err != nil {
+        return err
+    }
+
+    return nil
+}
+```
+
 ### Delete
+
+```go
+func deleteUserByEmail(email string) error {
+    query := `
+    DELETE FROM users
+    WHERE email = ?
+    `
+
+    _, err := db.Exec(query, email)
+    if err != nil {
+        return err
+    }
+
+    return nil
+}
+```
+
+## 总结
+
+本文详细介绍了如何在 Go 语言中连接和操作数据库，主要内容包括：
+
+1. **环境准备**
+   - 使用 Docker 快速搭建 MySQL 和 PostgreSQL 测试环境
+   - 配置必要的数据库连接环境变量
+
+2. **数据库连接**
+   - 安装必要的数据库驱动
+   - 建立数据库连接的基本步骤
+   - MySQL 和 PostgreSQL 的连接字符串差异
+
+3. **基础数据库操作（CRUD）**
+   - 创建表结构
+   - 插入数据（Create）
+   - 查询数据（Read）
+   - 更新数据（Update）
+   - 删除数据（Delete）
+
+4. **实用技巧**
+   - 使用环境变量管理配置
+   - 预处理语句提高性能
+   - MySQL 和 PostgreSQL 的语法差异（如占位符的不同使用方式）
 
 ## 参考资料
 
