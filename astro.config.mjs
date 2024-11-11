@@ -36,6 +36,6 @@ export default defineConfig({
     rehypePlugins: [rehypeMathjax, rehypeExternalLinks, rehypeGithubAlerts],
   },
   integrations: [react(), sitemap(), tailwind(), partytown()],
-  output: "server",
+  output: "hybrid",
   adapter: netlify()
 });
