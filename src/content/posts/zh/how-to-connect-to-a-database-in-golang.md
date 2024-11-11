@@ -242,7 +242,7 @@ VALUES ('i@blocklune.cc', 'password123');
 首先是 MySQL：
 
 ```go
-func insertData(email, password string) error {
+func addUser(email, password string) error {
     query := `
     INSERT INTO users (email, password)
     VALUES (?, ?)
@@ -260,7 +260,7 @@ func insertData(email, password string) error {
 接着是 PostgreSQL：
 
 ```go
-func insertData(email, password string) error {
+func addUser(email, password string) error {
     query := `
     INSERT INTO users (email, password)
     VALUES ($1, $2)
@@ -275,7 +275,10 @@ func insertData(email, password string) error {
 }
 ```
 
-可以看到 MySQL 中使用 `?` 作为占位符，而 PostgreSQL 中用的是 `$1`, `$2` 等。从现在开始，下面的代码均 **默认使用 MySQL 语句**，您需要替换占位符以适配 PostgreSQL。
+可以看到 MySQL 中使用 `?` 作为占位符，而 PostgreSQL 中用的是 `$1`, `$2` 等。
+
+> [!Important]
+> 从现在开始，下面的代码均 **默认使用 MySQL 语句**，您需要替换占位符以适配 PostgreSQL。
 
 事实上，`Exec()` 的执行结果返回了两个值。我们上面一直只使用了第二个 `error` 类型的值，判断语句执行是否出错。而第一个值的类型为 [`Result`](https://pkg.go.dev/database/sql#Result)，借助它，我们可以获取诸如 “最后插入记录的 ID” 等信息：
 
@@ -291,7 +294,8 @@ if err != nil {
 }
 ```
 
-需要注意 PostgreSQL **不支持** 这个 `LastInsertId()`。
+> [!Caution]
+> 需要注意 PostgreSQL **不支持** 这个 `LastInsertId()`。
 
 如果我们需要执行许多插入操作，我们可以先 “准备” 一下查询语句，以提高性能：
 
@@ -425,6 +429,8 @@ func deleteUserByEmail(email string) error {
    - 使用环境变量管理配置
    - 预处理语句提高性能
    - MySQL 和 PostgreSQL 的语法差异（如占位符的不同使用方式）
+
+示例仓库：[BlockLune/go-db-example](https://github.com/BlockLune/go-db-example)
 
 ## 参考资料
 
