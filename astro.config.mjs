@@ -9,6 +9,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from '@astrojs/tailwind';
 import partytown from "@astrojs/partytown";
+import netlify from "@astrojs/netlify";
 
 import { SITE } from './src/config.ts';
 import { defaultLang, ui } from './src/utils/i18n.ts';
@@ -33,7 +34,8 @@ export default defineConfig({
     },
     remarkPlugins: [remarkDescPlugin, remarkMath],
     rehypePlugins: [rehypeMathjax, rehypeExternalLinks, rehypeGithubAlerts],
-
   },
-  integrations: [react(), sitemap(), tailwind(), partytown()]
+  integrations: [react(), sitemap(), tailwind(), partytown()],
+  output: "hybrid",
+  adapter: netlify()
 });
