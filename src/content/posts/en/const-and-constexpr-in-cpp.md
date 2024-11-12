@@ -10,11 +10,11 @@ tags:
 - programming-language
 - const-usage
 - constexpr
-title: The const and constexpr in C++ (REMAKE)
+title: const and constexpr in C++
 toc: true
 ---
 
-I have written a post about `const` in C++ in Chinese before, but [it](/posts/7ec6ba38.html) was too verbose and unclear. :( So, I decided to rewrite it.
+I have written a post about `const` in C++ in Chinese before, but [it](/posts/7ec6ba38) was too verbose and unclear. :( So, I decided to rewrite it.
 
 <!--more-->
 

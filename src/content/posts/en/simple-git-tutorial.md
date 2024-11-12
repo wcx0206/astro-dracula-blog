@@ -285,8 +285,8 @@ git clean -x # deletes untracked files, including ignored files in `.gitignore` 
 
 ## Next Steps
 
-- _[Working with Remote Server - Simple Git Tutorial](/posts/85390c91.html)_
-- _[Branching and Merging - Simple Git Tutorial](/posts/aa010e90.html)_
+- _[Working with Remote Server - Simple Git Tutorial](/posts/85390c91)_
+- _[Branching and Merging - Simple Git Tutorial](/posts/aa010e90)_
 
 ## Resources
 

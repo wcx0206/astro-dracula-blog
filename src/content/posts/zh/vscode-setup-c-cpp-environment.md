@@ -163,7 +163,7 @@ $ pacman -S mingw-w64-x86_64-gdb
 
 **2022 年 10 月 13 日更新：**
 
-参见我的另一篇文章：[《VS Code 中文乱码问题》](/posts/ca05bed5.html)
+参见我的另一篇文章：[《VS Code 中文乱码问题》](/posts/ca05bed5)
 
 ## 参考资料
 

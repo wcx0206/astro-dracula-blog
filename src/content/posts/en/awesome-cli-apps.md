@@ -21,20 +21,20 @@ This is a list of some awesome CLI (command-line interface) apps.
 
 The following list consists of enhanced versions of some basic command-line tools.
 
-| Basic | Enhanced                                                     | Notes            |
-| ----- | ------------------------------------------------------------ | ---------------- |
-| cat   | [bat](https://github.com/sharkdp/bat)                        |                  |
-| cd    | [zoxide](https://github.com/ajeetdsouza/zoxide)              |                  |
-| du    | [dust](https://github.com/bootandy/dust)                     |                  |
-| find  | [fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf) |                  |
+| Basic | Enhanced                                                                                                                                     | Notes            |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| cat   | [bat](https://github.com/sharkdp/bat)                                                                                                        |                  |
+| cd    | [zoxide](https://github.com/ajeetdsouza/zoxide)                                                                                              |                  |
+| du    | [dust](https://github.com/bootandy/dust)                                                                                                     |                  |
+| find  | [fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf)                                                                  |                  |
 | git   | ~~[lazygit](https://github.com/jesseduffield/lazygit)~~, [gitui]([https://github.com/extrawurst/gitui), [hub](https://github.com/mislav/hub) |                  |
-| grep  | [ripgrep](https://github.com/BurntSushi/ripgrep)             |                  |
-| ls    | [lsd](https://github.com/lsd-rs/lsd), [exa](https://github.com/ogham/exa) |                  |
-| man   | ~~[tldr](https://github.com/tldr-pages/tldr)~~, [tealdeer](https://github.com/dbrgn/tealdeer) |                  |
-| sed   | [sd](https://github.com/chmln/sd)                            |                  |
-| sudo  | [sudo-rs](https://github.com/memorysafety/sudo-rs)           |                  |
-| top   | [bottom](https://github.com/ClementTsang/bottom)             |                  |
-| tree  | [lsd](https://github.com/lsd-rs/lsd)                         | Use `lsd --tree` |
+| grep  | [ripgrep](https://github.com/BurntSushi/ripgrep)                                                                                             |                  |
+| ls    | [lsd](https://github.com/lsd-rs/lsd), [exa](https://github.com/ogham/exa)                                                                    |                  |
+| man   | ~~[tldr](https://github.com/tldr-pages/tldr)~~, [tealdeer](https://github.com/dbrgn/tealdeer)                                                |                  |
+| sed   | [sd](https://github.com/chmln/sd)                                                                                                            |                  |
+| sudo  | [sudo-rs](https://github.com/memorysafety/sudo-rs)                                                                                           |                  |
+| top   | [bottom](https://github.com/ClementTsang/bottom)                                                                                             |                  |
+| tree  | [lsd](https://github.com/lsd-rs/lsd)                                                                                                         | Use `lsd --tree` |
 
 Also see [Modern Unix](https://github.com/ibraheemdev/modern-unix)
 
@@ -46,7 +46,7 @@ Also see [Modern Unix](https://github.com/ibraheemdev/modern-unix)
 
 - frogmounth: a TUI Markdown browser (See [GitHub](https://github.com/Textualize/frogmouth))
 
-- joshuto: a TUI file explorer (See [GitHub](https://github.com/kamiyaa/joshuto), [my post](/posts/348795e3.html))
+- joshuto: a TUI file explorer (See [GitHub](https://github.com/kamiyaa/joshuto), [my post](/posts/348795e3))
 
 - shell_gpt: talk to GPT in terminal (See [GitHub](https://github.com/TheR1D/shell_gpt))
 

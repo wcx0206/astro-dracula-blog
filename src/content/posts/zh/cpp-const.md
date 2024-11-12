@@ -19,7 +19,7 @@ toc: true
 
 <!--more-->
 
-**[2023 年 3 月 24 日更新：]** 此文章已经重写，请查看：_[The const and constexpr in C++ (REMAKE)](/posts/3358bcc1.html)_
+**[2023 年 3 月 24 日更新：]** 此文章已经重写，请查看：_[The const and constexpr in C++ (REMAKE)](/posts/3358bcc1)_
 
 ## 最基本的用法 —— 定义常量
 
@@ -184,7 +184,7 @@ p3 = &y;                  // 错误
 
 ## 参考资料
 
-- [《C++ const 用法小结 （欢迎大家拍砖） - karllen - 博客园》](https://www.cnblogs.com/Forever-Kenlen-Ja/p/3776991.html)
+- [《C++ const 用法小结 （欢迎大家拍砖） - karllen - 博客园》](https://www.cnblogs.com/Forever-Kenlen-Ja/p/3776991)
 - [《Linux 系统编程学习总结 （二）ELF - 知乎》](https://zhuanlan.zhihu.com/p/145323002)
 - [《C\C++ 中函数后面加 const_51CTO 博客\_c++ const 函数》](https://blog.51cto.com/u_11495341/3040168)
 - [《C++ 顶层 const 和底层 const - 知乎》](https://zhuanlan.zhihu.com/p/499784237)

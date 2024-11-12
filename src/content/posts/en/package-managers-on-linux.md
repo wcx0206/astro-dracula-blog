@@ -110,7 +110,7 @@ To remove a package and its dependencies that are not required by any other inst
 sudo pacman -Rs <package_name>
 ```
 
-Here I found a helpful article that provides more information: [《Arch Linux 软件包的查询及清理》](https://www.cnblogs.com/sztom/p/10652624.html).
+Here I found a helpful article that provides more information: [《Arch Linux 软件包的查询及清理》](https://www.cnblogs.com/sztom/p/10652624).
 
 ## APT
 

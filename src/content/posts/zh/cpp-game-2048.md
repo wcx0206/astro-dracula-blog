@@ -605,6 +605,6 @@ ifEnd: function () {
 
 ## 参考资料
 
-[《C++产生随机数》](https://www.cnblogs.com/xiaokang01/p/9786751.html)
+[《C++产生随机数》](https://www.cnblogs.com/xiaokang01/p/9786751)
 [《C/C++ 获取键盘事件》](https://www.runoob.com/w3cnote/c-get-keycode.html)
 ... ...

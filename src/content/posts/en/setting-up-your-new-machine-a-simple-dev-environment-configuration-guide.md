@@ -124,7 +124,7 @@ By the way, the `Dracula` theme is also available in many other applications. I 
 
 The program running in the terminal is called a shell. It is a bridge between the user and the system kernel. On most Linux, the default shell is `bash`, while on macOS, it is `zsh`. There are two shells on Windows, `cmd` and `PowerShell`.
 
-I recommend using `zsh` on all systems. You can view it as a super set of bash with more features. Here is [my configuration](/posts/3e5630f.html), in which I:
+I recommend using `zsh` on all systems. You can view it as a super set of bash with more features. Here is [my configuration](/posts/3e5630f), in which I:
 
 - Use the [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh) framework to make `zsh` configuration easier
 - Use the theme [`powerlevel10k`](https://github.com/romkatv/powerlevel10k) to customize the command prompt
@@ -192,7 +192,7 @@ I recommend using the [`tealdeer`](https://github.com/dbrgn/tealdeer) client, wh
 
 I use Vim & VS Code every day. I use Vim for quick and small edits and VS Code for large projects. Even in VS Code, I'm using the Vim extension to enable the Vim key bindings.
 
-My Vim configuration is [here](/posts/96f7ff9f.html).
+My Vim configuration is [here](/posts/96f7ff9f).
 
 To make Vim the default editor on Ubuntu, you can run the following command as root:
 
@@ -206,7 +206,7 @@ Here I'm not talking about version control systems like `git`, but the version o
 
 - Java: [`sdkman`](https://sdkman.io/), etc.
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm), etc.
-- Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/posts/c7d1762.html) about this).
+- Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/posts/c7d1762) about this).
 
 ### Dotfiles: Persisting your App Configurations
 

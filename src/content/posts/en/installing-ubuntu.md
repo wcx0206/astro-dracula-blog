@@ -66,7 +66,7 @@ sudo apt install fish
 chsh --shell $(which fish)
 ```
 
-Or if you want to use `zsh` and config further, refer to: _[My Zsh Config](posts/3e5630f.html)_
+Or if you want to use `zsh` and config further, refer to: _[My Zsh Config](posts/3e5630f)_
 
 ### AppStore
 
@@ -84,14 +84,14 @@ Maybe _[zzzgydi/clash-verge: A Clash GUI based on tauri. Supports Windows, macOS
 
 ### CLI-APPs
 
-See [Awesome CLI Apps](/posts/d64ccd8c.html).
+See [Awesome CLI Apps](/posts/d64ccd8c).
 
 ## Q & A
 
 Q: The operating system always freezes on the welcome page.
 A: Install / Update NVIDIA driver.
 
-See _[Ubuntu 下安装 NVIDIA 驱动的三种方法](https://www.cnblogs.com/Leozi/p/13281224.html)_
+See _[Ubuntu 下安装 NVIDIA 驱动的三种方法](https://www.cnblogs.com/Leozi/p/13281224)_
 
 and _[ubuntu - nouveau 0000:01:00.0: DRM: failed to idle channel 0 [DRM] - Super User](https://superuser.com/questions/1750975/nouveau-00000100-0-drm-failed-to-idle-channel-0-drm)_
 

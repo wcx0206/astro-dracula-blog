@@ -226,7 +226,7 @@ const std::string& StrVector::at(size_t index) const {
 }
 ```
 
-Learn more about `static_cast` and `const_cast` [here](/posts/f5746381.html)
+Learn more about `static_cast` and `const_cast` [here](/posts/f5746381)
 
 Should `begin()` and `end()` be `const`?
 
@@ -266,10 +266,10 @@ This is tricky!
 
 | Iterator Type        | Increment Iterator? | Change underlying value? |
 | -------------------- | ------------------- | ------------------------ |
-| iterator             | ✅                  | ✅                       |
-| const_iterator       | ✅                  | ❌                       |
-| const iterator       | ❌                  | ✅                       |
-| const const_iterator | ❌                  | ❌                       |
+| iterator             | ✅                   | ✅                        |
+| const_iterator       | ✅                   | ❌                        |
+| const iterator       | ❌                   | ✅                        |
+| const const_iterator | ❌                   | ❌                        |
 
 ```cpp
 using iterator = std::string*;
