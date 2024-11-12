@@ -9,12 +9,14 @@ tags:
 date: 2024-11-12 08:58:00
 ---
 
-我之前写了一篇关于 Git 的[教程](/posts/simple-git-tutorial)，但它有点把 Git 和 GitHub 混为一谈了。我希望在此文中专注于 GitHub，帮助您更好地理解两者。
+我之前写了一篇关于 Git 的[教程](/posts/simple-git-tutorial)。而在此文中，我希望介绍一下说到 Git 离不开的平台：GitHub。
 
 <!--more-->
 
+正如在介绍 Git 的文章中提到的，GitHub 是一个用于托管远程 Git 仓库的平台。您可以将其简单但不严谨地理解成，这是您的一个小云盘，可以用于同步（上传、下载）您的代码文件，并且您还可以借助该平台与其他开发者进行沟通交流。
+
 > [!Note]
-> 如果您遇到了任何问题，建议您查询 [Github Docs](https://docs.github.com/)，使用搜索引擎搜索，或者询问一个 AI 助手。
+> 如果您遇到了任何问题，建议您查询 [Github Docs](https://docs.github.com/)，使用搜索引擎搜索，或者询问一个 AI 助手。或者，您也可以通过[邮箱](mailto:i@blocklune.cc)联系我。
 
 ## 创建一个 GitHub 账户
 
@@ -111,11 +113,7 @@ git clone ssh://git@ssh.github.com:443/YOUR-USERNAME/YOUR-REPOSITORY.git
 
 - _[在 HTTPS 端口使用 SSH - GitHub 文档](https://docs.github.com/zh/authentication/troubleshooting-ssh/using-ssh-over-the-https-port)_
 
-## GitHub Cli
-
-TODO
-
-## 基本用法
+## 基本概念与用法
 
 ### 克隆仓库
 
@@ -140,6 +138,14 @@ git clone -b BRANCH URL
 ```bash
 git clone URL --depth=1
 ```
+
+### 问题 & 拉取请求
+
+**问题（Issue）** 和 **拉取请求（Pull Request, PR）** 是 GitHub 上两种最重要的协作功能。通过 “问题”，您可以指出某个代码库中的问题、提出改进意见、请求添加新功能等；通过 “拉取请求”，您可以请求某个代码库的管理者合并您提交的代码，以实现对该代码库的贡献。
+
+### GitHub 工作流
+
+参考 _[GitHub 流 - GitHub 文档](https://docs.github.com/zh/get-started/using-github/github-flow)_
 
 ## 资源
 

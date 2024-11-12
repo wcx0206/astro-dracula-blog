@@ -15,12 +15,14 @@ title: Simple GitHub Tutorial
 updated: 2024-11-12 08:58:00
 ---
 
-I posted a [tutorial](/posts/simple-git-tutorial) of Git. But it got a bit confused about using Git and using GitHub together. I am posting this new tutorial to draw a line and make things clear.
+I wrote a tutorial on Git (/posts/simple-git-tutorial). In this post, I'd like to introduce the platform that is indispensable when it comes to Git: GitHub.
 
 <!--more-->
 
+As mentioned in the article about Git, GitHub is a platform for hosting remote Git repositories. Think of it simply, but loosely, as a little cloud drive that you can use to sync (upload, download) your code and communicate with other developers.
+
 > [!Note]
-> If you run into any problems, it's highly recommended that you check out [Github Docs](https://docs.github.com/), Google it or ask an AI agent.
+> If you encounter any problems, I recommend that you check [Github Docs](https://docs.github.com/), use a search engine, or ask an AI assistant. Alternatively, you can contact me at [email](mailto:i@blocklune.cc).
 
 ## Creating a Github Account
 
@@ -117,11 +119,7 @@ Also see:
 
 - _[Using SSH over the HTTPS port - GitHub Docs](https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port)_
 
-## GitHub Cli
-
-TODO
-
-## Basic Usages
+## Basic Concept & Usages
 
 ### Cloning
 
@@ -146,6 +144,14 @@ If you don't want to include all commits, you can use the `--depth` option. This
 ```bash
 git clone URL --depth=1
 ```
+
+### Issues & Pull Requests
+
+**Issues** and **Pull Requests (PR)** are two of the most important collaboration features on GitHub. With an Issue, you can point out problems with a codebase, suggest improvements, request new features, etc. With a Pull Request, you can ask the administrator of a codebase to merge your submitted code for the purpose of contributing to that codebase.
+
+### GitHub Workflow
+
+See _[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)_
 
 ## Resources
 
