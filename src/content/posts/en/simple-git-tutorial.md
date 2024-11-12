@@ -12,10 +12,10 @@ tags:
 - tool
 - collaboration
 title: Simple Git Tutorial
-toc: true
+updated: 2024-11-12 08:20:00
 ---
 
-This is mainly a simple tutorial of Git. Some info about GitHub also included. You may also read _[Simple GitHub Tutorial](/posts/1cce885f.html)_.
+This is mainly a simple tutorial of Git. Some info about GitHub also included. You may also read _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_.
 
 <!--more-->
 
@@ -27,19 +27,22 @@ You may have learnt Git and GitHub before, and also may have confused them becau
 
 ![GitHub (This picture is from the Internet)](https://b316f18.webp.li/blog-imgs/cs/tools/vcs/simple-git-tutorial/2.png)
 
-In short, [Git](https://git-scm.com/) is a Version Control System (VCS), which enables you to create a repository of your codes, to track changes in your project and to manage your files efficiently. [GitHub](https://GitHub.com/) is a platform used to host remote Git repositories for collaboration and sharing projects.
+In short, [Git](https://git-scm.com/) is a **Version Control System (VCS)**, which enables you to create a repository of your codes, to track changes in your project and to manage your files efficiently. [GitHub](https://GitHub.com/) is a platform used to host remote Git repositories for collaboration and sharing projects.
 
-In this post, you will learn the basic usage of Git. If you are looking for info about working with GitHub, see \_[Simple GitHub Tutorial](/posts/1cce885f.html).
-
-Want to go deeper? See [Resources](#resources).
+In this post, you will learn the basic usage of Git. If you are looking for info about working with GitHub, see _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_.
 
 ## Installing Git
 
 Download Git from the official website:
 
-_[Git - Downloads (git-scm.com)](https://git-scm.com/downloads)_
+- _[Git - Downloads (git-scm.com)](https://git-scm.com/downloads)_
 
-Or use your favorite package manager by yourself.
+Or use your favorite package manager by yourself. For example, use `apt`:
+
+```bash
+sudo apt update
+sudo apt install git
+```
 
 ## Basic Configuration
 
@@ -89,7 +92,15 @@ git <verb> --help
 man git-<verb>
 ```
 
+For example, if you are confused with `git add`, run:
+
+```bash
+git help add
+```
+
 ## Getting A Git Repository
+
+It's time for us to prepare a git repository. Here are two choices:
 
 ### Creating One In An Existing Directory
 
@@ -103,13 +114,18 @@ This command will create a directory called `.git`.
 
 ### Cloning One from An Existing Repo
 
-See _[Simple GitHub Tutorial](/posts/1cce885f.html)_
+See _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_
 
 ## Files' States in a Git Project
 
 There are three main states in Git: **modified**, **staged**, and **committed**. And this leads us to three main sections of a Git project: the `Working Directory`, the `Staging Area` and the `Git Directory`.
 
 You modify your files in the `Working Directory`, stage them (using `git add`) to the `Staging Area`, and commit them (using `git commit`) to the `Git Directory`.
+
+When a commit is made, a commit record is generated, which you can think of as a ‘snapshot’ of your code repository.
+
+> [!Tip]
+> Please don't misunderstand what is meant by ‘commit’ here! Everything here happens in your local Git repository.
 
 Also see _[Git - What is Git?](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)_.
 
@@ -142,7 +158,6 @@ git restore --staged :/      # unstage all files
 ```bash
 git rm --cached <file>
 ```
-
 
 > [!Note]
 > `git reset` is equivalent to `git restore --staged :/`. `git reset <file>` is equivalent to `git restore --staged <file>`. But `git rm --cached <file>` is unique. Actually, it means remove `<file>` from the `Staging Area`, while the other two commands move `<file>` in the `Staging Area` back to the `Working Directory`.
@@ -223,11 +238,10 @@ git add <all_tracked_files_that_have_been_modified>
 git commit
 ```
 
-
 > [!Note]
 > The links below maybe helpful if you want to write better commit messages:
 >
-> - \_[How to Write Better Git Commit Messages – A Step-By-Step Guide](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
+> - _[How to Write Better Git Commit Messages – A Step-By-Step Guide](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)_
 > - _[ohmyzsh/plugins/git-commit at master · ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-commit)_
 
 ## History
@@ -239,18 +253,13 @@ git log
 ```
 
 - `-p` or `--patch` flag make logs output in the patch way.
-
 - `-<n>` flag to limit the number of logs (e.g. `-2` only show two latest logs).
-
 - `--stat` flag shows simple statistics.
-
 - `--pretty` option provides some different ways to show the history.
-
   - `--pretty=oneline` option make every commit be showed in one line
   - `--pretty=short`
   - `--pretty=full`
   - `--pretty=fuller`
-
 - `--graph` flag adds some ascii characters to vividly show your history.
 
 ## Discarding Changes in Working
