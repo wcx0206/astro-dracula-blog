@@ -11,6 +11,7 @@ tags:
 - pyenv
 - conda
 title: Managing Multiple Python Versions with pyenv and conda
+updated: 2024-11-15 12:06:00
 ---
 
 As a CS student, I often find myself working on projects that require different Python versions, each with its own set of dependencies and libraries. In such scenarios, having a reliable and efficient method for managing these versions becomes crucial. Inspired by _[pyenv 与 conda 双轨制：管理 Python 版本和环境](https://blog.yfi.moe/post/pyenv-conda-together/)_, this blog post aims to document my experience with managing multiple versions of Python using pyenv and conda.
@@ -20,7 +21,7 @@ As a CS student, I often find myself working on projects that require different 
 In this workflow, we use pythons managed by [pyenv](https://github.com/pyenv/pyenv) by default. We'll use `conda activate` to use pythons managed by [conda](https://www.anaconda.com/) when needed.
 
 > [!Note]
-> The installation process provided here is only for macOS (and zsh), on other platforms such as Windows you may need to make some changes.
+> The installation process provided here is only for macOS (and zsh), on other platforms such as Windows you may need to make some changes. The ["Version Control of the Environment" section of this post](/posts/setting-up-your-new-machine-a-simple-dev-environment-configuration-guide/#version-control-of-the-environment) may be helpful.
 
 ## Install pyenv
 

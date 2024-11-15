@@ -16,7 +16,7 @@ date: 2024-11-15 11:46:00
 在本工作流中，我们默认使用由 [pyenv](https://github.com/pyenv/pyenv) 管理的 `python`。需要时，我们将使用 `conda activate` 来使用由 [conda](https://www.anaconda.com/) 管理的 `python`。
 
 > [!Note]
-> 这里提供的安装过程仅适用于 macOS（和 zsh），在 Windows 等其他平台上可能需要做一些更改。
+> 这里提供的安装过程仅适用于 macOS（和 zsh），在 Windows 等其他平台上可能需要做一些更改。[此文的 “环境的版本控制” 部分](/zh/posts/setting-up-your-new-machine-a-simple-dev-environment-configuration-guide/#环境的版本控制)可能会对您有所帮助。
 
 ## 安装 pyenv
 

@@ -204,6 +204,23 @@ update-alternatives --config editor # 并在菜单中选择 vim
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm) 等
 - Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/) 等（关于这个我也写了一篇[文章](/posts/managing-multiple-python-versions-with-pyenv-and-conda)）。
 
+如果您正在 Windows 平台上使用 Scoop 作为您的包管理器，您也可以使用 `scoop reset` 命令来快速切换版本，下面是一个使用它来管理 Python 版本的例子（来自[官方 Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Switching-Ruby,-Python-and-PHP-Versions)）
+
+```bash
+scoop bucket add versions # 如果您还没有添加 versions 桶，添加它
+
+scoop install python27 python
+python --version # -> Python 3.6.2
+
+# 切换到 python 2.7.x
+scoop reset python27
+python --version # -> Python 2.7.13
+
+# 切换回 3.x
+scoop reset python
+python --version # -> Python 3.6.2
+```
+
 ### Dotfiles：持久化您的应用配置
 
 许多 Unix 类系统上的程序使用以 `.` 开头的文件作为其配置文件。例如，`bash` 的 `.bashrc` 和 `vim` 的 `.vimrc`。所以您可以将这些文件保存在某个地方（比如 GitHub 仓库）并同步到您的新机器上。如果您在 GitHub 上搜索 `dotfile`，您会发现许多具有类似名称的仓库。更多信息请参见 [dotfiles.github.io](https://dotfiles.github.io)。

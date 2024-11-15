@@ -206,7 +206,24 @@ Here I'm not talking about version control systems like `git`, but the version o
 
 - Java: [`sdkman`](https://sdkman.io/), etc.
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm), etc.
-- Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/posts/c7d1762) about this).
+- Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/posts/managing-multiple-python-versions-with-pyenv-and-conda) about this).
+
+If you're using `scoop` as your package manager on Windows, you can also use the `scoop reset` command to quickly switch versions, and here's an example of using it to manage Python versions (from the [official Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Switching-Ruby,-Python-and-PHP-Versions)):
+
+```bash
+scoop bucket add versions # add the 'versions' bucket if you haven't already
+
+scoop install python27 python
+python --version # -> Python 3.6.2
+
+# switch to python 2.7.x
+scoop reset python27
+python --version # -> Python 2.7.13
+
+# switch back (to 3.x)
+scoop reset python
+python --version # -> Python 3.6.2
+```
 
 ### Dotfiles: Persisting your App Configurations
 
