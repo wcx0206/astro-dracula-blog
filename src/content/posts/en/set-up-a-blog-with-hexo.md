@@ -155,7 +155,7 @@ To install it, run:
 npm install hexo-blockquote2note --save
 ```
 
-Preview: _[Introducing hexo-blockquote2note](posts/55f9ebd1.html)_
+Preview: _[Introducing hexo-blockquote2note](posts/55f9ebd1)_
 
 ### hexo-generator-feed
 
