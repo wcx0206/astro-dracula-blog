@@ -1,5 +1,5 @@
 ---
-title: Notes for OSTEP
+title: 我的 OSTEP 笔记
 tags:
 - operating-system
 - ostep

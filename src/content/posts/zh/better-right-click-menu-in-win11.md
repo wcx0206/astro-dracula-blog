@@ -10,14 +10,12 @@ tags:
 - right-click-menu
 - context-menu
 - customization
-title: Better right-click menu in Win11
+title: Windows 11 中更好的右键菜单
 ---
 
-When the Windows system was updated to version 11, the right-click menu was completely redesigned. Microsoft is apparently trying to make it simpler and more modern, but the way they have chosen to do it is really brute force: hiding everything useful in the secondary menu! I find this really annoying. Luckily, we have a way to bring back the classic, and even customize it and make it better! (This post is in Chinese.)
+当 Windows 系统迭代到 11 这个大版本后，右键菜单被完全重新设计了。"巨硬" 似乎是想让它更简单、更现代化，但是它选择如何做到这点的方法确实是相当暴力 —— 把那些有用的全藏到二级菜单！对我而言，这真的很痛苦！幸运的是，我们有办法让原来的经典菜单回来，甚至是有限地自定义它，让它更好用！
 
 <!--more-->
-
-当 Windows 系统迭代到 11 这个大版本后，右键菜单被完全重新设计了。"巨硬" 似乎是想让它更简单、更现代化，但是它选择如何做到这点的方法确实是相当暴力 —— 把那些有用的全藏到二级菜单！对我而言，这真的很痛苦！幸运的是，我们有办法让原来的经典菜单回来，甚至是有限地自定义它，让它更好用！
 
 ## 回到经典的风格
 

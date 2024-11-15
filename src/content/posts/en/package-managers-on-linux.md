@@ -10,11 +10,12 @@ tags:
 - package-manager
 - linux
 - apt
-title: Package managers in Linux (To be continued)
+title: Package managers on Linux (TBC)
 toc: true
 ---
 
 This post tries to simply introduce some package managers and their basic usage.
+
 <!--more-->
 
 ## pacman

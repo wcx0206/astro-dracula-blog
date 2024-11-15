@@ -10,10 +10,10 @@ tags:
 - oop
 - getter-setter
 - property-decorator
-title: Getter and Setter in Python
+title: Python 中的 Getter 和 Setter
 ---
 
-Chinese translation for _[Getter and Setter in Python](https://www.geeksforgeeks.org/getter-and-setter-in-python/)_.
+_[Getter and Setter in Python](https://www.geeksforgeeks.org/getter-and-setter-in-python/)_ 的中文翻译。
 
 <!--more-->
 

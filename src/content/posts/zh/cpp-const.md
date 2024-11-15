@@ -13,6 +13,7 @@ tags:
 - const-qualifier
 title: C++ const 用法汇总
 toc: true
+updated: 2023-3-24 00:00:00
 ---
 
 最开始只是用 const 来定义常量，学到了指针传参的时候又知道了用 const 来防止一些值的修改，学到类的时候又看到非静态成员函数后边加个 const 来干嘛干嘛，然后么又听说什么顶层 const、底层 const... 真是越学越迷糊了，赶紧做一波整理。

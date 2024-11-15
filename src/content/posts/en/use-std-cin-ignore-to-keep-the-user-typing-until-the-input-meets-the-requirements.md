@@ -10,7 +10,7 @@ tags:
 - c
 - input-validation
 - std-cin
-title: Uses std::cin.ignore() to keep the user typing until the input meets the requirements
+title: Use std::cin.ignore() to keep the user typing until the input meets the requirements
 ---
 
 I used to control users' input by making the input a string and process it later. But today, my friend posed this question to me: Can we control input without a char array or string class?

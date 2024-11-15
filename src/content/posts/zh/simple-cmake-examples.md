@@ -10,10 +10,10 @@ tags:
 - cmake
 - software-engineering
 - build-system
-title: Simple CMake Examples
+title: 简单 CMake 例子
 ---
 
-Some simple CMake examples for reviewing.
+一些简单的 CMake 例子，记录以供复习查阅。
 
 <!--more-->
 

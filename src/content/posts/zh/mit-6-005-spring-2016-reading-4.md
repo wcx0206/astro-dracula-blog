@@ -11,7 +11,7 @@ tags:
 - code-review
 - dry
 - code-hygiene
-title: 阅读材料 4 - 代码审查 | MIT 6.005
+title: 阅读材料 4 - 代码审查 | MIT 6.005 学习笔记
 ---
 
 MIT 6.005 Spring 2016 的 [OCW](https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/) 版本的学习笔记。此篇笔记涉及的内容为 Reading 4 Code Review。

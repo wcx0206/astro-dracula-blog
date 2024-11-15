@@ -9,10 +9,10 @@ tags:
 - tool
 - unix
 - productivity
-title: Tmux Quick Start
+title: Tmux 快速入门
 ---
 
-Chinese translation for _[How to Install and Use Tmux](https://tmuxcheatsheet.com/how-to-install-tmux/)_.
+对 _[How to Install and Use Tmux](https://tmuxcheatsheet.com/how-to-install-tmux/)_ 一文的中文翻译。
 
 <!--more-->
 
