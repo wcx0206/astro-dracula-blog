@@ -20,6 +20,7 @@ export default function PostStack({
     const t = useTranslations(lang);
     const [query, setQuery] = useState("");
     const [debouncedQuery] = useDebounce(query, 300);
+    const numberOfPosts = snapshots.length;
 
     let results: PostSnapshot[] = [];
     if (debouncedQuery === "") {
@@ -40,7 +41,7 @@ export default function PostStack({
                 <input
                     id="search"
                     type="text"
-                    placeholder={t('search.placeholder')}
+                    placeholder={t('search.placeholder.first_part') + numberOfPosts + t('search.placeholder.second_part.post')}
                     className="bg-dracula-dark/20 placeholder-dracula-blue 
                     text-dracula-light focus:outline-none focus:bg-dracula-dark 
                     hover:bg-dracula-dark px-8 py-4 transition"

@@ -8,6 +8,7 @@ export default function TagGroup({ lang, tagMap }: { lang: Lang, tagMap: Map<str
     const t = useTranslations(lang);
     const [query, setQuery] = useState("");
     const [debouncedQuery] = useDebounce(query, 300);
+    const numberOfTags = tagMap.size;
 
     let results: string[] = [];
     if (debouncedQuery !== "") {
@@ -26,7 +27,7 @@ export default function TagGroup({ lang, tagMap }: { lang: Lang, tagMap: Map<str
                 <input
                     id="search"
                     type="text"
-                    placeholder={t("search.placeholder")}
+                    placeholder={t("search.placeholder.first_part") + numberOfTags + t("search.placeholder.second_part.tag")}
                     className="bg-dracula-dark/20 placeholder-dracula-blue 
                     text-dracula-light focus:outline-none focus:bg-dracula-dark 
                     hover:bg-dracula-dark px-8 py-4 transition"
