@@ -19,9 +19,8 @@ As a CS student, I often find myself working on projects that require different 
 
 In this workflow, we use pythons managed by [pyenv](https://github.com/pyenv/pyenv) by default. We'll use `conda activate` to use pythons managed by [conda](https://www.anaconda.com/) when needed.
 
-
-> [!NOTE]
-> The installation process provided here is only for macOS (and Z Shell), on other platforms such as Windows you may need to make some changes.
+> [!Note]
+> The installation process provided here is only for macOS (and zsh), on other platforms such as Windows you may need to make some changes.
 
 ## Install pyenv
 
