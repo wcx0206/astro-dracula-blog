@@ -295,7 +295,7 @@ Replace $x_i$ with $x_i-\mu_i$ to make features have approximately zero mean (Do
 ### How to choose learning rate $\alpha$
 
 - If $\alpha$ is too small: slow convergence;
-- If $\alpha$ is too large: $J(\theta) may not decrease on every iteration; may not converge.$
+- If $\alpha$ is too large: $J(\theta)$ may not decrease on every iteration; may not converge.
 
 To choose $\alpha$, try:
 
@@ -726,7 +726,7 @@ Cost(h_\theta(x), y)=
 \end{cases}
 $$
 
-$Cost=0$ if $y=1, h_\theta(x)=1$, but as $h_\theta(x) \to 0$, $Cost \to \infin$
+$Cost=0$ if $y=1, h_\theta(x)=1$, but as $h_\theta(x) \to 0$, $Cost \to \infty$
 
 Captures intuition that if $h_\theta(x)=0$, (predict $P(y=1|x;\theta)$), but $y=1$, we'll penalize learning algorithm by a very large cost.
 
