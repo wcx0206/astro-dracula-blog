@@ -17,5 +17,22 @@ pre {
 }
 
 ::selection {
-  @apply bg-dracula-blue ;
+  @apply bg-dracula-blue;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme("colors.dracula-purple.400");
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme("colors.dracula-purple.DEFAULT");
 }
