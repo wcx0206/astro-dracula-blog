@@ -8,7 +8,7 @@
 - [x] :star: Simple & Clean Design
 - [x] :iphone: Responsive Design
 - [x] :vampire_man: Dracula Theme
-- [x] :zap: Animations created with [Motion](motion.dev) (the original Framer Motion)
+- [x] :zap: Animations created with [Motion](https://motion.dev) (the original Framer Motion)
 - [x] :mag: Fuzzy Search built with [fuse.js](https://www.fusejs.io/)
 - [x] :world_map: Sitemap & RSS Feed
 - [x] :spider_web: SEO-Friendly

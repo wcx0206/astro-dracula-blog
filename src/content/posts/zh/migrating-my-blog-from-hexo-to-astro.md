@@ -25,7 +25,7 @@ date: 2024-11-10 13:57:11
 
 于是，我决定自己写一个博客系统。我选择了 [Astro](https://astro.build)，并将它部署在 [blocklune.cc](https://blocklune.cc)，作为全新的开始。
 
-这个新的博客使用 Astro 构建，并集成了 [React](https://react.dev/) 组件。配色方案是我个人喜欢的 [Dracula](https://draculatheme.com/) 主题。设计过程中，[Tailwind CSS](https://tailwindcss.com/) 和 [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) 提供了很大帮助。我还用 [Framer Motion](https://www.framer.com/motion/) 制作了一些轻量的动画效果。
+这个新的博客使用 Astro 构建，并集成了 [React](https://react.dev/) 组件。配色方案是我个人喜欢的 [Dracula](https://draculatheme.com/) 主题。设计过程中，[Tailwind CSS](https://tailwindcss.com/) 和 [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) 提供了很大帮助。我还用 [Motion](https://motion.dev/)（原来的 Framer Motion）制作了一些轻量的动画效果。
 
 该博客系统开源在 [GitHub](https://github.com/blocklune/astro-dracula-blog)。如果你也想试试，那就 [Fork](https://github.com/BlockLune/astro-dracula-blog/fork) 它吧！
 
