@@ -70,27 +70,24 @@ You can install `joshuto` using `cargo`:
 cargo install --git https://github.com/kamiyaa/joshuto.git --force
 ```
 
-{% note info%}
-
-To install `cargo`, run:
-
-```bash
-sudo apt install cargo
-```
-
-Then add `/$HOME/.cargo/bin` to PATH in `/$HOME/.profile`:
-
-```bash
-export PATH="$PATH:/$HOME/.cargo/bin"
-```
-
-If you don't use bash, but fishshell, then edit `/$HOME/.config/fish/config.fish` and add this line:
-
-```bash
-set -x PATH /$HOME/.cargo/bin $PATH
-```
-
-{% endnote %}
+> [!Note]
+> To install `cargo`, run:
+>
+> ```bash
+> sudo apt install cargo
+> ```
+>
+> Then add `/$HOME/.cargo/bin` to PATH in `/$HOME/.profile`:
+>
+> ```bash
+> export PATH="$PATH:/$HOME/.cargo/bin"
+> ```
+>
+> If you don't use bash, but fishshell, then edit `/$HOME/.config/fish/config.fish` and add this line:
+>
+> ```bash
+> set -x PATH /$HOME/.cargo/bin $PATH
+> ```
 
 ## Usage
 

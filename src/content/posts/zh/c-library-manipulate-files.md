@@ -28,11 +28,12 @@ FILE *fp;
 
 ## 打开文件 fopen()
 
-{% note %}
-函数名称：fopen
-参数：待打开文件的名称（包含该文件名的字符串地址），打开文件的模式；
-返回值：成功打开文件则返回一个文件指针，否则返回空指针（NULL）
-{% endnote %}
+> [!Note]
+> 函数名称：fopen
+>
+> 参数：待打开文件的名称（包含该文件名的字符串地址），打开文件的模式；
+>
+> 返回值：成功打开文件则返回一个文件指针，否则返回空指针（NULL）
 
 例如：
 
@@ -65,15 +66,14 @@ if (fp = fopen("example.file", "r") == NULL)
 
 ## 关闭文件 fclose()
 
-{% note %}
-函数名称：fclose
-参数：待关闭文件的名称（包含该文件名的字符串地址）；
-返回值：成功关闭返回 0，否则返回 EOF。
-{% endnote %}
+> [!Note]
+> 函数名称：fclose
+>
+> 参数：待关闭文件的名称（包含该文件名的字符串地址）；
+>
+> 返回值：成功关闭返回 0，否则返回 EOF。
 
-{% note warning no-icon %}
 注意区分 fopen() 和 fclose() 的返回值！前者失败时返回 NULL（通常情况下就是 0），后者成功时返回 0。
-{% endnote %}
 
 ## 读写文件
 
@@ -87,52 +87,61 @@ if (fp = fopen("example.file", "r") == NULL)
 
 ### ungetc()
 
-{% note %}
-函数名称：ungetc
-函数原型：`int ungetc(int c, FILE *fp);`
-函数作用：把 c 指定的字符放回输入流中
-返回值：如果成功，则返回被推入的字符，否则返回 EOF
-{% endnote %}
+> [!Note]
+> 函数名称：ungetc
+>
+> 函数原型：`int ungetc(int c, FILE *fp);`
+>
+> 函数作用：把 c 指定的字符放回输入流中
+>
+> 返回值：如果成功，则返回被推入的字符，否则返回 EOF
 
 ### fgets() 和 fputs()
 
 虽然这两个函数也分别类似于 gets() 和 puts()，但比起上边几个函数的"类似"，这个要低一点，所以详细说明一下。
 
-{% note %}
-函数名称：fgets
-函数原型：`char *fgets (char * restrict str, int n, FILE * restrict fp);`
-返回值：如果成功，该函数返回相同的 str 参数。如果到达文件末尾或者没有读取到任何字符，str 的内容保持不变，并返回一个空指针。如果发生错误，返回一个空指针。
-{% endnote %}
+> [!Note]
+> 函数名称：fgets
+>
+> 函数原型：`char *fgets (char * restrict str, int n, FILE * restrict fp);`
+>
+> 返回值：如果成功，该函数返回相同的 str 参数。如果到达文件末尾或者没有读取到任何字符，str 的内容保持不变，并返回一个空指针。如果发生错误，返回一个空指针。
 
 需要注意 fgets() 的第二个参数，因为 fgets() 读取输入知道第一个换行符的后边（**意味着它会读入换行符**），或读到文件结尾，或读取 n-1 个字符，并在结尾加上一个 `\0` 使之成为一个字符串。
 
-{% note %}
-函数名称：fputs
-函数原型：`int fputs (char * restrict str, FILE * restrict fp);`
-返回值：该函数返回一个非负值，如果发生错误则返回 EOF。
-{% endnote %}
+> [!Note]
+> 函数名称：fputs
+>
+> 函数原型：`int fputs (char * restrict str, FILE * restrict fp);`
+>
+> 返回值：该函数返回一个非负值，如果发生错误则返回 EOF。
 
 fputs() 与 puts() 类似，但**不会在结尾自动添加换行**。
 
-{% note warning no-icon %}
-注意区分 fgets() 与 gets()， fputs() 与 puts()！gets() 不保留换行符所以 puts() 自动添加换行符；fgets() 保留换行符所以 fputs() 不会添加换行符。
-{% endnote %}
+> [!Caution]
+> 注意区分 fgets() 与 gets()， fputs() 与 puts()！gets() 不保留换行符所以 puts() 自动添加换行符；fgets() 保留换行符所以 fputs() 不会添加换行符。
 
 ### fread() 和 fwrite()
 
 上述的函数都是以文本形式读写文件，这两个函数用于以二进制形式读写文件。
 
-{% note %}
-函数名称：fread
-函数原型：`size_t fread(void * restrict ptr, size_t size, size_t nmemb, FILE * restrict fp);`
-返回值：返回成功读取项的数量。正常情况下返回值等于 nmemb，发生错误则返回值小于 nmemb。
-{% endnote %}
+读：
 
-{% note %}
-函数名称：fwrite
-函数原型：`size_t fwrite(const void * restrict ptr, size_t size, size_t nmemb, FILE * restrict fp);`
-返回值：返回成功写入项的数量。正常情况下返回值等于 nmemb，发生错误则返回值小于 nmemb。
-{% endnote %}
+> [!Note]
+> 函数名称：fread
+>
+> 函数原型：`size_t fread(void * restrict ptr, size_t size, size_t nmemb, FILE * restrict fp);`
+>
+> 返回值：返回成功读取项的数量。正常情况下返回值等于 nmemb，发生错误则返回值小于 nmemb。
+
+写：
+
+> [!Note]
+> 函数名称：fwrite
+>
+> 函数原型：`size_t fwrite(const void * restrict ptr, size_t size, size_t nmemb, FILE * restrict fp);`
+>
+> 返回值：返回成功写入项的数量。正常情况下返回值等于 nmemb，发生错误则返回值小于 nmemb。
 
 参数 size 表示待写入数据块的大小（以字节为单位），nmemb 表示待写入数据块的数量。
 
@@ -155,12 +164,14 @@ fread(earnings, sizeof(double), 10, fp);
 
 ## 随机访问 fseek() 和 ftell()
 
-{% note %}
-函数名称：fseek
-函数原型：`int fseek(FILE *_File,long _Offset,int _Origin);`
-参数：文件指针，偏移量(long 类型)，模式
-返回值：正常则返回 0，错误则返回 -1。
-{% endnote %}
+> [!Note]
+> 函数名称：fseek
+>
+> 函数原型：`int fseek(FILE *_File,long _Offset,int _Origin);`
+>
+> 参数：文件指针，偏移量(long 类型)，模式
+>
+> 返回值：正常则返回 0，错误则返回 -1。
 
 第二个参数偏移量必须是一个 long 类型的值，代表偏移的**字节数**。这个值为正，则表示像文件末尾方向移动；为负则表示向文件开头处。
 第三个参数可以理解成起点位置，可以使用 `SEEK_SET`、`SEEK_CUR` 或 `SEEK_END` 分别定位到文件开始、当前位置或文件末尾（老版本应分别使用 `0`、`1`、`2`）。
@@ -175,11 +186,12 @@ fseek(fp, 0L, SEEK_END);   // 定位至文件末尾
 fseek(fp, -10L, SEEK_END); // 从文件结尾处回退 10 个字节
 ```
 
-{% note %}
-函数名称：ftell
-函数原型：`long ftell(FILE *_File);`
-返回值：返回当前位置距文件开始的字节数，如文件的第一个字节到文件开始处的距离为 0。
-{% endnote %}
+> [!Note]
+> 函数名称：ftell
+>
+> 函数原型：`long ftell(FILE *_File);`
+>
+> 返回值：返回当前位置距文件开始的字节数，如文件的第一个字节到文件开始处的距离为 0。
 
 下边是书中给出的一个例子：
 
@@ -198,20 +210,23 @@ for (count = 1L; count <= last; count++)
 
 ### 刷新缓冲区 fflush()
 
-{% note %}
-函数名称：fflush
-函数原型：`int fflush(FILE *fp);`
-函数作用：调用该函数将刷新缓冲区，即将输出缓冲区中所有的未写入数据被发送到 fp 指定的输出文件。如果 fp 为空指针，所有输出缓冲区都被刷新。
-返回值：成功返回 0，错误返回 EOF。
-{% endnote %}
+> [!Note]
+> 函数名称：fflush
+>
+> 函数原型：`int fflush(FILE *fp);`
+>
+> 函数作用：调用该函数将刷新缓冲区，即将输出缓冲区中所有的未写入数据被发送到 fp 指定的输出文件。如果 fp 为空指针，所有输出缓冲区都被刷新。
+>
+> 返回值：成功返回 0，错误返回 EOF。
 
 ### 创建替换使用缓冲区 setvbuf()
 
-{% note %}
-函数名称：setvbuf
-函数原型：`int setvbuf(FILE * restrict fp, char * restrict buf, int mode, size_t size);`
-返回值：成功返回 0，否则返回非零值。
-{% endnote %}
+> [!Note]
+> 函数名称：setvbuf
+>
+> 函数原型：`int setvbuf(FILE * restrict fp, char * restrict buf, int mode, size_t size);`
+>
+> 返回值：成功返回 0，否则返回非零值。
 
 第二个参数指向待使用的缓冲区。如果是 NULL，则自动分配。
 第三个参数为模式，有下边几种：
