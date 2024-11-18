@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import type { Lang } from "@/utils/i18n";
 
 export default function LabelTag(

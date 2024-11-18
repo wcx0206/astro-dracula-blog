@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import DateTag from "./date-tag";
 import LabelTag from "./label-tag";
 import type { PostSnapshot } from "@/schemas/post";

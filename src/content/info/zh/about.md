@@ -16,4 +16,4 @@
 
 于是我决心要创建一个真正属于自己的博客，我决定从头开始、完完全全地构建一个自己的博客。Here it is!
 
-这个博客使用 [Astro](https://astro.build/) 构建，并集成了 [React](https://react.dev/) 组件。我选择 Astro 主要是因为它的速度。博客的配色方案源自 [Dracula](https://draculatheme.com/)。此外，我还使用了 [Tailwind CSS](https://tailwindcss.com/) 进行样式设计，使用 [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) 处理排版。同时，我还使用 [Framer Motion](https://www.framer.com/motion/) 制作了一些动画效果。
+这个博客使用 [Astro](https://astro.build/) 构建，并集成了 [React](https://react.dev/) 组件。我选择 Astro 主要是因为它的速度。博客的配色方案源自 [Dracula](https://draculatheme.com/)。此外，我还使用了 [Tailwind CSS](https://tailwindcss.com/) 进行样式设计，使用 [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) 处理排版。同时，我还使用 [Motion](https://motion.dev)（原来的 Framer Motion） 制作了一些动画效果。

@@ -1,5 +1,5 @@
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import avatarImage from "@/assets/avatar.webp";
 import { AUTHOR, SOCIALS } from "../config";
 
