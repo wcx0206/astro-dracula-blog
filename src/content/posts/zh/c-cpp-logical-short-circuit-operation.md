@@ -15,7 +15,7 @@ title: C 语言中与(&&)和或(||)运算符的短路运算
 ---
 
 此篇笔记来源于下边的这个题目。
-![](https://img.blocklune.cc/blog-imgs/cs/languages/c%20&%20cpp/c-语言中与-和或-运算符的短路运算/1.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/languages/c%20&%20cpp/c-语言中与-和或-运算符的短路运算/1.png)
 
 <!--more-->
 

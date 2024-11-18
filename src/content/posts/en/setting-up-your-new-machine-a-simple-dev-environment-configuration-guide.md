@@ -23,7 +23,7 @@ As developers, we interact with all kinds of machines every day. A well-configur
 
 When I started coding, my terminal was a stark black and white window that failed to inspire creativity. Now, my terminal is colorful, feature-rich, and a joy to use. This transformation is just one example of how proper configuration can enhance your coding experience.
 
-![My Terminal](https://img.blocklune.cc)
+![My Terminal](https://img.blocklune.cc/sip/2024/09/02/18mgdt-o7.webp)
 
 Terminal configuration is just one part of the larger concept of development environment configuration. These configurations can be complex, but this guide tries to provide a road map for beginners. This guide will not be a step-by-step tutorial, meaning I will not show you how to download and install the individual applications. You can refer to the official websites to learn how to install and use these applications in detail.
 

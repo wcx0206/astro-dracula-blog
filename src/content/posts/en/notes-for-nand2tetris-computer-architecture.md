@@ -30,7 +30,7 @@ Same **Hardware** can run many different **Software** programs.
 
 Memory stores **Data** and **Program**. CPU is composed of **ALU** and **Registers**.
 
-![Information Flows](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/1.png)
+![Information Flows](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/1.png)
 
 Registers store both Data and Addresses.
 
@@ -56,13 +56,13 @@ Use program counter.
 
 ### Fetch-Execute Clash
 
-![Fetch-Execute Clash](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/2.png)
+![Fetch-Execute Clash](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/2.png)
 
 How to solve that? Do one after the other (Use `Mux`).
 
 ### Solution: Mux and Instruction register
 
-![Solution](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/3.png)
+![Solution](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/3.png)
 
 ### Simpler solution: Harvard Architecture
 
@@ -81,17 +81,17 @@ A 16-bit processor, designed to:
 
 ### The overall computer architecture
 
-![The overall computer architecture](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/4.png)
+![The overall computer architecture](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/4.png)
 
 ### Hack CPU Interface
 
-![Inputs](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/5.png)
+![Inputs](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/5.png)
 
-![Outputs](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/6.png)
+![Outputs](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/6.png)
 
 ### Hack CPU Implementation
 
-![Hack CPU Implementation](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/7.png)
+![Hack CPU Implementation](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/7.png)
 
 ### Instruction handling
 
@@ -235,7 +235,7 @@ Hardware simulation: programs are stored in text files; program loading is emula
 
 ### Hack Computer implementation
 
-![Hack Computer implementation](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/8.png)
+![Hack Computer implementation](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/8.png)
 
 ## Unit 5.5
 
@@ -255,8 +255,8 @@ Hardware simulation: programs are stored in text files; program loading is emula
 
 最后，最复杂的一步，填入 control bits（包括 sel bits, load bits 等等）。
 
-![设计图](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/9.png)
-![指令表](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/10.png)
+![设计图](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/9.png)
+![指令表](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-computer-architecture/10.png)
 
 在构造这些 control bits 之前，我们需要明确：这个 CPU 将处理 A-instruction 和 C-instruction 两类指令，这意味着 control bits 与指令类型有关。并且，分析这两类指令可以发现：
 

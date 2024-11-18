@@ -128,7 +128,7 @@ git clone URL [LOCAL_DIRECTORY_NAME]
 
 在任一 GitHub 仓库的首页，您都可以找到一个绿色的 `Code` 按钮，点击它，会弹出一个选项卡，包括 HTTPS 和 SSH 标签页（您必须登录才能看到 SSH 标签页）。对于您没有编辑、修改权限的公共仓库，您可以使用它的 HTTPS 链接来克隆；如果您希望编辑某个仓库，您必须使用对应的 SSH 链接。
 
-![Code 按钮](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/my9nh-7r.webp)
+![Code 按钮](https://webp.blocklune.cc/sip/2024/11/18/my9nh-7r.webp)
 
 > [!Tip]
 > 如果您一不小心已经使用了 HTTPS 链接克隆了您希望编辑的仓库，您可以在本地仓库执行下面的命令以更新您的仓库远程地址为 SSH 版本的链接（命令中的 `origin` 其实是一个 “别名”，用于指示这是哪一个远程 Git 仓库）：
@@ -177,11 +177,11 @@ git clone URL --depth=1
 1. 首先，前往 GitHub 首页，点击上方工具栏右侧的加号按钮，在下拉栏中点击 `New repository`。
 2. 填写仓库的基本信息，包括仓库名（Repository name）等，并确定仓库类型（默认是 Public 公开仓库，但在小组作业这样一个情境下，可能您更希望它是 Private 私有的）。完成后，点击页面右下角的 `Create repository` 按钮。
 
-![创建仓库](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/nzhss-ac.webp)
+![创建仓库](https://webp.blocklune.cc/sip/2024/11/18/nzhss-ac.webp)
 
 3. 创建完成后，会自动跳转到仓库页面：
 
-![仓库页面](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/o8e82-pl.webp)
+![仓库页面](https://webp.blocklune.cc/sip/2024/11/18/o8e82-pl.webp)
 
 4. 按照页面的提示在本地执行相应的命令（首先记得改成 `SSH`）：
 
@@ -209,7 +209,7 @@ git push -u origin main # 推送到名为 origin 的远程仓库的 main 分支
 
 6. 到目前为止，仅有您拥有对此仓库的编辑权限。如果您希望邀请您的小组成员，可以点击上方工具栏的 `Settings`，在左侧的 `Access` 板块选择 `Collaborators`，并点击右侧的 `Add people` 按钮：
 
-![添加协作者](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/q50fd-hs.webp)
+![添加协作者](https://webp.blocklune.cc/sip/2024/11/18/q50fd-hs.webp)
 
 被邀请的协作者会收到一封邮件通知，按照邮件中的提示操作，最终协作者就能获得该仓库的编辑权限了。然后，协助者可以使用 SSH 链接克隆该仓库，并按照常规的 Git 工作流在本地进行修改，最后使用 `git push` 将更改推送到远程仓库。待该协作者推送后，其他协作者可以使用 `git pull` 来拉取最新的更改。
 
@@ -222,15 +222,15 @@ git push -u origin main # 推送到名为 origin 的远程仓库的 main 分支
 
 1. 首先，进入开源项目的首页，点击右上角的 Fork 按钮。
 
-![Fork 按钮](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/mya7c-u8.webp)
+![Fork 按钮](https://webp.blocklune.cc/sip/2024/11/18/mya7c-u8.webp)
 
 2. 在自动跳转到的新建 Fork 页面，按您的需要自定义相关信息，或者保持默认，然后点击 `Create fork` 按钮。
 
-![创建 Fork 页面](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/mya6f-uo.webp)
+![创建 Fork 页面](https://webp.blocklune.cc/sip/2024/11/18/mya6f-uo.webp)
 
 3. 现在您应该跳转到了一个同名仓库（如果您在上一步中没有修改默认设置的话）。在这个仓库的仓库名下，还标注了此仓库的 Fork 来源。例如在下图中，公共仓库为 `withastro/astro`，我的 GitHub 用户名为 BlockLune，我 Fork 得来的这个仓库就叫作 `BlockLune/astro`。
 
-![Fork 得来的仓库](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/nojpa-0f.webp)
+![Fork 得来的仓库](https://webp.blocklune.cc/sip/2024/11/18/nojpa-0f.webp)
 
 4. 使用 SSH 链接克隆该仓库到本地。
 
@@ -244,7 +244,7 @@ git checkout -b BRANCH_NAME
 
 7. 在您认为您的更改已经完成后，回到 GitHub，并前往这个项目的公共仓库地址。点击上方的 `Pull requests` 进入拉取请求标签页，然后点击右侧的绿色 `New pull request` 按钮。
 
-![新建 PR 页面](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/my9o5-cg.webp)
+![新建 PR 页面](https://webp.blocklune.cc/sip/2024/11/18/my9o5-cg.webp)
 
 8. 在新建拉取请求页面，分别选择 `base` 和 `compare` 分支。`base` 表示您希望推送（Push）到的分支；`compare` 表示您刚刚写的新功能所在的分支（例如 `feature/greeting`），即您希望对方拉取（Pull）的分支。选择完成后，点击绿色的 `Create pull request` 按钮。
 

@@ -35,7 +35,7 @@ This is a note for 4.3 Minimum Spanning Trees, _[Algorithms, Part II](https://ww
 
 **Cut property.** Given any cut, the crossing edge of min weight is in the MST.
 
-![Cut property](https://img.blocklune.cc/blog-imgs/cs/algorithms%20&%20data%20structures/notes-for-algorithms-part-ii-minimum-spanning-trees/1.png)
+![Cut property](https://webp.blocklune.cc/blog-imgs/cs/algorithms%20&%20data%20structures/notes-for-algorithms-part-ii-minimum-spanning-trees/1.png)
 
 Greedy MST algorithm:
 

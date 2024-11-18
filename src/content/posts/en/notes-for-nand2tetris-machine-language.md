@@ -19,7 +19,7 @@ This is a note for Nand2Tetris unit 4.
 
 <!--more-->
 
-![The Hack Machine Language](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-machine-language/1.png)
+![The Hack Machine Language](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-machine-language/1.png)
 
 ## Project 4
 

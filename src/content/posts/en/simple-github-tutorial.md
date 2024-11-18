@@ -133,7 +133,7 @@ where center brackets mean that `LOCAL_DIRECTORY_NAME` is optional.
 
 On the front page of any GitHub repository, you'll find a green `Code` button; clicking on it will bring up a tab with HTTPS and SSH tabs (you must be logged in to see the SSH tabs). For public repositories that you don't have editing or modification rights to, you can use their HTTPS links to clone them; if you wish to edit a repository, you must use the corresponding SSH link.
 
-![Code Button](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/my9nh-7r.webp)
+![Code Button](https://webp.blocklune.cc/sip/2024/11/18/my9nh-7r.webp)
 
 > [!Tip]
 > If you have accidentally cloned the repository you wish to edit using an HTTPS link, you can run the following command on your local repository to update the remote address of your repository to the SSH version of the link (the `origin` in the command is actually an "alias" to indicate which remote Git repository it is! ):
@@ -182,11 +182,11 @@ The following example workflow assumes you want to collaborate with your team me
 1. First, go to the GitHub homepage, click the plus button on the right side of the top toolbar, and select `New repository` from the dropdown menu.
 2. Fill in the basic information for the repository, including the repository name, and specify the repository type (the default is `Public`, but in a group project context, you may prefer it to be `Private`). Once completed, click the `Create repository` button at the bottom right of the page.
 
-![Create Repository](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/nzhss-ac.webp)
+![Create Repository](https://webp.blocklune.cc/sip/2024/11/18/nzhss-ac.webp)
 
 3. After creation, you will be automatically redirected to the repository page:
 
-![Repository Page](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/o8e82-pl.webp)
+![Repository Page](https://webp.blocklune.cc/sip/2024/11/18/o8e82-pl.webp)
 
 4. Follow the prompts on the page to execute the corresponding commands locally (remember to switch to `SSH` first):
 
@@ -214,7 +214,7 @@ git push -u origin main # Push to the main branch of the remote repository named
 
 6. So far, only you have edit permissions for this repository. If you want to invite your group members, click on `Settings` in the top toolbar, select `Collaborators` in the left `Access` section, and click the `Add people` button on the right:
 
-![Add Collaborators](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/q50fd-hs.webp)
+![Add Collaborators](https://webp.blocklune.cc/sip/2024/11/18/q50fd-hs.webp)
 
 The invited collaborators will receive an email notification. By following the instructions in the email, they will gain edit permissions for the repository. Then, collaborators can clone the repository using the SSH link, make changes locally following the regular Git workflow, and finally use `git push` to push changes to the remote repository. Once a collaborator pushes, others can use `git pull` to fetch the latest changes.
 
@@ -227,15 +227,15 @@ The following example workflow assumes you want to contribute code to an open-so
 
 1. First, go to the homepage of the open-source project and click the Fork button in the upper right corner.
 
-![Fork Button](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/mya7c-u8.webp)
+![Fork Button](https://webp.blocklune.cc/sip/2024/11/18/mya7c-u8.webp)
 
 2. On the new Fork page that you are automatically redirected to, customize the relevant information as needed or keep the default, then click the `Create fork` button.
 
-![Create Fork Page](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/mya6f-uo.webp)
+![Create Fork Page](https://webp.blocklune.cc/sip/2024/11/18/mya6f-uo.webp)
 
 3. Now you should be redirected to a repository with the same name (if you did not change the default settings in the previous step). Under the repository name, it will indicate the source of this fork. For example, in the image below, the public repository is `withastro/astro`, and my GitHub username is BlockLune, so the forked repository is named `BlockLune/astro`.
 
-![Forked Repository](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/nojpa-0f.webp)
+![Forked Repository](https://webp.blocklune.cc/sip/2024/11/18/nojpa-0f.webp)
 
 4. Clone this repository to your local machine using the SSH link.
 
@@ -249,7 +249,7 @@ git checkout -b BRANCH_NAME
 
 7. When you believe your changes are complete, return to GitHub and navigate to the public repository address of the project. Click on `Pull requests` at the top to enter the pull request tab, then click the green `New pull request` button on the right.
 
-![New PR Page](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/my9o5-cg.webp)
+![New PR Page](https://webp.blocklune.cc/sip/2024/11/18/my9o5-cg.webp)
 
 8. On the new pull request page, choose the `base` and `compare` branches. `base` indicates the branch you want to push to; `compare` indicates the branch where your new feature resides (e.g., `feature/greeting`), which you want the other party to pull from. After making your selections, click the green `Create pull request` button.
 

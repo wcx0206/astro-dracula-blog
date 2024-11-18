@@ -24,8 +24,8 @@ I learnt this course from the website. This is actually not an open source cours
 
 If you also want to learn more about modern C++, give this course a try.
 
-![Website of the course](https://img.blocklune.cc/blog-imgs/cs/languages/c%20&%20cpp/my-personal-summay-of-stanford-cs106l/1.png)
+![Website of the course](https://webp.blocklune.cc/blog-imgs/cs/languages/c%20&%20cpp/my-personal-summay-of-stanford-cs106l/1.png)
 
-![Assignment 2](https://img.blocklune.cc/blog-imgs/cs/languages/c%20&%20cpp/my-personal-summay-of-stanford-cs106l/2.png)
+![Assignment 2](https://webp.blocklune.cc/blog-imgs/cs/languages/c%20&%20cpp/my-personal-summay-of-stanford-cs106l/2.png)
 
-![Slides in my Samsung Note](https://img.blocklune.cc/blog-imgs/cs/languages/c%20&%20cpp/my-personal-summay-of-stanford-cs106l/3.png)
+![Slides in my Samsung Note](https://webp.blocklune.cc/blog-imgs/cs/languages/c%20&%20cpp/my-personal-summay-of-stanford-cs106l/3.png)

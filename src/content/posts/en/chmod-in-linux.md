@@ -21,7 +21,7 @@ I accidentally ran a wrong `chmod` command in my Linux, and it messed up everyth
 
 When you run `ls -l` in your terminal, you can always see strings like `-rw-r–r–` and `drwxr-xr-x` etc. To understand them, we can always split a such string into four part. The first one is a single character, `-` if it's a file and `d` if it's a directory. The rest 9 characters can be equally divided into three parts, representing the permission of the owner, the members of the group and other users relatively. Every part contains three characters, showing the permission of **r**(read), **w**(write) and **x**(execute).
 
-![When you run `ls -l`](https://img.blocklune.cc/blog-imgs/cs/tools/the-chmod-command-in-linux/1.png)
+![When you run `ls -l`](https://webp.blocklune.cc/blog-imgs/cs/tools/the-chmod-command-in-linux/1.png)
 ![From www.runoob.com](https://www.runoob.com/wp-content/uploads/2014/08/file-permissions-rwx.jpg)
 
 Besides the bit pattern, you can also use octal notation to express these permissions, which uses 4 for **r**, 2 for **w** and 1 for **x**. The sum of these octal numbers then can replace the `rwx` pattern. For example, using 6 for **rw**.
@@ -52,11 +52,11 @@ The actual default permission for a file is 666 - 022 = 644, which means `-rw-r�
 
 You can run the `umask` command to see what your setting is.
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/the-chmod-command-in-linux/4.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/the-chmod-command-in-linux/4.png)
 
 ## The chmod Command
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/the-chmod-command-in-linux/5.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/the-chmod-command-in-linux/5.png)
 
 ```bash
 chmod [-cfvR] [--help] [--version] <mode> <file>...

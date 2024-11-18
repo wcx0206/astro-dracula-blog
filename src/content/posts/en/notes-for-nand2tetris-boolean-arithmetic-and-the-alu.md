@@ -105,7 +105,7 @@ So, the steps to compute -x is:
 
 ALU: Arithmetic Logic Unit
 
-![alu](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-arithmetic-and-the-alu/1.png)
+![alu](https://webp.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-arithmetic-and-the-alu/1.png)
 
 ## Project 2
 

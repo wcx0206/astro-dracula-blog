@@ -52,7 +52,7 @@ toc: true
 
 - **截图预览**
 
-  ![谷歌访问助手](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/1.png)
+  ![谷歌访问助手](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/1.png)
 
 - **下载地址**
 
@@ -70,7 +70,7 @@ toc: true
 
 - **截图预览**
 
-  ![Infinity新标签页](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/2.png)
+  ![Infinity新标签页](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/2.png)
 
 - **下载地址**
 
@@ -84,7 +84,7 @@ toc: true
 
 - **截图预览**
 
-  ![安装百度优化插件后的Google主页](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/3.png)
+  ![安装百度优化插件后的Google主页](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/3.png)
 
 - **下载地址**
 
@@ -100,7 +100,7 @@ toc: true
 
 - **截图预览**
 
-  ![划词翻译界面](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/4.png)
+  ![划词翻译界面](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/4.png)
 
 - **下载地址**
 
@@ -116,7 +116,7 @@ toc: true
 
 - **截图预览**
 
-  ![一张用FireShot截取的维基百科首页](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/5.png)
+  ![一张用FireShot截取的维基百科首页](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/5.png)
 
 - **下载地址**
 
@@ -132,7 +132,7 @@ toc: true
 
 - **截图预览**
 
-  ![使用Stylus中“Baidu Lite 百度轻”后的百度主页](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/6.png)
+  ![使用Stylus中“Baidu Lite 百度轻”后的百度主页](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/6.png)
 
 - **下载地址**
 
@@ -180,7 +180,7 @@ toc: true
 
 - **截图预览**
 
-  ![crxMouse设置界面](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/7.png)
+  ![crxMouse设置界面](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/7.png)
 
 - **下载地址**
 
@@ -228,7 +228,7 @@ toc: true
 
 - **截图预览**
 
-  ![将打开的三个标签页全部聚拢](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/8.png)
+  ![将打开的三个标签页全部聚拢](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/8.png)
 
 - **下载地址**
 
@@ -258,7 +258,7 @@ toc: true
 
 - **截图预览**
 
-  ![bilibili助手设置页面](https://img.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/9.png)
+  ![bilibili助手设置页面](https://webp.blocklune.cc/blog-imgs/cs/tools/chrome-插件推荐/9.png)
 
 - **下载地址**
 

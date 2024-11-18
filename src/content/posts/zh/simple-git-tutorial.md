@@ -17,9 +17,9 @@ date: 2024-11-12 08:20:00
 
 您可能早就听过 Git 和 GitHub，也可能因为它们相似的名字而感到困惑。这两个东西到底是什么？
 
-![Git (图片来源于互联网)](https://img.blocklune.cc/blog-imgs/cs/tools/vcs/simple-git-tutorial/1.png)
+![Git (图片来源于互联网)](https://webp.blocklune.cc/blog-imgs/cs/tools/vcs/simple-git-tutorial/1.png)
 
-![GitHub (图片来源于互联网)](https://img.blocklune.cc/blog-imgs/cs/tools/vcs/simple-git-tutorial/2.png)
+![GitHub (图片来源于互联网)](https://webp.blocklune.cc/blog-imgs/cs/tools/vcs/simple-git-tutorial/2.png)
 
 简而言之，[Git](https://git-scm.com/) 是一个 **版本控制系统（Version Control System, VCS）**，它允许您创建一个代码仓库，跟踪项目中的变化，并高效地管理文件。[GitHub](https://github.com/) 是一个用于托管远程 Git 仓库的平台，用于协作和共享项目。
 

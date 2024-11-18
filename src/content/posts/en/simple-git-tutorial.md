@@ -23,9 +23,9 @@ This is mainly a simple tutorial of Git. Some info about GitHub also included. Y
 
 You may have learnt Git and GitHub before, and also may have confused them because their similar names. What are these two things on earth?
 
-![Git (This picture is from the Internet)](https://img.blocklune.cc/blog-imgs/cs/tools/vcs/simple-git-tutorial/1.png)
+![Git (This picture is from the Internet)](https://webp.blocklune.cc/blog-imgs/cs/tools/vcs/simple-git-tutorial/1.png)
 
-![GitHub (This picture is from the Internet)](https://img.blocklune.cc/blog-imgs/cs/tools/vcs/simple-git-tutorial/2.png)
+![GitHub (This picture is from the Internet)](https://webp.blocklune.cc/blog-imgs/cs/tools/vcs/simple-git-tutorial/2.png)
 
 In short, [Git](https://git-scm.com/) is a **Version Control System (VCS)**, which enables you to create a repository of your codes, to track changes in your project and to manage your files efficiently. [GitHub](https://GitHub.com/) is a platform used to host remote Git repositories for collaboration and sharing projects.
 

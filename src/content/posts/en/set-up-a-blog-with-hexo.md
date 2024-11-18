@@ -18,7 +18,7 @@ This is a simple record of my further attempt to set up a blog with Hexo. I buil
 
 <!--more-->
 
-![Hexo](https://img.blocklune.cc/blog-imgs/cs/web/set-up-a-blog-with-hexo/1.png)
+![Hexo](https://webp.blocklune.cc/blog-imgs/cs/web/set-up-a-blog-with-hexo/1.png)
 
 ## Installation
 
@@ -50,7 +50,7 @@ Learn more in _[Hexo Docs](https://hexo.io/docs/setup)_.
 
 Before starting to use your blog, you may choose a [theme](https://hexo.io/themes/) you like.
 
-![Hexo themes](https://img.blocklune.cc/blog-imgs/cs/web/set-up-a-blog-with-hexo/2.png)
+![Hexo themes](https://webp.blocklune.cc/blog-imgs/cs/web/set-up-a-blog-with-hexo/2.png)
 
 Here I choose the [NexT](https://theme-next.js.org/) theme. To install it, run:
 

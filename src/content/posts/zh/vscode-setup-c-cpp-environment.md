@@ -22,7 +22,7 @@ toc: true
 
 打开 [VS Code 官网](https://code.visualstudio.com/)，点击 `Download for Windows` 按钮（其他平台请选择对应平台的安装包，此处以 Windows 平台为例），等待下载完成。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/1.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/1.png)
 
 > [!TIP]
 > #### 国内 VS Code 下载速度慢的解决方案
@@ -31,18 +31,18 @@ toc: true
 >
 > 在你的下载软件处（我这里是 IDM，你如果是浏览器下载的就去浏览器的下载管理器里找），找到下载地址。将下载地址中的 `az764295.vo.msecnd.net` 替换为 `vscode.cdn.azure.cn`，然后取消原任务，用修改过的下载链接新建一个下载。
 >
-> ![修改前](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/2.png)
+> ![修改前](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/2.png)
 
 打开安装包，一路下一步，直到下面这个界面，按照下边的进行选择，直到安装完毕。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/3.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/3.png)
 
 ## VS Code 设置中文
 
 打开 VS Code，点击图示左侧第五个图标或使用快捷键 `Ctrl+Shift+X` 打开 `拓展` 页面，搜索：`Chinese`，找到 `Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code` 这个插件，点击 `Install` 安装，等待安装完成后按照提示点击右下角 `Restart` 按钮重启 VS Code。
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/4.png)
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/5.png)
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/6.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/4.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/5.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/6.png)
 
 ## 安装并检查编译器
 
@@ -55,15 +55,15 @@ DevCpp 安装的时候也帮我们安装好了编译器，但 VS Code 并没有�
 >
 > 在这个按钮上右键，选择`复制链接`。
 >
-> ![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/7.png)
+> ![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/7.png)
 >
 > 然后前往[https://ghproxy.com/](https://ghproxy.com/)这个网站，粘贴上面复制的下载链接，点击下载。
 >
-> ![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/8.png)
+> ![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/8.png)
 
 打开安装包，一路默认下一步。耐心等待（国内网络可以！只要耐心等！）直到出现下面的界面：
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/9.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/9.png)
 
 输入下面的命令安装 gcc：
 
@@ -71,21 +71,21 @@ DevCpp 安装的时候也帮我们安装好了编译器，但 VS Code 并没有�
 pacman -S mingw-w64-x86_64-gcc
 ```
 
-![画横线的是需要自己输入的](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/10.png)
+![画横线的是需要自己输入的](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/10.png)
 
 接下来需要添加环境变量。直接搜索 `高级系统设置`：
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/11.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/11.png)
 
 打开后点击环境变量。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/12.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/12.png)
 
 添加系统变量。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/13.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/13.png)
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/14.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/14.png)
 
 打开 CMD 检查一下是否成功：
 输入 `gcc -v`，如果有结果，就安装成功了。
@@ -96,17 +96,17 @@ pacman -S mingw-w64-x86_64-gcc
 
 第一个：`C/C++`
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/15.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/15.png)
 
 直接点击安装（我这里截图的时候还没重启，如果按照上述步骤已经安装了中文语言包并重启了 Code，这里的 `Install` 按钮就会变成 `安装`）。
 
 第二个：`C/C++ Extension Pack`
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/16.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/16.png)
 
 第三个：`C/C++ Compile Run`
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/17.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/17.png)
 
 这个扩展提供了极其简单的`F6`一键编译运行功能。
 
@@ -124,7 +124,7 @@ int main() {
 
 `Ctrl+S` 保存，`F6` 运行，成功输出结果。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/18.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/18.png)
 
 ## Debug
 
@@ -148,16 +148,16 @@ $ pacman -S mingw-w64-x86_64-gdb
 >
 > 在 VS Code 中按下 `Ctrl + Shift + P`，输入 `install`，选择`从VSIX安装...`，选择上边下好的文件，等待安装完成。
 >
-> ![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/19.png)
+> ![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/19.png)
 
 
 安装完成后，左下角点击 `Select folder.`，选择当前文件夹。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/20.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/20.png)
 
 然后按下小齿轮进行编译，按下三角形运行，设置好断点按下小虫子进行 Debug。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/21.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/vs-code-的安装与配置基础-c-c-开发环境/21.png)
 
 ## 解决中文乱码问题
 

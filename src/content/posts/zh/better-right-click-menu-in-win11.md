@@ -27,15 +27,15 @@ title: Windows 11 中更好的右键菜单
 
 将页面拉到最下边，按下这个 **Download** 来下载这个小工具。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/1.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/1.png)
 
 你应该会得到一个 zip 压缩包。**先将它解压**，并双击运行 **W11ClassicMenu.exe** 这个文件。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/2.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/2.png)
 
 然后就是 "傻瓜式" 操作了。看不懂英文的话可以照着把语言改成中文：
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/3.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/3.png)
 
 ### 方法二
 
@@ -51,13 +51,13 @@ reg.exe add “HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2
 
 然后按下回车，重启你的文件资源管理器，应该就能看到效果生效了。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/4.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/4.png)
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/5.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/5.png)
 
 > 如何重启文件资源管理器？按下 `Ctrl + Shift + Esc` 来启动任务管理器，找到 Windows 资源管理器，右键，选择 "重新启动"。
 >
-> ![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/6.png)
+> ![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/6.png)
 
 **改为 win11 风格**：如果你反悔了，想把右键菜单改回 win11 风格，只要把上边的步骤再来一遍，不过换成这条命令：
 
@@ -69,13 +69,13 @@ reg.exe delete “HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae
 
 现在你的右键菜单回归到了原汁原味的体验：经典而复杂。各种奇奇怪怪的东西都在这儿，溢出屏幕。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/7.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/7.png)
 
 有没有什么办法来整理这些东西呢？我推荐另一个小工具：
 
 Context Menu Manager: [https://github.com/BluePointLilac/ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager)
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/8.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/8.png)
 
 ### 软件下载
 
@@ -83,25 +83,25 @@ Context Menu Manager: [https://github.com/BluePointLilac/ContextMenuManager](htt
 
 （觉得这个项目不错的话请点击右上角的 star 以支持这位 BluePointLilac 大佬哦）
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/9.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/9.png)
 
 点击 exe 文件就可以下载了。如果嫌速度慢的话，可以右键，"复制链接"，然后访问 [https://ghproxy.com/](https://ghproxy.com/)，粘贴刚刚复制的地址到输入框，点击下载。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/10.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/10.png)
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/11.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/11.png)
 
 ### 软件使用
 
 打开软件，可以看到大部分右键菜单项都被分类列出来了。你要做的就是——点击右边大大的开关键来控制是否启用某个项，或者右键某个项进行更多设置。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/12.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/12.png)
 
 更强大的是，你可以在 "其他规则" 选项卡中，启用一些非常牛逼的功能到你的右键菜单。
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/13.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/13.png)
 
-![](https://img.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/14.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/tools/better-right-click-menu-in-win11/14.png)
 
 ## TLDR
 

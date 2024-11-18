@@ -31,9 +31,9 @@ blue pen illustration, light blue background, flowers on face, growth, nature, b
 
 然后生成出了下面这些相当不错的图案：
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/1.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/1.png)
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/2.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/2.png)
 
 下边分类讲讲 tag:
 
@@ -77,7 +77,7 @@ zoom in one eyes
 
 首先描述一下原来的头像，让 AI 知道我大概是想要怎样的一个 "老婆"。~~（虽然其实我描述的时候更感觉是在捏女儿）~~ 顺便一说，我这个原来的头像其实也是 AI 生成的，叫 [WaifuLabs](https://waifulabs.com/generate)，是我把原来生成出来的丢进 PS 去了水印，又自己修缮了一下得到的。
 
-![上边是 WaifuLabs 生成出来时候的样子，下边是我自己 PS 改的](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/3.png)
+![上边是 WaifuLabs 生成出来时候的样子，下边是我自己 PS 改的](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/3.png)
 
 抛却那些提高质量的，大概给了 `披肩发`、`深灰色头发`、`深灰色眼睛`、`红色眼影`、`白色衬衫`、`微笑` 这些 tag。同时模仿了上边，给了 `面部的花` 之类的 tag：
 
@@ -93,35 +93,35 @@ zoom in one eyes
 
 跑了大概 100 张，然后挑了挑，下边展示的是部分高质量的：
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/4.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/4.png)
 
 又是一波奇奇怪怪的调整：
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/5.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/5.png)
 
 最后挑选出了这张我觉得挺有特色的：
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/6.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/6.png)
 
 然后开始根据这张进行派生：
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/7.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/7.png)
 
 # 一张壁纸（一堆壁纸）
 
 这事儿开始的挺搞笑的，当时我正在调上边的头像参数，坐我旁边玩 CSGO 的朋友希望我把某把枪拟人，然后发我了下边的图片：
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/8.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/8.png)
 
 然后我加了点描述词生成了，但生成效果并不好，我就又开始研究我上边的头像了。我完全忘记了我还拿着这张图生成的某张图在做派生呢... 我只是改回了我的 prompt，就意外地得到了下边这张图：
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/9.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/9.png)
 
 似乎是把枪头画成了那条条纹？我也不知道。反正着实是惊艳到我了，扔到 bigjpg 那边提高了一下分辨率，再扔进 PS 调了一下曲线，嘿嘿，新的手机壁纸有了！
 
-![拉的曲线](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/10.png)
+![拉的曲线](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/10.png)
 
-![新的手机壁纸！](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/11.png)
+![新的手机壁纸！](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/11.png)
 
 然后又拿这张图和基于上边改的 prompt 做了派生...
 
@@ -129,8 +129,8 @@ zoom in one eyes
 {{masterpiece,best quality}},shawl hair,dark grey hair, dark grey eyes,red eye shadow,red scanf,  light grey shirt,{{illustration}},red flower on face,white flower on hair,growth, nature,beautiful face, {{indifferent}}, zoom in one eyes,1girl, red flower background, gold fence background,focus on eye
 ```
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/12.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/12.png)
 
-![](https://img.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/13.png)
+![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/13.png)
 
 相当不错！
