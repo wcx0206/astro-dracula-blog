@@ -7,16 +7,17 @@ tags:
 - github
 - version-control
 date: 2024-11-12 08:58:00
+updated: 2024-11-18 11:20:00
 ---
 
-我之前写了一篇关于 Git 的[教程](/posts/simple-git-tutorial)。而在此文中，我希望介绍一下说到 Git 离不开的平台：GitHub。
+我之前写了一篇关于 Git 的[教程](/posts/simple-git-tutorial)。在这篇文章中，我将介绍 GitHub 这个与 Git 密不可分的平台。
 
 <!--more-->
 
-正如在介绍 Git 的文章中提到的，GitHub 是一个用于托管远程 Git 仓库的平台。您可以将其简单但不严谨地理解成，这是您的一个小云盘，可以用于同步（上传、下载）您的代码文件，并且您还可以借助该平台与其他开发者进行沟通交流。
+正如在介绍 Git 的文章中提到的，GitHub 是一个用于托管远程 Git 仓库的平台。您可以将其简单理解为一个云盘，用于同步（上传、下载）您的代码文件，并且您还可以借助该平台与其他开发者进行沟通交流。
 
 > [!Note]
-> 如果您遇到了任何问题，建议您查询 [Github Docs](https://docs.github.com/)，使用搜索引擎搜索，或者询问一个 AI 助手。或者，您也可以通过[邮箱](mailto:i@blocklune.cc)联系我。
+> 如果您遇到了任何问题，建议您查询 [GitHub Docs](https://docs.github.com/)，使用搜索引擎搜索，或者询问一个 AI 助手。您也可以通过[邮箱](mailto:i@blocklune.cc)联系我。
 
 ## 创建一个 GitHub 账户
 
@@ -117,15 +118,37 @@ git clone ssh://git@ssh.github.com:443/YOUR-USERNAME/YOUR-REPOSITORY.git
 
 ### 克隆仓库
 
-您可以使用 `git clone` 从 GitHub 克隆一个现有的 repo。最简单的形式如下
+**仓库（Repository, Repo）** 是 Git 中的概念，指的是存放您代码的地方。仓库可以分为本地仓库和远程仓库。您可以使用 `git clone` 命令从 GitHub 上克隆一个仓库，即基于一个远程仓库克隆一个本地仓库。命令格式如下：
 
 ```bash
 git clone URL [LOCAL_DIRECTORY_NAME]
 ```
 
-括号中的 `LOCAL_DIRECTORY_NAME` 为可选项。
+方括号中的 `LOCAL_DIRECTORY_NAME` 为可选项。
 
-> 不再推荐使用 http/https 网址进行克隆。使用 `git@github.com:YOUR-NAME/YOUR-REPOSITORY.git` 这样的 URL！
+在任一 GitHub 仓库的首页，您都可以找到一个绿色的 `Code` 按钮，点击它，会弹出一个选项卡，包括 HTTPS 和 SSH 标签页（您必须登录才能看到 SSH 标签页）。对于您没有编辑、修改权限的公共仓库，您可以使用它的 HTTPS 链接来克隆；如果您希望编辑某个仓库，您必须使用对应的 SSH 链接。
+
+![Code 按钮](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/my9nh-7r.webp)
+
+> [!Tip]
+> 如果您一不小心已经使用了 HTTPS 链接克隆了您希望编辑的仓库，您可以在本地仓库执行下面的命令以更新您的仓库远程地址为 SSH 版本的链接（命令中的 `origin` 其实是一个 “别名”，用于指示这是哪一个远程 Git 仓库）：
+>
+> ```bash
+> git remote set-url origin SSH_URL
+> ```
+>
+> 使用下面的命令来检查更改是否生效：
+>
+> ```bash
+> git remote -v
+> ```
+>
+> 输出应该类似于：
+>
+> ```text
+> origin    git@github.com:YOUR_NAME/YOUR_REPOSITORY.git (fetch)
+> origin    git@github.com:YOUR_NAME/YOUR_REPOSITORY.git (push)
+> ```
 
 如果想在克隆时指定分支，可以使用 `-b` 选项：
 
@@ -139,13 +162,105 @@ git clone -b BRANCH URL
 git clone URL --depth=1
 ```
 
-### 问题 & 拉取请求
+### 问题，拉取请求
 
 **问题（Issue）** 和 **拉取请求（Pull Request, PR）** 是 GitHub 上两种最重要的协作功能。通过 “问题”，您可以指出某个代码库中的问题、提出改进意见、请求添加新功能等；通过 “拉取请求”，您可以请求某个代码库的管理者合并您提交的代码，以实现对该代码库的贡献。
 
 ### GitHub 工作流
 
-参考 _[GitHub 流 - GitHub 文档](https://docs.github.com/zh/get-started/using-github/github-flow)_
+没有什么比通过例子学习更能让你快速掌握如何使用 GitHub 了。下面给出两个 GitHub 工作流，以帮助您更好地理解 GitHub 的基本概念与用法。
+
+#### 小组作业
+
+下面这个示例工作流假设您正希望与小组成员共同完成一个项目，并假设您是组长，承担着创建和管理仓库的职责：
+
+1. 首先，前往 GitHub 首页，点击上方工具栏右侧的加号按钮，在下拉栏中点击 `New repository`。
+2. 填写仓库的基本信息，包括仓库名（Repository name）等，并确定仓库类型（默认是 Public 公开仓库，但在小组作业这样一个情境下，可能您更希望它是 Private 私有的）。完成后，点击页面右下角的 `Create repository` 按钮。
+
+![创建仓库](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/nzhss-ac.webp)
+
+3. 创建完成后，会自动跳转到仓库页面：
+
+![仓库页面](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/o8e82-pl.webp)
+
+4. 按照页面的提示在本地执行相应的命令（首先记得改成 `SSH`）：
+
+- 如果您还没有在本地建立仓库，那就新建一个目录（例如名为 `teamwork-example`），然后 `cd` 进去，有选择地执行下面的命令：
+
+```bash
+echo "# teamwork-example" >> README.md # 创建一个 README.md 文件
+git init # 初始化 Git 仓库
+git add README.md # 将这个新建的 README.md 添加到暂存区
+git commit -m "first commit" # Commit，其中 commit message 为 first commit
+git branch -M main # 将当前分支名更改为 main
+git remote add origin git@github.com:YOUR-NAME/teamwork-example.git # 添加一个名为 origin 的远程仓库
+git push -u origin main # 推送到名为 origin 的远程仓库的 main 分支
+```
+
+- 如果您已经在本地建立了仓库，那就直接 `cd` 进去，执行下面的命令：
+
+```bash
+git remote add origin git@github.com:YOUR-NAME/teamwork-example.git # 添加一个名为 origin 的远程仓库
+git branch -M main # 将当前分支名更改为 main
+git push -u origin main # 推送到名为 origin 的远程仓库的 main 分支
+```
+
+5. 回到 GitHub 仓库页，现在您应该可以在这里看到您的代码了。
+
+6. 到目前为止，仅有您拥有对此仓库的编辑权限。如果您希望邀请您的小组成员，可以点击上方工具栏的 `Settings`，在左侧的 `Access` 板块选择 `Collaborators`，并点击右侧的 `Add people` 按钮：
+
+![添加协作者](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/q50fd-hs.webp)
+
+被邀请的协作者会收到一封邮件通知，按照邮件中的提示操作，最终协作者就能获得该仓库的编辑权限了。然后，协助者可以使用 SSH 链接克隆该仓库，并按照常规的 Git 工作流在本地进行修改，最后使用 `git push` 将更改推送到远程仓库。待该协作者推送后，其他协作者可以使用 `git pull` 来拉取最新的更改。
+
+> [!Important]
+> 在多编辑者的情况下，分支管理变得更为复杂。一个良好的习惯是，每个编辑者都在开始工作前执行 `git pull` 以拉取最新的更改，并在各自的功能分支上进行开发，而不是直接在主分支上工作。这样可以避免直接冲突，并使代码审查和合并变得更容易管理。此外，还可以使用在下面一个示例工作流中介绍的 PR 功能，以实现更高效的协作。
+
+#### 为一个开源项目贡献代码
+
+下面这个示例工作流假设您正希望为一个开源项目贡献代码：
+
+1. 首先，进入开源项目的首页，点击右上角的 Fork 按钮。
+
+![Fork 按钮](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/mya7c-u8.webp)
+
+2. 在自动跳转到的新建 Fork 页面，按您的需要自定义相关信息，或者保持默认，然后点击 `Create fork` 按钮。
+
+![创建 Fork 页面](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/mya6f-uo.webp)
+
+3. 现在您应该跳转到了一个同名仓库（如果您在上一步中没有修改默认设置的话）。在这个仓库的仓库名下，还标注了此仓库的 Fork 来源。例如在下图中，公共仓库为 `withastro/astro`，我的 GitHub 用户名为 BlockLune，我 Fork 得来的这个仓库就叫作 `BlockLune/astro`。
+
+![Fork 得来的仓库](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/nojpa-0f.webp)
+
+4. 使用 SSH 链接克隆该仓库到本地。
+
+5. 在终端中进入项目的根目录，输入下面的命令新建一个分支并切换到它。其中的 `BRANCH_NAME` 分支名一定是具有描述性的，并应该符合该项目的相关约定（例如如果您正希望为该项目添加一个打招呼的新功能，您的分支名可能是 `feature/greeting`）：
+
+```bash
+git checkout -b BRANCH_NAME
+```
+
+6. 执行您的 Git 工作流。例如：编辑文件，并适时地使用 `git add` 和 `git commit` 保存更改，其中的 commit message 也需要注意描述性和符合项目约定。
+
+7. 在您认为您的更改已经完成后，回到 GitHub，并前往这个项目的公共仓库地址。点击上方的 `Pull requests` 进入拉取请求标签页，然后点击右侧的绿色 `New pull request` 按钮。
+
+![新建 PR 页面](https://pub-af472240fc074a369c4d02574ef383b5.r2.dev/sip/2024/11/18/my9o5-cg.webp)
+
+8. 在新建拉取请求页面，分别选择 `base` 和 `compare` 分支。`base` 表示您希望推送（Push）到的分支；`compare` 表示您刚刚写的新功能所在的分支（例如 `feature/greeting`），即您希望对方拉取（Pull）的分支。选择完成后，点击绿色的 `Create pull request` 按钮。
+
+9. 页面将自动跳转至一个新的拉取请求页面。您可以在此页与仓库的维护者或其他人员一起沟通交流，并针对发现的问题、可能的改进等继续提交新的 commits 到此分支。观察该页面的 URL，它形如 `https://github.com/REPO_OWNER/REPO/pull/ID`。其中 ID 是自增得来的，Issue 和 PR 共同自增，仓库的第一个 Issue 或 PR 的 ID 就是 `#1`，第二个就是 `#2` 等等。
+
+10. 如果您的这个分支的工作室是修复某个问题（例如 `#2`），您还可以在描述文本中添加 `Close #2` 等关键词来将您的这个 PR 关联到那个 Issue，并在该 PR 被合并时自动关闭关联的 Issue。关于将 PR 与 Issue 相关联的更多信息，请参考 _[将拉取请求链接到议题 - GitHub 文档](https://docs.github.com/zh/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword%23linking-a-pull-request-to-an-issue-using-a-keyword)_。
+
+11. 接下来的步骤将会是仓库所有者的工作：他将审查您的代码，并在确认无误后合并您的分支（即完成拉取操作）。合并完成后，贡献分支中的 Commits 都会以某种形式合并进上面的 `base` 分支，此时就可以安全地将贡献分支（即上面的 `compare` 分支）删除了。
+
+> [!Tip]
+> 通过这个工作流，现在您应该能够理解 “拉取请求（PR）” 的含义：您 Fork 了原始仓库，并将您的贡献推送（Push）到了这个仓库，所以您希望请求（Request）原始仓库拉取（Pull）您贡献的这些内容，这就是 “拉取请求（PR）”。
+
+了解更多：
+
+- _[Hello World - GitHub 文档](https://docs.github.com/zh/get-started/start-your-journey/hello-world#step-1-create-a-repository)_
+- _[GitHub 流 - GitHub 文档](https://docs.github.com/zh/get-started/using-github/github-flow)_
 
 ## 资源
 
