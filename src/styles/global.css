@@ -5,7 +5,7 @@ del {
 }
 
 code {
-  @apply font-code;
+  @apply font-code break-all;
 }
 
 pre {
