@@ -10,7 +10,7 @@ date: 2024-11-12 08:58:00
 updated: 2024-11-18 11:20:00
 ---
 
-我之前写了一篇关于 Git 的[教程](/posts/simple-git-tutorial)。在这篇文章中，我将介绍 GitHub 这个与 Git 密不可分的平台。
+我之前写了一篇[关于 Git 的教程](/posts/simple-git-tutorial)。在这篇文章中，我将介绍 GitHub 这个与 Git 密不可分的平台。
 
 <!--more-->
 
