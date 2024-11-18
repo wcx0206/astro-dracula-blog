@@ -23,7 +23,7 @@ When in a terminal, sometimes it's really annoying to keep on typing in `cd` or 
 
 It allows you to explore files in terminal like this:
 
-![joshuto on GitHub](https://b316f18.webp.li/blog-imgs/cs/tools/joshuto-a-great-file-manager-in-terminal/1.png)
+![joshuto on GitHub](https://img.blocklune.cc/blog-imgs/cs/tools/joshuto-a-great-file-manager-in-terminal/1.png)
 
 ## Installation
 

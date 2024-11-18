@@ -39,7 +39,7 @@ RegExp doesn't support the direct expression of a number range. We have to do it
 
 After some analysis, we can easily see that we can do the 0-255 part this way:
 
-![From https://c.runoob.com/front-end/7625/](https://b316f18.webp.li/blog-imgs/cs/tools/matching-ipv4-addresses-with-regexp/1.png)
+![From https://c.runoob.com/front-end/7625/](https://img.blocklune.cc/blog-imgs/cs/tools/matching-ipv4-addresses-with-regexp/1.png)
 
 and the RegExp should be like this:
 
@@ -61,7 +61,7 @@ With similar method, we can write the 0-65535 part like this:
 [0-9]|[1-9][0-9]{1,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]
 ```
 
-![From https://c.runoob.com/front-end/7625/](https://b316f18.webp.li/blog-imgs/cs/tools/matching-ipv4-addresses-with-regexp/2.png)
+![From https://c.runoob.com/front-end/7625/](https://img.blocklune.cc/blog-imgs/cs/tools/matching-ipv4-addresses-with-regexp/2.png)
 
 ## Concatenate Them
 

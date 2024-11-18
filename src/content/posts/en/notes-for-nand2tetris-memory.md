@@ -32,11 +32,11 @@ Combinatorial Logic vs Sequential Logic
 
 Flip Flops (触发器)
 
-![Sequential Logic](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/1.png)
+![Sequential Logic](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/1.png)
 
 The Clock Data Flip Flop (DFF):
 
-![DFF](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/2.png)
+![DFF](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/2.png)
 
 Implementation of the DFF:
 
@@ -47,7 +47,7 @@ Implementation of the DFF:
 
 Bit (1-bit Register):
 
-![Bit](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/3.png)
+![Bit](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/3.png)
 
 ```python
 if load[t-1]:
@@ -58,7 +58,7 @@ else:
 
 Register:
 
-![Register](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/4.png)
+![Register](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/4.png)
 
 - w (word width): 16-bit, 32-bit, 64-bit ...
 - Register's state: the value which is currently stored in the register
@@ -71,7 +71,7 @@ At any given point of time, only one register in the RAM is selected.
 
 - k (width of address input): $k = log_{2}n$
 
-![RAM](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/5.png)
+![RAM](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/5.png)
 
 ## Unit 3.3
 
@@ -89,7 +89,7 @@ Counter's three possible control settings:
 - Next: $PC++$
 - Goto: $PC=n$
 
-![PC](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/6.png)
+![PC](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/6.png)
 
 ```python
 if reset[t] == 1:
@@ -365,7 +365,7 @@ else                    out[t+1] = out[t]
 
 into nested three-level if-else statements. Since `Mux` can only choose which state to keep, and cannot choose what state is needed before calculating that state, we have to analyze this nested if-else statement **from the innermost level outwards**. And, in terms of requirements, the top requirement will override the bottom requirement, i.e. the reset instruction will hide the load instruction, and the load instruction will hide the inc instruction. By working from the bottom up, we achieve exactly this override.
 
-![From the innermost level outwards](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/7.png)
+![From the innermost level outwards](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-memory/7.png)
 
 In order to use `Mux`, it is logical to find out what the new state of the current state (`original`) should be after `reset`, `load` and `inc`. The new state after `reset` is `false`, and the new state after `load` is `in`, without any computation. Only the state after `inc` needs to be obtained using `Inc16`, in this case which is `increased`.
 

@@ -29,6 +29,6 @@ The five projects are amazing. Instead of writing stupid experiment reports, upl
 
 I'd highly recommend any CS student to take this course on Coursera. It's free and in my opinion it's actually much easier than the listening section of the national college entrance examination or CET-4.
 
-![](https://b316f18.webp.li/blog-imgs/cs/algorithms%20&%20data%20structures/my-personal-summary-of-algorithms-part-i-on-coursera/1.png)
+![](https://img.blocklune.cc/blog-imgs/cs/algorithms%20&%20data%20structures/my-personal-summary-of-algorithms-part-i-on-coursera/1.png)
 
-![](https://b316f18.webp.li/blog-imgs/cs/algorithms%20&%20data%20structures/my-personal-summary-of-algorithms-part-i-on-coursera/2.png)
+![](https://img.blocklune.cc/blog-imgs/cs/algorithms%20&%20data%20structures/my-personal-summary-of-algorithms-part-i-on-coursera/2.png)

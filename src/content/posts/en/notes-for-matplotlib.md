@@ -39,7 +39,7 @@ import numpy as np
 
 A useful figure:
 
-![Parts of a Figure](https://b316f18.webp.li/blog-imgs/cs/languages/python/notes-for-matplotlib/1.png)
+![Parts of a Figure](https://img.blocklune.cc/blog-imgs/cs/languages/python/notes-for-matplotlib/1.png)
 
 Two coding styles:
 

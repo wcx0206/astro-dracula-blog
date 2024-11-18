@@ -24,8 +24,8 @@ title: 补记一个用 Vue.js 和 ElementUI 实现的在线抽奖网页
 
 仓库在这儿：[BlockLune/catch-dog](https://github.com/BlockLune/catch-dog)
 
-![Screenshot 1](https://b316f18.webp.li/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/1.png)
-![Screenshot 2](https://b316f18.webp.li/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/2.png)
-![Screenshot 3](https://b316f18.webp.li/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/3.png)
-![Screenshot 4](https://b316f18.webp.li/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/4.png)
-![Screenshot 5](https://b316f18.webp.li/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/5.png)
+![Screenshot 1](https://img.blocklune.cc/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/1.png)
+![Screenshot 2](https://img.blocklune.cc/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/2.png)
+![Screenshot 3](https://img.blocklune.cc/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/3.png)
+![Screenshot 4](https://img.blocklune.cc/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/4.png)
+![Screenshot 5](https://img.blocklune.cc/blog-imgs/cs/web/补记一个用-vue-js-和-elementui-实现的在线抽奖网页/5.png)

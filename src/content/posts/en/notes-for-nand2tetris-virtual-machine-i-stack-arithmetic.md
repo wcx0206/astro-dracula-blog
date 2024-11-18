@@ -42,7 +42,7 @@ What makes the abstraction work?
 - Compiler
 - Operating system
 
-![From high-level to low-level](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-virtual-machine-i-stack-arithmetic/1.png)
+![From high-level to low-level](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-virtual-machine-i-stack-arithmetic/1.png)
 
 Nand2Tetris Part II is **more demanding** than Nand2Tetris Part I.
 

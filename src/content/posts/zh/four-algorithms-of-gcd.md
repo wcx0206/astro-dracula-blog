@@ -59,7 +59,7 @@ End;
 
 ### 1. 流程图
 
-![Powered by draw.io](https://b316f18.webp.li/blog-imgs/cs/algorithms%20&%20data%20structures/求解最大公约数的四种算法/1.png)
+![Powered by draw.io](https://img.blocklune.cc/blog-imgs/cs/algorithms%20&%20data%20structures/求解最大公约数的四种算法/1.png)
 
 ### 1. C++ 代码
 
@@ -114,7 +114,7 @@ End;
 
 ### 2. 流程图
 
-![Powered by draw.io](https://b316f18.webp.li/blog-imgs/cs/algorithms%20&%20data%20structures/求解最大公约数的四种算法/2.png)
+![Powered by draw.io](https://img.blocklune.cc/blog-imgs/cs/algorithms%20&%20data%20structures/求解最大公约数的四种算法/2.png)
 
 ### 2. C++ 代码
 
@@ -279,7 +279,7 @@ $O(log(max(a,b)))$
 
 #### 4.1. 流程图
 
-![Powered by draw.io](https://b316f18.webp.li/blog-imgs/cs/algorithms%20&%20data%20structures/求解最大公约数的四种算法/3.png)
+![Powered by draw.io](https://img.blocklune.cc/blog-imgs/cs/algorithms%20&%20data%20structures/求解最大公约数的四种算法/3.png)
 
 #### 4.1. C++ 代码
 
@@ -342,7 +342,7 @@ uint64_t gcd(uint64_t a, uint64_t b)
 
 #### 4.2. 流程图
 
-![Powered by draw.io](https://b316f18.webp.li/blog-imgs/cs/algorithms%20&%20data%20structures/求解最大公约数的四种算法/4.png)
+![Powered by draw.io](https://img.blocklune.cc/blog-imgs/cs/algorithms%20&%20data%20structures/求解最大公约数的四种算法/4.png)
 
 #### 4.2. C++ 代码
 

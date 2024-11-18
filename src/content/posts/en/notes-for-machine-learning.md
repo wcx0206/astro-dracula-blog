@@ -92,7 +92,7 @@ Notation:
 
 How does supervised learning work?
 
-![How does supervised learning work](https://b316f18.webp.li/blog-imgs/cs/ai/notes-for-machine-learning/1.png)
+![How does supervised learning work](https://img.blocklune.cc/blog-imgs/cs/ai/notes-for-machine-learning/1.png)
 
 $h$ is called hypothesis function (假设函数)。
 
@@ -520,7 +520,7 @@ def gradient_descent_multi(X, y, theta, alpha, num_iters):
     return theta, J_history
 ```
 
-![gradientDescent.py](https://b316f18.webp.li/blog-imgs/cs/ai/notes-for-machine-learning/2.png)
+![gradientDescent.py](https://img.blocklune.cc/blog-imgs/cs/ai/notes-for-machine-learning/2.png)
 
 ### ex1-featureNormalize.py
 
@@ -839,7 +839,7 @@ The problem of overfitting (过拟合问题)
 
 ### What's overfitting?
 
-![Overfitting](https://b316f18.webp.li/blog-imgs/cs/ai/notes-for-machine-learning/3.png)
+![Overfitting](https://img.blocklune.cc/blog-imgs/cs/ai/notes-for-machine-learning/3.png)
 
 - Underfit: 欠拟合
 - High bias: 高偏差
@@ -1143,7 +1143,7 @@ Recent resurgence (兴起): State-of-the-art technique for many applications
 
 ### Neural Network
 
-![Neural Network](https://b316f18.webp.li/blog-imgs/cs/ai/notes-for-machine-learning/4.png)
+![Neural Network](https://img.blocklune.cc/blog-imgs/cs/ai/notes-for-machine-learning/4.png)
 
 - The input layer: the first layer
 - The output layer: the last layer
@@ -1156,7 +1156,7 @@ Notations:
 - $a_i^{(j)}$ = "activation" of unit $i$ in layer $j$ (activation 的意思是由一个具体神经元计算并输出的值)
 - $\Theta^{(j)}$ = matrix of weights controlling function mapping from layer $j$ to layer $j+1$ (权重矩阵)
 
-![An example](https://b316f18.webp.li/blog-imgs/cs/ai/notes-for-machine-learning/5.png)
+![An example](https://img.blocklune.cc/blog-imgs/cs/ai/notes-for-machine-learning/5.png)
 
 If network has $s_j$ units in layer $j$, $s_{j+1}$ units in layer $j+1$, then $\Theta^{j}$ will be of dimension $s_{j+1} \times (s_j + 1)$.
 
@@ -1164,7 +1164,7 @@ If network has $s_j$ units in layer $j$, $s_{j+1}$ units in layer $j+1$, then $\
 
 ### Forward propagation (前向传播): Vectorized implementation
 
-![Forward propagation: vectorized implementation](https://b316f18.webp.li/blog-imgs/cs/ai/notes-for-machine-learning/6.png)
+![Forward propagation: vectorized implementation](https://img.blocklune.cc/blog-imgs/cs/ai/notes-for-machine-learning/6.png)
 
 ## Lesson 62 (Exercise 3)
 
@@ -1176,7 +1176,7 @@ If network has $s_j$ units in layer $j$, $s_{j+1}$ units in layer $j+1$, then $\
 
 ## Lesson 65
 
-![Example](https://b316f18.webp.li/blog-imgs/cs/ai/notes-for-machine-learning/7.png)
+![Example](https://img.blocklune.cc/blog-imgs/cs/ai/notes-for-machine-learning/7.png)
 
 ## Lesson 66
 

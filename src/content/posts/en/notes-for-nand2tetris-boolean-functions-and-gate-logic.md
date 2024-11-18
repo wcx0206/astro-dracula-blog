@@ -59,11 +59,11 @@ Logic gates:
 
 ### Gate diagrams
 
-![Some gate diagrams](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/1.png)
+![Some gate diagrams](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/1.png)
 
 ### Gate interfaces and implements
 
-![Interface vs Implementation](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/2.png)
+![Interface vs Implementation](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/2.png)
 
 ## Unit 1.4
 
@@ -101,7 +101,7 @@ Attention! The index is **FROM RIGHT TO LEFT**!
 
 ## Unit 1.7
 
-![Mux and DMux](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/3.png)
+![Mux and DMux](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/3.png)
 
 ### Multiplexor (Mux, 复用器)
 
@@ -415,7 +415,7 @@ CHIP Mux16 {
 
 The idea of the implementation is classify the four inputs into two groups, and use two layers of `Mux16`;
 
-![Mux4Way](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/4.png)
+![Mux4Way](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/4.png)
 
 ```hdl
 /**
@@ -483,7 +483,7 @@ CHIP DMux {
 
 ### DMux4Way.hdl
 
-![DMux4Way](https://b316f18.webp.li/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/5.png)
+![DMux4Way](https://img.blocklune.cc/blog-imgs/cs/computing%20system/nand2tetris/notes-for-nand2tetris-boolean-functions-and-gate-logic/5.png)
 
 ```hdl
 /**

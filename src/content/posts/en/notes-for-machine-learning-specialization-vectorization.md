@@ -96,7 +96,7 @@ Vectorization's benefits:
 
 **Ex.**
 
-![Vectorization for Gradient descent](https://b316f18.webp.li/blog-imgs/cs/ai/notes-for-machine-learning-specialization-vectorization/1.png)
+![Vectorization for Gradient descent](https://img.blocklune.cc/blog-imgs/cs/ai/notes-for-machine-learning-specialization-vectorization/1.png)
 
 ## P55
 
