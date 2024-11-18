@@ -36,7 +36,7 @@ File structure:
 ├── public/
 ├── src/
 │   ├── assets/
-│   │   └── avatar.png
+│   │   └── avatar.webp
 │   ├── components/
 │   ├── config.ts
 │   ├── content/
@@ -65,7 +65,7 @@ File structure:
 To use this theme, follow these steps:
 
 1. Edit `src/config.ts` to configure the basic information for your site. You can also configure your [umami](https://umami.is/) analytics and search engine verifications here.
-2. Replace `src/assets/avatar.png` with your own avatar.
+2. Replace `src/assets/avatar.webp` with your own avatar.
 3. Rewrite your own about page text in `src/content/info/en/about.md` & `src/info/zh/about.md`.
 4. Delete my posts in `src/content/posts` and write your own. Currently the theme supports both Chinese and English languages, for different language versions of the same post, you need to make sure they are located in the `en` and `zh` directories and use the same filename.
 
