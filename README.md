@@ -69,7 +69,7 @@ To use this theme, follow these steps:
 3. Rewrite your own about page text in `src/content/info/en/about.md` & `src/info/zh/about.md`.
 4. Delete my posts in `src/content/posts` and write your own. Currently the theme supports both Chinese and English languages, for different language versions of the same post, you need to make sure they are located in the `en` and `zh` directories and use the same filename.
 
-To start writing a new post, follow these steps:
+To start writing a new post, you can use the `pnpm new` command (see below), or follow these steps:
 
 1. Create a file in `src/content/posts/en` if you are writing the English version of a post, say `hello-world.md`.
 2. Edit the file `src/content/posts/en/hello-world.md` like this:
@@ -117,6 +117,25 @@ pnpm build
 
 # preview (after the build)
 pnpm preview
+
+# create a new post (or draft)
+pnpm new
+```
+
+More detailed usage of `pnpm new` (The output of `pnpm new --help`):
+
+```text
+Usage: pnpm new [options] <post-title>
+
+Options:
+  -l, --lang <en|zh>   Set the language (default: en)
+  -d, --draft          Create a draft post (default: false)
+  -m, --mdx            Use MDX format (default: false)
+  -h, --help           Show this help message
+
+Example:
+  pnpm new "Hello World"
+  pnpm new -l zh "你好，世界"
 ```
 
 ## :books: The Story
