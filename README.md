@@ -1,5 +1,12 @@
 # Astro Dracula Blog
 
+<p>
+    <strong>English</strong>
+    <a href="doc/readme_zh.md">简体中文</a>
+</p>
+
+A fast and simple blog system with dracula theme built with Astro.
+
 ![Screenshot Home](doc/img/screenshot-home.png)
 
 ## :fire: Features
