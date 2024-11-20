@@ -41,6 +41,7 @@ export const MISC = {
     },
     dateTag: {
         daysToBeGreen: 7,
+        daysToBeRed: 365,
     },
     toc: {
         minHeadings: 3,

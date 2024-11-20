@@ -13,8 +13,12 @@ const { Content } = await render(post);
   <h1 class="text-dracula-pink font-black text-4xl">{post.data.title}</h1>
 
   <div class="flex flex-wrap gap-2 mt-4">
-    <DateTag date={post.data.date} type="published" />
-    {post.data.updated && <DateTag date={post.data.updated} type="updated" />}
+    <DateTag lang={lang} date={post.data.date} type="published" />
+    {
+      post.data.updated && (
+        <DateTag lang={lang} date={post.data.updated} type="updated" />
+      )
+    }
     {
       Array.from(getUniqueLowerCaseTagMap(post.data.tags).keys()).map((tag) => (
         <LabelTag lang={lang} label={tag} type="link" />
