@@ -3,7 +3,6 @@ import { defineConfig } from "astro/config";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeMathjax from "rehype-mathjax";
 import remarkMath from "remark-math";
-import remarkMermaid from "remark-mermaidjs";
 import { rehypeGithubAlerts } from "rehype-github-alerts";
 
 import react from "@astrojs/react";
@@ -26,7 +25,7 @@ export default defineConfig({
 				zshrc: "zsh",
 			},
 		},
-		remarkPlugins: [remarkDescPlugin, remarkMath, remarkMermaid],
+		remarkPlugins: [remarkDescPlugin, remarkMath],
 		rehypePlugins: [rehypeExternalLinks, rehypeGithubAlerts, rehypeMathjax],
 	},
 	integrations: [react(), sitemap(), tailwind(), partytown()],

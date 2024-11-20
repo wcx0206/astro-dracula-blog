@@ -23,7 +23,6 @@ A fast and simple blog system with dracula theme built with Astro.
 - [x] :triangular_ruler: Mathjax
 - [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
 - [x] :book: TOC (Table of Contents)
-- [x] :bar_chart: [Mermaid](https://mermaid.js.org/)
 
 ## :white_check_mark: Lighthouse Score
 

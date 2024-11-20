@@ -23,7 +23,6 @@
 - [x] :triangular_ruler: 支持 Mathjax
 - [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
 - [x] :book: 目录
-- [x] :bar_chart: [Mermaid](https://mermaid.js.org/)
 
 ## :white_check_mark: Lighthouse 评分
 
