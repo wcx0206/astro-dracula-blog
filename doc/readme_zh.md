@@ -116,6 +116,7 @@ export const defaultLang : Lang = "zh";
 ```bash
 # 安装依赖
 pnpm install
+pnpx playwright install --with-deps chromium # remark-mermaidjs
 
 # 启动开发服务器
 pnpm dev

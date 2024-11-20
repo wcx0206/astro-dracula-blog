@@ -116,6 +116,7 @@ Useful commands:
 ```bash
 # install dependencies
 pnpm install
+pnpx playwright install --with-deps chromium # needed by remark-mermaidjs
 
 # start the dev server
 pnpm dev
