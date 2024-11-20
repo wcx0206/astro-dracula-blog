@@ -20,9 +20,10 @@ A fast and simple blog system with dracula theme built with Astro.
 - [x] :world_map: Sitemap & RSS Feed
 - [x] :spider_web: SEO-Friendly
 - [x] :earth_asia: I18n-Supported (`zh` & `en`)
-- [x] :triangular_ruler: Mathjax Supported
+- [x] :triangular_ruler: Mathjax
 - [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
-- [x] :book: TOC
+- [x] :book: TOC (Table of Contents)
+- [x] :bar_chart: [Mermaid](https://mermaid.js.org/)
 
 ## :white_check_mark: Lighthouse Score
 

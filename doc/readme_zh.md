@@ -17,12 +17,13 @@
 - [x] :vampire_man: Dracula 主题
 - [x] :zap: 使用 [Motion](https://motion.dev)（原 Framer Motion）创建的动画
 - [x] :mag: 使用 [fuse.js](https://www.fusejs.io/) 构建的模糊搜索
-- [x] :world_map: 网站地图 & RSS 订阅
+- [x] :world_map: Sitemap & RSS 订阅
 - [x] :spider_web: SEO 友好
 - [x] :earth_asia: 支持国际化 (`zh` & `en`)
 - [x] :triangular_ruler: 支持 Mathjax
 - [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
 - [x] :book: 目录
+- [x] :bar_chart: [Mermaid](https://mermaid.js.org/)
 
 ## :white_check_mark: Lighthouse 评分
 
