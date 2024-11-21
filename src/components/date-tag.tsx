@@ -1,4 +1,5 @@
 import { MISC } from "@/config";
+import { getColor, getDiffInDays, getFormattedDate } from "@/utils/date";
 import { type Lang, useTranslations } from "@/utils/i18n";
 
 export default function DateTag({
@@ -11,27 +12,15 @@ export default function DateTag({
   type?: "published" | "updated";
 }) {
   const t = useTranslations(lang);
-
-  const now = new Date();
-  const target = new Date(date);
-  const diffInMilliseconds: number = now.getTime() - target.getTime();
-  const diffInDays = Math.round(diffInMilliseconds / (1000 * 60 * 60 * 24));
-
-  const color =
-    diffInDays <= MISC.dateTag.daysToBeGreen
-      ? "text-dracula-green"
-      : diffInDays > MISC.dateTag.daysToBeRed
-        ? "text-dracula-red"
-        : "text-dracula-orange";
-
-  const formattedDate = new Date(date).toISOString().slice(0, 10);
+  const formattedDate = getFormattedDate(date);
+  const diffInDays = getDiffInDays(new Date(), date);
+  const color = getColor(diffInDays);
+  const textColor = `text-dracula-${color}`;
 
   const greenTitleText = t("newlyUpdatedMsg.firstPart") + MISC.dateTag.daysToBeGreen + t("newlyUpdatedMsg.secondPart");
-
   const redTitleText = t("oldPostMsg.firstPart") + MISC.dateTag.daysToBeRed + t("oldPostMsg.secondPart");
 
-  const titleText =
-    color === "text-dracula-green" ? greenTitleText : color === "text-dracula-red" ? redTitleText : undefined;
+  const titleText = color === "green" ? greenTitleText : color === "red" ? redTitleText : undefined;
 
   /**
    * If type is given, it will display the type and the date.
@@ -48,7 +37,7 @@ export default function DateTag({
           <span>{formattedDate}</span>
         </code>
       ) : (
-        <code title={titleText} className={`inline-block bg-dracula-dark/30 px-2 py-1 ${color}`}>
+        <code title={titleText} className={`inline-block bg-dracula-dark/30 px-2 py-1 ${textColor}`}>
           {formattedDate}
         </code>
       )}
