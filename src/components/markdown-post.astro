@@ -1,10 +1,10 @@
 ---
 import { render } from "astro:content";
+import { getUniqueLowerCaseTagMap } from "@/utils/post";
 import DateTag from "./date-tag.tsx";
 import LabelTag from "./label-tag.tsx";
-import TocCard from "./toc-card";
 import Prose from "./prose.astro";
-import { getUniqueLowerCaseTagMap } from "@/utils/post";
+import TocCard from "./toc-card";
 const { lang, post, headings } = Astro.props;
 const { Content } = await render(post);
 ---

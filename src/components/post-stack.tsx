@@ -1,10 +1,10 @@
+import Fuse from "fuse.js";
 import { useState } from "react";
 import { useDebounce } from "use-debounce";
-import Fuse from "fuse.js";
 
-import PostCard from "./post-card";
 import type { PostSnapshot } from "@/schemas/post";
-import { useTranslations, type Lang } from "@/utils/i18n";
+import { type Lang, useTranslations } from "@/utils/i18n";
+import PostCard from "./post-card";
 
 const fuseOptions = {
   keys: ["slug", "title", "description", "tags"],
@@ -46,11 +46,7 @@ export default function PostStack({
         <input
           id="search"
           type="text"
-          placeholder={
-            t("search.placeholder.firstPart") +
-            numberOfPosts +
-            t("search.placeholder.secondPart.post")
-          }
+          placeholder={t("search.placeholder.firstPart") + numberOfPosts + t("search.placeholder.secondPart.post")}
           className="bg-dracula-dark/20 placeholder-dracula-blue 
                     text-dracula-light focus:outline-none focus:bg-dracula-dark 
                     hover:bg-dracula-dark px-8 py-4 transition"
@@ -59,14 +55,7 @@ export default function PostStack({
         />
       </div>
       {results.length > 0 ? (
-        results.map((snapshot) => (
-          <PostCard
-            lang={lang}
-            snapshot={snapshot}
-            animate={true}
-            key={snapshot.pureSlug}
-          />
-        ))
+        results.map((snapshot) => <PostCard lang={lang} snapshot={snapshot} animate={true} key={snapshot.pureSlug} />)
       ) : (
         <p>{t("search.noResults")}</p>
       )}

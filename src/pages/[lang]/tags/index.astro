@@ -1,15 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "@/layouts/base-layout.astro";
 import TagGroup from "@/components/tag-group.tsx";
-import { getUniqueLowerCaseTagMap, getSnapshots } from "@/utils/post";
+import BaseLayout from "@/layouts/base-layout.astro";
 import { ui, useTranslations } from "@/utils/i18n";
+import { getSnapshots, getUniqueLowerCaseTagMap } from "@/utils/post";
 
 const { lang } = Astro.props;
 const posts = await getCollection("posts");
-const tags = getUniqueLowerCaseTagMap(
-  (await getSnapshots(posts, lang)).map((post) => post.tags).flat()
-);
+const tags = getUniqueLowerCaseTagMap((await getSnapshots(posts, lang)).flatMap((post) => post.tags));
 const t = useTranslations(lang);
 
 export function getStaticPaths() {

@@ -1,11 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import {
-  getLangFromSlug,
-  getPureSlugFromSlug,
-  makeUniqueByLang,
-} from "@/utils/post";
 import { defaultLang } from "@/utils/i18n";
+import { getLangFromSlug, getPureSlugFromSlug, makeUniqueByLang } from "@/utils/post";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");

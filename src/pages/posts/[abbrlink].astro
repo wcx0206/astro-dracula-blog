@@ -1,17 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import {
-  getLangFromSlug,
-  getPureSlugFromSlug,
-  makeUniqueByLang,
-} from "@/utils/post";
 import { defaultLang } from "@/utils/i18n";
+import { getLangFromSlug, getPureSlugFromSlug, makeUniqueByLang } from "@/utils/post";
 
 export async function getStaticPaths() {
-  const postsWithAbbrlink = await getCollection(
-    "posts",
-    (post) => post.data.abbrlink
-  );
+  const postsWithAbbrlink = await getCollection("posts", (post) => post.data.abbrlink);
 
   const uniquePosts = makeUniqueByLang(postsWithAbbrlink, defaultLang);
   const paths = uniquePosts.map((post) => {

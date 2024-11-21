@@ -8,21 +8,14 @@ import Moon from "@/components/icons/moon.astro";
 import Rss from "@/components/icons/rss.astro";
 import LanguagePicker from "@/components/language-picker.astro";
 
+import { getLangFromUrl, type ui, useTranslatedPath, useTranslations } from "@/utils/i18n";
 import { SITE } from "../config";
-import {
-  ui,
-  getLangFromUrl,
-  useTranslations,
-  useTranslatedPath,
-} from "@/utils/i18n";
 
 const { title } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang as keyof typeof ui);
 const translatePath = useTranslatedPath(lang as keyof typeof ui);
-const pageTitle = title
-  ? `${title} | ${SITE.title}`
-  : `${SITE.title} | ${SITE.description}`;
+const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} | ${SITE.description}`;
 ---
 
 <html lang={lang} class="scroll-smooth">

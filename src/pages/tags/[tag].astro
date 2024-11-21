@@ -1,14 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import { getUniqueLowerCaseTagMap, makeUniqueByLang } from "@/utils/post";
 import { defaultLang, useTranslatedPath } from "@/utils/i18n";
+import { getUniqueLowerCaseTagMap, makeUniqueByLang } from "@/utils/post";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts");
   const uniquePosts = makeUniqueByLang(posts, defaultLang);
-  const tags = getUniqueLowerCaseTagMap(
-    uniquePosts.map((uniquePost) => uniquePost.data.tags).flat()
-  );
+  const tags = getUniqueLowerCaseTagMap(uniquePosts.flatMap((uniquePost) => uniquePost.data.tags));
   return Array.from(tags.keys()).map((tag) => ({ params: { tag } }));
 };
 

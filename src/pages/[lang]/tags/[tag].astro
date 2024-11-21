@@ -1,34 +1,26 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "@/layouts/base-layout.astro";
-import PostStack from "@/components/post-stack.tsx";
 import LabelTag from "@/components/label-tag.tsx";
-import {
-  getUniqueLowerCaseTagMap,
-  getSnapshots,
-  makeUniqueByLang,
-} from "@/utils/post";
-import { ui, type Lang } from "@/utils/i18n";
+import PostStack from "@/components/post-stack.tsx";
+import BaseLayout from "@/layouts/base-layout.astro";
+import { type Lang, ui } from "@/utils/i18n";
 import { useTranslations } from "@/utils/i18n";
+import { getSnapshots, getUniqueLowerCaseTagMap, makeUniqueByLang } from "@/utils/post";
 
 export const getStaticPaths = async () => {
   const paths = await Promise.all(
     Object.keys(ui).map(async (lang) => {
       const posts = await getCollection("posts");
       const uniquePosts = makeUniqueByLang(posts, lang as Lang);
-      const tags = getUniqueLowerCaseTagMap(
-        uniquePosts.map((uniquePost) => uniquePost.data.tags).flat()
-      );
+      const tags = getUniqueLowerCaseTagMap(uniquePosts.flatMap((uniquePost) => uniquePost.data.tags));
       return Array.from(tags.keys()).map((tag) => ({ params: { lang, tag } }));
-    })
+    }),
   );
   return paths.flat();
 };
 
 const { lang, tag } = Astro.params;
-const filteredPosts = await getCollection("posts", (post) =>
-  getUniqueLowerCaseTagMap(post.data.tags).get(tag)
-);
+const filteredPosts = await getCollection("posts", (post) => getUniqueLowerCaseTagMap(post.data.tags).get(tag));
 const filteredSnapshots = await getSnapshots(filteredPosts, lang as Lang);
 const t = useTranslations(lang as Lang);
 ---

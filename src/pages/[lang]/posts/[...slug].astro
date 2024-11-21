@@ -1,10 +1,10 @@
 ---
+import { getCollection, getEntry } from "astro:content";
 import MarkdownPost from "@/components/markdown-post.astro";
 import TocCard from "@/components/toc-card.tsx";
 import BaseLayout from "@/layouts/base-layout.astro";
-import { getCollection, getEntry } from "astro:content";
+import { type Lang, defaultLang, getLangFromUrl, ui } from "@/utils/i18n";
 import { classifyByLangs } from "@/utils/post";
-import { ui, defaultLang, getLangFromUrl, type Lang } from "@/utils/i18n";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");

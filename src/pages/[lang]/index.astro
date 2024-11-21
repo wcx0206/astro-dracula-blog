@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "@/layouts/base-layout.astro";
 import PostStack from "@/components/post-stack.tsx";
+import BaseLayout from "@/layouts/base-layout.astro";
+import { type Lang, ui } from "@/utils/i18n";
 import { getSnapshots } from "@/utils/post";
-import { ui, type Lang } from "@/utils/i18n";
 
 const posts = await getCollection("posts");
 
