@@ -1,3 +1,5 @@
+import { MISC } from "@/config";
+
 export const languages = {
   en: "EN",
   zh: "中",
@@ -20,10 +22,9 @@ export const ui = {
     goBackHome: "Go Back Home",
     publishedAt: "Published at",
     updatedAt: "Updated at",
-    "newlyUpdatedMsg.firstPart": "This post is updated in ",
-    "newlyUpdatedMsg.secondPart": " days.",
-    "oldPostMsg.firstPart": "This post has not been updated in over ",
-    "oldPostMsg.secondPart": " days and please check the validity of the information it contains.",
+    "post.newlyUpdatedMsg": `Updated in ${MISC.dateTag.daysToBeGreen} days`,
+    "post.oldPostWarningMsg": `Last update over ${MISC.dateTag.daysToBeRed} days ago`,
+    "post.license": "Licensed under",
   },
   zh: {
     "nav.home": "首页",
@@ -39,10 +40,9 @@ export const ui = {
     goBackHome: "返回首页",
     publishedAt: "发表于",
     updatedAt: "更新于",
-    "newlyUpdatedMsg.firstPart": "这篇文章在最近 ",
-    "newlyUpdatedMsg.secondPart": " 天内有过更新。",
-    "oldPostMsg.firstPart": "这篇文章已经超过 ",
-    "oldPostMsg.secondPart": " 天没有更新了，请检查其中信息的有效性。",
+    "post.newlyUpdatedMsg": `更新于 ${MISC.dateTag.daysToBeGreen} 日内`,
+    "post.oldPostWarningMsg": `更新于 ${MISC.dateTag.daysToBeRed} 日前`,
+    "post.license": "许可证",
   },
 } as const;
 
