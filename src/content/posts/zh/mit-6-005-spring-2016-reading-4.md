@@ -218,11 +218,11 @@ int secondsPerDay = 86400;
 
 遵循语言的词法命名约定。在 Python 中，类通常是大写的，变量是小写的，并且单词用 `_` 分隔（words_are_separated_by_underscores ）。在 Java 中：
 
-- methodsAreNamedWithCamelCaseLikeThis（方法名使用小驼峰）
-- variablesAreAlsoCamelCase（变量也使用小驼峰）
-- CONSTANTS_ARE_IN_ALL_CAPS_WITH_UNDERSCORES（常量使用全大写，并用下划线分隔）
-- ClassesAreCapitalized（类名单词首字母大写）
-- packages.are.lowercase.and.separated.by.dots（包名为全小写，使用点分隔）
+- `methodsAreNamedWithCamelCaseLikeThis`（方法名使用小驼峰）
+- `variablesAreAlsoCamelCase`（变量也使用小驼峰）
+- `CONSTANTS_ARE_IN_ALL_CAPS_WITH_UNDERSCORES`（常量使用全大写，并用下划线分隔）
+- `ClassesAreCapitalized`（类名单词首字母大写）
+- `packages.are.lowercase.and.separated.by.dots`（包名为全小写，使用点分隔）
 
 方法名通常是动词短语，如 `getDate` 或 `isUpperCase`，而变量名和类名通常是名词短语。选择短词，简明扼要，但要避免缩写。例如，`message` 比 `msg` 更清楚，`word` 比 `wd` 好得多。请记住，在课堂上和现实生活中，你的许多队友都不是以英语为母语的人，缩写对于非母语的人来说可能更难。
 
