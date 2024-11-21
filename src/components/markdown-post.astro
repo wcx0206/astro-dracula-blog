@@ -11,7 +11,10 @@ import TocCard from "./toc-card";
 const { lang, post, headings } = Astro.props;
 const { Content } = await render(post);
 
-const licenseEnabled = MISC.license?.enabled;
+let licenseEnabled = MISC.license?.enabled;
+if (!post.data.license || post.data.license === "none") {
+  licenseEnabled = false;
+}
 const license = post.data.license || MISC.license.default.name;
 const licenseLink = post.data.licenseLink || MISC.license.default.link;
 ---
