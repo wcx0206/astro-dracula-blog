@@ -10,6 +10,7 @@ tags:
 - unix
 - productivity
 title: Tmux 快速入门
+license: none
 ---
 
 对 _[How to Install and Use Tmux](https://tmuxcheatsheet.com/how-to-install-tmux/)_ 一文的中文翻译。
