@@ -1,4 +1,3 @@
-import { MISC } from "@/config";
 import { getColor, getDiffInDays, getFormattedDate } from "@/utils/date";
 import { type Lang, useTranslations } from "@/utils/i18n";
 
@@ -17,10 +16,8 @@ export default function DateTag({
   const color = getColor(diffInDays);
   const textColor = `text-dracula-${color}`;
 
-  const greenTitleText = t("newlyUpdatedMsg.firstPart") + MISC.dateTag.daysToBeGreen + t("newlyUpdatedMsg.secondPart");
-  const redTitleText = t("oldPostMsg.firstPart") + MISC.dateTag.daysToBeRed + t("oldPostMsg.secondPart");
-
-  const titleText = color === "green" ? greenTitleText : color === "red" ? redTitleText : undefined;
+  const titleText =
+    color === "green" ? t("post.newlyUpdatedMsg") : color === "red" ? t("post.oldPostWarningMsg") : undefined;
 
   /**
    * If type is given, it will display the type and the date.
