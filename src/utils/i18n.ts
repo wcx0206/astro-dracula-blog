@@ -24,6 +24,7 @@ export const ui = {
     updatedAt: "Updated at",
     "post.newlyUpdatedMsg": `Updated in ${MISC.dateTag.daysToBeGreen} days`,
     "post.oldPostWarningMsg": `Last update over ${MISC.dateTag.daysToBeRed} days ago`,
+    "post.license": "Licensed under",
   },
   zh: {
     "nav.home": "首页",
@@ -41,6 +42,7 @@ export const ui = {
     updatedAt: "更新于",
     "post.newlyUpdatedMsg": `更新于 ${MISC.dateTag.daysToBeGreen} 日内`,
     "post.oldPostWarningMsg": `更新于 ${MISC.dateTag.daysToBeRed} 日前`,
+    "post.license": "许可证",
   },
 } as const;
 

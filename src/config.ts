@@ -43,6 +43,13 @@ export const MISC = {
     daysToBeGreen: 7,
     daysToBeRed: 365,
   },
+  license: {
+    enabled: true,
+    default: {
+      name: "CC BY-NC-SA 4.0",
+      link: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    },
+  },
   toc: {
     minHeadings: 3,
   },
