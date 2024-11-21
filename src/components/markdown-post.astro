@@ -1,7 +1,7 @@
 ---
 import { render } from "astro:content";
 import { getUniqueLowerCaseTagMap } from "@/utils/post";
-import DateTag from "./date-tag.tsx";
+import DateRelatedTags from "./date-related-tags";
 import LabelTag from "./label-tag.tsx";
 import Prose from "./prose.astro";
 import TocCard from "./toc-card";
@@ -13,12 +13,7 @@ const { Content } = await render(post);
   <h1 class="text-dracula-pink font-black text-4xl">{post.data.title}</h1>
 
   <div class="flex flex-wrap gap-2 mt-4">
-    <DateTag lang={lang} date={post.data.date} type="published" />
-    {
-      post.data.updated && (
-        <DateTag lang={lang} date={post.data.updated} type="updated" />
-      )
-    }
+    <DateRelatedTags lang={lang} publishedAt={post.data.date} updatedAt={post.data.updated}/>
     {
       Array.from(getUniqueLowerCaseTagMap(post.data.tags).keys()).map((tag) => (
         <LabelTag lang={lang} label={tag} type="link" />
