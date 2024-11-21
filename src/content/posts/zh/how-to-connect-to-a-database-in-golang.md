@@ -5,6 +5,7 @@ tags:
 - golang
 - database
 date: 2024-11-11 19:05:00
+updated: 2024-11-21 16:14:00
 ---
 
 本文以 MySQL 和 PostgreSQL 为例，介绍了如何在 Golang 中连接数据库。
@@ -405,6 +406,66 @@ func deleteUserByEmail(email string) error {
 }
 ```
 
+## 下一步（GORM）
+
+在实际工程中，连接数据库更多地采用 ORM 方式。ORM（Object-Relational Mapping，对象关系映射）是一种在面向对象编程语言中实现数据持久化的一种技术。它的基本思想是将关系数据库中的数据表映射到编程语言中的对象，从而允许开发者使用面向对象的编程技术来操作数据库。
+
+[GORM](https://gorm.io/zh_CN/) 是面向 Golang 的一个全功能 ORM 库。下面演示了使用连接 PostgreSQL 并进行 CRUD 操作的流程：
+
+```go
+package main
+
+import (
+    "fmt"
+    "os"
+
+    _ "github.com/joho/godotenv/autoload"
+    "gorm.io/driver/postgres"
+    "gorm.io/gorm"
+)
+
+type User struct {
+    ID       uint
+    Email    string
+    Password string
+}
+
+func main() {
+    dbHost := os.Getenv("DB_HOST")
+    dbPort := os.Getenv("DB_PORT")
+    dbName := os.Getenv("DB_NAME")
+    dbUser := os.Getenv("DB_USER")
+    dbPassword := os.Getenv("DB_PASSWORD")
+
+    // dsn means Data Source Name
+    dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", dbHost, dbPort, dbUser, dbPassword, dbName)
+    db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+    if err != nil {
+        panic(err)
+    }
+
+    db.AutoMigrate(&User{})
+
+    // C
+    db.Create(&User{Email: "i@blocklune.cc", Password: "password123"})
+
+    // R
+    var user User
+    db.First(&user, 1)
+    fmt.Printf("User with ID 1: %s %s\n", user.Email, user.Password)
+    db.First(&user, "email = ?", "i@blocklune.cc")
+    fmt.Printf("User with email i@blocklune.cc: %d, %s\n", user.ID, user.Password)
+
+    // U
+    db.Model(&user).Update("Password", "password456")
+    db.First(&user, 1)
+    fmt.Printf("User with ID 1: %s %s\n", user.Email, user.Password)
+
+    // D
+    db.Delete(&user, 1)
+}
+```
+
 ## 总结
 
 本文详细介绍了如何在 Go 语言中连接和操作数据库，主要内容包括：
@@ -434,6 +495,7 @@ func deleteUserByEmail(email string) error {
 
 ## 参考资料
 
+- [GORM 指南 | GORM - The fantastic ORM library for Golang, aims to be developer friendly.](https://gorm.io/zh_CN/docs/)
 - [Golang MySQL CRUD Example - Golang Docs](https://golangdocs.com/mysql-golang-crud-example)
 - [Golang PostgreSQL Example - Golang Docs](https://golangdocs.com/golang-postgresql-example)
 - [Tutorial: Accessing a relational database - The Go Programming Language](https://go.dev/doc/tutorial/database-access)
