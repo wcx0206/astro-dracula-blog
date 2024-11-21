@@ -12,7 +12,7 @@ const { lang, post, headings } = Astro.props;
 const { Content } = await render(post);
 
 let licenseEnabled = MISC.license?.enabled;
-if (!post.data.license || post.data.license === "none") {
+if (post.data.license && post.data.license === "none") {
   licenseEnabled = false;
 }
 const license = post.data.license || MISC.license.default.name;
