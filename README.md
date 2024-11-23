@@ -7,7 +7,7 @@
 
 A fast and simple blog system with dracula theme built with Astro.
 
-![Screenshot Home](doc/img/screenshot-home.png)
+[![Astro Dracula Blog](doc/img/hero.webp)](doc/gallery.md)
 
 ## :fire: Features
 
@@ -144,6 +144,9 @@ Example:
   pnpm new "Hello World"
   pnpm new -l zh "你好，世界"
 ```
+
+> [!Caution]
+> Due to [the slug generation library used](https://www.npmjs.com/package/slugify), an empty slug will be generated for a full Chinese title like “你好，世界”, which will result in a file called `Untitled.md`.
 
 ## :books: The Story
 

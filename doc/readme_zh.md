@@ -7,7 +7,7 @@
 
 一个快速、简单的博客系统，使用 Dracula 主题，使用 Astro 构建。
 
-![主页截图](img/screenshot-home.png)
+[![Astro Dracula Blog](img/hero.webp)](gallery.md)
 
 ## :fire: 特性
 
@@ -144,6 +144,9 @@ Example:
   pnpm new "Hello World"
   pnpm new -l zh "你好，世界"
 ```
+
+> [!Caution]
+> 由于[使用的 slug 生成库](https://www.npmjs.com/package/slugify)的原因，对于 “你好，世界” 这样全中文的标题会生成空的 Slug，此时会产生名为 `Untitled.md` 的文件。
 
 ## :link: 参考
 
