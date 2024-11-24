@@ -168,5 +168,4 @@
 /posts/118aec2d /zh/posts/write-a-simple-thread-pool-with-rust 301
 /posts/118aec2d.html /zh/posts/write-a-simple-thread-pool-with-rust 301
 
-/ /zh 302 Language=zh
-/ /en 302
+/* /zh/:splat 302 Language=zh
