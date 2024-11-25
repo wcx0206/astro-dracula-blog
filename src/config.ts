@@ -8,6 +8,9 @@ export const SITE = {
     zh: "一个关于开发和生活的博客，由 Astro 驱动。",
   },
   url: "https://blocklune.cc",
+  og: {
+    imageUrl: "https://img.blocklune.cc/astro-blog-ogimage.jpg"
+  },
   analytics: {
     umami: {
       id: "ab70a625-ed64-484a-9c34-803e1c598bf9",

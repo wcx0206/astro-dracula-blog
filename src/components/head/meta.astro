@@ -21,7 +21,7 @@ const domain = new URL(SITE.url).hostname;
 <meta property="og:type" content="website" />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={pageDescription} />
-<meta property="og:image" content="" />
+<meta property="og:image" content={SITE.og.imageUrl} />
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -29,4 +29,4 @@ const domain = new URL(SITE.url).hostname;
 <meta property="twitter:url" content={SITE.url} />
 <meta name="twitter:title" content={pageTitle} />
 <meta name="twitter:description" content={pageDescription} />
-<meta name="twitter:image" content="" />
+<meta name="twitter:image" content={SITE.og.imageUrl} />
