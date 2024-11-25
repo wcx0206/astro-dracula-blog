@@ -136,7 +136,7 @@ export const config: Config = { path: "/preview-image" };
 
 其结果并不美观，但它奏效了！
 
-![当前结果](https://developers.netlify.com/images/full/guides/2024-03-05-generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-1.png)
+![Step 1](https://img.blocklune.cc/blog-imgs/generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-1.avif)
 
 ## 为图像添加样式
 
@@ -187,7 +187,7 @@ export default async (request: Request, context: Context) => {
 
 现在我们有了比刚才多一点点的样式：
 
-![一点点样式](https://developers.netlify.com/images/full/guides/2024-03-05-generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-2.png)
+![Step 2](https://img.blocklune.cc/blog-imgs/generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-2.avif)
 
 ### 添加 SVG 背景以及 Logo 图像
 
@@ -247,7 +247,7 @@ export default async (request: Request, context: Context) => {
 
 现在，它们协调起来了！
 
-![协调](https://developers.netlify.com/images/full/guides/2024-03-05-generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-3.png)
+![Step 3](https://img.blocklune.cc/blog-imgs/generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-3.avif)
 
 ### 为图像添加字体
 
@@ -329,7 +329,7 @@ export default async (request: Request, context: Context) => {
 
 刷新。如果一切配置正确的话，您就可以在您的图片上看到新的字体了！
 
-![带有字体的 OG 图像](https://developers.netlify.com/images/full/guides/2024-03-05-generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-4.png)
+![Step 4](https://img.blocklune.cc/blog-imgs/generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-4.avif)
 
 ## 使用动态内容
 
@@ -401,7 +401,7 @@ export const config: Config = { path: "/preview-image/:slug" };
 
 然后您就能看到动态生成的内容了！
 
-![动态生成的 OG 图像](https://developers.netlify.com/images/full/guides/2024-03-05-generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-5.png)
+![Step 5](https://img.blocklune.cc/blog-imgs/generate-dynamic-open-graph-images-using-netlify-edge-functions/dynamic-meta-images-5.avif)
 
 注意错误的 slug（例如 `/preview-image/__WRONG__`）将返回 404。
 
