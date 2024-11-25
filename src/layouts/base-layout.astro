@@ -12,17 +12,16 @@ import LanguagePicker from "@/components/language-picker.astro";
 
 import {
   getLangFromUrl,
-  type ui,
   useTranslatedPath,
   useTranslations,
+  type Lang,
 } from "@/utils/i18n";
 import { SITE } from "@/config";
-import { type Lang } from "@/utils/i18n";
 
 const { title, description } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang as keyof typeof ui);
-const translatePath = useTranslatedPath(lang as keyof typeof ui);
+const t = useTranslations(lang as Lang);
+const translatePath = useTranslatedPath(lang as Lang);
 const pageTitle = title
   ? `${title} | ${SITE.title[lang as Lang]}`
   : `${SITE.title[lang as Lang]} | ${SITE.description[lang as Lang]}`;
