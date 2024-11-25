@@ -42,7 +42,6 @@
     "use-debounce": "^10.0.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "lefthook": "^1.8.4"
+    "@biomejs/biome": "1.9.4"
   }
 }
