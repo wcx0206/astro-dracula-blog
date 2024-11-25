@@ -32,8 +32,6 @@ updated: 2023-01-12
 方法来源：[《Git Bash 中文显示乱码，options 修改为 zh_CN 和 utf-8 还是不行怎么办？》](https://blog.csdn.net/weixin_44285445/article/details/112325994)
 
 > [!Caution]
-> #### 注意
->
 > 该方法全局更改 Windows 系统的默认编码，可能引起某些软件运行异常。
 
 **以下是原来的文章:**

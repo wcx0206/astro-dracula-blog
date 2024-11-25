@@ -220,7 +220,7 @@ int main()
 
 下边是代码 1 对应的程序的一个可能的输出 (具体内存地址可能不同):
 
-```
+```text
 The pointer in getMemory() points at: 0x10161c0
 The address of the pointer in getMemory(): 0x61fdf0
 The pointer in main() points at: 0x10
@@ -258,7 +258,7 @@ int main()
 
 下边是代码 2 对应的程序的一个可能的输出 (具体内存地址可能不同):
 
-```
+```text
 The pointer in getMemory() points at: 0x7461c0
 The address of the pointer in getMemory(): 0x61fe18
 The pointer in main() points at: 0x7461c0
@@ -296,7 +296,7 @@ int main()
 
 只要将上边的代码 1 中 `void getMemory(int *p)` 改为 `void getMemory(int *&p)` 就行了，下边是可能的输出：
 
-```
+```text
 The pointer in getMemory() points at: 0x10261c0
 The address of the pointer in getMemory(): 0x61fe18
 The pointer in main() points at: 0x10261c0

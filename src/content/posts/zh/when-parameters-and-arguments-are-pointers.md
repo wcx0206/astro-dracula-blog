@@ -45,7 +45,7 @@ void func(int n)
 
 下边是输出结果：
 
-```
+```text
 Before func(), main(): n = 5
 Before n++, func(): n = 5
 After n++, func(): n = 6
@@ -122,7 +122,7 @@ void func(int *p)
 
 在我电脑上的输出结果是：
 
-```
+```text
 In main():
 p = 0xee61c0
 &p = 0x61fe18
@@ -167,7 +167,7 @@ void func(int *p)
 
 输出结果：
 
-```
+```text
 Before func(), main(): (*p) = 5
 Before (*p)++, func(): (*p) = 5
 After (*p)++, func(): (*p) = 6
@@ -204,7 +204,7 @@ void func(int arr[], int n)
 
 输出结果：
 
-```
+```text
 0 1 2
 1 2 3
 ```

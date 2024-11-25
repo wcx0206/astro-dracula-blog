@@ -76,7 +76,7 @@ int main()
 
 下边是可能的输出：
 
-```
+```text
 The value of n in main(): 0
 The address of n in main(): 0x61fe1c
 The value of n in func(): 0
@@ -143,7 +143,7 @@ int main()
 
 下边是可能的输出：
 
-```
+```text
 The value of n in main(): 0
 The address of n in main(): 0x61fe1c
 The value of n(*p) in func(): 0
@@ -196,7 +196,7 @@ int main()
 
 下边是可能的输出：
 
-```
+```text
 The value of n1 in main(): 0
 The address of n1 in main(): 0x61fe1c
 The value of n2 in func(): 0

@@ -19,13 +19,13 @@ toc: true
 
 注：这篇文章更偏向于我记录生成时使用的 tag， 不涉及基础操作。我使用的 NovelAI 下载自[这里](https://www.bilibili.com/video/BV1EV4y1L7dX)。
 
-# 一个头像（一堆头像）
+## 一个头像（一堆头像）
 
 我最开始只是用几个 tag 生成。经历了一些粗浅的尝试后，发现生成的质量并不高。但是看到了[一篇文章](https://www.yuque.com/longyuye/lmgcwy/goa36x)，照着里边的 tag 写，才算真正开始了探索。
 
 首先是根据上边那篇文章最后的示例增改了点 tag 形成的 prompt:
 
-```
+```text
 blue pen illustration, light blue background, flowers on face, growth, nature, beautiful face, pink hair,shawl hair, zoom in on eyes, apathy, red eye shadow, petite, best quality, masterpiece
 ```
 
@@ -39,37 +39,37 @@ blue pen illustration, light blue background, flowers on face, growth, nature, b
 
 提高总体质量的：
 
-```
+```text
 masterpiece, best quality, by famous artist, beautiful face
 ```
 
 使整体的风格偏向更具插画感：
 
-```
+```text
 illustration
 ```
 
 限定背景的：
 
-```
+```text
 xxxx + backgroud  (比如上边的淡蓝色背景就是 light blue background )
 ```
 
 让生成出来的 waifu 更幼的：
 
-```
+```text
 petite
 ```
 
 让脸上、头发上出现花朵装饰的：
 
-```
+```text
 flowers on face
 ```
 
 让眼睛更大的：
 
-```
+```text
 zoom in one eyes
 ```
 
@@ -81,13 +81,13 @@ zoom in one eyes
 
 抛却那些提高质量的，大概给了 `披肩发`、`深灰色头发`、`深灰色眼睛`、`红色眼影`、`白色衬衫`、`微笑` 这些 tag。同时模仿了上边，给了 `面部的花` 之类的 tag：
 
-```
+```text
 {{masterpiece,best quality}},shawl hair,dark grey hair, dark grey eyes,red eye shadow,  white shirt,illustration,flower on face,growth, nature,beautiful face, smile, zoom in one eyes
 ```
 
 以上边的内容为 prompt，同时把我改的那张扔给 NovelAI，根据生成结果又慢慢改，添加 tag，最终的 prompt 如下:
 
-```
+```text
 {{masterpiece,best quality,by wlop}},shawl hair,dark grey hair, dark grey eyes,red eye shadow, white shirt,{{{illustration}}},flower on face, growth, nature, beautiful face, small smile, zoom in one eyes, {{{{petite}}}}, dramatic shadows, ink,eye-focus, portrait, red hairclip
 ```
 
@@ -107,7 +107,7 @@ zoom in one eyes
 
 ![](https://webp.blocklune.cc/blog-imgs/cs/ai/挖老婆矿！——-novelai-初试/7.png)
 
-# 一张壁纸（一堆壁纸）
+## 一张壁纸（一堆壁纸）
 
 这事儿开始的挺搞笑的，当时我正在调上边的头像参数，坐我旁边玩 CSGO 的朋友希望我把某把枪拟人，然后发我了下边的图片：
 
@@ -125,7 +125,7 @@ zoom in one eyes
 
 然后又拿这张图和基于上边改的 prompt 做了派生...
 
-```
+```text
 {{masterpiece,best quality}},shawl hair,dark grey hair, dark grey eyes,red eye shadow,red scanf,  light grey shirt,{{illustration}},red flower on face,white flower on hair,growth, nature,beautiful face, {{indifferent}}, zoom in one eyes,1girl, red flower background, gold fence background,focus on eye
 ```
 

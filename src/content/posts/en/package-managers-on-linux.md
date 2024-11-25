@@ -30,7 +30,7 @@ Firstly, find a mirror you need on [Mirror Overview of ArchLinux offical site](h
 
 Then, edit `/etc/pacman.d/mirrorlist` , and paste the string below into the file.
 
-```
+```text
 Server = https://mirrors.njupt.edu.cn/archlinux/$repo/os/$arch
 ```
 
@@ -40,7 +40,7 @@ Last, save the file and run `sudo pacman -Syu` to update.
 
 For an easy copy, here are some mirrors in China:
 
-```
+```text
 ### China
 ## Aliyun
 # Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
@@ -121,7 +121,7 @@ The APT(Advanced Packaging Tools) is(Maybe "are"? Since it's "tools"?) widely us
 
 Take Tsinghua's mirror as an example:
 
-```
+```text
 ## Tsinghua
 ## from https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释

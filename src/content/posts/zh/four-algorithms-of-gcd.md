@@ -40,19 +40,19 @@ $O(min(a,b))$
 
 ### 1. 伪代码描述
 
-```
+```text
 var a,b,i:integer;
 input(a);
 input(b);
 Begin
 For i<-a to 1 do
 Begin
-	If a%i==0 Then
-    	If b%i==0 Then
-    	Begin
-    		print(i);
-    		break;
-    	End;
+    If a%i==0 Then
+        If b%i==0 Then
+        Begin
+            print(i);
+            break;
+        End;
 End;
 End;
 ```
@@ -102,12 +102,12 @@ int main()
 
 ### 2. 伪代码描述
 
-```
+```text
 var a,b:integer;
 def gcd(a,b):
 Begin
-	If b==0 Then
-    	return a;
+    If b==0 Then
+        return a;
     Else return(gcd(b, a%b));
 End;
 ```
@@ -266,7 +266,7 @@ uint64_t gcd(uint64_t a, uint64_t b)
 
 $O(log(max(a,b)))$
 
-### 版本一：
+### 版本一
 
 学习自[这篇](https://cnblogs.com/COLIN-LIGHTNING/p/8425484.html)文章，正好学习一下位运算的一些“骚操作”（见下文引用处）。
 
@@ -289,7 +289,7 @@ $O(log(max(a,b)))$
 >
 > (2) 异或运算 (^):
 >
-> 具体介绍参考之前的随笔：http://www.cnblogs.com/COLIN-LIGHTNING/p/8298554.html；
+> 具体介绍参考之前的随笔：[浅谈异或运算符的应用及相关题目题解 - COLINGAO - 博客园](http://www.cnblogs.com/COLIN-LIGHTNING/p/8298554.html)；
 > 应用为交换两数：a\^=b,b\^=a,a^=b 即完成了两数交换。
 >
 > (3) 按位左移 (<<):
@@ -322,7 +322,7 @@ uint64_t gcd(uint64_t a, uint64_t b)
 }
 ```
 
-### 版本二：
+### 版本二
 
 来自[这里](https://blog.csdn.net/Brilliance_panpan/article/details/88372432)，对均为奇数的情况做了不同的处理，其他都是一样的。
 
@@ -366,11 +366,11 @@ uint64_t gcd(uint64_t a, uint64_t b)
 }
 ```
 
-## 参考资料：
+## 参考资料
 
-- [《求最大公约数的 4 种常用算法*AmethystFOB 的博客 - CSDN 博客*求最大公约数的四种算法》](https://blog.csdn.net/Brilliance_panpan/article/details/88372432)
+- [《求最大公约数的 4 种常用算法\*AmethystFOB 的博客 - CSDN 博客\*求最大公约数的四种算法》](https://blog.csdn.net/Brilliance_panpan/article/details/88372432)
 - [《更相减损术\_百度百科 (baidu.com)》](https://baike.baidu.com/item/更相减损术)
-- [《教你写一手漂亮的伪代码（详细规则 & 简单实例）\_*陈同学*的博客 - CSDN 博客\_伪代码的简单例子》](https://blog.csdn.net/Dan1374219106/article/details/106676043)
+- [《教你写一手漂亮的伪代码（详细规则 & 简单实例）\_陈同学的博客 - CSDN 博客\_伪代码的简单例子》](https://blog.csdn.net/Dan1374219106/article/details/106676043)
 - [《伪代码是什么？如何写一个伪代码？-C#.Net 教程 - PHP 中文网》](https://www.php.cn/csharp-article-415083.html)
 - [《流程图\_百度百科 (baidu.com)》](https://baike.baidu.com/item/流程图/206961)
 - [《for、while、do while 三种循环的流程图画法总结（附案例） - 知乎 (zhihu.com)》](https://zhuanlan.zhihu.com/p/359722998)

@@ -21,11 +21,11 @@ toc: true
 
 下边是完整的发现及解决问题的过程。
 
-# 发现问题
+## 发现问题
 
 在按照 [《使用 VS Code + Clangd + CMake 搭建 C/C++ 开发环境》](https://www.bilibili.com/video/BV1sW411v7VZ) 搭建我在 ArchWSL 内的 C/C++ 开发环境时，我创建了一个用于测试的 HelloWorld 工程。这个工程的文件结构长这样：
 
-```
+```text
 .
 ├── build
 ├── .clang-format
@@ -61,7 +61,7 @@ int main()
 
 调试的时候发现，int 型变量 a 是可以查看的，但 std::string 型的变量 str 却显示 `error: summary string parsing error` 错误。
 
-# 问题解决
+## 问题解决
 
 在测试中我发现，这个问题只在我使用 clang 工具链编译时产生，使用 g++ 就没有这个问题，所以猜测不是 lldb 调试器的问题，而是 clang 编译器的问题。
 

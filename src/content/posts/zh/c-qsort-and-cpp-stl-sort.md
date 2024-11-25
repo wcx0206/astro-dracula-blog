@@ -124,7 +124,7 @@ int cmp(const void *a, const void *b)
 
 输出是：
 
-```
+```text
 ID: 1, Score: 5
 ID: 5, Score: 4
 ID: 2, Score: 3
@@ -217,7 +217,6 @@ bool cmp(STUDENT a, STUDENT b)
 ```
 
 输出和上边是一样的。
-
 
 > [!IMPORTANT]
 > 在 qsort 中，最后一个参数的函数的返回值应是一个有符号整型。在期望 **升序** 排序时，这个返回值应该指定为：**第一个元素大于第二个元素，返回正数；** 第一个元素等于第二个元素，返回 0；第一个元素小于第二个元素，返回负数。

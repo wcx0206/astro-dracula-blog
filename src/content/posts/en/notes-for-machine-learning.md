@@ -532,7 +532,6 @@ The hint says that:
 
 where `ddof` means Delta Degrees of Freedom. The divisor used in calculation is `N - ddof`, where `N` represents the number of elements. By default `ddof` is zero.
 
-
 > [!Note]
 > 这实际上就是总体标准差和样本标准差的区别：
 >

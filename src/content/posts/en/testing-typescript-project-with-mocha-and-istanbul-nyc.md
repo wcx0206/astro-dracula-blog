@@ -116,8 +116,6 @@ npm install --save-dev cross-env tsx
 
 > [!Note]
 > [cross-env](https://www.npmjs.com/package/cross-env) is a useful tool for setting environment variables across platforms.
-
-
 > [!WARNING]
 > I tried [ts-node](https://github.com/TypeStrong/ts-node) just like the [example](https://github.com/mochajs/mocha-examples/tree/master/packages/typescript) provided by Mocha but I encountered an `ERR_UNKNOWN_FILE_EXTENSION` like [this](https://github.com/TypeStrong/ts-node/issues/1997). Finally I use [tsx](https://github.com/privatenumber/tsx) and it works.
 
@@ -223,11 +221,11 @@ The output may be:
   2 passing (2ms)
 
 -----------|---------|----------|---------|---------|-------------------
-File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
------------|---------|----------|---------|---------|-------------------
-All files  |     100 |    85.71 |     100 |     100 |
- divide.ts |     100 |    85.71 |     100 |     100 | 1
------------|---------|----------|---------|---------|-------------------
+| File        | % Stmts   | % Branch   | % Funcs   | % Lines   | Uncovered Line #s   |
+| ----------- | --------- | ---------- | --------- | --------- | ------------------- |
+| All files   | 100       | 85.71      | 100       | 100       |
+| divide.ts   | 100       | 85.71      | 100       | 100       | 1                   |
+| ----------- | --------- | ---------- | --------- | --------- | ------------------- |
 
 =============================== Coverage summary ===============================
 Statements   : 100% ( 5/5 )

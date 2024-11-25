@@ -421,7 +421,6 @@ Here are some old content migrated from my previous Icarus blog.
   $family-code ?= 'Source Code Pro', monospace, 'Microsoft YaHei'
   ```
 
-
 > [!Caution]
 > This operation modifies the node module! So it's NOT recommended.
 
