@@ -9,6 +9,7 @@ categories:
   - Web
 abbrlink: 78783da5
 date: 2024-11-10 13:57:11
+updated: 2024-11-25 14:22:00
 ---
 
 终于，我决定自己写一个博客！
@@ -37,7 +38,7 @@ Astro 仍然是个框架，但不是一个专门的博客框架，它是泛用�
 
 还有另一个有关 Markdown 渲染的问题。我的原文 Frontmatter 中没有描述字段，而是通过一个 more 标记实现的。所以我理所当然地可以从文中提取那部分内容，用在文章导航页的文章卡片上。问题是：提取到的是 Markdown，但 Astro 不支持选择性地仅渲染这一部分 Markdown，我得自己[走一遍渲染流程](https://github.com/yy4382/yfi.moe/blob/149ff03d084a72b212c4629730f356377d702d45/app/blog/src/utils/markdown.ts#L59)（此处链接是我朋友的博客中走的流程）。这样让我有点抓狂，一个项目中有两个 Markdown 渲染流程总觉得不舒服，还得在 `astro.config.mjs` 和自定义渲染流程中配置两份相同的内容。最后我干脆放弃了渲染描述，直接用 [`mdast-util-to-string`](https://www.npmjs.com/package/mdast-util-to-string) 拿了纯文本作为描述，反正我设计的文章卡片操作逻辑是点击卡片进入文章，卡片上的链接本来就点不了。
 
-使用 Hexo 博客时，我没有太关注文章的 Slug，使用的是 [hexo-abbrlink](https://github.com/ohroy/hexo-abbrlink) 插件随机生成的（哈希？）值作为文章链接。但新博客我希望使用语义化的 Slug 作为链接，同时希望能从原来的 abbrlink 跳转到新的地址。这里的适配也花了我一阵子。
+使用 Hexo 博客时，我没有太关注文章的 Slug，使用的是 [hexo-abbrlink](https://github.com/ohroy/hexo-abbrlink) 插件随机生成的（哈希？）值作为文章链接。但新博客我希望使用语义化的 Slug 作为链接，同时希望能从原来的 abbrlink 跳转到新的地址。起初我这里采用的办法是在 Astro 中单独创建这些页面，具体的做法是读取 Frontmatter 并检查是否包含 `abbrlink` 属性，如果包含就把它使用 `Astro.rewrite` 重写为新的页面。但是这样使用 `rewrite` 实际上创建了多份内容相同的页面，这对 SEO 并不友好。目前采取的方案的方案相对就更合理一些 —— 我用 Python 写个小脚本用来找到这些包含 `abbrlink` 的文章，然后创建了 Netlify `_redirects` 文件，用 301（永久移动）将这些内容重定向到新的页面。
 
 为了练习英语，我的一些文章是用英文写的。但为了与朋友交流分享（以及写得快、偷懒），我也有文章是用中文写的。所以我特别希望博客系统能支持国际化，至少是中英双语切换。这可以说是新博客系统中最折磨我的一段了，除了新逻辑，我几乎完全重写了原有的没有 i18n 情况下的获取文章的逻辑。我现在仍然不能确定我写的逻辑对不对。如果有问题，烦请你[提交 Issue](https://github.com/BlockLune/astro-dracula-blog/issues/new) 指出来。
 
