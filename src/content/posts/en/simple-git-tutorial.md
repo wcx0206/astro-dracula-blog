@@ -12,7 +12,7 @@ tags:
 - tool
 - collaboration
 title: Simple Git Tutorial
-updated: 2024-11-12 08:20:00
+updated: 2024-11-25 15:49:00
 ---
 
 This is mainly a simple tutorial of Git. Some info about GitHub also included. You may also read _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_.
@@ -283,13 +283,10 @@ git clean -d # deletes directories
 git clean -x # deletes untracked files, including ignored files in `.gitignore` and `.git/info/exclude`
 ```
 
-## Next Steps
-
-- _[Working with Remote Server - Simple Git Tutorial](/posts/85390c91)_
-- _[Branching and Merging - Simple Git Tutorial](/posts/aa010e90)_
-
 ## Resources
 
+- [Simple Git Tutorial: Branching and Merging | BlockLune's Blog](/en/posts/simple-git-tutorial-branching-and-merging)
+- [Simple GitHub Tutorial | BlockLune's Blog](/en/posts/simple-github-tutorial)
 - _[Git - Reference](https://git-scm.com/docs)_
 - _[GitHub Docs](https://docs.github.com/)_
 - _[GitHub Training Kit](https://training.GitHub.com/)_

@@ -7,6 +7,7 @@ tags:
 - tool
 - collaboration
 date: 2024-11-12 08:20:00
+updated: 2024-11-25 15:49:00
 ---
 
 本文是一篇面向初学者的 Git 的教程，也可以当作一篇 Git 基础命令的备忘录。此文也包括了一些关于 GitHub 的信息，但如果您想更深入了解，请阅读[《简明 GitHub 教程》](/posts/simple-github-tutorial)。
@@ -275,13 +276,10 @@ git clean -d # 删除目录
 git clean -x # 删除未跟踪的文件，包括 `.gitignore` 和 `.git/info/exclude` 中的忽略文件
 ```
 
-## 下一步
-
-- _[Working with Remote Server - Simple Git Tutorial](/posts/85390c91)_
-- _[Branching and Merging - Simple Git Tutorial](/posts/aa010e90)_
-
 ## 资源
 
+- [简明 Git 教程：分支与合并 | BlockLune's Blog](/zh/posts/simple-git-tutorial-branching-and-merging)
+- [简明 GitHub 教程 | BlockLune's Blog](/zh/posts/simple-github-tutorial)
 - _[Git - Reference](https://git-scm.com/docs)_
 - _[GitHub Docs](https://docs.github.com/)_
 - _[GitHub Training Kit](https://training.GitHub.com/)_

@@ -7,7 +7,7 @@ tags:
 - github
 - version-control
 date: 2024-11-12 08:58:00
-updated: 2024-11-25 14:54:00
+updated: 2024-11-25 15:49:00
 ---
 
 我之前写了一篇[关于 Git 的教程](/posts/simple-git-tutorial)。在这篇文章中，我将介绍 GitHub 这个与 Git 密不可分的平台。
@@ -262,6 +262,35 @@ git checkout -b BRANCH_NAME
 - _[Hello World - GitHub 文档](https://docs.github.com/zh/get-started/start-your-journey/hello-world#step-1-create-a-repository)_
 - _[GitHub 流 - GitHub 文档](https://docs.github.com/zh/get-started/using-github/github-flow)_
 
+### 相关 Git 命令一览
+
+```bash
+# 添加一个新的远程服务器
+git remote add NAME URL
+
+# 删除一个远程服务器
+git remote remove NAME
+
+# 显示所有远程服务
+git remote -v
+
+# 重命名一个远程服务器
+git remote rename OLD_NAME NEW_NAME
+
+# 显示特定名称远程服务器的一些信息
+git remote show NAME
+
+# push
+git push -u NAME BRANCH # 或者 `git push --set-upstream NAME BRANCH`
+
+# fetch
+git fetch  # 从默认服务器（一般为 origin）拉取
+git fetch NAME # 从特定名字的服务器拉取
+
+# fetch & merge
+git pull
+```
+
 ## 仓库统计信息
 
 您可以在 GitHub 仓库页面的右侧看到 `Languages` 板块，显示了这个仓库所使用的语言信息。这个信息是由 [github-linguist/linguist](https://github.com/github-linguist/linguist) 生成的。
@@ -292,4 +321,6 @@ git checkout -b BRANCH_NAME
 
 ## 资源
 
-- _[GitHub docs](https://docs.github.com/)_
+- [简明 Git 教程 | BlockLune's Blog](/zh/posts/simple-git-tutorial)
+- [简明 Git 教程：分支与合并 | BlockLune's Blog](/zh/posts/simple-git-tutorial-branching-and-merging)
+- _[GitHub Docs](https://docs.github.com/)_

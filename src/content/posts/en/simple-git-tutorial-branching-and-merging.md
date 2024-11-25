@@ -12,6 +12,7 @@ tags:
 - branching
 - merging
 title: 'Simple Git Tutorial: Branching and Merging'
+updated: 2024-11-25 15:49:00
 ---
 
 Git's powerful branching and merging capabilities can help you deal with parallel collaborative development processes. Let's take a look.
@@ -94,7 +95,6 @@ git brach --unset-upstream <branch>
 git push origin --delete <branch_name>
 ```
 
-
 > [!Note]
 > There is no direct command to rename a remote branch. But you can do it like this:
 >
@@ -124,6 +124,8 @@ git branch --no-merged
 
 ## Resources
 
+- [Simple Git Tutorial | BlockLune's Blog](/en/posts/simple-git-tutorial)
+- [Simple GitHub Tutorial | BlockLune's Blog](/en/posts/simple-github-tutorial)
 - _[Git - Reference](https://git-scm.com/docs)_
 - _[git - What is a tracking branch? - Stack Overflow](https://stackoverflow.com/questions/4693588/what-is-a-tracking-branch)_
 - _[onlywei/explain-git-with-d3: Use D3 to visualize simple git branching operations.](https://github.com/onlywei/explain-git-with-d3)_
