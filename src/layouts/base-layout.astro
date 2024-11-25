@@ -4,7 +4,8 @@ import { ViewTransitions } from "astro:transitions";
 import "@/styles/global.css";
 import "@/styles/mathjax.css";
 import "@/styles/rehype-github-alerts.css";
-import Favicon from "@/components/favicon.astro";
+import Favicon from "@/components/head/favicon.astro";
+import Meta from "@/components/head/meta.astro";
 import Moon from "@/components/icons/moon.astro";
 import Rss from "@/components/icons/rss.astro";
 import LanguagePicker from "@/components/language-picker.astro";
@@ -25,29 +26,18 @@ const translatePath = useTranslatedPath(lang as keyof typeof ui);
 const pageTitle = title
   ? `${title} | ${SITE.title[lang as Lang]}`
   : `${SITE.title[lang as Lang]} | ${SITE.description[lang as Lang]}`;
-const pageDescription = description || SITE.description[lang as Lang];
 ---
 
 <html lang={lang} class="scroll-smooth">
   <head>
-    <meta charset="utf-8" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Meta lang={lang} description={description} pageTitle={pageTitle} />
     <Favicon />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link
       rel="alternate"
       type="application/rss+xml"
       title={SITE.title[lang as Lang]}
       href={new URL("rss.xml", SITE.url)}
-    />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={pageDescription} />
-    <meta name="msvalidate.01" content={SITE.searchEngine.bing} />
-    <meta name="baidu-site-verification" content={SITE.searchEngine.baidu} />
-    <meta name="sogou_site_verification" content={SITE.searchEngine.sogou} />
-    <meta
-      name="360-site-verification"
-      content={SITE.searchEngine.threeSixZero}
     />
     <script
       is:inline

@@ -1,0 +1,32 @@
+---
+import { SITE } from "@/config";
+import type { Lang } from "@/utils/i18n";
+
+const { lang, description, pageTitle } = Astro.props;
+const pageDescription = description || SITE.description[lang as Lang];
+const domain = new URL(SITE.url).hostname;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<meta name="description" content={pageDescription} />
+<meta name="msvalidate.01" content={SITE.searchEngine.bing} />
+<meta name="baidu-site-verification" content={SITE.searchEngine.baidu} />
+<meta name="sogou_site_verification" content={SITE.searchEngine.sogou} />
+<meta name="360-site-verification" content={SITE.searchEngine.threeSixZero} />
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content={SITE.url} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={pageDescription} />
+<meta property="og:image" content="" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content={domain} />
+<meta property="twitter:url" content={SITE.url} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
+<meta name="twitter:image" content="" />
