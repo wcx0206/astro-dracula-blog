@@ -156,15 +156,8 @@ Then the value of n in main(): 1
 
 ## 引用传递
 
-{% raw %}
-
-<article class="message message-immersive is-warning">
-<div class="message-body">
-<i class="fas fa-exclamation-triangle mr-2"></i>
-注意引用传递是 C++ 的特性，C 没有这个特性。
-</div>
-</article>
-{% endraw %}
+> [!Tip]
+> 注意引用传递是 C++ 的特性，C 没有这个特性。
 
 **引用传递**相当于给实参取了个别名，对形参的操作会同步到实参那边去，还是来看下边的代码 3 吧：
 
@@ -210,5 +203,4 @@ Then the value of n1 in main(): 1
 ## 参考文章
 
 - [C++ 值传递、指针传递、引用传递 - 简书 (jianshu.com)](https://www.jianshu.com/p/2b5594b876ef)
-
 - [C++ 值传递、指针传递、引用传递详解 - zqlucky - 博客园 (cnblogs.com)](https://www.cnblogs.com/dingxiaoqiang/p/8012578.html)

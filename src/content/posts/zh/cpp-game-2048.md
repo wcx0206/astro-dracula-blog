@@ -381,47 +381,38 @@ int main()
 
 其中的 a 是起始值，n 是整数的范围。
 
-{% raw %}
-
-<article class="message is-danger">
-<div class="message-body">
-{% endraw %}
-注意！`srand()`用于初始化，**只需要初始化一次**。所以，你的获取随机数函数应该长得像这样：
-
-```C++
-int getRandomNum(int min, int max)
-{
-    return (rand() % (max - min + 1)) + min;
-}
-int main()
-{
-    srand(time(0));
-    cout << getRandomNum(1,100) << endl;
-    return 0;
-}
-```
-
-而不是这样：
-
-```C++
-int getRandomNum(int min, int max)
-{
-    srand(time(0));
-    return (rand() % (max - min + 1)) + min;
-}
-int main()
-{
-    cout << getRandomNum(1,100) << endl;
-    return 0;
-}
-```
-
-**错误的写法会导致快速生成随机数时每次返回的都是随机数序列的第一个...** （可能是程序运行速度很快种子都是一样的结果）。
-
-{% raw %}
-</div>
-</article>
-{% endraw %}
+> [!Tip]
+> 注意！`srand()`用于初始化，**只需要初始化一次**。所以，你的获取随机数函数应该长得像这样：
+>
+> ```C++
+> int getRandomNum(int min, int max)
+> {
+>     return (rand() % (max - min + 1)) + min;
+> }
+> int main()
+> {
+>     srand(time(0));
+>     cout << getRandomNum(1,100) << endl;
+>     return 0;
+> }
+> ```
+>
+> 而不是这样：
+>
+> ```C++
+> int getRandomNum(int min, int max)
+> {
+>     srand(time(0));
+>     return (rand() % (max - min + 1)) + min;
+> }
+> int main()
+> {
+>     cout << getRandomNum(1,100) << endl;
+>     return 0;
+> }
+> ```
+>
+> **错误的写法会导致快速生成随机数时每次返回的都是随机数序列的第一个...** （可能是程序运行速度很快种子都是一样的结果）。
 
 接着我定义了 `getTwoOrFour()` 和 `generateNewNum()` 函数。前者用于随机生成 2/4，不必多说。后者用于在 4*4 方格内随机放上一个数字，首先生成行列坐标，如果检查到这个格子空的，可以生成在这，那就生成，结束该函数的运行，否则进行下一次尝试。
 
@@ -476,13 +467,8 @@ void init() // 初始化
 
 ### 移动与合并
 
-{% raw %}
-<article class="message is-danger">
-<div class="message-body">
-注意这里的移动与合并算法可能不是最优解，可能比较低效，甚至可能有错误。仅供参考。
-</div>
-</article>
-{% endraw %}
+> [!Caution]
+> 注意这里的移动与合并算法可能不是最优解，可能比较低效，甚至可能有错误。仅供参考。
 
 移动无非就是上下左右，彼此之间比较类似。这里以向上移动为例：
 
