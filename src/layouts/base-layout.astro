@@ -7,6 +7,7 @@ import "@/styles/rehype-github-alerts.css";
 import Moon from "@/components/icons/moon.astro";
 import Rss from "@/components/icons/rss.astro";
 import LanguagePicker from "@/components/language-picker.astro";
+import Favicon from "@/components/favicon.astro";
 
 import { getLangFromUrl, type ui, useTranslatedPath, useTranslations } from "@/utils/i18n";
 import { SITE } from "../config";
@@ -22,7 +23,7 @@ const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} | ${SITE.d
   <head>
     <meta charset="utf-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <Favicon />
     <link
       rel="alternate"
       type="application/rss+xml"
