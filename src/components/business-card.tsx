@@ -1,8 +1,9 @@
 import avatarImage from "@/assets/avatar.webp";
 import { motion, useReducedMotion } from "motion/react";
-import { AUTHOR, SOCIALS } from "../config";
+import { AUTHOR, SOCIALS } from "@/config";
+import { type Lang } from "@/utils/i18n";
 
-export default function BusinessCard() {
+export default function BusinessCard({ lang }: { lang: Lang }) {
   const shouldReduceMotion = useReducedMotion();
   const initialOpacity = shouldReduceMotion ? 1 : 0;
   const initialX = shouldReduceMotion ? 0 : 10;
@@ -22,7 +23,7 @@ export default function BusinessCard() {
       />
       <div className="flex flex-col gap-4 text-center sm:text-left">
         <h2 className="font-bold text-3xl text-dracula-pink">{AUTHOR.name}</h2>
-        <p className="text-pretty">{AUTHOR.bio}</p>
+        <p className="text-pretty">{AUTHOR.bio[lang]}</p>
         <p className="flex gap-4 justify-center sm:justify-start">
           {SOCIALS.map((social) => (
             <a

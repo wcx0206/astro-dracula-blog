@@ -20,7 +20,7 @@ export function getStaticPaths() {
 
 <BaseLayout title={t("nav.about")}>
   <div class="flex mb-12">
-    <BusinessCard client:load />
+    <BusinessCard lang={lang as Lang} client:load />
   </div>
   <Prose>
     <Content />

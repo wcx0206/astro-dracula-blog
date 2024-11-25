@@ -1,6 +1,12 @@
 export const SITE = {
-  title: "BlockLune's Blog",
-  description: "A blog about development and life, powered by Astro.",
+  title: {
+    en: "BlockLune's Blog",
+    zh: "BlockLune's Blog",
+  },
+  description: {
+    en: "A blog about development and life, powered by Astro.",
+    zh: "一个关于开发和生活的博客，由 Astro 驱动。",
+  },
   url: "https://blocklune.cc",
   analytics: {
     umami: {
@@ -19,7 +25,10 @@ export const AUTHOR = {
   name: "BlockLune",
   link: "https://github.com/BlockLune",
   email: "i@blocklune.cc",
-  bio: "A student majoring in computer science and technology.",
+  bio: {
+    en: "A student majoring in computer science and technology.",
+    zh: "一名计算机科学与技术专业的学生。",
+  }
 };
 
 export const SOCIALS = [
