@@ -9,15 +9,23 @@ import Moon from "@/components/icons/moon.astro";
 import Rss from "@/components/icons/rss.astro";
 import LanguagePicker from "@/components/language-picker.astro";
 
-import { getLangFromUrl, type ui, useTranslatedPath, useTranslations } from "@/utils/i18n";
+import {
+  getLangFromUrl,
+  type ui,
+  useTranslatedPath,
+  useTranslations,
+} from "@/utils/i18n";
 import { SITE } from "@/config";
 import { type Lang } from "@/utils/i18n";
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang as keyof typeof ui);
 const translatePath = useTranslatedPath(lang as keyof typeof ui);
-const pageTitle = title ? `${title} | ${SITE.title[lang as Lang]}` : `${SITE.title[lang as Lang]} | ${SITE.description[lang as Lang]}`;
+const pageTitle = title
+  ? `${title} | ${SITE.title[lang as Lang]}`
+  : `${SITE.title[lang as Lang]} | ${SITE.description[lang as Lang]}`;
+const pageDescription = description || SITE.description[lang as Lang];
 ---
 
 <html lang={lang} class="scroll-smooth">
@@ -33,7 +41,7 @@ const pageTitle = title ? `${title} | ${SITE.title[lang as Lang]}` : `${SITE.tit
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={SITE.description[lang as Lang]} />
+    <meta name="description" content={pageDescription} />
     <meta name="msvalidate.01" content={SITE.searchEngine.bing} />
     <meta name="baidu-site-verification" content={SITE.searchEngine.baidu} />
     <meta name="sogou_site_verification" content={SITE.searchEngine.sogou} />

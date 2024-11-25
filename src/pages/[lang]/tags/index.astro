@@ -7,7 +7,9 @@ import { getSnapshots, getUniqueLowerCaseTagMap } from "@/utils/post";
 
 const { lang } = Astro.props;
 const posts = await getCollection("posts");
-const tags = getUniqueLowerCaseTagMap((await getSnapshots(posts, lang)).flatMap((post) => post.tags));
+const tags = getUniqueLowerCaseTagMap(
+  (await getSnapshots(posts, lang)).flatMap((post) => post.tags)
+);
 const t = useTranslations(lang);
 
 export function getStaticPaths() {
@@ -18,6 +20,6 @@ export function getStaticPaths() {
 }
 ---
 
-<BaseLayout title={t("nav.tags")}>
+<BaseLayout title={t("nav.tags")} description={t("nav.tags.description")}>
   <TagGroup lang={lang} tagMap={tags} client:load />
 </BaseLayout>
