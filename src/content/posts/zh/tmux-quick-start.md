@@ -9,11 +9,12 @@ tags:
 - tool
 - unix
 - productivity
-title: Tmux 快速入门
+- translation
+title: Tmux 快速入门（翻译）
 license: none
 ---
 
-对 _[How to Install and Use Tmux](https://tmuxcheatsheet.com/how-to-install-tmux/)_ 一文的中文翻译。
+对 _[How to Install and Use Tmux](https://tmuxcheatsheet.com/how-to-install-tmux/)_ 一文的中文翻译，原作者是 [@l9c](https://github.com/l9c)。
 
 <!--more-->
 
