@@ -75,6 +75,9 @@
 2. 用您自己的头像替换 `src/assets/avatar.webp`。
 3. 在 `src/content/info/en/about.md` 和 `src/info/zh/about.md` 中重写您自己的 “关于” 页面的文本。
 4. 删除 `src/content/posts` 中的我的文章并编写您自己的文章。目前该主题支持中文和英文，对于同一篇文章的不同语言版本，您需要确保它们位于 `en` 和 `zh` 目录中并使用相同的文件名。
+5. 删除 `public/_redirects` 以及 `public/favicon.svg`，并使用您自己的 Netlify 重定向配置和 favicon 图标。
+
+### 新建文章
 
 要开始编写新文章，您可以使用 `pnpm new` 命令（见下文），或按照以下步骤操作：
 
@@ -97,6 +100,8 @@ Hello! This is my first post!
 I'm writing my first post!
 ```
 
+### 自定义配色方案
+
 要自定义此主题的配色方案，请编辑以下文件：
 
 - `src/components/prose.astro`
@@ -104,13 +109,26 @@ I'm writing my first post!
 - `src/styles/rehype-github-alerts.css`
 - `tailwind.config.mjs`
 
-目前此主题支持中文和英文，并使用英文作为默认语言。要切换到中文，请编辑 `src/utils/i18n.ts`：
+### 语言配置
+
+目前此主题支持中文和英文，并使用英文作为默认语言。
+
+要切换到中文：
+
+- 编辑 `src/utils/i18n.ts`：
 
 ```ts
 export const defaultLang : Lang = "zh";
 ```
 
-有用的命令：
+- 编辑 `public/_redirects`（确保位于文件末尾）：
+
+```text
+/ /en 302! Language=en
+/ /zh 302!
+```
+
+### 有用的命令
 
 ```bash
 # 安装依赖

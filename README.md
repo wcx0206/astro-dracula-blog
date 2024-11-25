@@ -75,6 +75,9 @@ To use this theme, follow these steps:
 2. Replace `src/assets/avatar.webp` with your own avatar.
 3. Rewrite your own about page text in `src/content/info/en/about.md` & `src/info/zh/about.md`.
 4. Delete my posts in `src/content/posts` and write your own. Currently the theme supports both Chinese and English languages, for different language versions of the same post, you need to make sure they are located in the `en` and `zh` directories and use the same filename.
+5. Remove `public/_redirects` and `public/favicon.svg` and use your own Netlify redirect configuration and favicon icon.
+
+### Write a New Post
 
 To start writing a new post, you can use the `pnpm new` command (see below), or follow these steps:
 
@@ -97,6 +100,8 @@ Hello! This is my first post!
 I'm writing my first post!
 ```
 
+### Customize Color Scheme
+
 To customize the color scheme of this theme, edit the following files:
 
 - `src/components/prose.astro`
@@ -104,13 +109,26 @@ To customize the color scheme of this theme, edit the following files:
 - `src/styles/rehype-github-alerts.css`
 - `tailwind.config.mjs`
 
-Currently this theme supports both Chinese and English, and uses English as its default language. To switch it to Chinese, edit `src/utils/i18n.ts`:
+### I18n Configuration
+
+Currently this theme supports both Chinese and English, and uses English as its default language.
+
+To switch it to Chinese:
+
+- Edit `src/utils/i18n.ts`:
 
 ```ts
 export const defaultLang : Lang = "zh";
 ```
 
-Useful commands:
+- Edit `public/_redirects` (Make sure these are at the end of the file):
+
+```text
+/ /en 302! Language=en
+/ /zh 302!
+```
+
+### Useful Commands
 
 ```bash
 # install dependencies
