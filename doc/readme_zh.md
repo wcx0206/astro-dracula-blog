@@ -75,7 +75,27 @@
 2. 用您自己的头像替换 `src/assets/avatar.webp`。
 3. 在 `src/content/info/en/about.md` 和 `src/info/zh/about.md` 中重写您自己的 “关于” 页面的文本。
 4. 删除 `src/content/posts` 中的我的文章并编写您自己的文章。目前该主题支持中文和英文，对于同一篇文章的不同语言版本，您需要确保它们位于 `en` 和 `zh` 目录中并使用相同的文件名。
-5. 删除 `public/_redirects` 以及 `public/favicon.svg`，并使用您自己的 Netlify 重定向配置和 favicon 图标。
+5. 删除 `public/_redirects`，并使用您自己的 Netlify 重定向配置。
+6. 删除 `public` 中的图标并替换为您自己的。下面的命令或许会有所帮助：
+
+```bash
+# https://github.com/yy4382/yfi.moe/blob/main/app/blog/src/components/modules/head/Favicon.astro
+mkdir magic
+magick logo.png -resize 16  ./magic/favicon-16.png
+magick logo.png -resize 32  ./magic/favicon-32.png
+magick logo.png -resize 48  ./magic/icon-48.png
+magick logo.png -resize 96  ./magic/icon-96.png
+magick logo.png -resize 144 ./magic/icon-144.png
+magick logo.png -resize 192 ./magic/icon-192.png
+magick logo.png -resize 256 ./magic/icon-256.png
+magick logo.png -resize 384 ./magic/icon-384.png
+magick logo.png -resize 512 ./magic/icon-512.png
+magick logo.png -resize 120 ./magic/apple-touch-icon-120.png
+magick logo.png -resize 152 ./magic/apple-touch-icon-152.png
+magick logo.png -resize 167 ./magic/apple-touch-icon-167.png
+magick logo.png -resize 180 ./magic/apple-touch-icon-180.png
+magick ./magic/favicon-32.png ./magic/favicon-16.png ./magic/favicon.ico
+```
 
 ### 新建文章
 

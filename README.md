@@ -75,7 +75,27 @@ To use this theme, follow these steps:
 2. Replace `src/assets/avatar.webp` with your own avatar.
 3. Rewrite your own about page text in `src/content/info/en/about.md` & `src/info/zh/about.md`.
 4. Delete my posts in `src/content/posts` and write your own. Currently the theme supports both Chinese and English languages, for different language versions of the same post, you need to make sure they are located in the `en` and `zh` directories and use the same filename.
-5. Remove `public/_redirects` and `public/favicon.svg` and use your own Netlify redirect configuration and favicon icon.
+5. Remove `public/_redirects` and use your own Netlify redirect configuration.
+6. Remove the icons in `public` and use your own. The commands below may be helpful:
+
+```bash
+# https://github.com/yy4382/yfi.moe/blob/main/app/blog/src/components/modules/head/Favicon.astro
+mkdir magic
+magick logo.png -resize 16  ./magic/favicon-16.png
+magick logo.png -resize 32  ./magic/favicon-32.png
+magick logo.png -resize 48  ./magic/icon-48.png
+magick logo.png -resize 96  ./magic/icon-96.png
+magick logo.png -resize 144 ./magic/icon-144.png
+magick logo.png -resize 192 ./magic/icon-192.png
+magick logo.png -resize 256 ./magic/icon-256.png
+magick logo.png -resize 384 ./magic/icon-384.png
+magick logo.png -resize 512 ./magic/icon-512.png
+magick logo.png -resize 120 ./magic/apple-touch-icon-120.png
+magick logo.png -resize 152 ./magic/apple-touch-icon-152.png
+magick logo.png -resize 167 ./magic/apple-touch-icon-167.png
+magick logo.png -resize 180 ./magic/apple-touch-icon-180.png
+magick ./magic/favicon-32.png ./magic/favicon-16.png ./magic/favicon.ico
+```
 
 ### Write a New Post
 
