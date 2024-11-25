@@ -12,7 +12,7 @@ tags:
 - tool
 - collaboration
 title: Simple Git Tutorial
-updated: 2024-11-25 15:49:00
+updated: 2024-11-25 16:06:00
 ---
 
 This is mainly a simple tutorial of Git. Some info about GitHub also included. You may also read _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_.
@@ -261,6 +261,22 @@ git log
   - `--pretty=full`
   - `--pretty=fuller`
 - `--graph` flag adds some ascii characters to vividly show your history.
+
+## Stashing Changes
+
+Sometimes you may want to temporarily save changes in your workspace, but you don't want to commit them. For example, you've started your work, edited a few files, and then you remember that you forgot to pull the latest changes using `git pull`. In these cases, you can use the `git stash` command:
+
+```bash
+git stash # Save the current uncommitted changes
+git stash pop # Revert the last stash and remove it from the stash list
+git stash clear # Clear the stash list
+```
+
+By default, it does not save files that are not tracked (not using `git add`). To include these files, you can use the option `-u`.
+
+Learn more:
+
+- _[How to Use Git Stash to Efficiently Manage Your Code](https://www.freecodecamp.org/news/how-to-use-git-stash-to-manage-code/)_
 
 ## Discarding Changes in Working
 

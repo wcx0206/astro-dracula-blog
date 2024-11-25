@@ -7,7 +7,7 @@ tags:
 - tool
 - collaboration
 date: 2024-11-12 08:20:00
-updated: 2024-11-25 15:49:00
+updated: 2024-11-25 16:06:00
 ---
 
 本文是一篇面向初学者的 Git 的教程，也可以当作一篇 Git 基础命令的备忘录。此文也包括了一些关于 GitHub 的信息，但如果您想更深入了解，请阅读[《简明 GitHub 教程》](/posts/simple-github-tutorial)。
@@ -122,7 +122,7 @@ Git 中有三个主要状态：**已修改**、**已暂存**和**已提交**。�
 > [!Tip]
 > 请不要误解这里所说的 “提交”！这里的所有操作均发生在您的本地 Git 仓库。
 
-更多信息请参阅[《Git - Git 是什么？》](https://git-scm.com/book/zh/v2/%e8%b5%b7%e6%ad%a5-Git-%e6%98%af%e4%bb%80%e4%b9%88%ef%bc%9f)。
+更多信息请参阅 _[《Git - Git 是什么？》](https://git-scm.com/book/zh/v2/%e8%b5%b7%e6%ad%a5-Git-%e6%98%af%e4%bb%80%e4%b9%88%ef%bc%9f)_。
 
 ## 跟踪文件
 
@@ -254,6 +254,22 @@ git log
   - `--pretty=full`
   - `--pretty=fuller`
 - `--graph` 标志添加了一些 ASCII 字符，以花哨的方式输出日志。
+
+## 暂存更改
+
+有时，您可能希望暂时保存您工作区的更改，但并不希望将其作为 Commit 提交。例如，您已经开始了您的工作，编辑了几个文件，此时您才想起来您忘记使用 `git pull` 拉取最新的更改。在这些情形下，您可以使用 `git stash` 命令：
+
+```bash
+git stash # 保存当前未提交的改动
+git stash pop # 恢复最近一次 stash 的改动，并从 stash 列表中移除
+git stash clear # 清空 stash 列表
+```
+
+默认情况下，它不会保存未跟踪（未使用 `git add`）的文件。为了包括这些文件，您可以使用选项 `-u`。
+
+了解更多：
+
+- _[How to Use Git Stash to Efficiently Manage Your Code](https://www.freecodecamp.org/news/how-to-use-git-stash-to-manage-code/)_
 
 ## 丢弃工作目录中的更改
 
