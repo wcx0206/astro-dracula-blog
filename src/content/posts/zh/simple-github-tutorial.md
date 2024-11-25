@@ -7,7 +7,7 @@ tags:
 - github
 - version-control
 date: 2024-11-12 08:58:00
-updated: 2024-11-18 11:20:00
+updated: 2024-11-25 14:54:00
 ---
 
 我之前写了一篇[关于 Git 的教程](/posts/simple-git-tutorial)。在这篇文章中，我将介绍 GitHub 这个与 Git 密不可分的平台。
@@ -261,6 +261,34 @@ git checkout -b BRANCH_NAME
 
 - _[Hello World - GitHub 文档](https://docs.github.com/zh/get-started/start-your-journey/hello-world#step-1-create-a-repository)_
 - _[GitHub 流 - GitHub 文档](https://docs.github.com/zh/get-started/using-github/github-flow)_
+
+## 仓库统计信息
+
+您可以在 GitHub 仓库页面的右侧看到 `Languages` 板块，显示了这个仓库所使用的语言信息。这个信息是由 [github-linguist/linguist](https://github.com/github-linguist/linguist) 生成的。
+
+有时您可能希望对此处信息进行一些控制（例如您可能希望将 Jupyter Notebook 归类到 Python），所以了解它们是从何而来的会有点用。为了进行上述控制，一个可能的方法是使用 `.gitattributes`，例如：
+
+```text
+*.ipynb linguist-language=Python
+```
+
+了解更多：
+
+- [linguist/docs/overrides.md at main · github-linguist/linguist](https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#using-gitattributes)
+
+## GitHub 个人资料
+
+您可以创建一个与您的 GitHub 用户名同名的仓库，并往其中添加一个 `README.md` 文件，以创建一个个人简介页面。这个页面会显示在您的 GitHub 个人页面。例如，我的仓库是 [BlockLune/BlockLune](https://github.com/BlockLune/BlockLune)，显示在 [我的 GitHub 个人页面](https://github.com/BlockLune)。
+
+很多人会选择在这里添加一些统计信息。GitHub 上实际上有很多专门的项目用于生成这些统计信息，例如：
+
+- [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
+- [ryo-ma/github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy)
+- [DenverCoder1/github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats)
+
+了解更多：
+
+- [自定义个人资料 - GitHub 文档](https://docs.github.com/zh/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile)
 
 ## 资源
 
