@@ -22,15 +22,14 @@ export async function getStaticPaths() {
   return paths;
 }
 
-export const GET: APIRoute = async ({ props }) => {
-  console.log(props);
+export const GET: APIRoute = async ({ props, params }) => {
   if (!props.post) {
     for (const possibleLang of Object.keys(ui)) {
-      if (await getEntry("posts", `${possibleLang}/${Astro.params.slug}`)) {
+      if (await getEntry("posts", `${possibleLang}/${params.slug}`)) {
         return new Response(null, {
           status: 302,
           headers: {
-            Location: `/${possibleLang}/og-images/${Astro.params.slug}.png`,
+            Location: `/${possibleLang}/og-images/${params.slug}.png`,
           },
         });
       }
@@ -38,7 +37,7 @@ export const GET: APIRoute = async ({ props }) => {
     return new Response(null, { status: 404 });
   }
   return new Response(
-    await generateOgImageForPost(Astro.params.lang, props.post),
+    await generateOgImageForPost(params.lang as Lang, props.post),
     {
       headers: { "Content-Type": "image/png" },
     }
