@@ -1,4 +1,4 @@
----
+import type { APIRoute } from "astro";
 import { getCollection, getEntry } from "astro:content";
 import { type Lang, ui } from "@/utils/i18n";
 import { classifyByLangs } from "@/utils/post";
@@ -21,18 +21,20 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const { post } = Astro.props;
-const { lang, slug } = Astro.params;
+export const GET: APIRoute = async ({ props, params }) => {
+  let { post } = props;
+  const { lang, slug } = params;
 
-if (!post) {
-  for (const possibleLang of Object.keys(ui)) {
-    if (await getEntry("posts", `${possibleLang}/${slug}`)) {
-      return Astro.rewrite(`/${possibleLang}/og-images/${slug}.png`);
+  if (!post) {
+    for (const possibleLang of Object.keys(ui)) {
+      const possiblePost = await getEntry("posts", `${possibleLang}/${slug}`);
+      if (possiblePost) {
+        post = possiblePost;
+      }
     }
   }
-  return Astro.rewrite("/404");
-}
-return new Response(await generateOgImageForPost(lang as Lang, post!), {
-  headers: { "Content-Type": "image/png" },
-});
----
+
+  return new Response(await generateOgImageForPost(lang as Lang, post!), {
+    headers: { "Content-Type": "image/png" },
+  });
+};
