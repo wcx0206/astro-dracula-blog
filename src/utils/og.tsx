@@ -18,8 +18,8 @@ export async function generateOgImageForPost(lang: Lang, post: Post) {
   const svg = await satori(
     <div
       style={{
-        width: "100%",
-        height: "100%",
+        width: 1200,
+        height: 630,
         background: "#282A36",
         display: "flex",
         alignItems: "center",
@@ -28,10 +28,9 @@ export async function generateOgImageForPost(lang: Lang, post: Post) {
     >
       <div
         style={{
-          width: "90%",
-          height: "90%",
-          background: "#44475A",
-          opacity: "0.2",
+          width: 1100,
+          height: 530,
+          background: "#44475A33",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -70,10 +69,11 @@ export async function generateOgImageForPost(lang: Lang, post: Post) {
               <span
                 style={{
                   color: "#8BE9FD",
+                  marginRight: 10,
                 }}
               >
                 by
-              </span>{" "}
+              </span>
               <span
                 style={{
                   color: "#F8F8F2",
@@ -102,7 +102,7 @@ export async function generateOgImageForPost(lang: Lang, post: Post) {
       height: 630,
       embedFont: true,
       fonts: (await loadGoogleFonts(
-        post.data.title + SITE.title + "by" + AUTHOR.name
+        post.data.title + SITE.title[lang] + "by" + AUTHOR.name
       )) as FontOptions[],
     }
   );
