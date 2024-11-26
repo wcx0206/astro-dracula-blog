@@ -77,10 +77,11 @@ export async function generateOgImageForPost(lang: Lang, post: Post) {
               fontSize: 28,
             }}
           >
-            <span>
+            <span style={{
+              color: "#8BE9FD",
+            }}>
               <span
                 style={{
-                  color: "#8BE9FD",
                   marginRight: 10,
                 }}
               >
