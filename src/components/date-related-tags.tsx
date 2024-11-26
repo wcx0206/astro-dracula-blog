@@ -1,5 +1,5 @@
 import { getDiffInDays } from "@/utils/date";
-import { type Lang, useTranslations } from "@/utils/i18n";
+import { type Lang } from "@/utils/i18n";
 import DateTag from "./date-tag";
 import PostDateStatusTag from "./post-date-status-tag";
 
@@ -12,7 +12,6 @@ export default function DateRelatedTags({
   publishedAt: string;
   updatedAt?: string;
 }) {
-  const t = useTranslations(lang);
   const latestDate = updatedAt || publishedAt;
   const diffInDays = getDiffInDays(new Date(), latestDate);
 
