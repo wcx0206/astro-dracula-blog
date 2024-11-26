@@ -12,6 +12,7 @@ export const PostFrontmatterSchema = z.object({
   updated: z.date().optional(),
   license: z.string().optional(),
   licenseLink: z.string().optional(),
+  ogImageUrl: z.string().optional(),
 });
 
 export const PostSchema = z.object({

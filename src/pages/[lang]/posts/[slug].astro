@@ -27,6 +27,8 @@ export async function getStaticPaths() {
 
 const { post, headings } = Astro.props;
 const { lang, slug } = Astro.params;
+const ogImageUrlToUse =
+  post?.data.ogImageUrl || `/${lang}/og-images/${slug}.png`;
 
 if (!post) {
   for (const possibleLang of Object.keys(ui)) {
@@ -41,7 +43,7 @@ if (!post) {
 <BaseLayout
   title={post!.data.title}
   description={getDescFromMdString(post!.body)}
-  ogImageUrl={`/${lang}/og-images/${slug}.png`}
+  ogImageUrl={ogImageUrlToUse}
 >
   <div class="relative">
     <div class="hidden 2xl:block fixed right-10 top-10 w-72">
