@@ -121,6 +121,16 @@ Hello! This is my first post!
 I'm writing my first post!
 ```
 
+目前，Frontmatter 支持以下属性：
+
+- `title`：文章标题
+- `tags`：文章标签
+- `date`：文章的发布日期
+- `updated`：文章的更新日期
+- `license`：文章的许可证，设置为 `none` 以禁用
+- `licenseLink`: 许可证链接
+- `ogImageUrl`: 指定特定文章的 Open Graph 图片
+
 ### 自定义配色方案
 
 要自定义此主题的配色方案，请编辑以下文件：

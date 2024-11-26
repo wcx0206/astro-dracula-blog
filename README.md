@@ -121,6 +121,16 @@ Hello! This is my first post!
 I'm writing my first post!
 ```
 
+Currently, Frontmatter supports the following properties
+
+- `title`: the title of a post
+- `tags`: the tags of a post
+- `date`: the published date of a post
+- `updated`: the updated date of a post
+- `license`: the license of a post, set to `none` to disable the license for a specific post
+- `licenseLink`: the license link
+- `ogImageUrl`: specify an Open Graph image for a specific post
+
 ### Customize Color Scheme
 
 To customize the color scheme of this theme, edit the following files:
