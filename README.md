@@ -23,6 +23,7 @@ A fast and simple blog system with dracula theme built with Astro.
 - [x] :triangular_ruler: Mathjax
 - [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
 - [x] :book: TOC (Table of Contents)
+- [x] :framed_picture: Dynamic Open Graph Generation for Posts
 
 ## :white_check_mark: Lighthouse Score
 

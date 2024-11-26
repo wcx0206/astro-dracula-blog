@@ -23,6 +23,7 @@
 - [x] :triangular_ruler: 支持 Mathjax
 - [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
 - [x] :book: 目录
+- [x] :framed_picture: 为文章自动生成 Open Graph 图像
 
 ## :white_check_mark: Lighthouse 评分
 
