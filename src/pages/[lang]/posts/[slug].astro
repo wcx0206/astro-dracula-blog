@@ -3,7 +3,7 @@ import { getCollection, getEntry } from "astro:content";
 import MarkdownPost from "@/components/markdown-post.astro";
 import TocCard from "@/components/toc-card.tsx";
 import BaseLayout from "@/layouts/base-layout.astro";
-import { type Lang, defaultLang, getLangFromUrl, ui } from "@/utils/i18n";
+import { type Lang, ui } from "@/utils/i18n";
 import { classifyByLangs } from "@/utils/post";
 import { getDescFromMdString } from "@/utils/markdown";
 
@@ -27,20 +27,19 @@ export async function getStaticPaths() {
 
 const { post, headings } = Astro.props;
 const { lang, slug } = Astro.params;
-const [currentLang] = getLangFromUrl(Astro.url.pathname);
 
-// TODO: support more langs
 if (!post) {
-  if (currentLang !== defaultLang) {
-    return Astro.rewrite(`/${defaultLang}/posts/${slug}`);
+  for (const possibleLang of Object.keys(ui)) {
+    if (await getEntry("posts", `${possibleLang}/${slug}`)) {
+      return Astro.rewrite(`/${possibleLang}/posts/${slug}`);
+    }
   }
-  return Astro.rewrite(`/zh/posts/${slug}`);
 }
 ---
 
 <BaseLayout
-  title={post.data.title}
-  description={getDescFromMdString(post.body)}
+  title={post!.data.title}
+  description={getDescFromMdString(post!.body)}
 >
   <div class="relative">
     <div class="hidden 2xl:block fixed right-10 top-10 w-72">
