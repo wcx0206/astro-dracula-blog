@@ -2,9 +2,10 @@
 import { SITE } from "@/config";
 import type { Lang } from "@/utils/i18n";
 
-const { lang, description, pageTitle } = Astro.props;
+const { lang, description, pageTitle, ogImageUrl } = Astro.props;
 const pageDescription = description || SITE.description[lang as Lang];
 const domain = new URL(SITE.url).hostname;
+const pageOgImageUrl = new URL(ogImageUrl || SITE.og.imageUrl, SITE.url);
 ---
 
 <meta charset="utf-8" />
@@ -21,7 +22,7 @@ const domain = new URL(SITE.url).hostname;
 <meta property="og:type" content="website" />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={pageDescription} />
-<meta property="og:image" content={SITE.og.imageUrl} />
+<meta property="og:image" content={pageOgImageUrl} />
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -29,4 +30,4 @@ const domain = new URL(SITE.url).hostname;
 <meta property="twitter:url" content={SITE.url} />
 <meta name="twitter:title" content={pageTitle} />
 <meta name="twitter:description" content={pageDescription} />
-<meta name="twitter:image" content={SITE.og.imageUrl} />
+<meta name="twitter:image" content={pageOgImageUrl} />

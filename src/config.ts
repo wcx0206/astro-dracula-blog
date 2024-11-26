@@ -9,7 +9,7 @@ export const SITE = {
   },
   url: "https://blocklune.cc",
   og: {
-    imageUrl: "https://img.blocklune.cc/astro-blog-ogimage.jpg"
+    imageUrl: "/ogimage.jpg"
   },
   analytics: {
     umami: {

@@ -41,6 +41,7 @@ if (!post) {
 <BaseLayout
   title={post!.data.title}
   description={getDescFromMdString(post!.body)}
+  ogImageUrl={`/${lang}/og-images/${slug}.png`}
 >
   <div class="relative">
     <div class="hidden 2xl:block fixed right-10 top-10 w-72">
