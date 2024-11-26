@@ -14,6 +14,18 @@ function svgBufferToPngBuffer(svg: string) {
   return pngData.asPng();
 }
 
+function limitText(text: string, length: number) {
+  if (text.length <= length) return text;
+  const truncated = text.slice(0, length);
+  const isAscii = /^[\x00-\x7F]*$/.test(truncated); // Check if the text is ASCII
+  if (!isAscii) return truncated + " ...";
+
+  const lastSpaceIndex = truncated.lastIndexOf(" ");
+  return lastSpaceIndex === -1
+    ? truncated + " ..."
+    : truncated.slice(0, lastSpaceIndex) + " ...";
+}
+
 export async function generateOgImageForPost(lang: Lang, post: Post) {
   const svg = await satori(
     <div
@@ -50,11 +62,11 @@ export async function generateOgImageForPost(lang: Lang, post: Post) {
               color: "#FF79C6",
               fontSize: 72,
               fontWeight: "bold",
-              maxHeight: "84%",
+              maxHeight: "70%",
               overflow: "hidden",
             }}
           >
-            {post.data.title}
+            {limitText(post.data.title, 60)}
           </p>
           <div
             style={{
@@ -102,7 +114,7 @@ export async function generateOgImageForPost(lang: Lang, post: Post) {
       height: 630,
       embedFont: true,
       fonts: (await loadGoogleFonts(
-        post.data.title + SITE.title[lang] + "by" + AUTHOR.name
+        post.data.title + SITE.title[lang] + "by" + AUTHOR.name + "."
       )) as FontOptions[],
     }
   );
