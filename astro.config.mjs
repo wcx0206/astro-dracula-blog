@@ -15,19 +15,24 @@ import { remarkDescPlugin } from "./src/utils/markdown.ts";
 
 // https://astro.build/config
 export default defineConfig({
-	site: SITE.url,
-	markdown: {
-		shikiConfig: {
-			theme: "dracula",
-			wrap: true,
-			langAlias: {
-				C: "c",
-				zshrc: "zsh",
-			},
-		},
-		remarkPlugins: [remarkDescPlugin, remarkMath],
-		rehypePlugins: [rehypeExternalLinks, rehypeGithubAlerts, rehypeMathjax],
-	},
-	integrations: [react(), sitemap(), tailwind(), partytown()],
-	output: "static",
+  site: SITE.url,
+  markdown: {
+    shikiConfig: {
+      theme: "dracula",
+      wrap: true,
+      langAlias: {
+        C: "c",
+        zshrc: "zsh",
+      },
+    },
+    remarkPlugins: [remarkDescPlugin, remarkMath],
+    rehypePlugins: [rehypeExternalLinks, rehypeGithubAlerts, rehypeMathjax],
+  },
+  integrations: [react(), sitemap(), tailwind(), partytown()],
+  output: "static",
+  vite: {
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"],
+    },
+  },
 });

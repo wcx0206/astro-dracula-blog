@@ -17,7 +17,7 @@ import Footer from "@/components/ui/footer.astro";
 import { getLangFromUrl } from "@/utils/i18n";
 import { SITE } from "@/config";
 
-const { title, description } = Astro.props;
+const { title, description, ogImageUrl } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
 const pageTitle = title
   ? `${title} | ${SITE.title[lang]}`
@@ -26,7 +26,12 @@ const pageTitle = title
 
 <html lang={lang} class="scroll-smooth">
   <head>
-    <Meta lang={lang} description={description} pageTitle={pageTitle} />
+    <Meta
+      lang={lang}
+      description={description}
+      pageTitle={pageTitle}
+      ogImageUrl={ogImageUrl}
+    />
     <Favicon />
     <Sitemap />
     <RssLink lang={lang} />

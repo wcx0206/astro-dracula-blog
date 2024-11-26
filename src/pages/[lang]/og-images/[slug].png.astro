@@ -1,0 +1,38 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import { type Lang, ui } from "@/utils/i18n";
+import { classifyByLangs } from "@/utils/post";
+import { generateOgImageForPost } from "@/utils/og";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  const classified = classifyByLangs(posts);
+
+  const paths = [];
+  for (const lang of Object.keys(ui)) {
+    for (const pureSlug of classified.keys()) {
+      const entry = await getEntry("posts", `${lang}/${pureSlug}`);
+      paths.push({
+        params: { lang: lang as Lang, slug: pureSlug },
+        props: { post: entry },
+      });
+    }
+  }
+  return paths;
+}
+
+const { post } = Astro.props;
+const { lang, slug } = Astro.params;
+
+if (!post) {
+  for (const possibleLang of Object.keys(ui)) {
+    if (await getEntry("posts", `${possibleLang}/${slug}`)) {
+      return Astro.rewrite(`/${possibleLang}/og-images/${slug}.png`);
+    }
+  }
+  return Astro.rewrite("/404");
+}
+return new Response(await generateOgImageForPost(lang as Lang, post!), {
+  headers: { "Content-Type": "image/png" },
+});
+---
