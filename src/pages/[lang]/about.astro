@@ -8,7 +8,7 @@ import { type Lang, ui, useTranslations } from "@/utils/i18n";
 const { lang } = Astro.props;
 const about = await getEntry("info", `${lang}/about`);
 const { Content } = await render(about);
-const t = useTranslations(lang as Lang);
+const t = useTranslations(lang);
 
 export function getStaticPaths() {
   return Object.keys(ui).map((lang) => ({
@@ -20,7 +20,7 @@ export function getStaticPaths() {
 
 <BaseLayout title={t("nav.about")}>
   <div class="flex mb-12">
-    <BusinessCard lang={lang as Lang} client:load />
+    <BusinessCard lang={lang} client:load />
   </div>
   <Prose>
     <Content />

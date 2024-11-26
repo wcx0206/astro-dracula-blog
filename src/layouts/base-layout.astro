@@ -20,11 +20,11 @@ import { SITE } from "@/config";
 
 const { title, description } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang as Lang);
-const translatePath = useTranslatedPath(lang as Lang);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 const pageTitle = title
-  ? `${title} | ${SITE.title[lang as Lang]}`
-  : `${SITE.title[lang as Lang]} | ${SITE.description[lang as Lang]}`;
+  ? `${title} | ${SITE.title[lang]}`
+  : `${SITE.title[lang]} | ${SITE.description[lang]}`;
 ---
 
 <html lang={lang} class="scroll-smooth">
@@ -35,7 +35,7 @@ const pageTitle = title
     <link
       rel="alternate"
       type="application/rss+xml"
-      title={SITE.title[lang as Lang]}
+      title={SITE.title[lang]}
       href={new URL("rss.xml", SITE.url)}
     />
     <script
@@ -60,7 +60,7 @@ const pageTitle = title
         >
           <Moon />
           <h1 class="font-black text-2xl">
-            {SITE.title[lang as Lang]}
+            {SITE.title[lang]}
           </h1>
         </a>
         <a
@@ -101,7 +101,7 @@ const pageTitle = title
     </main>
     <footer class="mt-14 flex flex-col items-center gap-2 w-full">
       <p class="text-lg">
-        {SITE.title[lang as Lang]}
+        {SITE.title[lang]}
       </p>
       <p class="text-sm">
         Powered by

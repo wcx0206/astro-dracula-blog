@@ -19,7 +19,9 @@ export const getStaticPaths = async () => {
       const tags = getUniqueLowerCaseTagMap(
         uniquePosts.flatMap((uniquePost) => uniquePost.data.tags)
       );
-      return Array.from(tags.keys()).map((tag) => ({ params: { lang, tag } }));
+      return Array.from(tags.keys()).map((tag) => ({
+        params: { lang: lang as Lang, tag },
+      }));
     })
   );
   return paths.flat();
@@ -29,8 +31,8 @@ const { lang, tag } = Astro.params;
 const filteredPosts = await getCollection("posts", (post) =>
   getUniqueLowerCaseTagMap(post.data.tags).get(tag)
 );
-const filteredSnapshots = await getSnapshots(filteredPosts, lang as Lang);
-const t = useTranslations(lang as Lang);
+const filteredSnapshots = await getSnapshots(filteredPosts, lang);
+const t = useTranslations(lang);
 ---
 
 <BaseLayout
@@ -42,9 +44,9 @@ const t = useTranslations(lang as Lang);
       class="text-4xl font-black text-dracula-light mb-10 mx-auto leading-loose"
     >
       {t("postsWithTag.firstPart")}
-      <LabelTag lang={lang as Lang} label={tag} size="large" />
+      <LabelTag lang={lang} label={tag} size="large" />
       {t("postsWithTag.secondPart")}
     </h1>
-    <PostStack lang={lang as Lang} snapshots={filteredSnapshots} client:load />
+    <PostStack lang={lang} snapshots={filteredSnapshots} client:load />
   </article>
 </BaseLayout>

@@ -64,11 +64,11 @@ export function useTranslatedPath(lang: keyof typeof ui) {
   };
 }
 
-export function getLangFromUrl(url: string) {
+export function getLangFromUrl(url: string): [Lang, string] {
   const [, lang, ...rest] = url.split("/");
   const urlWithoutLang = rest.join("/");
-  if (lang in ui) return [lang as keyof typeof ui, urlWithoutLang];
-  return [defaultLang as keyof typeof ui, urlWithoutLang];
+  if (lang in ui) return [lang as Lang, urlWithoutLang];
+  return [defaultLang as Lang, urlWithoutLang];
 }
 
 export function useTranslations(lang: Lang) {

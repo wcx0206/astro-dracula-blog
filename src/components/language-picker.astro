@@ -3,7 +3,7 @@ import { type Lang, languages } from "@/utils/i18n";
 import { getLangFromUrl, useTranslatedPath } from "@/utils/i18n";
 
 const [activeLang, urlWithoutLang] = getLangFromUrl(Astro.url.pathname);
-const translatePath = useTranslatedPath(activeLang as Lang);
+const translatePath = useTranslatedPath(activeLang);
 ---
 
 <ul class="flex gap-2">

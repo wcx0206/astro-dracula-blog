@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "@/layouts/base-layout.astro";
-import { type Lang, ui, useTranslatedPath, useTranslations } from "@/utils/i18n";
+import {
+  type Lang,
+  ui,
+  useTranslatedPath,
+  useTranslations,
+} from "@/utils/i18n";
 
 export function getStaticPaths() {
   return Object.keys(ui).map((lang) => ({
@@ -9,8 +14,8 @@ export function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const t = useTranslations(lang as Lang);
-const translatedPath = useTranslatedPath(lang as Lang);
+const t = useTranslations(lang);
+const translatedPath = useTranslatedPath(lang);
 ---
 
 <BaseLayout title="404" description={t("pageNotFoundDescription")}>
