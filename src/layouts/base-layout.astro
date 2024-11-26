@@ -4,22 +4,21 @@ import { ViewTransitions } from "astro:transitions";
 import "@/styles/global.css";
 import "@/styles/mathjax.css";
 import "@/styles/rehype-github-alerts.css";
+
 import Favicon from "@/components/head/favicon.astro";
 import Meta from "@/components/head/meta.astro";
+import Umami from "@/components/head/umami.astro";
+import RssLink from "@/components/head/rss-link.astro";
+import Sitemap from "@/components/head/sitemap.astro";
+
 import Header from "@/components/ui/header.astro";
 import Footer from "@/components/ui/footer.astro";
 
-import {
-  getLangFromUrl,
-  useTranslatedPath,
-  useTranslations,
-} from "@/utils/i18n";
+import { getLangFromUrl } from "@/utils/i18n";
 import { SITE } from "@/config";
 
 const { title, description } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
 const pageTitle = title
   ? `${title} | ${SITE.title[lang]}`
   : `${SITE.title[lang]} | ${SITE.description[lang]}`;
@@ -29,18 +28,9 @@ const pageTitle = title
   <head>
     <Meta lang={lang} description={description} pageTitle={pageTitle} />
     <Favicon />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={SITE.title[lang]}
-      href={new URL("rss.xml", SITE.url)}
-    />
-    <script
-      is:inline
-      type="text/partytown"
-      src="https://cloud.umami.is/script.js"
-      data-website-id={SITE.analytics.umami.id}></script>
+    <Sitemap />
+    <RssLink lang={lang} />
+    <Umami />
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
