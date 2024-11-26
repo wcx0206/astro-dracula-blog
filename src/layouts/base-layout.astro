@@ -7,6 +7,7 @@ import "@/styles/rehype-github-alerts.css";
 import Favicon from "@/components/head/favicon.astro";
 import Meta from "@/components/head/meta.astro";
 import Header from "@/components/ui/header.astro";
+import Footer from "@/components/ui/footer.astro";
 
 import {
   getLangFromUrl,
@@ -50,26 +51,6 @@ const pageTitle = title
     <main>
       <slot />
     </main>
-    <footer class="mt-14 flex flex-col items-center gap-2 w-full">
-      <p class="text-lg">
-        {SITE.title[lang]}
-      </p>
-      <p class="text-sm">
-        Powered by
-        <a
-          href="https://astro.build/"
-          target="_blank"
-          rel="nofollow"
-          class="hover:text-dracula-pink transition">Astro</a
-        >
-        {" & "}
-        <a
-          href="https://github.com/BlockLune/astro-dracula-blog/"
-          target="_blank"
-          rel="nofollow"
-          class="hover:text-dracula-pink transition">AstroDraculaBlog</a
-        >
-      </p>
-    </footer>
+    <Footer lang={lang} />
   </body>
 </html>

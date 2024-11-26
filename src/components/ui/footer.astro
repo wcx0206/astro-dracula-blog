@@ -1,0 +1,28 @@
+---
+import type { Lang } from "@/utils/i18n";
+import { SITE } from "@/config";
+
+const { lang } = Astro.props;
+---
+
+<footer class="mt-14 flex flex-col items-center gap-2 w-full">
+  <p class="text-lg">
+    {SITE.title[lang as Lang]}
+  </p>
+  <p class="text-sm">
+    Powered by
+    <a
+      href="https://astro.build/"
+      target="_blank"
+      rel="nofollow"
+      class="hover:text-dracula-pink transition">Astro</a
+    >
+    {" & "}
+    <a
+      href="https://github.com/BlockLune/astro-dracula-blog/"
+      target="_blank"
+      rel="nofollow"
+      class="hover:text-dracula-pink transition">AstroDraculaBlog</a
+    >
+  </p>
+</footer>
