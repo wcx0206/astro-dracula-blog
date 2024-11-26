@@ -4,8 +4,9 @@ import type { Lang } from "@/utils/i18n";
 
 const { lang, description, pageTitle, ogImageUrl } = Astro.props;
 const pageDescription = description || SITE.description[lang as Lang];
-const domain = new URL(SITE.url).hostname;
-const pageOgImageUrl = new URL(ogImageUrl || SITE.og.imageUrl, SITE.url);
+const pageOgDomain = Astro.url.hostname;
+const pageOgUrl = Astro.url.href;
+const pageOgImageUrl = new URL(ogImageUrl || SITE.og.imageUrl, Astro.url);
 ---
 
 <meta charset="utf-8" />
@@ -18,7 +19,7 @@ const pageOgImageUrl = new URL(ogImageUrl || SITE.og.imageUrl, SITE.url);
 <meta name="360-site-verification" content={SITE.searchEngine.threeSixZero} />
 
 <!-- Facebook Meta Tags -->
-<meta property="og:url" content={SITE.url} />
+<meta property="og:url" content={pageOgUrl} />
 <meta property="og:type" content="website" />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={pageDescription} />
@@ -26,8 +27,8 @@ const pageOgImageUrl = new URL(ogImageUrl || SITE.og.imageUrl, SITE.url);
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:domain" content={domain} />
-<meta property="twitter:url" content={SITE.url} />
+<meta property="twitter:domain" content={pageOgDomain} />
+<meta property="twitter:url" content={pageOgUrl} />
 <meta name="twitter:title" content={pageTitle} />
 <meta name="twitter:description" content={pageDescription} />
 <meta name="twitter:image" content={pageOgImageUrl} />
