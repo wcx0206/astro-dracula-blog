@@ -89,7 +89,6 @@ export async function generateOgImageForPost(lang: Lang, post: Post) {
               </span>
               <span
                 style={{
-                  color: "#F8F8F2",
                   overflow: "hidden",
                   fontWeight: "bold",
                 }}
