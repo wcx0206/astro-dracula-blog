@@ -276,6 +276,9 @@ git remote add NAME URL
 # remove a specific remote server
 git remote remove NAME
 
+# set (update) the URL of a remote server
+git remote set-url NAME URL
+
 # show remote servers
 git remote -v
 
@@ -290,7 +293,7 @@ git push -u NAME BRANCH # or `git push --set-upstream NAME BRANCH`
 
 # fetch
 git fetch  # from the default remote upstream repo
-git fetch <server_name>  # from a specific remote upstream repo
+git fetch NAME  # from a specific remote upstream repo
 
 # fetch & merge
 git pull
