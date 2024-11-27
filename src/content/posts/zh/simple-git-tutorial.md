@@ -7,7 +7,7 @@ tags:
 - tool
 - collaboration
 date: 2024-11-12 08:20:00
-updated: 2024-11-25 16:06:00
+updated: 2024-11-27 11:13:00
 ---
 
 本文是一篇面向初学者的 Git 的教程，也可以当作一篇 Git 基础命令的备忘录。此文也包括了一些关于 GitHub 的信息，但如果您想更深入了解，请阅读[《简明 GitHub 教程》](/posts/simple-github-tutorial)。
@@ -255,6 +255,12 @@ git log
   - `--pretty=fuller`
 - `--graph` 标志添加了一些 ASCII 字符，以花哨的方式输出日志。
 
+我为下面的命令添加了 `glog` 这样一个别名，还挺有用的：
+
+```bash
+git log --oneline --decorate --graph
+```
+
 ## 暂存更改
 
 有时，您可能希望暂时保存您工作区的更改，但并不希望将其作为 Commit 提交。例如，您已经开始了您的工作，编辑了几个文件，此时您才想起来您忘记使用 `git pull` 拉取最新的更改。在这些情形下，您可以使用 `git stash` 命令：
@@ -284,13 +290,30 @@ git checkout -- <文件>
 
 此命令将放弃自上次提交以来对文件所做的修改，其中 `--` 表示以下内容应被视为文件参数，即使它们类似于选项。
 
-## 清理文件和/或目录
+如果希望丢弃所有新增（即未跟踪的文件）和更改，请运行：
+
+```bash
+git reset HEAD --hard
+```
+
+## 清理未跟踪的文件和/或目录
 
 ```bash
 git clean # 删除 Git 未跟踪的文件
 git clean -d # 删除目录
 git clean -x # 删除未跟踪的文件，包括 `.gitignore` 和 `.git/info/exclude` 中的忽略文件
 ```
+
+## 优化本地 Git 存储
+
+使用 `git gc` 命令可以优化本地 Git 仓库的存储：
+
+```bash
+git gc --aggressive --prune=now
+```
+
+- `--aggressive` 选项告诉 Git 尽可能多地优化存储，但可能会花费更多时间。
+- `--prune=now` 选项告诉 Git 立即删除不再需要的对象。
 
 ## 资源
 

@@ -12,7 +12,7 @@ tags:
 - tool
 - collaboration
 title: Simple Git Tutorial
-updated: 2024-11-25 16:06:00
+updated: 2024-11-27 11:07:00
 ---
 
 This is mainly a simple tutorial of Git. Some info about GitHub also included. You may also read _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_.
@@ -262,6 +262,12 @@ git log
   - `--pretty=fuller`
 - `--graph` flag adds some ascii characters to vividly show your history.
 
+I set an alias `glog` for the command below, which is quite useful:
+
+```bash
+git log --oneline --decorate --graph
+```
+
 ## Stashing Changes
 
 Sometimes you may want to temporarily save changes in your workspace, but you don't want to commit them. For example, you've started your work, edited a few files, and then you remember that you forgot to pull the latest changes using `git pull`. In these cases, you can use the `git stash` command:
@@ -291,13 +297,30 @@ git checkout -- <file>
 
 This command will abandon the modifications to the file after your last commit, where `--` indicates that the following content should be treated as file parameters, even if they resemble options.
 
-## Cleaning Files and/or Directories
+If you want to discard all new (untracked) and modified files, run:
+
+```bash
+git reset HEAD --hard
+```
+
+## Cleaning Files And/or Directories That Are Not Tracked
 
 ```bash
 git clean # deletes files that are not tracked by Git
 git clean -d # deletes directories
 git clean -x # deletes untracked files, including ignored files in `.gitignore` and `.git/info/exclude`
 ```
+
+## Optimize Local Git Storage
+
+Use the `git gc` command to optimize the storage of your local Git repository:
+
+```bash
+git gc --aggressive --prune=now
+```
+
+- `--aggressive` makes the optimization more thorough but slower.
+- `--prune=now` removes all unreachable objects immediately.
 
 ## Resources
 
