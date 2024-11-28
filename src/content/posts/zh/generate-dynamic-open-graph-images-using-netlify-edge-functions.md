@@ -6,6 +6,7 @@ tags:
 - edge-function
 - translation
 date: 2024-11-25 23:05:20
+license: none
 ---
 
 对 _[Generate dynamic Open Graph images using Netlify Edge Functions](https://developers.netlify.com/guides/generate-dynamic-open-graph-images-using-netlify-edge-functions/)_ 一文的中文翻译，原作者是 Sean C Davis。
