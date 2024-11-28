@@ -5,14 +5,14 @@ tags:
 - golang
 - database
 date: 2024-11-11 19:05:00
-updated: 2024-11-21 16:14:00
+updated: 2024-11-28 17:03:00
 ---
 
-本文以 MySQL 和 PostgreSQL 为例，介绍了如何在 Golang 中连接数据库。
+本文以 MySQL 和 PostgreSQL 为例，介绍了如何在 Golang 中连接数据库。我将从使用 Docker 创建一个 MySQL 或 PostgreSQL 容器等准备工作开始，逐步引导您完成连接数据库的过程。我会介绍四种方法：使用 `database/sql` 包，使用 `GORM`，使用 `sqlx`，以及使用 `sqlc`。
 
 <!--more-->
 
-## 准备工作
+## 准备数据库（以 Docker 为例）
 
 您需要准备一个 MySQL 和/或一个 PostgreSQL。
 
@@ -70,7 +70,9 @@ DB_USER=postgres
 DB_PASSWORD=password
 ```
 
-## 创建示例项目并连接数据库
+## 第一种方法：使用标准库的 `database/sql` 包
+
+### 创建示例项目并连接数据库
 
 创建一个目录 `go-db-example` 并在其中运行下面的命令来创建一个 Go 项目：
 
@@ -166,7 +168,7 @@ go run .
 
 如果 `Successfully connected to database!` 成功输出了，那就说明数据库成功连接了。
 
-## 初始化表
+### 初始化表
 
 下面让我们来创建一张示例表 `users`，表中的数据项定义如下：
 
@@ -220,7 +222,7 @@ func createUsersTable() {
 }
 ```
 
-## 常用操作 CRUD
+### 常用操作 CRUD
 
 下面演示四种常用操作，即
 
@@ -229,7 +231,7 @@ func createUsersTable() {
 - Update
 - Delete
 
-### Create
+#### Create
 
 让我们来用 INSERT 插入一条记录，相应的语句无论在 MySQL 中还是在 PostgreSQL 中都是一样的：
 
@@ -279,7 +281,7 @@ func addUser(email, password string) error {
 可以看到 MySQL 中使用 `?` 作为占位符，而 PostgreSQL 中用的是 `$1`, `$2` 等。
 
 > [!Important]
-> 从现在开始，下面的代码均 **默认使用 MySQL 语句**，您需要替换占位符以适配 PostgreSQL。
+> 从现在开始到这第一种方法结束的代码均 **默认使用 MySQL 语句**，您需要替换占位符以适配 PostgreSQL。
 
 事实上，`Exec()` 的执行结果返回了两个值。我们上面一直只使用了第二个 `error` 类型的值，判断语句执行是否出错。而第一个值的类型为 [`Result`](https://pkg.go.dev/database/sql#Result)，借助它，我们可以获取诸如 “最后插入记录的 ID” 等信息：
 
@@ -314,7 +316,7 @@ if err != nil {
 }
 ```
 
-### Read
+#### Read
 
 可以使用 [`Query()`](https://pkg.go.dev/database/sql#DB.Query) 或 [`QueryRow()`](https://pkg.go.dev/database/sql#DB.QueryRow) 来进行查询，区别在于前者返回任意多行，后者返回至多一行：
 
@@ -369,7 +371,7 @@ func getUserByEmail(email string) (*User, error) {
 }
 ```
 
-### Update
+#### Update
 
 ```go
 func updateUserPassword(email, newPassword string) error {
@@ -388,7 +390,7 @@ func updateUserPassword(email, newPassword string) error {
 }
 ```
 
-### Delete
+#### Delete
 
 ```go
 func deleteUserByEmail(email string) error {
@@ -406,7 +408,11 @@ func deleteUserByEmail(email string) error {
 }
 ```
 
-## 下一步（GORM）
+### 完整示例
+
+示例仓库：[BlockLune/go-db-example](https://github.com/BlockLune/go-db-example)
+
+## 第二种方法：使用 `GORM`
 
 在实际工程中，连接数据库更多地采用 ORM 方式。ORM（Object-Relational Mapping，对象关系映射）是一种在面向对象编程语言中实现数据持久化的一种技术。它的基本思想是将关系数据库中的数据表映射到编程语言中的对象，从而允许开发者使用面向对象的编程技术来操作数据库。
 
@@ -466,35 +472,45 @@ func main() {
 }
 ```
 
-## 总结
+## 第三种方法：使用 `sqlx`
 
-本文详细介绍了如何在 Go 语言中连接和操作数据库，主要内容包括：
+TODO
 
-1. **环境准备**
-   - 使用 Docker 快速搭建 MySQL 和 PostgreSQL 测试环境
-   - 配置必要的数据库连接环境变量
+## 第四种方法：使用 `sqlc`
 
-2. **数据库连接**
-   - 安装必要的数据库驱动
-   - 建立数据库连接的基本步骤
-   - MySQL 和 PostgreSQL 的连接字符串差异
+[`sqlc`](https://github.com/sqlc-dev/sqlc) 是一个用于生成 Go 代码的工具，它可以根据 SQL 查询语句生成相应的类型安全的 Go 代码。
 
-3. **基础数据库操作（CRUD）**
-   - 创建表结构
-   - 插入数据（Create）
-   - 查询数据（Read）
-   - 更新数据（Update）
-   - 删除数据（Delete）
+具体的步骤请参考：
 
-4. **实用技巧**
-   - 使用环境变量管理配置
-   - 预处理语句提高性能
-   - MySQL 和 PostgreSQL 的语法差异（如占位符的不同使用方式）
+- [Getting started with MySQL — sqlc 1.27.0 documentation](https://docs.sqlc.dev/en/latest/tutorials/getting-started-mysql.html#)
+- [Getting started with PostgreSQL — sqlc 1.27.0 documentation](https://docs.sqlc.dev/en/latest/tutorials/getting-started-postgresql.html)
 
-示例仓库：[BlockLune/go-db-example](https://github.com/BlockLune/go-db-example)
+## 如何选择
+
+下面是各个方法的特点，帮助您进行选择：
+
+- 标准库 `database/sql`：
+  - 快速 & 直接
+  - 需要手动将 SQL 字段映射到 Go 结构体
+  - 容易出错，并且在运行时才会发现它们
+- 使用 `GORM`：
+  - CRUD 操作已经实现好了，生产环境代码中使用它非常方便
+  - 必须学会使用 GORM 的 API 来对数据库进行操作
+  - 在高负载情况下，可能会出现性能问题（比标准库慢 3-5 倍）
+- 使用 `sqlx`：
+  - 非常快速 & 易于使用
+  - 通过查询文本和结构体标签来映射字段
+  - 运行时才会发现错误
+- 使用 `sqlc`：
+  - 非常快速 & 易于使用
+  - 您只需要定义 SQL 查询，相应的 Go 代码会自动生成
+  - 在生成代码前捕获错误
+
+来自 [Udemy 课程](https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernetes/) 的讲师建议优先使用 `sqlc`，否则使用 `sqlx`。
 
 ## 参考资料
 
+- [6. Generate CRUD Golang code from SQL | Compare db/sql, gorm, sqlx & sqlc | Learn everything about backend web development: Golang, Postgres, Redis, Gin, gRPC, Docker, Kubernetes, AWS, CI/CD | Udemy](https://www.udemy.com/course/backend-master-class-golang-postgresql-kubernetes/)
 - [GORM 指南 | GORM - The fantastic ORM library for Golang, aims to be developer friendly.](https://gorm.io/zh_CN/docs/)
 - [Golang MySQL CRUD Example - Golang Docs](https://golangdocs.com/mysql-golang-crud-example)
 - [Golang PostgreSQL Example - Golang Docs](https://golangdocs.com/golang-postgresql-example)
