@@ -34,8 +34,7 @@ mv .vimrc .vimrc.bak
 安装 [vim-plug](https://github.com/junegunn/vim-plug)，它是一个 Vim 插件管理器：
 
 ```bash
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 下载我的配置文件：
@@ -74,7 +73,19 @@ call plug#end()
 
 然后在 Vim 中运行 `:PlugInstall` 来安装插件。
 
-如果您想知道我使用的插件，可以查看我的 [`.vimrc`](https://raw.githubusercontent.com/BlockLune/dotfiles/refs/heads/main/.vimrc)。
+下面介绍一些我使用的插件及其基本用法：
+
+- [`mg979/vim-visual-multi`](https://github.com/mg979/vim-visual-multi)：使用 `<C-n>` 来快速创建多光标。
+- [`takac/vim-hardtime`](https://github.com/takac/vim-hardtime)：阻止您在短时间内连续使用 `hijk` 进行移动以敦促形成更好的习惯。阅读下面两篇文章以了解更多（需要注意的是，您可能需要在中文编辑环境下使用 `:HardTimeOff` 关闭这个插件，毕竟您没法用 `w`、`b`、`e`、`f`、`t` 等键位在中文中移动）：
+  - _[Habit breaking, habit making | vimcasts.org](http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/)_（[中文翻译](/zh/posts/habit-breaking-habit-making)）
+  - _[Moving around | Vim Tips Wiki](https://vim.fandom.com/wiki/Moving_around)_
+- [`tpope/vim-eunuch`](https://github.com/tpope/vim-eunuch)：提供了一些与 Unix 常用命令相关的 Vim 语法糖，其中我最常使用的是 `:SudoWrite`（更多用法请在 Vim 中键入 `:help eunuch` 查看）：
+  - 举例而言：您希望使用 `vim /etc/hosts` 来编辑您的 hosts 文件，但在要保存时才意识到您忘记添加 `sudo` 所以您无权保存！尽管您可以使用 `:w !sudo tee % > /dev/null` 这样一条命令来实现不退出 Vim 而以超级用户权限来保存，但显然 `:SudoWrite` 更便于输入。
+- [`tpope/vim-unimpaired`](https://github.com/tpope/vim-unimpaired)：提供了一系列使用 `[` 和 `]` 开始的快捷键，包括（更多用法请在 Vim 中键入 `:help unimpaired` 查看）：
+  - `[q` 是 `:cprevious`，`]q` 是 `:cnext`，分别用于显示前一个和后一个错误或 **Q**uickfix 列表项。
+  - `[t` 是 `:tprev`，`]t` 是 `:tnext`，分别前往上一个和下一个标签。
+
+如果您想知道我使用的插件的完整列表，可以查看我的 [`.vimrc`](https://raw.githubusercontent.com/BlockLune/dotfiles/refs/heads/main/.vimrc)。
 
 #### 键位设置
 
@@ -88,16 +99,7 @@ Vim 的强大之处在于它的键位设置。您可以通过键位设置来自�
 - 使用 `<leader>e` 来切换文件管理器 NERDTree
 - ...
 
-#### 培养好习惯
-
-最近我安装了一个名为 [vim-hardtime](https://github.com/takac/vim-hardtime) 的插件，它会阻止我在短时间内多次按下 `hijk` 以此来敦促我使用更好的移动方式。您可以参考下面两篇文章以了解更多：
-
-- _[Habit breaking, habit making | vimcasts.org](http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/)_
-- _[Moving around | Vim Tips Wiki](https://vim.fandom.com/wiki/Moving_around)_
-
-其中第一篇文章我做了中文翻译：[打破坏习惯，养成好习惯 | BlockLune's Blog](/zh/posts/habit-breaking-habit-making)。
-
-需要注意的是，您可能需要在中文编辑环境下关闭这个插件。毕竟您没法用 `w`、`b`、`e`、`f`、`t` 等键位在中文中移动了。
+在 Vim 中键入 `:map` 来查看所有按键映射。
 
 ## NeoVim (LazyVim)
 
@@ -105,7 +107,9 @@ LazyVim 是一个 NeoVim 配置，它几乎已经是个 IDE 了。我基于 Lazy
 
 ## 其他软件中的 Vim 模式
 
-TODO
+许多其他软件都支持 Vim 模式。
+
+在 VS Code 中，可以通过安装 [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) 这个扩展来启用 Vim 模式。在我的 [dotfiles](https://github.com/BlockLune/dotfiles) 仓库中也包含了相关配置，它们大多是与我的 Vim 以及 NeoVim 适应的（例如我将 VSCode 中打开终端的快捷键改为了 `Ctrl + /` 以与 LazyVim 的配置匹配），但也存在一些不同（例如 LazyVim 中的 `K` 与 VSCode 中的 `gh` 是类似的，启用了 `vim-visual-multi` 的 LazyVim 中的 `<C-n>` 与 VSCode 中的 `Cmd + d` (macOS) 或 `Ctrl + d` 实现类似的功能）。
 
 ## 参考和更多阅读资料
 
@@ -115,5 +119,5 @@ TODO
 - _[Moving around | Vim Tips Wiki](https://vim.fandom.com/wiki/Moving_around)_
 - _[Practical Vim by Drew Neil](https://pragprog.com/titles/dnvim2/practical-vim-second-edition/)_
 - _[VIMCASTS.org](http://vimcasts.org/)_
-- _[Vim 配置入门 - 阮一峰的网络日志 (ruanyifeng.com)](https://ruanyifeng.com/blog/2018/09/vimrc.html)_
+- _[Vim 配置入门 - 阮一峰的网络日志](https://ruanyifeng.com/blog/2018/09/vimrc.html)_
 - _[ivim](https://github.com/kepbod/ivim)_
