@@ -22,6 +22,11 @@ export async function GET(context: any) {
         author: AUTHOR.name,
         pubDate: post.data.date,
         link: `${lang}/posts/${pureSlug}`,
+        enclosure: {
+          url: `${lang}/og-images/${pureSlug}.png`,
+          length: 0,
+          type: "image/png",
+        }
       };
     }),
     stylesheet: "/rss.xsl",
