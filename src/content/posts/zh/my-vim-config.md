@@ -1,9 +1,9 @@
 ---
+title: 我的 Vim 和 NeoVim 配置
 abbrlink: 96f7ff9f
 categories:
 - CS
 - Tools
-date: 2023-04-22 10:27:09
 tags:
 - vim
 - neovim
@@ -11,23 +11,25 @@ tags:
 - text-editor
 - terminal
 - configuration
-title: 我的 Vim (以及 NeoVim) 配置
-updated: 2024-10-18 17:00:00
+date: 2023-04-22 10:27:09
+updated: 2024-11-29 10:45:00
 ---
 
-Vim 可以说是一个老古董了，但是在命令行文本编辑器这一领域，即使到目前，它说第二也没人能说第一。在这篇文章中，我们会进行一些简单的配置，让 Vim 更加好用。并且，我们还会谈到 NeoVim 相关的内容，通过安装和配置 LazyVim，来让 NeoVim 变为一个现代化的、全功能的 IDE。
+本文记录了我在 Vim 和 NeoVim 中的配置。
 
 <!--more-->
 
 ## Vim
 
-首先备份你的 Vim 设置（如果你配置过的话）：
+### TL;DR
+
+遵循这些步骤以快速应用我的 Vim 配置。请注意配置好代理，因为这些配置需要访问 GitHub。
+
+首先，如果您已经配置过 Vim，请使用以下命令备份您的配置文件：
 
 ```bash
 mv .vimrc .vimrc.bak
 ```
-
-接着，在开始下面的工作之前，记得配置好代理。因为下面的操作需要大量访问 GitHub。
 
 安装 [vim-plug](https://github.com/junegunn/vim-plug)，它是一个 Vim 插件管理器：
 
@@ -36,43 +38,68 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-然后下载我的配置：
+下载我的配置文件：
 
 ```bash
 curl -o ~/.vimrc https://raw.githubusercontent.com/BlockLune/dotfiles/refs/heads/main/.vimrc
 ```
 
-启动 Vim。这里会因为缺失插件报错，但我们启动它就是为了进去装插件的所以不用管，回车即可：
+在命令行中键入 `vim` 以启动 Vim。此时会因为缺失插件报错，但我们很快就会安装它们。按下回车以继续。
+
+在 Vim 中运行 `:PlugInstall` 来安装我配置中的插件。
+
+### 详细说明
+
+Vim 的配置文件是 `~/.vimrc`。为了自定义 Vim，您需要编辑这个文件。
+
+#### 起步
+
+作为一个历史悠久的软件，Vim 的一些默认配置并不符合现代软件的惯例。我建议您启用一些基础设置使其更现代化和符合现代人的直觉。作为起步，您可以参考 [`essential.vim`](https://github.com/toshimichimiki/practical-vim-2nd/blob/master/essential.vim) 、来自 [Missing Semester](https://missing.csail.mit.edu/2020/editors/) 的 [Basic Vimrc](https://missing.csail.mit.edu/2020/files/vimrc) 以及 [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim)。我的配置就是基于 `tpope/vim-sensible` 的。
+
+#### 插件
+
+除了设置 Vim 本身，您还需要一些插件来使其更强大。而为了管理这些插件，您需要一个插件管理器。我使用的是 [vim-plug](https://github.com/junegunn/vim-plug)。运行下面的命令来安装它：
 
 ```bash
-vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-最后，在 Vim 中运行 `:PlugInstall` 来安装这些插件。下面是部分插件的简介：
+在安装完成后，您就可以在 `~/.vimrc` 中添加插件了。例如，为了安装 `tpope/vim-sensible`，您可以在 `~/.vimrc` 中添加：
 
-| Plugin                 | Basic Usage                                                                               | Link                                                         |
-| ---------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| ack.vim                | Search text in the project using `:Ack` command                                           | [GitHub](https://github.com/mileszs/ack.vim)                 |
-| ale                    | Perform syntax checks while editing code with configured tools                            | [GitHub](https://github.com/dense-analysis/ale)              |
-| auto-pairs             | Automatically insert closing brackets for opening brackets                                | [GitHub](https://github.com/jiangmiao/auto-pairs)            |
-| CamelCaseMotion        | Press `<leader>` followed by a motion command to move to the next/previous CamelCase word | [GitHub](https://github.com/bkad/CamelCaseMotion)            |
-| ctrlp.vim              | Open CtrlP window with `:CtrlP` or `<C-p>`, then search and open files                    | [GitHub](https://github.com/ctrlpvim/ctrlp.vim)              |
-| lightline.vim          | Customize appearance and content of the statusline                                        | [GitHub](https://github.com/itchyny/lightline.vim)           |
-| nerdtree               | Open NERDTree window with `:NERDTree`, navigate with `hjkl` keys                          | [GitHub](https://github.com/preservim/nerdtree)              |
-| vim-commentary         | Comment/uncomment lines with `gc` or `gC` commands                                        | [GitHub](https://github.com/tpope/vim-commentary)            |
-| vim-dracula            | Switch to Dracula theme with `:colorscheme dracula`                                       | [GitHub](https://github.com/dracula/vim)                     |
-| vim-easymotion         | Trigger EasyMotion with `<Leader><Leader>` and enter characters to jump                   | [GitHub](https://github.com/easymotion/vim-easymotion)       |
-| vim-fugitive           | View file status with `:G status`, commit changes with `:G commit` and so forth           | [GitHub](https://github.com/tpope/vim-fugitive)              |
-| vim-indent-guides      | Visually display indent levels in Vim                                                     | [GitHub](https://github.com/preservim/vim-indent-guides)     |
-| vim-sensible           | Configure Vim with sensible defaults for a pleasant editing experience                    | [GitHub](https://github.com/tpope/vim-sensible)              |
-| vim-surround           | Change surrounding characters with `cst`, delete surroundings with `dst`, and more        | [GitHub](https://github.com/tpope/vim-surround)              |
-| vim-unimpaired         | Provides various useful mappings for manipulating vertical whitespace and more            | [GitHub](https://github.com/tpope/vim-unimpaired)            |
-| vim-visual-star-search | Search for the visually selected text with `*` and `#` commands                           | [GitHub](https://github.com/nelstrom/vim-visual-star-search) |
-| YouCompleteMe          | A code-completion engine for Vim                                                          | [GitHub](https://github.com/ycm-core/YouCompleteMe)          |
+```vim
+call plug#begin()
+Plug 'tpope/vim-sensible'
+call plug#end()
+```
+
+然后在 Vim 中运行 `:PlugInstall` 来安装插件。
+
+如果您想知道我使用的插件，可以查看我的 [`.vimrc`](https://raw.githubusercontent.com/BlockLune/dotfiles/refs/heads/main/.vimrc)。
+
+#### 键位设置
+
+Vim 的强大之处在于它的键位设置。您可以通过键位设置来自定义 Vim 的行为。我的设置包括：
+
+- 在插入模式下使用 `jk` 映射为 `<Esc>`，以便更快地退出插入模式
+- 使用 `Ctrl` + `hjkl` 来在窗口之间移动
+- 使用 `H` 和 `L` 来在标签页之间移动
+- 使用 `<leader>bd` 来关闭当前缓冲区
+- 使用 `<leader>bo` 来关闭其他缓冲区
+- 使用 `<leader>e` 来切换文件管理器 NERDTree
+- ...
+
+#### 培养好习惯
+
+最近我安装了一个名为 [vim-hardtime](https://github.com/takac/vim-hardtime) 的插件，它会阻止我在短时间内多次按下 `hijk` 以此来敦促我使用更好的移动方式。您可以参考下面两篇文章以了解更多：
+
+- _[Habit breaking, habit making | vimcasts.org](http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/)_
+- _[Moving around | Vim Tips Wiki](https://vim.fandom.com/wiki/Moving_around)_
+
+需要注意的是，您可能需要在中文编辑环境下关闭这个插件。毕竟您没法用 `w`、`b`、`e`、`f` 等键位在中文中移动了。
 
 ## NeoVim (LazyVim)
 
-LazyVim 是一个 NeoVim 配置，它几乎已经是个 IDE 了。我基于 LazyVim 又进行了一些配置，你可以在 [这里](https://github.com/BlockLune/NeovimConfig) 找到。
+LazyVim 是一个 NeoVim 配置，它几乎已经是个 IDE 了。我基于 LazyVim 又进行了一些配置，您可以在 [这里](https://github.com/BlockLune/dotfiles/tree/main/.config/nvim) 找到。
 
 ## 其他软件中的 Vim 模式
 
@@ -82,6 +109,9 @@ TODO
 
 - _[A Good Vimrc (dougblack.io)](https://dougblack.io/words/a-good-vimrc.html)_
 - _[Editors (Vim) · Missing Semester (mit.edu)](https://missing.csail.mit.edu/2020/editors/)_
+- _[Habit breaking, habit making | vimcasts.org](http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/)_
+- _[Moving around | Vim Tips Wiki](https://vim.fandom.com/wiki/Moving_around)_
 - _[Practical Vim by Drew Neil](https://pragprog.com/titles/dnvim2/practical-vim-second-edition/)_
 - _[VIMCASTS.org](http://vimcasts.org/)_
 - _[Vim 配置入门 - 阮一峰的网络日志 (ruanyifeng.com)](https://ruanyifeng.com/blog/2018/09/vimrc.html)_
+- _[ivim](https://github.com/kepbod/ivim)_
