@@ -1,9 +1,9 @@
 ---
+title: Setting up your new machine - A simple dev environment configuration guide
 abbrlink: 183d7426
 categories:
 - CS
 - Tools
-date: 2024-09-02 15:53:08
 tags:
 - unix
 - windows
@@ -12,14 +12,15 @@ tags:
 - software-engineering
 - configuration
 - tool
-title: Setting up your new machine - A simple dev environment configuration guide
+date: 2024-09-02 15:53:08
+updated: 2024-11-30 13:43:00
 ---
 
 As developers, we interact with all kinds of machines every day. A well-configured development environment can significantly boost productivity and make coding more enjoyable. This comprehensive guide will help you set up a comfortable and efficient workspace. It's mainly for beginners, but experienced developers may also find some useful tips.
 
 <!--more-->
 
-## Why Development Environment Configuration Matters & Who This Guide Is For
+## Why Development Environment Configuration Matters
 
 When I started coding, my terminal was a stark black and white window that failed to inspire creativity. Now, my terminal is colorful, feature-rich, and a joy to use. This transformation is just one example of how proper configuration can enhance your coding experience.
 
@@ -35,7 +36,31 @@ This post is inspired by:
 
 ## Network Configuration: The First Step
 
-Before diving into development environment setup, ensure your network is functioning correctly. You'll need a stable internet connection to download various tools and packages.
+Before diving into development environment setup, ensure your network is functioning correctly. You'll need a stable Internet connection to download various tools and packages.
+
+You may need a [proxy](https://en.wikipedia.org/wiki/Proxy_server) for a better Internet connection.
+
+When you open your proxy software and turn on the "System Proxy" option, your browser reads this configuration and automatically applies it so that your web traffic is routed through the proxy server. However, this is not the case for our terminal tools - they generally don't read the system proxy settings automatically, instead they read some proxy-related environment variables. So to use the proxy in your terminal environment, you need to set these environment variables.
+
+Usually you can find a "Copy Environment Variables" button in your proxy software to copy the above commands to set the environment variables. If your proxy is running on `127.0.0.1:7890`, the command to set the environment variables might look like this:
+
+```bash
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+```
+
+> [!Tip]
+> If you are using a [WSL](https://learn.microsoft.com/zh-cn/windows/wsl/), you will need to do some configuration to make it accessible to your proxy on Windows. Please edit the `.wslconfig` file in your user directory and add the following lines:
+>
+> ```ini
+> [wsl2]
+> networkingMode=mirrored
+> autoProxy=true
+> ```
+>
+> For details, please refer to:
+>
+> - [Mirrored mode networking | Accessing network applications with WSL | Microsoft Learn](https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking)
+> - [Auto Proxy | Accessing network applications with WSL | Microsoft Learn](https://learn.microsoft.com/en-us/windows/wsl/networking#auto-proxy)
 
 ## Client-Side Configuration: Windows, macOS, and Linux
 
@@ -43,11 +68,24 @@ When I say "client side", I mean the local machine you are using, i.e. your PC o
 
 On a Mac, you must use macOS, while on a PC, you can use Windows or Linux. Most configurations on a Unix-like operating system (like macOS or Linux) are similar, while they may vary on Windows. As developers, we use Unix-like systems (most of which are Linux) much more than Windows. However, as a beginner in the IT field (e.g. a Chinese CS student), you may only have a PC running Windows.
 
-In this guide, I will respect that by trying to make your Windows a little more "Unix-like". We will not use virtual machines (e.g. VMWare or WSL), as this method installs a full Linux.
+In this guide, I will respect that by trying to make your Windows a little more "Unix-like". Here I am referring to a pure Windows environment and not a virtual machine (such as VMWare or [WSL](https://learn.microsoft.com/zh-cn/windows/wsl/)).
+
+> [!Tip]
+> Although this article mentions some ways to make Windows more “Unix-like”, I still recommend that, if you can, **you should use WSL** and configure it according to the general approach mentioned in this article applicable to Linux or Unix. The benefits of doing so are at least twofold:
+>
+> - avoidance of some Windows-specific problems
+> - better performance (for some reason, the same configuration on Windows is not nearly as good as on other platforms)
 
 ### Adding a User Account
 
-This section is basically for Linux users only. When you install a new Linux system, you may only have a root account. It is not recommended to use the root account for daily work, as it is too powerful and can cause serious problems if you make a mistake. It's recommended that you create a new user account and use it instead.
+This section is for Linux users only. When you install a new Linux system, you may only have a `root` account. It is not recommended to use the `root` account for daily work, as it is too powerful and can cause serious problems if you make a mistake. It's recommended that you create a new user account and use it instead.
+
+> [!Tip]
+> If you are using WSL, you will be asked for a username and password when you first start up. In that case, you can **skip** this step.
+>
+> See:
+>
+> - [Set up your Linux username and password | Set up a WSL development environment | Microsoft Learn](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password)
 
 You can create a new account with the following command (replace `username` with your desired username)
 
@@ -66,7 +104,8 @@ Or you can edit the sudoers file manually by running `visudo`.
 If you are using Ubuntu, you can use the `adduser` command instead. Follow the instructions it gives and enjoy a more user friendly experience:
 
 ```bash
-adduser username sudo
+adduser username # add a new user with name "username"
+adduser username sudo # make the new user a sudoer
 ```
 
 ### Choosing the Right Font
@@ -116,9 +155,7 @@ dimensions = { columns = 80, lines = 30 }
 padding = { x = 12, y = 12 }
 ```
 
-A theme is a set of configurations that change the appearance of the applications. You can use a theme to make your terminal utilities nicer and easier to use. For example, set the `colorschema` in Vim. However, I prefer to set the theme in the terminal emulator so that all the terminal utilities share a similar look. I use the [`Dracula`](https://draculatheme.com/) theme in `Alacritty` and `iTerm2`.
-
-By the way, the `Dracula` theme is also available in many other applications. I also use it in my VS Code and JetBrains IDEs. A shared theme makes your development environment more consistent and beautiful.
+A theme is a set of configurations that change the appearance of an application. You can use themes to make your terminal tools look better and be easier to use. For example, set `colorscheme` in Vim. However, I prefer to set themes in the terminal emulator so that all terminal tools share a similar look. I use the [`Dracula`](https://draculatheme.com/) theme in both `Alacritty` and `iTerm2`. The `Dracula` theme is also available in many other applications, such as VS Code and JetBrains IDEs. Shared themes make your development environment more consistent and aesthetically pleasing. In addition to `Dracula`, [`catppuccin`](https://catppuccin.com/) is another theme I really like.
 
 ### Shell: The Bridge Between You and the System Kernel
 
@@ -129,6 +166,38 @@ I recommend using `zsh` on all systems. You can view it as a super set of bash w
 - Use the [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh) framework to make `zsh` configuration easier
 - Use the theme [`powerlevel10k`](https://github.com/romkatv/powerlevel10k) to customize the command prompt
 - Use a lot of other plugins and configurations
+
+For example, here is a simple function I use to enable or disable the proxy in `zsh`:
+
+```bash
+proxy() {
+  if [[ "$1" == "-d" || "$1" == "--disable" || "$1" == "-c" || "$1" == "--clear" ]]; then
+    unset https_proxy http_proxy all_proxy
+    echo "Proxy disabled"
+  elif [[ "$1" == "--check" ]]; then
+    if command -v wget &> /dev/null; then
+      wget --spider --proxy=on http://google.com -q -T 10
+      if [ $? -eq 0 ]; then
+        echo "Proxy is working."
+      else
+        echo "Proxy is not working."
+      fi
+    elif command -v curl &> /dev/null; then
+      curl --proxy http://127.0.0.1:7890 http://google.com -s -m 10 --connect-timeout 10
+      if [ $? -eq 0 ]; then
+        echo "Proxy is working."
+      else
+        echo "Proxy is not working."
+      fi
+    else
+      echo "Neither wget nor curl is installed, cannot check proxy."
+    fi
+  else
+    export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+    echo "Proxy enabled"
+  fi
+}
+```
 
 If you don't want to use `zsh` since it needs some configurations, a good alternative is [`fish`](https://fishshell.com/). However, `fish` is not POSIX-compliant, which means you may have some compatibility issues with some shell scripts. This is the reason why I prefer `zsh`. But it's fine for beginners.
 
@@ -170,7 +239,7 @@ On the Mac, however, you need to download and install a package manager. The mos
 The concept of "package manager" explained above is really dirty and loose. To be more precise, the above package managers are system-wide. There are many more package managers in various tech stacks. For example, `npm` in node.js projects and `cargo` in rust projects, etc.
 
 > [!Tip]
-> For Chinese users, a common headache is the physical distance from the server, which leads to problems such as poor network signal and consequently slow download speeds, or even timeouts, and ultimately the inability to download packages properly using a package manager. In this case, you can use a mirror site. In the past, we had to manually modify a bunch of configuration files for different package managers. But now you can use a tool called [`chsrc`](https://github.com/RubyMetric/chsrc).
+> For Chinese users, a common headache is the physical distance from the server, which leads to problems such as poor network signal and consequently slow download speeds, or even timeouts, and ultimately the inability to download packages properly using a package manager. In this case, in addition to using a proxy as mentioned above, you can also use a mirror site. In the past, we had to manually modify a bunch of configuration files for different package managers. But now you can use a tool called [`chsrc`](https://github.com/RubyMetric/chsrc).
 
 ### Gsudo: A Third Party `sudo` for Windows
 
@@ -208,7 +277,22 @@ Here I'm not talking about version control systems like `git`, but the version o
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm), etc.
 - Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/posts/managing-multiple-python-versions-with-pyenv-and-conda) about this).
 
-If you're using `scoop` as your package manager on Windows, you can also use the `scoop reset` command to quickly switch versions, and here's an example of using it to manage Python versions (from the [official Wiki](https://github.com/ScoopInstaller/Scoop/wiki/Switching-Ruby,-Python-and-PHP-Versions)):
+In addition to the software-specific version control tools mentioned above, you can also use tools like [`asdf`](https://asdf-vm.com/zh-hans/) or [`mise`](https://mise.jdx.dev/) to manage multiple software versions. Here is an example of using `mise` to manage multiple Node.js versions:
+
+```bash
+mise install node@22
+mise install node@20
+
+mise ls # list all installed versions
+
+mise use -g node@20 # switch to Node 20 globally
+node --version # -> v20.18.1
+
+mise use -g node@22 # switch to Node 22 globally
+node --version # -> v22.11.0
+```
+
+If you're using `scoop` as your package manager on Windows, you can also use the `scoop reset` command to quickly switch versions, and here's an example of using it to manage Python versions (from the [official wiki](https://github.com/ScoopInstaller/Scoop/wiki/Switching-Ruby,-Python-and-PHP-Versions)):
 
 ```bash
 scoop bucket add versions # add the 'versions' bucket if you haven't already
@@ -243,7 +327,21 @@ SSH (Secure SHell) is a network protocol that allows you to connect to a remote 
 ssh username@hostname
 ```
 
-By default, you must enter the password each time you connect to the server. You can omit this annoying step by using SSH keys. To do this: use the `ssh-keygen` command to generate a pair of keys on your local machine, and use the `ssh-copy-id` command to copy the public key to the server. You will be prompted to enter the password for the last time. You can then connect to the server without entering the password.
+By default, you must enter the password each time you connect to the server. You can omit this annoying step by using SSH keys. To do this:
+
+1. Use the `ssh-keygen` command to generate a pair of keys on your local machine. Run the following command and press Enter:
+
+```bash
+ssh-keygen -t ed25519
+```
+
+2. Use the `ssh-copy-id` command to copy the public key to the server.
+
+```bash
+ssh-copy-id username@hostname
+```
+
+You will be prompted to enter the password for the last time. You can then connect to the server without entering the password.
 
 > [!Note]
 > Note: I put the section about SSH in the server-side configuration, but the commands we use here are supposed to be run on the client side.
