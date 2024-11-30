@@ -75,34 +75,44 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] http://mirrors.aliyun.com/docker-ce/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 2. 安装最新版本：
 
 ```bash
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-3. 使用阿里云提供的镜像加速器（具体的加速器需要你自己登录阿里云后见[这里](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors)）：
+3. 修改 Docker 的镜像源（您可以在以下链接中找到您自己的加速器地址：[阿里云](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors) / [华为云](https://console.huaweicloud.com/swr/#/swr/mirror)，也可以参考[这份华为云文档](https://support.huaweicloud.com/usermanual-swr/swr_01_0045.html)）：
 
 ```bash
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://your-aliyun-mirror.mirror.aliyuncs.com"]
+  "registry-mirrors": ["https://your-mirror-address.mirror.aliyuncs.com"]
 }
 EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-4. 检查是否安装成功：
+4. 检查镜像源是否生效：
+
+```bash
+docker info
+```
+
+5. 检查是否安装成功：
 
 ```bash
 sudo docker run hello-world
 ```
+
+> [!Tip]
+> 如果您不希望设置镜像（Mirror），或者即使设置了镜像（Mirror）您还是无法成功拉取某个 Docker 镜像（Image），您也可以尝试下面这个网站提供的加速服务：
+>
+> - [Docker Proxy](https://dockerproxy.net/)
 
 ### 关键概念
 
