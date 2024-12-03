@@ -10,6 +10,7 @@ tags:
 - tool
 - gdb
 - debugging
+- cheat-sheet
 title: My GDB Cheat Sheet
 ---
 
