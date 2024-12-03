@@ -1,9 +1,11 @@
 ---
 title: cURL 和 httpie 常用命令速查表
 tags:
+- cheat-sheet
 - curl
 - httpie
-- cheat-sheet
+- terminal
+- tool
 date: 2024-12-03 13:29:17
 ---
 
