@@ -199,6 +199,13 @@ proxy() {
 }
 ```
 
+In addition to the `powerlevel10k` mentioned above for customizing your command prompt, you might also want to take a look at [starship](https://starship.rs/), a cross-platform cross-shell command prompt configuration tool written in Rust that performs very well.
+
+> [!Tip]
+> The command prompt is actually defined via the environment variable named `PS1`, see:
+>
+> - [What is the $PS1 Variable in Linux — Unix | by Linux School Tech | Medium](https://medium.com/@linuxadminhacks/what-is-the-ps1-variable-in-linux-unix-9932e981c276)
+
 If you don't want to use `zsh` since it needs some configurations, a good alternative is [`fish`](https://fishshell.com/). However, `fish` is not POSIX-compliant, which means you may have some compatibility issues with some shell scripts. This is the reason why I prefer `zsh`. But it's fine for beginners.
 
 You have `bash` installed on most unix-like systems and it's easy to install `zsh` or `fish` on those platform. But on Windows, it is a little bit tricky.
@@ -275,7 +282,7 @@ Here I'm not talking about version control systems like `git`, but the version o
 
 - Java: [`sdkman`](https://sdkman.io/), etc.
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm), etc.
-- Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/posts/managing-multiple-python-versions-with-pyenv-and-conda) about this).
+- Python: [`uv`](https://docs.astral.sh/uv/), [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/posts/managing-multiple-python-versions-with-pyenv-and-conda) about this).
 
 In addition to the software-specific version control tools mentioned above, you can also use tools like [`asdf`](https://asdf-vm.com/zh-hans/) or [`mise`](https://mise.jdx.dev/) to manage multiple software versions. Here is an example of using `mise` to manage multiple Node.js versions:
 

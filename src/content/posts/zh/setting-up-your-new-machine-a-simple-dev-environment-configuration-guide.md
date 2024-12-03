@@ -195,6 +195,13 @@ proxy() {
 }
 ```
 
+除了在上文中提到的 `powerlevel10k` 可以用于自定义命令提示符，您也可以看看 [starship](https://starship.rs/)，这是一个使用 Rust 写的跨平台跨终端命令提示符配置工具，性能非常好。
+
+> [!Tip]
+> 命令提示符实际上是通过名为 `PS1` 环境变量定义的，可以参考：
+>
+> - [What is the $PS1 Variable in Linux — Unix | by Linux School Tech | Medium](https://medium.com/@linuxadminhacks/what-is-the-ps1-variable-in-linux-unix-9932e981c276)
+
 如果您不想使用 `zsh`，因为它需要一些配置，您也可以试试 [`fish`](https://fishshell.com/)（我之前用的就是 `fish`）。然而，`fish` 不是 POSIX 兼容的，这意味着您可能会遇到一些 Shell 脚本的兼容性问题。这就是我更喜欢 `zsh` 的原因。但对于初学者来说，这没问题。
 
 在大多数类 Unix 系统上，您已经安装了 `bash`，并且很容易在这些平台上安装 `zsh` 或 `fish`。但在 Windows 上，这有点棘手。
@@ -271,7 +278,7 @@ update-alternatives --config editor # 并在菜单中选择 vim
 
 - Java: [`sdkman`](https://sdkman.io/) 等
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm) 等
-- Python: [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/) 等（关于这个我也写了一篇[文章](/posts/managing-multiple-python-versions-with-pyenv-and-conda)）
+- Python: [`uv`](https://docs.astral.sh/uv/), [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/) 等（关于这个我也写了一篇[文章](/posts/managing-multiple-python-versions-with-pyenv-and-conda)）
 
 除了上面提到的软件专用的版本控制工具，您还可以使用 [`asdf`](https://asdf-vm.com/zh-hans/) 或 [`mise`](https://mise.jdx.dev/) 这样的工具来管理多个软件的版本。下面是一个使用 `mise` 来管理多个 Node.js 版本的例子：
 
