@@ -1,17 +1,17 @@
 ---
 title: 2025 年的图床解决方案
 tags:
-- image-hosting
 - cloudflare
+- image-hosting
+- s3
 - s3-image-port
+- webp-cloud-services
 date: 2024-12-03 14:45:43
 ---
 
-作为一个使用 Markdown 进行日常写作的 Blogger，我不可避免地需要使用一个图床服务。过去，我使用过像 [sm.ms](https://sm.ms/)、[路过图床](https://imgse.com/) 等公共图床服务，也使用过基于 GitHub 的自建方案，但这些方案都有各自的问题，包括但不限于国内外连接速度较慢、图片被和谐或丢失等。但现在，我有了一个完整的自建解决方案，它基于 [Cloudflare R2](https://www.cloudflare.com/zh-cn/developer-platform/products/r2/)、[S3 Image Port](https://iport.yfi.moe/) 和 [WebP Cloud Services](https://webp.se)。
+作为一个使用 Markdown 进行日常写作的 Blogger，我不可避免地需要使用一个图床服务。过去，我使用过像 [sm.ms](https://sm.ms/)、[路过图床](https://imgse.com/) 等公共图床服务，也使用过基于 GitHub 的自建方案，但这些方案都有各自的问题，包括但不限于国内外连接速度较慢、图片被和谐或丢失等。但现在，我有了一个完整的自建解决方案，它基于 [Cloudflare R2](https://www.cloudflare.com/zh-cn/developer-platform/products/r2/)、[S3 Image Port](https://iport.yfi.moe/) 和 [WebP Cloud Services](https://webp.se)。我在过去的几个月中实践了下面所要说的这个方案，它为我提供了一个稳定、高效的图床服务。一起来看看吧！
 
 <!--more-->
-
-我在过去的几个月中实践了下面所要说的这个方案，现在，分享给各位。
 
 ## 是什么
 
