@@ -9,6 +9,7 @@ tags:
 - miniflux
 - rclone
 - self-hosting
+date: 2024-12-05 19:41:00
 ---
 
 近年来，云服务领域经历了迅猛的增长。虽然云服务最初主要面向企业用户设计，但现在各大云服务提供商也推出了针对个人用户的经济实惠方案。对于学生用户来说，更是有多种免费额度和服务优惠可供利用。伴随着以 Docker 为代表的容器化技术的迅速崛起，[自托管（Self-hosting）]((https://en.wikipedia.org/wiki/Self-hosting_(web_services)))这一曾经复杂且耗时的任务变得前所未有的简便和轻松。在本文中，我将借助面向学生的 Azure 为例，带您踏入自部署的世界。
@@ -17,7 +18,7 @@ tags:
 
 在本文中，我将引导您从选购一台云服务器起步，以部署 [Memos](https://www.usememos.com/)（个人备忘录）和 [Miniflux](https://miniflux.app/)（RSS 阅读器）为例，向您展示如何利用 Docker Compose 轻松快捷地部署各种服务。
 
-接下来，我们将探讨域名的选购以及如何使用 Caddy 来配置反向代理。通过这些步骤，您的服务将可以通过自定义的、易于记忆的 URL，例如 [`https://memos.blocklune.cc`](https://memos.blocklune.cc)，被用户直接访问。
+接下来，我们将探讨域名的选购以及如何使用 Caddy 来配置反向代理。通过这些步骤，您的服务将可以通过自定义的、易于记忆的 URL，例如 [`memos.blocklune.cc`](https://memos.blocklune.cc)，被用户直接访问。
 
 最后，为了确保您的数据安全与持久性，我会介绍服务器数据备份的具体方法。您将学习到如何使用 [`rclone`](https://rclone.org/) 这一强大工具，将您的关键数据备份至如 Cloudflare R2 这样的 S3 兼容存储服务、或者是 Google Drive 上。此外，我们还会讲解 `cron` 的基础用法，使您可以设置定期自动化的备份任务，从而无需手动干预即可保持数据的安全更新。
 
@@ -82,7 +83,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 如果您不了解什么是 Docker，或者您在安装时遇到了一些网络问题、希望使用镜像进行安装，可以参考我的另一篇文章：
 
-- [Docker: 是什么? 为什么? 怎么用? | BlockLune's Blog](https://blocklune.cc/zh/posts/docker-what-why-how/)
+- [Docker: 是什么? 为什么? 怎么用? | BlockLune's Blog](/zh/posts/docker-what-why-how/)
 
 在安装完成后，您可以创建一个目录（文件夹），用于存放待会我们会使用的 Docker Compose 文件。例如，在家目录下创建一个名为 `docker_data` 的目录。
 
@@ -224,7 +225,7 @@ services:
 
 而反向代理则是服务器端的中间层，它将成为服务器的代理人，与客户端打交道。
 
-在我们的情景中，我们将使用 Caddy 作为反向代理，它将接管来自 80 端口的请求，并根据我们定义的规则，将请求转发到实际的服务上。
+在此文中，我们将使用 Caddy 作为反向代理，它将接管来自 80 端口的请求，并根据我们定义的规则，将请求转发到实际的服务上。
 
 ### 安装 Caddy 并配置反向代理
 
@@ -240,7 +241,7 @@ sudo apt install caddy
 
 然后，我们需要前往我们购买的域名的 DNS 配置页面，添加 A 记录，将域名指向我们的服务器的公网 IP。在此处，对于上面配置的两个服务，我希望它们分别运行在 `memos.blocklune.cc` 和 `miniflux.blocklune.cc` 这两个域名上。所以，我需要添加两条 A 记录，均指向我的服务器的公网 IP。
 
-然后，编辑 `/etc/caddy/Caddyfile` 文件，添加如下内容：
+接着，编辑 `/etc/caddy/Caddyfile` 文件，添加如下内容（非常简单清楚的语法不是吗）：
 
 ```text
 memos.blocklune.cc {
@@ -258,7 +259,7 @@ miniflux.blocklune.cc {
 sudo systemctl restart caddy
 ```
 
-现在，您可以通过您的域名访问您的服务了！
+现在，您可以通过您的域名访问您的服务了！最初访问可能会提示您隐私风险，这是因为 Caddy 的自动 HTTPS 还没有生效。等待一段时间访问即可。
 
 ## 数据备份
 
@@ -272,10 +273,18 @@ sudo systemctl restart caddy
 
 ## 参考资料及扩展阅读
 
+Azure:
+
+- [Azure 文档 | Microsoft Learn](https://learn.microsoft.com/zh-cn/azure)
+
 Caddy:
 
 - [Caddy v2中文文档](https://caddy2.dengxiaolong.com/docs/)
 - [Caddy —— 轻松换掉你的 Nginx - Yunfi](https://yfi.moe/post/caddy-web-server)
+
+Docker:
+
+- [Docker Docs](https://docs.docker.com/)
 
 Memos:
 
