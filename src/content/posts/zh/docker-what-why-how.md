@@ -1,24 +1,24 @@
 ---
+title: 'Docker: 是什么? 为什么? 怎么用?'
 abbrlink: 86a70735
 categories:
 - CS
 - Tools
-date: 2024-09-03 16:35:32
 tags:
 - docker
 - containerization
 - software-engineering
 - tool
 - devops
-title: 'Docker: 是什么? 为什么? 怎么用?'
-updated: 2024-10-28 20:06:00
+date: 2024-09-03 16:35:32
+updated: 2024-12-05 15:47:00
 ---
 
-作为一个喜欢折腾新玩意儿的人，在网上冲浪时，我经常会去寻找各种各样新式的软件或服务。如果你和我一样也喜欢寻找这些软件，那你可能也会注意到，在安装指南中，越来越多的软件提供了一种使用 **Docker** 的安装或部署方法。这是什么东西？为什么现在流行使用它？我们又能如何使用它？这篇文章，带你入门 Docker 。
+作为一个喜欢折腾新玩意儿的人，在网上冲浪时，我经常会去寻找各种各样新式的软件或服务。如果您和我一样也喜欢寻找这些软件，那您可能也会注意到，在安装指南中，越来越多的软件提供了一种使用 **Docker** 的安装或部署方法。这是什么东西？为什么现在流行使用它？我们又能如何使用它？这篇文章，带您入门 Docker 。
 
 <!--more-->
 
-题外话: 这篇文章的标题模仿了朋友的[《RSS: 是什么？为什么？怎么用？》](https://yfi.moe/post/all-about-rss)。那是一篇很不错的文章，推荐你也去看一看。
+题外话: 这篇文章的标题模仿了朋友的[《RSS: 是什么？为什么？怎么用？》](https://yfi.moe/post/all-about-rss)。那是一篇很不错的文章，推荐您也去看一看。
 
 ## 是什么？
 
@@ -30,9 +30,9 @@ updated: 2024-10-28 20:06:00
 
 简单地讲，借助 Docker 平台，软件开发者可以将应用程序与其依赖项打包到一个可移植的容器中。这些容器可以在任何支持 Docker 的环境中运行，无需担心底层系统的差异。
 
-你可以将 Docker 理解为一种轻量级的虚拟机:
+您可以将 Docker 理解为一种轻量级的虚拟机:
 
-- 这个虚拟机已经配置好了运行特定软件所需的全部或大部分条件，无需你再花时间配置，开箱即用。
+- 这个虚拟机已经配置好了运行特定软件所需的全部或大部分条件，无需您再花时间配置，开箱即用。
 
 但 Docker 又不完全等同于传统虚拟机:
 
@@ -41,7 +41,7 @@ updated: 2024-10-28 20:06:00
 
 ## 为什么？
 
-新工具的诞生总是为了解决现有的问题和痛点。如果你也喜欢折腾，你肯定也经历过，照着网站上的部署和配置指南一步一步走下来，走着走着就走不通了，跑着跑着就报错了等等一系列问题。本身，“折腾” 这个词也就是在说你需要在这个过程中不停地解决问题嘛。造成这些问题的很大一部分原因，就是你的本地环境与开发者预设的环境不一致。而 Docker 允许开发者将他们的运行环境直接打包分享，大大简化了你的 “折腾” 过程。
+新工具的诞生总是为了解决现有的问题和痛点。如果您也喜欢折腾，您肯定也经历过，照着网站上的部署和配置指南一步一步走下来，走着走着就走不通了，跑着跑着就报错了等等一系列问题。本身，“折腾” 这个词也就是在说您需要在这个过程中不停地解决问题嘛。造成这些问题的很大一部分原因，就是您的本地环境与开发者预设的环境不一致。而 Docker 允许开发者将他们的运行环境直接打包分享，大大简化了您的 “折腾” 过程。
 
 当然，Docker 的功能不止于此。从更专业一点的角度说，Docker 的流行有几个关键原因:
 
@@ -56,16 +56,16 @@ updated: 2024-10-28 20:06:00
 
 关于如何安装 Docker，请参见[官方文档](https://docs.docker.com/get-started/get-docker/)。
 
-上面提到，Docker 容器会共用操作系统的内核。但实际上，Docker 只能使用 Linux Kernel。为了在 macOS 或 Windows 上使用 Docker，实际上需要借助其他方法。在官方文档中推荐使用的是 Docker Desktop，它使用了一个轻量级的虚拟机来运行 Docker。在 macOS 上，你也可以试试 [OrbStack](https://orbstack.dev/)。
+上面提到，Docker 容器会共用操作系统的内核。但实际上，Docker 只能使用 Linux Kernel。为了在 macOS 或 Windows 上使用 Docker，实际上需要借助其他方法。在官方文档中推荐使用的是 Docker Desktop，它使用了一个轻量级的虚拟机来运行 Docker。在 macOS 上，您也可以试试 [OrbStack](https://orbstack.dev/)。
 
-这里特别说一下在国内的 Ubuntu 服务器上安装 Docker Engine 这样一个场景。由于一些网络问题，你可能无法访问 Docker 官方源。下面是使用阿里云镜像的一种解决方案（仅关键命令，完整步骤参见[这份官方文档](https://docs.docker.com/engine/install/ubuntu/)）：
+这里特别说一下在国内的 Ubuntu 服务器上安装 Docker Engine 这样一个场景。由于一些网络问题，您可能无法访问 Docker 官方源。下面是使用阿里云镜像的一种解决方案（仅关键命令，完整步骤参见[这份官方文档](https://docs.docker.com/engine/install/ubuntu/)）：
 
 1. 设置 Docker 的 `apt` 存储库：
 
 ```bash
 # Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
+sudo apt update
+sudo apt install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -80,7 +80,7 @@ echo \
 2. 安装最新版本：
 
 ```bash
-sudo apt-get update
+sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
@@ -116,7 +116,7 @@ sudo docker run hello-world
 
 ### 关键概念
 
-在继续之前，必须首先解释一些关键概念。你不需要完全理解它们，但要知道它们的存在。后续的例子可能会帮助你更好地理解这些概念。
+在继续之前，必须首先解释一些关键概念。您不需要完全理解它们，但要知道它们的存在。后续的例子可能会帮助您更好地理解这些概念。
 
 - 容器 (`Container`): 一个轻量级、可执行的独立软件包，包含运行某个软件所需的所有内容。
 - 镜像 (`Image`): 用于创建容器的只读模板。镜像包含了运行应用程序所需的代码、运行时、库、环境变量和配置文件。
@@ -139,7 +139,7 @@ docker run --rm --name mysql-container -e MYSQL_ROOT_PASSWORD=your_root_password
 
 - `--rm`：当容器停止时，自动删除容器。
 - `--name`：指定容器的名称。
-- `-e`：设置环境变量，这里设置了容器中 MySQL 的 root 密码为 `your_root_password`。
+- `-e`：设置环境变量，这里将容器中 MySQL 的 root 密码设置为了 `your_root_password`。
 - `-p`：映射端口，这里将容器的 3306 端口映射到主机的 3306 端口。
 - `-d`：以分离（detached）模式在后台运行容器。
 
@@ -206,13 +206,13 @@ sudo docker run --name mysql-container \
   mysql:latest
 ```
 
-如果忘记使用 `--restart always` 选项指定容器自动重启，你可以使用 `docker update` 命令来更新容器的配置：
+如果忘记使用 `--restart always` 选项指定容器自动重启，您可以使用 `docker update` 命令来更新容器的配置：
 
 ```bash
 sudo docker update --restart always mysql-container
 ```
 
-在正式开始使用 MySQL 前，你可能还需要一些自定义配置。例如，允许任意 IP 地址连接到 MySQL 服务器。为此，编辑 `/etc/docker/mysql/conf.d/my.cnf` 如下：
+在正式开始使用 MySQL 前，您可能还需要一些自定义配置。例如，允许任意 IP 地址连接到 MySQL 服务器。为此，编辑 `/etc/docker/mysql/conf.d/my.cnf` 如下：
 
 ```text
 [mysqld]
@@ -225,7 +225,7 @@ bind-address = 0.0.0.0
 sudo docker restart mysql-container
 ```
 
-为了连接到容器中的 MySQL 服务器，你可以使用 `mysql` 命令行工具。可以这样直接使用 Docker 容器中的：
+为了连接到容器中的 MySQL 服务器，您可以使用 `mysql` 命令行工具。可以这样直接使用 Docker 容器中的：
 
 ```bash
 # 进入容器
@@ -234,7 +234,7 @@ sudo docker exec -it mysql-container bash
 mysql -u root -p
 ```
 
-我们可能希望直接远程访问位于这个远程服务器上的 MySQL 服务器。为此，可以首先在 MySQL 中添加一个新用户并给予相应的权限（下面的命令授予了所有权限，但你应该按照你的需要自行设置权限）：
+我们可能希望直接远程访问位于这个远程服务器上的 MySQL 服务器。为此，可以首先在 MySQL 中添加一个新用户并给予相应的权限（下面的命令授予了所有权限，但您应该按照您的需要自行设置权限）：
 
 ```sql
 CREATE USER 'remote_user'@'%' IDENTIFIED BY 'password';
@@ -242,16 +242,53 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote_user'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 
-你可能还需要设置服务器的防火墙，允许 3306 端口的访问。
+您可能还需要设置服务器的防火墙，允许 3306 端口的访问。
 
-最后，你可以在本地机器上使用下面的命令来远程访问：
+最后，您可以在本地机器上使用下面的命令来远程访问：
 
 ```bash
 mysql -u remote_user -p --host your_server_ip
 ```
 
+### Docker Compose
+
+您可能已经注意到了，上面的 `docker run` 命令正变得越来越长！以上两个例子仅仅展示了启动单个 Docker 容器的情况。然而，如果您的应用由多个部分组成，例如一个数据库、一个依赖于该数据库的后端，以及一个前端，您希望将这些部分连接起来并进行统一管理，那么单一的 `docker run` 命令会变得异常复杂。
+
+在这种情况下，Docker Compose 可以派上用场。简单（不严谨）地说，它允许您将多个冗长的 `docker run` 命令保存到文件中，并描述它们的依赖关系等。使用 Docker Compose，您可以用非常简短的命令来启动或停止整个应用。
+
+举个例子，针对之前提到的持久化安装 MySQL，您可以这样操作：
+
+1. 创建一个目录，在其中创建 `docker-compose.yml` 文件，并编辑为：
+
+```yaml
+services:
+  mysql-container:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/docker/mysql/data:/var/lib/mysql
+      - /etc/docker/mysql/conf.d:/etc/mysql/conf.d
+      - /var/log/docker/mysql:/var/log/mysql
+    restart: always
+```
+
+2. 在当前目录内运行下面的命令：
+
+```bash
+docker compose up -d # 以分离模式（后台）运行该 Docker Compose
+docker compose ps # 查看容器状态
+docker compose down # 结束运行
+```
+
+> [!Tip]
+> 过去，Docker Compose 需要您安装名为 `docker-compose` 的独立二进制文件（例如使用 `sudo apt install docker-compose` 进行安装），但现在，Docker Compose 已经成为了 Docker CLI 的一部分，命令格式也从原来的 `docker-compose up -d` 变为 `docker compose up -d`。具体请参考[官方文档](https://docs.docker.com/compose/install/)。
+
 ## 学习资源
 
-Docker 的[官方文档站](https://docs.docker.com/)提供了大量的文档。如果你遇到问题，你始终可以在官方文档里找到最新的解决方案。
+Docker 的[官方文档站](https://docs.docker.com/)提供了大量的文档。如果您遇到问题，您始终可以在官方文档里找到最新的解决方案。
 
-如果你需要的是一门课程，来自 KodeKloud 的这门 _[Docker Training Course for the Absolute Beginner](https://learn.kodekloud.com/user/courses/docker-training-course-for-the-absolute-beginner)_ 课程是我学习 Docker 的入门课。它不仅提供了课程视频，而且还有练习题和实验环境，并且完全免费。非常推荐你去学习。
+如果您需要的是一门课程，来自 KodeKloud 的这门 _[Docker Training Course for the Absolute Beginner](https://learn.kodekloud.com/user/courses/docker-training-course-for-the-absolute-beginner)_ 课程是我学习 Docker 的入门课。它不仅提供了课程视频，而且还有练习题和实验环境，并且完全免费。非常推荐您去学习。
