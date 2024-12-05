@@ -206,7 +206,59 @@ services:
 
 ## 域名与反向代理
 
-TODO
+在上面的部署中，我们使用了端口号来访问我们的服务。但是，这样的 URL 并不直观，也不容易记忆。所以，我们需要一个域名，并通过反向代理来将域名映射到我们的服务上。
+
+### 选购域名
+
+域名给我一种很奇妙的感觉，就像在互联网上购置了一套房产，从此我就有了一个家。
+
+您可以在各大域名注册商购买域名，例如 [GoDaddy](https://www.godaddy.com/)、[Cloudflare](https://www.cloudflare.com/zh-cn/products/registrar/)、[阿里云](https://www.alibabacloud.com/zh/domain)、[腾讯云](https://buy.cloud.tencent.com/domain)等。各家的域名价格一般不会相差特别大，但您也还是可以在一定程度上比较一下。我目前的 [blocklune.cc](https://blocklune.cc) 就是在 Cloudflare 上购买的。
+
+顺便一提，[最近](https://www.landiannews.com/archives/106871.html) 新开放注册的顶级域名 `cv` 在 [hello.cv](https://hello.cv) 上大多以 3 美刀首年价格开放注册，如果您感兴趣，可以去看看。
+
+### 反向代理
+
+什么是反向代理？
+
+一般而言的代理服务器是客户端和服务器之间的中间层，代理软件将成为客户端的代理人，与服务器打交道。
+
+而反向代理则是服务器端的中间层，它将成为服务器的代理人，与客户端打交道。
+
+在我们的情景中，我们将使用 Caddy 作为反向代理，它将接管来自 80 端口的请求，并根据我们定义的规则，将请求转发到实际的服务上。
+
+### 安装 Caddy 并配置反向代理
+
+在配置 Caddy 之前，我们需要先安装 Caddy：
+
+```bash
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+```
+
+然后，我们需要前往我们购买的域名的 DNS 配置页面，添加 A 记录，将域名指向我们的服务器的公网 IP。在此处，对于上面配置的两个服务，我希望它们分别运行在 `memos.blocklune.cc` 和 `miniflux.blocklune.cc` 这两个域名上。所以，我需要添加两条 A 记录，均指向我的服务器的公网 IP。
+
+然后，编辑 `/etc/caddy/Caddyfile` 文件，添加如下内容：
+
+```text
+memos.blocklune.cc {
+    reverse_proxy 127.0.0.1:5230
+}
+
+miniflux.blocklune.cc {
+    reverse_proxy 127.0.0.1:8080
+}
+```
+
+运行下面的命令重启 Caddy，以使配置生效：
+
+```bash
+sudo systemctl restart caddy
+```
+
+现在，您可以通过您的域名访问您的服务了！
 
 ## 参考资料
 
