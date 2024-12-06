@@ -27,10 +27,10 @@ export async function getStaticPaths() {
 
   for (const slug of classified.keys()) {
     for (const lang of supportedLangs) {
-      const post = await getPost(lang as Lang, slug);
+      const post = await getPost(lang, slug);
       const headings = post ? (await render(post)).headings : [];
       paths.push({
-        params: { lang: lang as Lang, slug },
+        params: { lang, slug },
         props: { post, headings },
       });
     }

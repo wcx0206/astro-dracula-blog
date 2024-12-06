@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     for (const slug of classified.keys()) {
       const entry = await getEntry("posts", `${lang}/${slug}`);
       paths.push({
-        params: { lang: lang as Lang, slug },
+        params: { lang, slug },
         props: { post: entry },
       });
     }
