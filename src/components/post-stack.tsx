@@ -57,7 +57,7 @@ export default function PostStack({
       {results.length > 0 ? (
         results.map((snapshot) => <PostCard lang={lang} snapshot={snapshot} animate={true} key={snapshot.slug} />)
       ) : (
-        <p>{t("search.noResults")}</p>
+        <p className="text-center">{t("search.noResults")}</p>
       )}
     </div>
   );
