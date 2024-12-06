@@ -24,6 +24,7 @@ A fast and simple blog system with dracula theme built with Astro.
 - [x] :octocat: [GitHub Alerts](https://github.com/chrisweb/rehype-github-alerts)
 - [x] :book: TOC (Table of Contents)
 - [x] :framed_picture: Dynamic Open Graph Generation for Posts
+- [x] :copyright: Project under MIT License & Support License customization for each post
 
 ## :white_check_mark: Lighthouse Score
 
@@ -74,7 +75,7 @@ To use this theme, follow these steps:
 
 1. Edit `src/config.ts` to configure the basic information for your site. You can also configure your [umami](https://umami.is/) analytics and search engine verifications here.
 2. Replace `src/assets/avatar.webp` with your own avatar.
-3. Rewrite your own about page text in `src/content/info/en/about.md` & `src/info/zh/about.md`.
+3. Rewrite your own about page text in `src/content/info/en/about.md` & `src/info/zh/about.md` (**Note**: Please retain the license information contained therein and, if possible, the url for this project).
 4. Delete my posts in `src/content/posts` and write your own. Currently the theme supports both Chinese and English languages, for different language versions of the same post, you need to make sure they are located in the `en` and `zh` directories and use the same filename.
 5. Remove `public/_redirects` and use your own Netlify redirect configuration.
 6. Remove the icons in `public` and use your own. The commands below may be helpful:

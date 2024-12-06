@@ -17,3 +17,21 @@ As I approached college, I experimented with [Hexo](https://hexo.io/) and the [I
 Determined to create a blog that was truly my own, I decided to build one from the ground up. And here it is!
 
 The blog is mainly built with [Astro](https://astro.build/) with [React](https://react.dev/) components. I chose Astro because it is super fast. The color scheme is inspired by [Dracula](https://draculatheme.com/). I use [Tailwind CSS](https://tailwindcss.com/) for styling and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) for typography. And I do some animations with [Motion](https://motion.dev) (the original Framer Motion).
+
+The license for the posts in this blog can be found in the header of the specific article, and the source code is available on [GitHub (BlockLune/AstroDraculaBlog)](https://github.com/BlockLune/astro-dracula-blog) under the [MIT license](https://en.wikipedia.org/wiki/MIT_License), which reads as follows:
+
+```text
+Copyright 2024 BlockLune
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+**PLEASE NOTE**: If you use this program or a portion of it, please retain this permission notice.
+
+If you like this project, please give me a star :star: on GitHub!
+
+:heart:
