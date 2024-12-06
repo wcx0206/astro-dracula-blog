@@ -26,7 +26,11 @@ export default defineConfig({
       },
     },
     remarkPlugins: [remarkDescPlugin, remarkMath],
-    rehypePlugins: [rehypeExternalLinks, rehypeGithubAlerts, rehypeMathjax],
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: "_blank" }],
+      rehypeGithubAlerts,
+      rehypeMathjax,
+    ],
   },
   integrations: [react(), sitemap(), tailwind(), partytown()],
   output: "static",
