@@ -5,7 +5,6 @@ tags:
 - caddy
 - docker
 - memos
-- bitwarden
 - miniflux
 - rclone
 - self-hosting
@@ -30,7 +29,7 @@ date: 2024-12-05 19:41:00
 
 此处指选择 **中国大陆地区** 的服务器或 **其他国家或地区** 的服务器。
 
-首先要考虑的是域名问题。在中国大陆地区，如果您的域名没有完成工信部要求的备案程序，则无法使用标准的 80（HTTP）和 443（HTTPS）端口提供服务。这将迫使您选择其他非标准端口。于我而言，这一点挺让人难受的。
+首先要考虑的是域名问题。在中国大陆地区，如果您的域名没有完成工信部要求的[备案](https://zh.wikipedia.org/zh-cn/ICP%E5%A4%87%E6%A1%88)程序，则无法使用标准的 80（HTTP）和 443（HTTPS）端口提供服务。这将迫使您选择其他非标准端口。于我而言，这一点挺让人难受的。
 
 此外，国内服务器也会遇到一些众所周知的网络问题，如果您选择了位于国内的服务器，您可能需要额外为配置镜像等步骤烦恼。
 
@@ -263,13 +262,96 @@ sudo systemctl restart caddy
 
 ## 数据备份
 
-最后，我们来讲讲数据备份。数据备份是非常重要的，它可以保证您的数据在意外发生时不会丢失。在这里，我们将使用 `rclone` 来将我们的数据备份到其他地方。
+最后，我们来讲讲数据备份。数据备份是非常重要的，它可以保证您的数据在意外发生时不会丢失。在这里，我们将使用 [`rclone`](https://rclone.org/) 来将我们的数据备份到其他地方。`rclone` 是一个用于管理云端存储的文件的命令行程序，功能强大，且支持的云端存储类型和服务商众多。
 
-我写了一个脚本，供您快速起步（您可以参考下面这个仓库的 README 提供的示例了解如何使用它）：
+使用下面的命令来安装最新版本的 `rclone`（不要使用 `apt` 安装，那边版本更新有些不及时）：
+
+```bash
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+```
+
+在正式开始使用前，您需要运行下面的命令来创建至少一份 `rclone` 配置（此处使用 `sudo` 是因为之后我会以 `root` 身份进行备份操作，那时候读取的 `rclone` 配置是 `root` 用户的配置）：
+
+```bash
+sudo rclone config
+```
+
+此处我希望将我的资料备份到 Cloudflare R2 存储中，这是一个 Amazon S3 兼容的云存储服务。可以参考下面的官方文档进行配置：
+
+- [Amazon S3 | RCLONE Docs](https://rclone.org/s3/#cloudflare-r2)
+
+跟随 `rclone config` 的引导即可完成配置的创建，默认配置位于用户目录下的 `.config/rclone/rclone.conf` 中。如果您也使用了 `root`，那就是 `/root/.config/rclone/rclone.conf`。其内容应该类似于：
+
+```text
+[r2]
+type = s3
+provider = Cloudflare
+access_key_id = YOUR_ACCESS_KEY_ID
+secret_access_key = YOUR_SECRET_ACCESS_KEY
+region = auto
+endpoint = https://YOUR_ENDPOINT
+```
+
+在方括号中括出的内容表示配置名称，在下面构造远程地址字符串时，会使用到。
+
+> [!Tip]
+> 除了 Cloudflare R2，我其实还配置了一份 Google Drive 的。相较于 R2，Google Drive 相对复杂一些。其中有一步需要前往 Google 开发者平台创建一个 `client_id`，您可以参考：
+>
+> - [Making your own client_id | Google drive | RCLONE Docs](https://rclone.org/drive/#making-your-own-client-id)
+>
+> 在配置引导中有一步需要进行身份验证，由于在服务器上我们没有浏览器，所以那一步要选择 `no`，然后根据其提示在本地安装 `rclone` 进行验证。注意这一步有时间限制，需要提前在本地机器上准备好 `rclone`。
+
+现在您可以开始使用 `rclone` 进行备份了，运行类似下面的命令来将本地的一个文件复制到一个远程位置，实现备份（同样的，我为了使用上面的为 `root` 用户创建配置，使用了 `sudo`）：
+
+```bash
+sudo rclone copy --s3-no-check-bucket LOCAL_FILE DEST_ADDRESS
+```
+
+其中：
+
+- `--s3-no-check-bucket`：不要尝试创建存储桶（取决于您在 Cloudflare 上分配的令牌的权限，我此处手动创建了相应的存储桶，所以不希望 `rclone` 再去检查或尝试创建存储桶）
+- `LOCAL_FILE`：替换为一个本地文件的路径
+- `DEST_ADDRESS`：远程地址，格式为 `<配置名称>:<存储桶名称>/<存储桶内路径>`。此处我的配置名称是 `r2`，存储桶如果为 `rclone-backup`，桶内路径为 `backup_data`，那么 `DEST_ADDRESS` 就替换为 `r2:rclone-backup/backup-data`
+
+我写了一个[脚本](https://github.com/BlockLune/rclone-backup/)，供您快速起步。
+
+它会使用 `tar` 将指定目录打包为一个带有时间戳的 `*.tar.gz`，作为上面的 `LOCAL_FILE`，并复制到您指定的远程地址。
+
+同时，它还带有一个 `--max-files` 选项，用于指定最多在远端保存几份备份。默认值为 3，当远程保存了超过这个值后，会使用 `rclone delete` 删除最老的文件。如果您希望禁用该功能，可以将该选项显式地设置为 0，将关闭这个功能。
+
+下面是这个脚本的仓库地址。更多信息，请参考其 README：
 
 - [BlockLune/rclone-backup](https://github.com/BlockLune/rclone-backup/)
 
-(To be continued...)
+有了脚本后，您可以使用 Linux 的 `cron` 程序来创建一个定期执行的自动任务，运行下面的命令：
+
+```bash
+sudo crontab -e
+```
+
+在文件末尾添加类似下面这一行：
+
+```bash
+0 4 * * 0,2,5 /path/to/backup.sh LOCAL_DIR DEST_ADDR
+```
+
+前面五列（用空格分隔）分别表示：
+
+- 分钟（0-59）
+- 小时（0-23）
+- 日（1-31）
+- 月（1-12）
+- 一周的第几天（0-7，0 和 7 都表示周日）
+
+更多信息请阅读：
+
+```bash
+man 5 crontab
+```
+
+上面的命令在周日、周二和周五的凌晨 4 点执行该自动任务。
+
+需要注意，`cron` 使用本地时间。所以取决于您的系统设置和服务器所在地，您可能需要选择一个更为合理的（例如网络压力较小的时段）进行备份。
 
 ## 参考资料及扩展阅读
 
