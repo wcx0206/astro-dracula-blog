@@ -1,6 +1,7 @@
 import { MISC } from "@/config";
 import { type Lang, useTranslations } from "@/utils/i18n";
 import type { MarkdownHeading } from "astro";
+import clsx from "clsx";
 import { useEffect, useState } from "react";
 
 export default function TocCard({
@@ -45,11 +46,10 @@ export default function TocCard({
           <li key={heading.slug} style={{ marginLeft: `${heading.depth - 2}rem` }}>
             <a
               href={`#${heading.slug}`}
-              className={`
-                                underline underline-offset-4 
-                                hover:text-dracula-pink transition
-                                ${activeId === heading.slug ? "text-dracula-pink" : ""}
-                            `}
+              className={clsx(
+                "underline underline-offset-4 hover:text-dracula-pink transition",
+                activeId === heading.slug && "text-dracula-pink"
+              )}
             >
               {heading.text}
             </a>

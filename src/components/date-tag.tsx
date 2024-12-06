@@ -1,5 +1,6 @@
 import { getColor, getDiffInDays, getFormattedDate } from "@/utils/date";
 import { type Lang, useTranslations } from "@/utils/i18n";
+import clsx from "clsx";
 
 export default function DateTag({
   lang,
@@ -34,10 +35,11 @@ export default function DateTag({
           <span>{formattedDate}</span>
         </code>
       ) : (
-        <code title={titleText} className={`inline-block bg-dracula-dark/30 px-2 py-1 ${textColor}`}>
+        <code title={titleText} className={clsx("inline-block bg-dracula-dark/30 px-2 py-1", textColor)}>
           {formattedDate}
         </code>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 }
