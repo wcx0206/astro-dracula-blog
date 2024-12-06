@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import PostStack from "@/components/post-stack.tsx";
 import BaseLayout from "@/layouts/base-layout.astro";
-import { type Lang, ui } from "@/utils/i18n";
+import { type Lang, supportedLangs } from "@/utils/i18n";
 import { getSnapshots } from "@/utils/post";
 
 const posts = await getCollection("posts");
@@ -11,7 +11,7 @@ const { lang } = Astro.params;
 const snapshots = await getSnapshots(posts, lang);
 
 export function getStaticPaths() {
-  return Object.keys(ui).map((lang) => ({
+  return supportedLangs.map((lang) => ({
     params: { lang: lang as Lang },
   }));
 }

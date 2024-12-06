@@ -24,9 +24,13 @@ export default function LabelTag({
   const text = count > 1 ? `${label} (${count})` : label;
   const className = size === "large" ? "text-4xl px-4 py-2" : "px-2 py-1";
   const tagComponent = (
-    <code className={
-      clsx("inline_block", className, "text-dracula-purple bg-dracula-dark/30 hover:bg-dracula-dark transition")
-    }>
+    <code
+      className={clsx(
+        "inline_block",
+        className,
+        "text-dracula-purple bg-dracula-dark/30 hover:bg-dracula-dark transition",
+      )}
+    >
       {text}
     </code>
   );

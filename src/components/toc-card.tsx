@@ -48,7 +48,7 @@ export default function TocCard({
               href={`#${heading.slug}`}
               className={clsx(
                 "underline underline-offset-4 hover:text-dracula-pink transition",
-                activeId === heading.slug && "text-dracula-pink"
+                activeId === heading.slug && "text-dracula-pink",
               )}
             >
               {heading.text}

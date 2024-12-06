@@ -9,7 +9,7 @@ export const SITE = {
   },
   url: "https://blocklune.cc",
   og: {
-    imageUrl: "/ogimage.jpg"
+    imageUrl: "/ogimage.jpg",
   },
   analytics: {
     umami: {
@@ -31,7 +31,7 @@ export const AUTHOR = {
   bio: {
     en: "A student majoring in computer science and technology.",
     zh: "一名计算机科学与技术专业的学生。",
-  }
+  },
 };
 
 export const SOCIALS = [

@@ -1,14 +1,9 @@
 ---
 import BaseLayout from "@/layouts/base-layout.astro";
-import {
-  type Lang,
-  ui,
-  useTranslatedPath,
-  useTranslations,
-} from "@/utils/i18n";
+import { type Lang, supportedLangs, useTranslatedPath, useTranslations } from "@/utils/i18n";
 
 export function getStaticPaths() {
-  return Object.keys(ui).map((lang) => ({
+  return supportedLangs.map((lang) => ({
     params: { lang: lang as Lang },
   }));
 }

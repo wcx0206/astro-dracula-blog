@@ -2,9 +2,9 @@ import { getCollection } from "astro:content";
 import { SITE } from "@/config.ts";
 import { AUTHOR } from "@/config.ts";
 import type { Post } from "@/schemas/post";
+import { defaultLang } from "@/utils/i18n";
 import { getDescFromMdString } from "@/utils/markdown";
 import { getLangFromId, getSlugFromId } from "@/utils/post";
-import { defaultLang } from "@/utils/i18n";
 import rss from "@astrojs/rss";
 
 export async function GET(context: any) {
@@ -26,7 +26,7 @@ export async function GET(context: any) {
           url: `${lang}/og-images/${slug}.png`,
           length: 0,
           type: "image/png",
-        }
+        },
       };
     }),
     stylesheet: "/rss.xsl",

@@ -2,8 +2,8 @@
 import Moon from "@/components/icons/moon.astro";
 import Rss from "@/components/icons/rss.astro";
 import LanguagePicker from "@/components/ui/language-picker.astro";
-import { useTranslations, useTranslatedPath, type Lang } from "@/utils/i18n";
 import { SITE } from "@/config";
+import { type Lang, useTranslatedPath, useTranslations } from "@/utils/i18n";
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);

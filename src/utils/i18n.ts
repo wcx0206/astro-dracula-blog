@@ -11,7 +11,8 @@ export const ui = {
   en: {
     "nav.home": "Home",
     "nav.tags": "Tags",
-    "nav.tags.description": "Here is the tag index of this site, where you can browse and quickly find posts and content related to topics you are interested in.",
+    "nav.tags.description":
+      "Here is the tag index of this site, where you can browse and quickly find posts and content related to topics you are interested in.",
     "nav.about": "About",
     "search.placeholder.firstPart": "Search in ",
     "search.placeholder.secondPart.post": " posts...",
@@ -23,7 +24,8 @@ export const ui = {
     "postsWithTag.description.secondPart": ".",
     toc: "Table of Content",
     pageNotFound: "PAGE NOT FOUND",
-    pageNotFoundDescription: "Sorry, the page you are looking for does not exist. Please check the URL or go back to the homepage.",
+    pageNotFoundDescription:
+      "Sorry, the page you are looking for does not exist. Please check the URL or go back to the homepage.",
     goBackHome: "Go Back Home",
     publishedAt: "Published at",
     updatedAt: "Updated at",
@@ -60,7 +62,8 @@ export const ui = {
   },
 } as const;
 
-export type Lang = keyof typeof ui;
+export type Lang = keyof typeof languages;
+export const supportedLangs = Object.keys(languages) as Lang[];
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {

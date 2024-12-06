@@ -1,5 +1,5 @@
 import { getDiffInDays } from "@/utils/date";
-import { type Lang } from "@/utils/i18n";
+import type { Lang } from "@/utils/i18n";
 import DateTag from "./date-tag";
 import PostDateStatusTag from "./post-date-status-tag";
 

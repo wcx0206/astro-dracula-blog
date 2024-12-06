@@ -7,21 +7,19 @@ import "@/styles/rehype-github-alerts.css";
 
 import Favicon from "@/components/head/favicon.astro";
 import Meta from "@/components/head/meta.astro";
-import Umami from "@/components/head/umami.astro";
 import RssLink from "@/components/head/rss-link.astro";
 import Sitemap from "@/components/head/sitemap.astro";
+import Umami from "@/components/head/umami.astro";
 
-import Header from "@/components/ui/header.astro";
 import Footer from "@/components/ui/footer.astro";
+import Header from "@/components/ui/header.astro";
 
-import { getLangFromUrl } from "@/utils/i18n";
 import { SITE } from "@/config";
+import { getLangFromUrl } from "@/utils/i18n";
 
 const { title, description, ogImageUrl } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
-const pageTitle = title
-  ? `${title} | ${SITE.title[lang]}`
-  : `${SITE.title[lang]} | ${SITE.description[lang]}`;
+const pageTitle = title ? `${title} | ${SITE.title[lang]}` : `${SITE.title[lang]} | ${SITE.description[lang]}`;
 ---
 
 <html lang={lang} class="scroll-smooth">

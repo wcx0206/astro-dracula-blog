@@ -1,7 +1,7 @@
 import avatarImage from "@/assets/avatar.webp";
-import { motion, useReducedMotion } from "motion/react";
 import { AUTHOR, SOCIALS } from "@/config";
-import { type Lang } from "@/utils/i18n";
+import type { Lang } from "@/utils/i18n";
+import { motion, useReducedMotion } from "motion/react";
 
 export default function BusinessCard({ lang }: { lang: Lang }) {
   const shouldReduceMotion = useReducedMotion();

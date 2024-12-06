@@ -38,8 +38,7 @@ export default function DateTag({
         <code title={titleText} className={clsx("inline-block bg-dracula-dark/30 px-2 py-1", textColor)}>
           {formattedDate}
         </code>
-      )
-      }
-    </div >
+      )}
+    </div>
   );
 }

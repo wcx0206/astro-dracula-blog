@@ -1,6 +1,6 @@
 import { defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
 import { PostFrontmatterSchema } from "@/schemas/post";
+import { glob } from "astro/loaders";
 
 const postsCollection = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/posts" }),

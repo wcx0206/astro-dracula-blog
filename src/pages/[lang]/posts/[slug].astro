@@ -1,18 +1,18 @@
 ---
 import { getCollection, getEntry } from "astro:content";
+import { render } from "astro:content";
 import MarkdownPost from "@/components/markdown-post.astro";
 import TocCard from "@/components/toc-card.tsx";
 import BaseLayout from "@/layouts/base-layout.astro";
-import { type Lang, ui } from "@/utils/i18n";
-import { classifyByLangs, getLangFromId } from "@/utils/post";
+import { type Lang, supportedLangs } from "@/utils/i18n";
 import { getDescFromMdString } from "@/utils/markdown";
-import { render } from "astro:content";
+import { classifyByLangs, getLangFromId } from "@/utils/post";
 
 export async function getStaticPaths() {
   async function getPost(currentLang: Lang, slug: string) {
     let post = await getEntry("posts", `${currentLang}/${slug}`);
     if (!post) {
-      for (const possibleLang of Object.keys(ui)) {
+      for (const possibleLang of supportedLangs) {
         if (currentLang === possibleLang) continue;
         post = await getEntry("posts", `${possibleLang}/${slug}`);
         if (post) break;
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
   const paths = [];
 
   for (const slug of classified.keys()) {
-    for (const lang of Object.keys(ui)) {
+    for (const lang of supportedLangs) {
       const post = await getPost(lang as Lang, slug);
       const headings = post ? (await render(post)).headings : [];
       paths.push({
@@ -41,8 +41,7 @@ export async function getStaticPaths() {
 const { post, headings } = Astro.props;
 const { lang, slug } = Astro.params;
 const actualLangOfPost = getLangFromId(post.id);
-const ogImageUrlToUse =
-  post?.data.ogImageUrl || `/${actualLangOfPost}/og-images/${slug}.png`;
+const ogImageUrlToUse = post?.data.ogImageUrl || `/${actualLangOfPost}/og-images/${slug}.png`;
 ---
 
 <BaseLayout
