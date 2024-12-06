@@ -30,6 +30,8 @@ export const ui = {
     "post.newlyUpdatedMsg": `Updated in ${MISC.dateTag.daysToBeGreen} days`,
     "post.oldPostWarningMsg": `Last update over ${MISC.dateTag.daysToBeRed} days ago`,
     "post.license": "Licensed under",
+    "post.notSupportedLang": "Language not supported",
+    "post.notSupportedLangDescription": "Sorry, your language is unavailable for this post.",
   },
   zh: {
     "nav.home": "首页",
@@ -53,6 +55,8 @@ export const ui = {
     "post.newlyUpdatedMsg": `更新于 ${MISC.dateTag.daysToBeGreen} 日内`,
     "post.oldPostWarningMsg": `更新于 ${MISC.dateTag.daysToBeRed} 日前`,
     "post.license": "许可证",
+    "post.notSupportedLang": "语言暂不支持",
+    "post.notSupportedLangDescription": "抱歉，此文章暂不支持您的语言。",
   },
 } as const;
 

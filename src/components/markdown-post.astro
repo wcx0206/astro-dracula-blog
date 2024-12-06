@@ -5,10 +5,11 @@ import { getUniqueLowerCaseTagMap } from "@/utils/post";
 import DateRelatedTags from "./date-related-tags";
 import LabelTag from "./label-tag.tsx";
 import LicenseTag from "./license-tag";
+import NotSupportedLangTag from "./not-supported-lang-tag";
 import Prose from "./prose.astro";
 import TocCard from "./toc-card";
 
-const { lang, post, headings } = Astro.props;
+const { lang, actualLang, post, headings } = Astro.props;
 const { Content } = await render(post);
 
 let licenseEnabled = MISC.license?.enabled;
@@ -23,12 +24,17 @@ const licenseLink = post.data.licenseLink || MISC.license.default.link;
   <h1 class="text-dracula-pink font-black text-4xl">{post.data.title}</h1>
 
   <div class="flex flex-wrap gap-2 mt-4">
-    <DateRelatedTags lang={lang} publishedAt={post.data.date} updatedAt={post.data.updated}/>
+    <DateRelatedTags
+      lang={lang}
+      publishedAt={post.data.date}
+      updatedAt={post.data.updated}
+    />
     {
       licenseEnabled && (
         <LicenseTag lang={lang} license={license} link={licenseLink} />
       )
     }
+    {lang !== actualLang && <NotSupportedLangTag lang={lang} />}
     {
       Array.from(getUniqueLowerCaseTagMap(post.data.tags).keys()).map((tag) => (
         <LabelTag lang={lang} label={tag} type="link" />
