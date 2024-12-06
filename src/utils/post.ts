@@ -65,11 +65,10 @@ export const getSnapshots = async (posts: Post[], expectedLang: Lang): Promise<P
     return dateB.getTime() - dateA.getTime();
   });
   return sorted.map((post) => {
-    const lang = getLangFromId(post.id);
     const slug = getSlugFromId(post.id);
 
     return {
-      href: `/${lang}/posts/${slug}`,
+      href: `/${expectedLang}/posts/${slug}`,
       title: post.data.title,
       date: getCloserFormattedDate(post.data.updated?.toISOString(), post.data.date.toISOString())!,
       description: getDescFromMdString(post.body),
