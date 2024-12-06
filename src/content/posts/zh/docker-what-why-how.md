@@ -11,10 +11,10 @@ tags:
 - tool
 - devops
 date: 2024-09-03 16:35:32
-updated: 2024-12-05 15:47:00
+updated: 2024-12-06 14:46:00
 ---
 
-作为一个喜欢折腾新玩意儿的人，在网上冲浪时，我经常会去寻找各种各样新式的软件或服务。如果您和我一样也喜欢寻找这些软件，那您可能也会注意到，在安装指南中，越来越多的软件提供了一种使用 **Docker** 的安装或部署方法。这是什么东西？为什么现在流行使用它？我们又能如何使用它？这篇文章，带您入门 Docker 。
+作为一个喜欢折腾新玩意儿的人，在网上冲浪时，我经常会去寻找各种各样新式的软件或服务。如果您和我一样也喜欢寻找这些软件，那您可能也会注意到，在安装指南中，越来越多的软件提供了一种使用 Docker 的安装或部署方法。这是什么东西？为什么现在流行使用它？我们又能如何使用它？这篇文章，带您入门 Docker。
 
 <!--more-->
 
@@ -54,11 +54,11 @@ updated: 2024-12-05 15:47:00
 
 ### 安装 Docker
 
-关于如何安装 Docker，请参见[官方文档](https://docs.docker.com/get-started/get-docker/)。
-
 上面提到，Docker 容器会共用操作系统的内核。但实际上，Docker 只能使用 Linux Kernel。为了在 macOS 或 Windows 上使用 Docker，实际上需要借助其他方法。在官方文档中推荐使用的是 Docker Desktop，它使用了一个轻量级的虚拟机来运行 Docker。在 macOS 上，您也可以试试 [OrbStack](https://orbstack.dev/)。
 
-这里特别说一下在国内的 Ubuntu 服务器上安装 Docker Engine 这样一个场景。由于一些网络问题，您可能无法访问 Docker 官方源。下面是使用阿里云镜像的一种解决方案（仅关键命令，完整步骤参见[这份官方文档](https://docs.docker.com/engine/install/ubuntu/)）：
+对于服务器使用场景，实际上您需要的只是 Docker Engine（以及相应的命令行工具 Docker CLI），具体的安装步骤请参考[这份官方文档](https://docs.docker.com/engine/install/ubuntu/)。
+
+这里特别说一下在国内服务器上安装的情况。由于一些网络问题，您可能无法访问 Docker 官方源。下面是使用阿里云镜像的一种解决方案：
 
 1. 设置 Docker 的 `apt` 存储库：
 
@@ -114,16 +114,32 @@ sudo docker run hello-world
 >
 > - [Docker Proxy](https://dockerproxy.net/)
 
+更多信息，请参见[官方文档](https://docs.docker.com/get-started/get-docker/)。
+
 ### 关键概念
 
 在继续之前，必须首先解释一些关键概念。您不需要完全理解它们，但要知道它们的存在。后续的例子可能会帮助您更好地理解这些概念。
 
 - 容器 (`Container`): 一个轻量级、可执行的独立软件包，包含运行某个软件所需的所有内容。
 - 镜像 (`Image`): 用于创建容器的只读模板。镜像包含了运行应用程序所需的代码、运行时、库、环境变量和配置文件。
+- 标签 (`Tag`): 用于标识镜像不同版本的标识符，由数字、字母等组成。除了容易理解的版本号，还有一些标签带有一些单词，例如如果标签中带有 `alpine`，表明该镜像基于 Alpine Linux，一般而言镜像体积会小很多。
 - 仓库 (`Repository`): 用于存储和分发 Docker 镜像的地方。
 - 卷 (`Volume`): 用于在容器和主机之间共享数据的目录。如前文所述，Docker 容器可以不严谨地视作一个虚拟机，那么卷就是虚拟机和主机之间的共享文件夹。
 
-可以这样区分容器和镜像：镜像是一个只读的模板，容器是镜像的运行实例。
+可以这样区分容器和镜像：**镜像是一个只读的模板，容器是镜像的运行实例。**
+
+下面给出一些常用命令：
+
+- `docker ps`：列出所有正在运行中的容器
+- `docker ps -a`：列出所有容器
+- `docker rm`：后跟容器名或容器 ID，用于删除指定的容器
+- `docker images`：列出所有镜像
+- `docker rmi`：后跟镜像名及其标签（`<镜像名称>:<标签名>`），用于删除指定的镜像
+- `docker run`：启动一个容器（具体见后面的例子）
+- `docker stop`：后跟一个容器名或容器 ID，停止一个容器
+- `docker restart`：后跟一个容器名或容器 ID，重启一个已经停止的容器
+- `docker exec`：在容器中运行一条指令，如果希望以交互式 Shell 的形式运行，需要添加 `-it` 选项。例如，在一个名为 `ubuntu-container` 的容器中以交互式 Shell 的形式运行 `bash` 可以用 `docker exec -it ubuntu-container /bin/bash`
+- `docker logs`：后跟容器名或容器 ID，查看容器中的日志
 
 ### 例子：安装 MySQL（一次性使用）
 
@@ -139,9 +155,10 @@ docker run --rm --name mysql-container -e MYSQL_ROOT_PASSWORD=your_root_password
 
 - `--rm`：当容器停止时，自动删除容器。
 - `--name`：指定容器的名称。
-- `-e`：设置环境变量，这里将容器中 MySQL 的 root 密码设置为了 `your_root_password`。
-- `-p`：映射端口，这里将容器的 3306 端口映射到主机的 3306 端口。
-- `-d`：以分离（detached）模式在后台运行容器。
+- `-e`：设置环境变量。这里设置了 `MYSQL_ROOT_PASSWORD`，效果是将容器中 MySQL 的 root 密码设置为了 `your_root_password`。
+- `-p`：映射端口，冒号前的是主机端口号，冒号后的是容器内的端口号。这里将容器的 3306 端口映射到主机的 3306 端口。
+- `-d`：以分离（detached）模式运行，即在后台运行容器。
+- `mysql`：镜像名称。如果希望指定某个版本，可以使用 `<镜像名称>:<标签>` 的形式来指定。如果不使用冒号添并添加标签，默认使用的标签是 `latest`（即 “最新” 版本）。
 
 接着，使用下面的命令来检查容器是否成功运行，您应该可以看到一个名为 `mysql-container` 的容器：
 
@@ -149,7 +166,7 @@ docker run --rm --name mysql-container -e MYSQL_ROOT_PASSWORD=your_root_password
 docker ps
 ```
 
-您可以使用本地的 `mysql` 客户端连接到这个 MySQL 服务器（您可能需要等待一段时间，直到容器内的 MySQL 启动完成）：
+现在，您的 MySQL 服务器正在启动了。稍等一会，等待它启动完成，然后使用 **本地的 `mysql` 客户端** 连接到它：
 
 ```bash
 mysql -u root -p -h 127.0.0.1 -P 3306
@@ -162,7 +179,18 @@ mysql -u root -p -h 127.0.0.1 -P 3306
 - `-h`：指定主机名，由于是本地连接，所以使用 `127.0.0.1`。
 - `-P`：指定端口。
 
-顺利的话，您应该能够看到 MySQL 的欢迎界面了。
+> [!Tip]
+> 您可以使用名为 `mysql` 的本地 MySQL 客户端来连接到这个 MySQL 服务器。如果您使用 Homebrew，您可以这样安装它：
+>
+> ```bash
+> brew install mysql-client
+> ```
+>
+> 但是，既然我们已经使用 Docker 技术了，我们也可以直接用上面创建的这个名为 `mysql-container` 的 Docker 容器中的 `mysql` 客户端。下面的命令使用 `docker exec` 命令以交互式 Shell（`-it`）的形式在 `mysql-container` 中运行 `mysql -u root -p`，从而直接使用该容器中的客户端：
+>
+> ```bash
+> docker exec -it mysql-container mysql -u root -p
+> ```
 
 ### 例子：安装 MySQL（持久化）
 
@@ -225,7 +253,7 @@ bind-address = 0.0.0.0
 sudo docker restart mysql-container
 ```
 
-为了连接到容器中的 MySQL 服务器，您可以使用 `mysql` 命令行工具。可以这样直接使用 Docker 容器中的：
+类似地，直接使用容器中的客户端连接到 MySQL 服务器：
 
 ```bash
 # 进入容器
@@ -244,11 +272,27 @@ FLUSH PRIVILEGES;
 
 您可能还需要设置服务器的防火墙，允许 3306 端口的访问。
 
-最后，您可以在本地机器上使用下面的命令来远程访问：
+最后，您可以在本地机器上使用下面的命令来远程访问（同样，您的本地机器上需要 `mysql` 客户端！）：
 
 ```bash
 mysql -u remote_user -p --host your_server_ip
 ```
+
+如果您本地没有安装 MySQL 客户端，那么，用 Docker 来安装一个吧！
+
+下面使用了一个较小的镜像 [`alpine/mysql`](https://hub.docker.com/r/alpine/mysql)，这是一个基于 Alpine 的 MySQL 客户端的镜像：
+
+```bash
+docker run -it --rm alpine/mysql -u remote_user -p --host your_server_ip
+```
+
+为了方便使用，您可以直接添加如下 alias：
+
+```bash
+alias mysql="docker run -it --rm alpine/mysql"
+```
+
+然后就可以直接用上面的 `mysql -u remote_user -p --host your_server_ip` 了。
 
 ### Docker Compose
 
@@ -281,6 +325,7 @@ services:
 ```bash
 docker compose up -d # 以分离模式（后台）运行该 Docker Compose
 docker compose ps # 查看容器状态
+docker compose logs # 查看日志
 docker compose down # 结束运行
 ```
 
