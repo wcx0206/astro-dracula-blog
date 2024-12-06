@@ -6,18 +6,25 @@ import BaseLayout from "@/layouts/base-layout.astro";
 import { type Lang, ui } from "@/utils/i18n";
 import { classifyByLangs } from "@/utils/post";
 import { getDescFromMdString } from "@/utils/markdown";
+import { render } from "astro:content";
+import type { MarkdownHeading } from "astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
   const classified = classifyByLangs(posts);
 
   const paths = [];
-  for (const lang of Object.keys(ui)) {
-    for (const pureSlug of classified.keys()) {
-      const entry = await getEntry("posts", `${lang}/${pureSlug}`);
-      const headings = (await entry?.render())?.headings || [];
+  for (const slug of classified.keys()) {
+    for (const lang of Object.keys(ui)) {
+      const entry = await getEntry("posts", `${lang}/${slug}`);
+      let headings: MarkdownHeading[];
+      if (entry) {
+        headings = (await render(entry)).headings;
+      } else {
+        headings = [];
+      }
       paths.push({
-        params: { lang: lang as Lang, slug: pureSlug },
+        params: { lang: lang as Lang, slug: slug },
         props: { post: entry, headings },
       });
     }
@@ -32,6 +39,7 @@ const ogImageUrlToUse =
 
 if (!post) {
   for (const possibleLang of Object.keys(ui)) {
+    if (lang === possibleLang) continue;
     if (await getEntry("posts", `${possibleLang}/${slug}`)) {
       return Astro.rewrite(`/${possibleLang}/posts/${slug}`);
     }
@@ -42,7 +50,7 @@ if (!post) {
 
 <BaseLayout
   title={post!.data.title}
-  description={getDescFromMdString(post!.body)}
+  description={getDescFromMdString(post.body)}
   ogImageUrl={ogImageUrlToUse}
 >
   <div class="relative">

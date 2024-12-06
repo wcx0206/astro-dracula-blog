@@ -1,7 +1,10 @@
 import { fromMarkdown } from "mdast-util-from-markdown";
 import { toString as mdastToString } from "mdast-util-to-string";
 
-export function getDescFromMdString(mdString: string) {
+export function getDescFromMdString(mdString: string | undefined) {
+  if (!mdString) {
+    return "";
+  }
   const mdast = fromMarkdown(mdString);
   const desc = mdastToString(mdast);
   const pos = desc.indexOf("<!--more-->");

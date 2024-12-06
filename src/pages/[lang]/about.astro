@@ -7,7 +7,7 @@ import { type Lang, ui, useTranslations } from "@/utils/i18n";
 
 const { lang } = Astro.props;
 const about = await getEntry("info", `${lang}/about`);
-const { Content } = await render(about);
+const { Content } = await render(about!);
 const t = useTranslations(lang);
 
 export function getStaticPaths() {

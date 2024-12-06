@@ -3,7 +3,7 @@ import { SITE } from "@/config.ts";
 import { AUTHOR } from "@/config.ts";
 import type { Post } from "@/schemas/post";
 import { getDescFromMdString } from "@/utils/markdown";
-import { getLangFromSlug, getPureSlugFromSlug } from "@/utils/post";
+import { getLangFromId, getSlugFromId } from "@/utils/post";
 import { defaultLang } from "@/utils/i18n";
 import rss from "@astrojs/rss";
 
@@ -14,16 +14,16 @@ export async function GET(context: any) {
     description: SITE.description[defaultLang],
     site: context.site,
     items: posts.map((post: Post) => {
-      const lang = getLangFromSlug(post.slug);
-      const pureSlug = getPureSlugFromSlug(post.slug);
+      const lang = getLangFromId(post.id);
+      const slug = getSlugFromId(post.id);
       return {
         title: post.data.title,
         description: getDescFromMdString(post.body),
         author: AUTHOR.name,
         pubDate: post.data.date,
-        link: `${lang}/posts/${pureSlug}`,
+        link: `${lang}/posts/${slug}`,
         enclosure: {
-          url: `${lang}/og-images/${pureSlug}.png`,
+          url: `${lang}/og-images/${slug}.png`,
           length: 0,
           type: "image/png",
         }

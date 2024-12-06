@@ -1,18 +1,18 @@
-import type { Post, PureSlug } from "@/schemas/post";
+import type { Post, Slug } from "@/schemas/post";
 import type { PostSnapshot } from "@/schemas/post";
 import { type Lang, defaultLang } from "@/utils/i18n";
 import { getDescFromMdString } from "@/utils/markdown";
 
-export const getLangFromSlug = (slug: string): Lang => {
-  const [lang] = slug.split("/");
+export const getLangFromId = (id: string): Lang => {
+  const [lang] = id.split("/");
   return lang as Lang;
 };
 
-export const getPureSlugFromSlug = (slug: string): PureSlug => {
-  if (!slug.includes("/")) {
-    return slug;
+export const getSlugFromId = (id: string): Slug => {
+  if (!id.includes("/")) {
+    return id;
   }
-  const [, ...rest] = slug.split("/");
+  const [, ...rest] = id.split("/");
   return rest.join("/");
 };
 
@@ -22,10 +22,10 @@ export const getPureSlugFromSlug = (slug: string): PureSlug => {
  * - values are posts with that pure slug
  */
 export const classifyByLangs = (posts: Post[]) => {
-  const map = new Map<PureSlug, Post[]>();
+  const map = new Map<Slug, Post[]>();
   for (const post of posts) {
-    const pureSlug = getPureSlugFromSlug(post.slug);
-    map.set(pureSlug, [...(map.get(pureSlug) || []), post]);
+    const slug = getSlugFromId(post.id);
+    map.set(slug, [...(map.get(slug) || []), post]);
   }
   return map;
 };
@@ -44,11 +44,11 @@ export const classifyByLangs = (posts: Post[]) => {
 export const makeUniqueByLang = (posts: Post[], expectedLang: Lang) => {
   const classified = classifyByLangs(posts);
 
-  return Array.from(classified.keys()).map((pureSlug) => {
-    const signlePostMultipleLangs = classified.get(pureSlug)!;
+  return Array.from(classified.keys()).map((slug) => {
+    const signlePostMultipleLangs = classified.get(slug)!;
     return (
-      signlePostMultipleLangs.find((version) => getLangFromSlug(version.slug) === expectedLang) ||
-      signlePostMultipleLangs.find((version) => getLangFromSlug(version.slug) === defaultLang) ||
+      signlePostMultipleLangs.find((version) => getLangFromId(version.id) === expectedLang) ||
+      signlePostMultipleLangs.find((version) => getLangFromId(version.id) === defaultLang) ||
       signlePostMultipleLangs[0]
     );
   });
@@ -65,15 +65,15 @@ export const getSnapshots = async (posts: Post[], expectedLang: Lang): Promise<P
     return dateB.getTime() - dateA.getTime();
   });
   return sorted.map((post) => {
-    const lang = getLangFromSlug(post.slug);
-    const pureSlug = getPureSlugFromSlug(post.slug);
+    const lang = getLangFromId(post.id);
+    const slug = getSlugFromId(post.id);
 
     return {
-      href: `/${lang}/posts/${pureSlug}`,
+      href: `/${lang}/posts/${slug}`,
       title: post.data.title,
       date: getCloserFormattedDate(post.data.updated?.toISOString(), post.data.date.toISOString())!,
       description: getDescFromMdString(post.body),
-      pureSlug: pureSlug,
+      slug,
       tags: Array.from(getUniqueLowerCaseTagMap(post.data.tags).keys()),
     };
   });

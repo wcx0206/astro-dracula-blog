@@ -1,6 +1,9 @@
-import { z } from "astro:content";
+import { z, type CollectionEntry } from "astro:content";
 
-export type PureSlug = string;
+// From astro v5, the original `slug` is now `id`
+// I use `slug` as a pure slug, which is the part after the first `/`
+// the part before the first `/` is the language
+export type Slug = string;
 
 export const PostFrontmatterSchema = z.object({
   title: z.string(),
@@ -15,21 +18,15 @@ export const PostFrontmatterSchema = z.object({
   ogImageUrl: z.string().optional(),
 });
 
-export const PostSchema = z.object({
-  data: PostFrontmatterSchema,
-  slug: z.string(),
-  body: z.string(),
-});
-
 export const PostSnapshotSchema = z.object({
   title: z.string(),
   description: z.string(),
   tags: z.array(z.string()),
-  pureSlug: z.string(),
+  slug: z.string(),
   href: z.string(),
   date: z.string(),
 });
 
 export type PostFrontmatter = z.infer<typeof PostFrontmatterSchema>;
-export type Post = z.infer<typeof PostSchema>;
 export type PostSnapshot = z.infer<typeof PostSnapshotSchema>;
+export type Post = CollectionEntry<'posts'>;

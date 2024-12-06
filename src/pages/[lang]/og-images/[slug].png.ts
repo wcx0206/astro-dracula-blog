@@ -10,10 +10,10 @@ export async function getStaticPaths() {
 
   const paths = [];
   for (const lang of Object.keys(ui)) {
-    for (const pureSlug of classified.keys()) {
-      const entry = await getEntry("posts", `${lang}/${pureSlug}`);
+    for (const slug of classified.keys()) {
+      const entry = await getEntry("posts", `${lang}/${slug}`);
       paths.push({
-        params: { lang: lang as Lang, slug: pureSlug },
+        params: { lang: lang as Lang, slug: slug },
         props: { post: entry },
       });
     }

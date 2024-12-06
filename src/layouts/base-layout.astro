@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import "@/styles/global.css";
 import "@/styles/mathjax.css";
@@ -37,7 +37,7 @@ const pageTitle = title
     <RssLink lang={lang} />
     <Umami />
     <title>{pageTitle}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body
     class="bg-dracula-darker text-dracula-light mx-4 md:mx-auto max-w-3xl py-12"

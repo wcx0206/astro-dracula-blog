@@ -47,15 +47,15 @@ export default function PostStack({
           id="search"
           type="text"
           placeholder={t("search.placeholder.firstPart") + numberOfPosts + t("search.placeholder.secondPart.post")}
-          className="bg-dracula-dark/20 placeholder-dracula-blue 
-                    text-dracula-light focus:outline-none focus:bg-dracula-dark 
+          className="bg-dracula-dark/20 placeholder-dracula-blue
+                    text-dracula-light focus:outline-none focus:bg-dracula-dark
                     hover:bg-dracula-dark px-8 py-4 transition"
           value={query}
           onChange={handleOnSearch}
         />
       </div>
       {results.length > 0 ? (
-        results.map((snapshot) => <PostCard lang={lang} snapshot={snapshot} animate={true} key={snapshot.pureSlug} />)
+        results.map((snapshot) => <PostCard lang={lang} snapshot={snapshot} animate={true} key={snapshot.slug} />)
       ) : (
         <p>{t("search.noResults")}</p>
       )}
