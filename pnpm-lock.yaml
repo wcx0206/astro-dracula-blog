@@ -44,6 +44,9 @@ importers:
       astro:
         specifier: ^4.16.14
         version: 4.16.14(rollup@4.27.4)(typescript@5.7.2)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
