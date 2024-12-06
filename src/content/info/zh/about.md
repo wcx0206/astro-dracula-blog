@@ -32,6 +32,4 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 **请注意**：如果您使用了这个项目或其中的一部分，请保留此处的许可声明。
 
-如果您喜欢这个项目，请在 GitHub 上给我一个 :star: ！
-
-:heart:
+如果您喜欢这个项目，请在 GitHub 上给我一个 ⭐！

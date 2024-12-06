@@ -32,6 +32,4 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 **PLEASE NOTE**: If you use this program or a portion of it, please retain this permission notice.
 
-If you like this project, please give me a star :star: on GitHub!
-
-:heart:
+If you like this project, please give me a star ⭐ on GitHub!
