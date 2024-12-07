@@ -75,7 +75,7 @@
 
 1. 编辑 `src/config.ts` 以配置您网站的基本信息。您还可以在此处配置您的 [umami](https://umami.is/) 分析和搜索引擎的验证信息。
 2. 用您自己的头像替换 `src/assets/avatar.webp`。
-3. 在 `src/content/info/en/about.md` 和 `src/info/zh/about.md` 中重写您自己的 “关于” 页面的文本（**注意**：请保留其中的许可证信息，如果可以，也请保留本项目的地址）。
+3. 在 `src/content/info/en/about.md` 和 `src/info/zh/about.md` 中重写您自己的 “关于” 页面的文本（**注意：请保留其中的许可证信息，如果可以，也请保留本项目的地址**）。
 4. 删除 `src/content/posts` 中的我的文章并编写您自己的文章。目前该主题支持中文和英文，对于同一篇文章的不同语言版本，您需要确保它们位于 `en` 和 `zh` 目录中并使用相同的文件名。
 5. 删除 `public/_redirects`，并使用您自己的 Netlify 重定向配置。
 6. 删除 `public` 中的图标并替换为您自己的。下面的命令或许会有所帮助：
