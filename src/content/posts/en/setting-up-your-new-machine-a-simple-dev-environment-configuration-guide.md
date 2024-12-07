@@ -126,7 +126,13 @@ The `FiraCode Nerd Font` is my favorite. Give it a try!
 
 You may have heard the term "terminal" or "console" before. These pronouns are from the old days when computers were huge and expensive. There might be one computer in an entire building. Terminals would be placed in different rooms in the building so that people could interact with that computer. The terminal is a text-based interface, and the console is a physical device.
 
-The terminal emulator is software that emulates the terminal, basically it's a GUI application that looks like a terminal. These days, you can use these terms interchangeably.
+Another concept is the **TTY**, which originally referred to a teletypewriter, a device that allowed a user to enter commands through a keyboard and view the computer's output from a printer or monitor. In modern computing, TTY refers not only to traditional physical terminal devices, but also to software-emulated terminal interfaces. Each terminal device has a corresponding TTY device file on Unix/Linux systems, e.g., `/dev/tty1`, `/dev/pts/0`, and so on.
+
+Related to this is the **Pseudo Terminal (PTY)**, which is a pair of character devices, including a pseudo terminal master and a pseudo terminal slave. Pseudo TTYs are used to emulate terminal functions, enabling multiple users or processes to share the input and output of the same physical terminal. It is widely used in modern operating systems for terminal emulators, remote connections (e.g., SSH), and multiplexers (e.g., tmux), allowing users the flexibility to perform command-line operations.
+
+While **Terminal Emulator** is software that emulates a terminal, it is basically a GUI application that looks like a terminal. Terminal windows in modern operating systems (such as GNOME Terminal, Konsole, etc.) fall into this category. When you use these terminal emulators, you are actually interacting with TTY and pseudo TTY interfaces.
+
+Today, you can use these terms interchangeably in many contexts because their meanings have become blurred. I will use the term "terminal" here.
 
 No matter what operating system you are using, you have a built-in terminal, e.g. `Terminal.app` on Mac and `Windows Terminal` on Windows. However, third-party options offer more features and customization. Consider:
 
