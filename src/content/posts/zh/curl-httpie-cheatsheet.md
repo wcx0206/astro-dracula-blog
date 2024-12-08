@@ -7,6 +7,7 @@ tags:
 - terminal
 - tool
 date: 2024-12-03 13:29:17
+updated: 2024-12-08 20:42:00
 ---
 
 [cURL](https://curl.se/) 是一个历史悠久、功能强大的发送和接受数据的工具，而 [httpie](https://httpie.io/) 是一个更加现代化的 HTTP 客户端，提供了更加人性化的命令行体验。本文记录了 cURL 和 httpie 的常用命令和选项，带您快速上手。
@@ -160,6 +161,72 @@ http DELETE URL
 
 ```bash
 http PUT pie.dev/put X-API-Token:123 name=John
+```
+
+如果是非字符串的 JSON 数据，可以使用 `:=` 分隔的键值对。下面是来自官方文档中的另一个例子：
+
+```bash
+http PUT pie.dev/put \
+    name=John \                        # String (default)
+    age:=29 \                          # Raw JSON — Number
+    married:=false \                   # Raw JSON — Boolean
+    hobbies:='["http", "pies"]' \      # Raw JSON — Array
+    favorite:='{"tool": "HTTPie"}' \   # Raw JSON — Object
+    bookmarks:=@files/data.json \      # Embed JSON file
+    description=@files/text.txt        # Embed text file
+```
+
+```json
+{
+    "age": 29,
+    "hobbies": [
+        "http",
+        "pies"
+    ],
+    "description": "John is a nice guy who likes pies.",
+    "married": false,
+    "name": "John",
+    "favorite": {
+        "tool": "HTTPie"
+    },
+    "bookmarks": {
+        "HTTPie": "https://httpie.org",
+    }
+}
+```
+
+对于多级 JSON 数据，还可以使用下面这样的格式（同样来自官方文档）：
+
+```bash
+http pie.dev/post \
+  platform[name]=HTTPie \
+  platform[about][mission]='Make APIs simple and intuitive' \
+  platform[about][homepage]=httpie.io \
+  platform[about][homepage]=httpie.io \
+  platform[about][stars]:=54000 \
+  platform[apps][]=Terminal \
+  platform[apps][]=Desktop \
+  platform[apps][]=Web \
+  platform[apps][]=Mobile
+```
+
+```json
+{
+    "platform": {
+        "name": "HTTPie",
+        "about": {
+            "mission": "Make APIs simple and intuitive",
+            "homepage": "httpie.io",
+            "stars": 54000
+        },
+        "apps": [
+            "Terminal",
+            "Desktop",
+            "Web",
+            "Mobile"
+        ]
+    }
+}
 ```
 
 ### 认证
