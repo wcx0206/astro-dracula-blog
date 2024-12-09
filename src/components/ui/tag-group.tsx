@@ -1,8 +1,8 @@
-import { type Lang, useTranslations } from "@/utils/i18n";
 import Fuse from "fuse.js";
-import { useState } from "react";
+import LabelTag from "@/components/ui/tags/label-tag";
+import { type Lang, useTranslations } from "@/utils/i18n";
 import { useDebounce } from "use-debounce";
-import LabelTag from "./label-tag";
+import { useState } from "react";
 
 export default function TagGroup({
   lang,
@@ -36,8 +36,8 @@ export default function TagGroup({
           id="search"
           type="text"
           placeholder={t("search.placeholder.firstPart") + numberOfTags + t("search.placeholder.secondPart.tag")}
-          className="bg-dracula-dark/20 placeholder-dracula-blue 
-                    text-dracula-light focus:outline-none focus:bg-dracula-dark 
+          className="bg-dracula-dark/20 placeholder-dracula-blue
+                    text-dracula-light focus:outline-none focus:bg-dracula-dark
                     hover:bg-dracula-dark px-8 py-4 transition"
           value={query}
           onChange={handleOnSearch}

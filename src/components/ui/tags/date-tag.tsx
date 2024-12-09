@@ -1,6 +1,6 @@
+import clsx from "clsx";
 import { getColor, getDiffInDays, getFormattedDate } from "@/utils/date";
 import { type Lang, useTranslations } from "@/utils/i18n";
-import clsx from "clsx";
 
 export default function DateTag({
   lang,

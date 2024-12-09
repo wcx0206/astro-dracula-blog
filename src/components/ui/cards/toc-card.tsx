@@ -1,7 +1,7 @@
+import clsx from "clsx";
+import type { MarkdownHeading } from "astro";
 import { MISC } from "@/config";
 import { type Lang, useTranslations } from "@/utils/i18n";
-import type { MarkdownHeading } from "astro";
-import clsx from "clsx";
 import { useEffect, useState } from "react";
 
 export default function TocCard({

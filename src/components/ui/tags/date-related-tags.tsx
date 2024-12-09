@@ -1,7 +1,7 @@
-import { getDiffInDays } from "@/utils/date";
+import DateTag from "@/components/ui/tags/date-tag";
+import PostDateStatusTag from "@/components/ui/tags/post-date-status-tag";
 import type { Lang } from "@/utils/i18n";
-import DateTag from "./date-tag";
-import PostDateStatusTag from "./post-date-status-tag";
+import { getDiffInDays } from "@/utils/date";
 
 export default function DateRelatedTags({
   lang,

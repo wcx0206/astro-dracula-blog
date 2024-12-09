@@ -1,5 +1,5 @@
-import type { Lang } from "@/utils/i18n";
 import clsx from "clsx";
+import type { Lang } from "@/utils/i18n";
 import { motion, useReducedMotion } from "motion/react";
 
 export default function LabelTag({

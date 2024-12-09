@@ -1,13 +1,13 @@
 ---
-import { render } from "astro:content";
+import DateRelatedTags from "@/components/ui/tags/date-related-tags.tsx";
+import LabelTag from "@/components/ui/tags/label-tag.tsx";
+import LicenseTag from "@/components/ui/tags/license-tag.tsx";
+import NotSupportedLangTag from "@/components/ui/tags/not-supported-lang-tag.tsx";
+import Prose from "@/components/style/prose.astro";
+import TocCard from "./cards/toc-card.tsx";
 import { MISC } from "@/config";
 import { getUniqueLowerCaseTagMap } from "@/utils/post";
-import DateRelatedTags from "./date-related-tags";
-import LabelTag from "./label-tag.tsx";
-import LicenseTag from "./license-tag";
-import NotSupportedLangTag from "./not-supported-lang-tag";
-import Prose from "./prose.astro";
-import TocCard from "./toc-card";
+import { render } from "astro:content";
 
 const { lang, actualLang, post, headings } = Astro.props;
 const { Content } = await render(post);

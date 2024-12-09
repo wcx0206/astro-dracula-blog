@@ -1,10 +1,9 @@
 import Fuse from "fuse.js";
-import { useState } from "react";
-import { useDebounce } from "use-debounce";
-
+import PostCard from "@/components/ui/cards/post-card";
 import type { PostSnapshot } from "@/schemas/post";
 import { type Lang, useTranslations } from "@/utils/i18n";
-import PostCard from "./post-card";
+import { useDebounce } from "use-debounce";
+import { useState } from "react";
 
 const fuseOptions = {
   keys: ["slug", "title", "description", "tags"],
