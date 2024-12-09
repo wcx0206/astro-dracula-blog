@@ -1,4 +1,5 @@
 @import "@fontsource-variable/fira-code";
+@import "tailwindcss/base";
 
 del {
   @apply text-dracula-blue;
