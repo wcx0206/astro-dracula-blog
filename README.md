@@ -1,11 +1,13 @@
 # Astro Dracula Blog
 
 <p>
-    <strong>English</strong>
-    <a href="doc/readme_zh.md">简体中文</a>
+    <a href="https://blocklune.cc"><strong>🛑 Live Demo</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;
+    <a href="doc/gallery.md"><strong>🖼️Gallery</strong></a>&nbsp;&nbsp;/&nbsp;&nbsp;
+    <strong>🌏 English</strong>&nbsp;&nbsp;/&nbsp;&nbsp;
+    <a href="doc/readme_zh.md"><strong>🌏 简体中文</strong></a>
 </p>
 
-A fast and simple blog system with dracula theme built with Astro.
+🌟 A fast and simple blog system with dracula theme built with Astro v5.
 
 [![Astro Dracula Blog](doc/img/hero.webp)](doc/gallery.md)
 
@@ -48,8 +50,8 @@ File structure:
 │   │   └── avatar.webp
 │   ├── components/
 │   ├── config.ts
+│   ├── content.config.ts
 │   ├── content/
-│   │   ├── config.ts
 │   │   ├── drafts/
 │   │   │   └── ...
 │   │   ├── info/
@@ -75,7 +77,7 @@ To use this theme, follow these steps:
 
 1. Edit `src/config.ts` to configure the basic information for your site. You can also configure your [umami](https://umami.is/) analytics and search engine verifications here.
 2. Replace `src/assets/avatar.webp` with your own avatar.
-3. Rewrite your own about page text in `src/content/info/en/about.md` & `src/info/zh/about.md` (**Note: Please retain the license information contained therein and, if possible, the url for this project**).
+3. Rewrite your own about page text in `src/content/info/en/about.md` & `src/info/zh/about.md` (**📌Note: Please retain the license information contained therein and, if possible, the url for this project❤️.**).
 4. Delete my posts in `src/content/posts` and write your own. Currently the theme supports both Chinese and English languages, for different language versions of the same post, you need to make sure they are located in the `en` and `zh` directories and use the same filename.
 5. Remove `public/_redirects` and use your own Netlify redirect configuration.
 6. Remove the icons in `public` and use your own. The commands below may be helpful:
@@ -132,11 +134,15 @@ Currently, Frontmatter supports the following properties
 - `licenseLink`: the license link
 - `ogImageUrl`: specify an Open Graph image for a specific post
 
+### Customize License
+
+To customize default license, edit the `src/config.ts` file. To customize the license for a specific post, edit the `license` property in the Frontmatter of the post file.
+
 ### Customize Color Scheme
 
 To customize the color scheme of this theme, edit the following files:
 
-- `src/components/prose.astro`
+- `src/components/style/prose.astro`
 - `src/styles/global.css`
 - `src/styles/rehype-github-alerts.css`
 - `tailwind.config.mjs`
