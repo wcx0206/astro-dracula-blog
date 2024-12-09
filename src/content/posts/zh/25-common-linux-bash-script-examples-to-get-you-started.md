@@ -7,6 +7,7 @@ tags:
     - bash-script
 license: none
 date: 2024-12-09 10:15:00
+updated: 2024-12-09 14:34:00
 ---
 
 对 _[25 Common Linux Bash Script Examples to Get You Started](https://www.hostinger.in/tutorials/bash-script-example)_ 一文的中文翻译，原作者是 [Ignas R.](https://www.hostinger.in/tutorials/author/ignasr)。
@@ -93,6 +94,9 @@ The best hosting provider is Hostinger
 
 可以看到，如果使用双引号 `"`，那么脚本会打印出变量的实际值；相反，如果使用单引号 `'`，那就只会打印出变量的名称。
 
+> [!Tip]
+> 译注：`echo` 支持一个 `-e` 选项，用于启用反斜杠（`\`）转义。
+
 ### Sleep 命令
 
 Sleep 命令会停止所有当前运行的 Bash 脚本。创建一个 `sleep.sh` 文件，内容如下：
@@ -167,6 +171,13 @@ echo "Wow, you look younger than $age years old"
 
 在上面的例子中，用户会输入一个 `age` 值。输出将会通过 `echo` 命令打印出来。
 
+> [!Tip]
+> 译注：使用 `-p` 选项来指定一个提示词（Prompt）。例如：
+>
+> ```bash
+> read -p "Enter your age: " age
+> ```
+
 ### 循环
 
 循环是各种编程语言中必不可少的工具。简单地说，[Bash 循环](https://www.hostinger.in/tutorials/bash-for-loop-guide-and-examples/)重复执行一组指令，直到达到用户指定的条件为止。创建 `whileloop.sh` 并编辑为：
@@ -194,6 +205,29 @@ done
 >     ((n++))
 > done
 > ```
+>
+> `(())` 是 Bash 中用于整数运算和算术表达式求值的复合命令。可以使用 C 风格的表达式语法，且其中的变量不需要使用 `$`。例如：
+>
+> ```bash
+> i=1
+> ((i++))  # 等同于 i=$((i+1))
+> ((i--))  # 等同于 i=$((i-1))
+>
+> # 算术运算符: +, -, *, /, %, **（幂运算）
+> ((result = 2 ** 3))  # 2的3次方
+>
+> # 比较运算符: >, <, >=, <=, ==, !=
+> ((5 >= 3))  # 返回真
+>
+> # 位运算符: &, |, ^, ~, <<, >>
+> ((result = 8 >> 1))  # 右移一位
+>
+> # 赋值运算符: =, +=, -=, *=, /=, %=
+> ((x += 5))  # 等同于 x=$((x+5))
+>
+> # 逻辑运算符: &&, ||, !
+> ((a && b))  # 逻辑与
+> ```
 
 现在我们已经尝试了 While 循环，再来试试 For 循环吧！创建 `forloop.sh` 并编辑为：
 
@@ -204,16 +238,6 @@ do
     echo "$n seconds"
 done
 ```
-
-> [!Tip]
-> 译注：可以写为：
->
-> ```bash
-> #!/bin/bash
-> for ((n = 2; n <= 10; n++)); do
->     echo "$n seconds"
-> done
-> ```
 
 输出如下：
 
@@ -257,6 +281,29 @@ milk
 
 脚本会遍历 `IndexedArray` 并打印出所有值。
 
+> [!Tip]
+> 译注：`@` 的含意是 “全部参数”，可以理解为 `at all`。下面还会提到一个 `#` 符号，表示长度、个数。
+>
+> ```bash
+> # 脚本参数
+> function show_args() {
+>     echo "参数个数: $#"
+>     echo "所有参数: $@"
+> }
+> show_args a b c
+> # 输出：
+> # 参数个数: 3
+> # 所有参数: a b c
+>
+> # 数组操作
+> arr=(x y z)
+> echo "数组元素个数: ${#arr[@]}"
+> echo "所有数组元素: ${arr[@]}"
+> # 输出：
+> # 数组元素个数: 3
+> # 所有数组元素: x y z
+> ```
+
 ### 条件语句
 
 最流行和广泛使用的条件语句是 `if`。 尽管 `if` 语句易于编写和理解，但它也可用于高级 Shell 脚本。
@@ -278,6 +325,56 @@ fi
 ```
 
 该脚本创建了两个变量，并比较它们是否相等。
+
+> [!Tip]
+> 译注：`[]` 实际上是 `test` 命令的别名，它是 POSIX 标准的一部分。
+>
+> ```bash
+> # 文件测试
+> [ -f "file.txt" ]      # 检查文件是否存在且是普通文件
+> [ -d "/path" ]         # 检查目录是否存在
+> [ -r "file.txt" ]      # 检查文件是否可读
+>
+> # 字符串测试
+> [ -z "$str" ]         # 检查字符串是否为空
+> [ -n "$str" ]         # 检查字符串是否非空
+> [ "$a" = "$b" ]       # 字符串相等比较（注意：`=` 两边需要空格）
+>
+> # 数值比较
+> [ "$a" -eq "$b" ]     # 等于
+> [ "$a" -ne "$b" ]     # 不等于
+> [ "$a" -lt "$b" ]     # 小于
+> ```
+>
+> `[[]]` 是扩展测试命令，它是 Bash 特有的功能，更强大但兼容性相对较差（毕竟不是 POSIX 标准的一部分）。它支持更多的操作符和功能，处理空格和特殊字符更安全，并且支持正则表达式匹配。
+>
+> ```bash
+> # 高级字符串比较
+> [[ $str == *"pattern"* ]]   # 模式匹配
+> [[ $str =~ ^[0-9]+$ ]]      # 正则表达式匹配
+>
+> # 逻辑运算
+> [[ $a == "yes" && $b == "no" ]]   # 逻辑与
+> [[ $a == "yes" || $b == "no" ]]   # 逻辑或
+>
+> # 文件比较
+> [[ -f $file && -r $file ]]   # 文件存在且可读
+> ```
+>
+> 主要区别包括：
+>
+> ```bash
+> file="my file.txt"
+> [ -f "$file" ]        # 需要引号（因为文件名中有空格）
+> [[ -f $file ]]        # 不需要引号，更安全
+>
+> # [] 需要使用 -a 和 -o
+> [ "$a" = "1" -a "$b" = "2" ]    # 逻辑与
+> # [[]] 可以使用 && 和 ||
+> [[ $a = "1" && $b = "2" ]]      # 更直观
+> ```
+>
+> 使用 `man test` 来查看更多信息。
 
 ### 函数
 
@@ -616,3 +713,75 @@ ip a
 ## 总结
 
 Linux bash 脚本对于希望将复杂的命令序列毫不费力地转换成一个脚本的用户来说非常有用。在本教程中，我们介绍了 bash 脚本的基础知识，以及如何使用它来自动执行任务并提高工作效率。希望本文能帮助您更好地理解 bash 脚本。您还可以查看我们的 bash 脚本教程，了解更多。 如果您有任何问题或意见，请在源地址下面留言。
+
+## 译者附
+
+### 取变量值与参数扩展
+
+在上述第一个例子中，我们定义了变量 `learningbash` 并使用 `$learningbash` 取得了它的值。而在获取字符串长度的例子中，我们定义了变量 `mystring` 并使用了 `${#mystring}` 来取得其长度。
+
+事实上，应该使用 `${learningbash}` 来替代 `$learningbash`，这样更安全、清晰：
+
+```bash
+myhello="Hello"
+# 这样会出错，shell 会尝试寻找名为 myhelloworld 的变量
+echo "$myhelloworld"
+# 这样正确，明确界定了变量名的范围
+echo "${myhello}world"
+```
+
+除了使用 `#` 获得字符串长度，以及上面还提到的查找并替换，还有以下相关用法：
+
+```bash
+# 子字符串
+echo ${myhello:0:2} # 输出 he
+
+# 替换第一个 l 为 L
+echo ${myhello/l/L}
+
+# 默认值
+${var:-default}    # 如果 var 未设置或为空，返回 default
+${var:=default}    # 如果 var 未设置或为空，将 var 设为 default 并返回
+${var:+value}      # 如果 var 已设置且不为空，返回 value，否则返回空
+${var:?message}    # 如果 var 未设置或为空，打印错误信息并退出脚本
+```
+
+### Case 语句
+
+类似于 C 语言中的 `switch`，语法如下：
+
+```bash
+case expression in
+    pattern1)
+        # 如果匹配 pattern1，执行此处的代码
+        ;;
+    pattern2)
+        # 如果匹配 pattern2，执行此处的代码
+        ;;
+    *)
+        # 上述情况均不满足，执行此处的代码
+        ;;
+esac
+```
+
+### 调试
+
+调试 Bash 脚本最有用的技巧之一是在脚本开头设置 `set -x` 选项。这个选项会启用调试模式，使 Bash 将执行的每一条命令打印到终端，并在前面加上一个 `+` 号。
+
+```bash
+#!/bin/bash
+set -x
+# 您的脚本从此处开始
+```
+
+如果您希望您的脚本在出错的地方立刻退出，可以使用 `set -e`：
+
+```bash
+#!/bin/bash
+set -e
+# 您的脚本从此处开始
+```
+
+### 相关阅读
+
+- [Bash Scripting Tutorial – Linux Shell Script and Command Line for Beginners](https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/#heading-advantages-of-bash-scripting)
