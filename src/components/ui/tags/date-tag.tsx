@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import BaseTag from "./base-tag";
 import { getColor, getDiffInDays, getFormattedDate } from "@/utils/date";
 import { type Lang, useTranslations } from "@/utils/i18n";
 
@@ -18,7 +18,11 @@ export default function DateTag({
   const textColor = `text-dracula-${color}`;
 
   const titleText =
-    color === "green" ? t("post.newlyUpdatedMsg") : color === "red" ? t("post.oldPostWarningMsg") : undefined;
+    color === "green"
+      ? t("post.newlyUpdatedMsg")
+      : color === "red"
+      ? t("post.oldPostWarningMsg")
+      : undefined;
 
   /**
    * If type is given, it will display the type and the date.
@@ -30,14 +34,22 @@ export default function DateTag({
   return (
     <div className="flex items-center">
       {type ? (
-        <code className="inline-block bg-dracula-dark/30 px-2 py-1">
-          <span className={type === "published" ? "text-dracula-orange" : "text-dracula-green"}>{t(`${type}At`)}</span>{" "}
+        <BaseTag>
+          <span
+            className={
+              type === "published"
+                ? "text-dracula-orange"
+                : "text-dracula-green"
+            }
+          >
+            {t(`${type}At`)}
+          </span>{" "}
           <span>{formattedDate}</span>
-        </code>
+        </BaseTag>
       ) : (
-        <code title={titleText} className={clsx("inline-block bg-dracula-dark/30 px-2 py-1", textColor)}>
-          {formattedDate}
-        </code>
+        <BaseTag title={titleText}>
+          <span className={textColor}>{formattedDate}</span>
+        </BaseTag>
       )}
     </div>
   );

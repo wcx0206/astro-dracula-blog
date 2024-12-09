@@ -1,6 +1,6 @@
-import clsx from "clsx";
 import type { Lang } from "@/utils/i18n";
 import { motion, useReducedMotion } from "motion/react";
+import BaseTag from "./base-tag";
 
 export default function LabelTag({
   lang,
@@ -22,21 +22,22 @@ export default function LabelTag({
   const initialX = shouldReduceMotion ? 0 : 10;
 
   const text = count > 1 ? `${label} (${count})` : label;
-  const className = size === "large" ? "text-4xl px-4 py-2" : "px-2 py-1";
   const tagComponent = (
-    <code
-      className={clsx(
-        "inline_block",
-        className,
-        "text-dracula-purple bg-dracula-dark/30 hover:bg-dracula-dark transition",
-      )}
-    >
-      {text}
-    </code>
+    <BaseTag hoverable large={size === "large"}>
+      <span className="text-dracula-purple">{text}</span>
+    </BaseTag>
   );
-  const linkTagOrNot = type === "link" ? <a href={`/${lang}/tags/${label}`}>{tagComponent}</a> : tagComponent;
+  const linkTagOrNot =
+    type === "link" ? (
+      <a href={`/${lang}/tags/${label}`}>{tagComponent}</a>
+    ) : (
+      tagComponent
+    );
   const animatedLinkTagOrNot = animate ? (
-    <motion.div initial={{ opacity: initialOpacity, x: initialX }} whileInView={{ opacity: 1, x: 0 }}>
+    <motion.div
+      initial={{ opacity: initialOpacity, x: initialX }}
+      whileInView={{ opacity: 1, x: 0 }}
+    >
       {linkTagOrNot}
     </motion.div>
   ) : (
