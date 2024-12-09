@@ -167,6 +167,10 @@
 /posts/1ef1e20b.html /zh/posts/when-parameters-and-arguments-are-pointers 301
 /posts/118aec2d /zh/posts/write-a-simple-thread-pool-with-rust 301
 /posts/118aec2d.html /zh/posts/write-a-simple-thread-pool-with-rust 301
+/posts/1d122915 /zh/posts/why-is-trinary-the-most-efficient-system 301
+/posts/1d122915.html /zh/posts/why-is-trinary-the-most-efficient-system 301
+/posts/dc298524 /zh/posts/my-rime-config 301
+/posts/dc298524.html /zh/posts/my-rime-config 301
 
 # This must be a force redirect because there is a `/` page.
 # See https://docs.netlify.com/routing/redirects/redirect-options/#force-redirects
