@@ -7,14 +7,14 @@ export default function LabelTag({
   label,
   count = 1,
   type = "tag",
-  size = "normal",
+  large = false,
   animate = false,
 }: {
   lang: Lang;
   label: string;
   count?: number;
   type?: "tag" | "link";
-  size?: "normal" | "large";
+  large?: boolean;
   animate?: boolean;
 }) {
   const shouldReduceMotion = useReducedMotion();
@@ -23,7 +23,7 @@ export default function LabelTag({
 
   const text = count > 1 ? `${label} (${count})` : label;
   const tagComponent = (
-    <BaseTag hoverable large={size === "large"}>
+    <BaseTag hoverable large={large}>
       <span className="text-dracula-purple">{text}</span>
     </BaseTag>
   );

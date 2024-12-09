@@ -44,7 +44,7 @@ const t = useTranslations(lang);
       class="text-4xl font-black text-dracula-light mb-10 mx-auto leading-loose"
     >
       {t("postsWithTag.firstPart")}
-      <LabelTag lang={lang} label={tag} size="large" />
+      <LabelTag lang={lang} label={tag} large />
       {t("postsWithTag.secondPart")}
     </h1>
     <PostStack lang={lang} snapshots={filteredSnapshots} client:load />
