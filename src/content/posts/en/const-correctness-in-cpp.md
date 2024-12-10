@@ -6,11 +6,13 @@ categories:
 - C & Cpp
 date: 2023-06-01 14:57:37
 tags:
+- const
 - cpp
-- software-engineering
-- const-interface
-- const-correctness
+- cs106l
+- note
 - programming-language
+- software-engineering
+- stanford
 title: Const Correctness in C++
 ---
 
@@ -18,7 +20,7 @@ This is a note for Lecture 8, [CS106L](https://web.stanford.edu/class/cs106l/ind
 
 <!--more-->
 
-## INTRODUCTION
+## Introduction
 
 What's const?
 
@@ -62,9 +64,9 @@ void f(const int x, const int y) {
 
 Since the variable `y` is const, `y=-1` can be found by the compiler.
 
-## CONST AND CLASSES
+## Const and Classes
 
-### INTRODUCTION OF CONST-INTERFACE
+### Introduction of Const-Interface
 
 Recall our `Student` class:
 
@@ -155,7 +157,7 @@ void Student::setAge(int age) {
 
 - **const-interface**: All member functions marked `const` in a class definition. Objects of type `const ClassName` may ONLY use the const-interface.
 
-### PRACTICE
+### Practice
 
 Let's make `StrVector`'s const-interface!
 
@@ -260,7 +262,7 @@ class StrVector {
 };
 ```
 
-### CONST ITERATOR vs CONST_ITERATOR
+### Const Iterator vs Const_iterator
 
 This is tricky!
 
@@ -291,7 +293,7 @@ c_it_c++; // not ok! can't change where a const pointer points!
 *c_it_c = "hi"; // not ok! can't change underlying const object
 ```
 
-## RECAP
+## Recap
 
 - Use const parameters and variables wherever you can in application code
 - Every member function of a class that doesn't change it member variables should be marked `const`

@@ -1,26 +1,24 @@
 ---
+title: const and constexpr in C++
 abbrlink: 3358bcc1
 categories:
 - CS
 - Languages
 - C & Cpp
-date: 2023-03-24 21:21:42
 tags:
 - cpp
 - programming-language
-- const-usage
-- constexpr
-title: const and constexpr in C++
-toc: true
+- const
+date: 2023-03-24 21:21:42
 ---
 
-I have written a post about `const` in C++ in Chinese before, but [it](/posts/7ec6ba38) was too verbose and unclear. :( So, I decided to rewrite it.
+In this blog post, I will list the various uses of const in C++.
 
 <!--more-->
 
-## BASIC USAGE OF CONST
+## Basic Usage of Const
 
-### MODIFIES BASIC DATE TYPE WITH CONST
+### Modifies Basic Date Type With Const
 
 The most basic usage of `const` is to define a constant. A constant is a variable whose value cannot be changed after initialization.
 
@@ -33,7 +31,7 @@ a = 2; // a is a variable. It's okay.
 
 ```
 
-### MODIFIES POINTERS WITH CONST
+### Modifies Pointers With Const
 
 When it comes to pointers, `const` can be used in two ways: **top-level const** and **low-level const**.
 
@@ -60,11 +58,11 @@ p2 = &y;                  // OK
 // *p3 = y;               // WRONG!
 ```
 
-### MODIFIES REFERENCE WITH CONST
+### Modifies Reference With Const
 
 For reference, there is only one way to use `const`: `const T &` (T is type name). Reference itself (like `T &`) is always top-level, since you can't change what it refers to after its initialization. So, `const T &` makes the reference both top-level and low-level.
 
-### MODIFIES OBJECTS WITH CONST
+### Modifies Objects With Const
 
 Modifying an object with `const` means that this object is immutable after its initialization.
 
@@ -72,9 +70,9 @@ Modifying an object with `const` means that this object is immutable after its i
 const std::string str = "This is an immutable string.";
 ```
 
-## CONST IN FUNCTIONS
+## Const in Functions
 
-### CONST IN PARAMETER LIST
+### Const in Parameter List
 
 A parameter modified with `const` means it is **read-only** to the function. Usually, we use this feature together with reference. So, when we don't want a function to change a specific argument, the parameter's type may look like `const T &`.
 
@@ -98,7 +96,7 @@ void Show(const T &in) {
 }
 ```
 
-### THE CONST AFTER A MEMBER FUNCTION
+### The Const After a Member Function
 
 The const after a member function indicates that the function does not modify any non-mutable data members of the class. In other words, this means that the `this` pointer is const, implying that this member function does not alter the state of this object.
 
@@ -128,7 +126,7 @@ int main() {
 }
 ```
 
-### RETURNS A CONST
+### Returns a Const
 
 When returning an object, the `const` before the return type indicates that this object is a constant and is immutable. For example: `const int& GetAgeConst()`, which returns a rvalue whose referenced content cannot be modified.
 
@@ -157,7 +155,7 @@ int main() {
 }
 ```
 
-## CONSTEXPR (NEW IN C++11)
+## Constexpr (New in C++11)
 
 `constexpr` keyword helps the compiler find those constant expressions at compile stage. A really common place of use is defining an array:
 

@@ -6,11 +6,14 @@ categories:
 - C & Cpp
 date: 2023-05-31 11:35:00
 tags:
+- const
 - cpp
-- const-correctness
-- type-safety
-- software-engineering
+- cs106l
+- note
 - programming-language
+- software-engineering
+- stanford
+- type-safety
 title: Type Safety and std::optional in C++
 ---
 
@@ -18,7 +21,7 @@ This is a note for Lecture 14, [CS106L](https://web.stanford.edu/class/cs106l/in
 
 <!--more-->
 
-## RECAP: CONST-CORRECTNESS
+## Recap: Const-Correctness
 
 - We pass big pieces of data **by reference** into helper functions by to avoid making copies of that data
 - If this function accidentally or sneakily changes that piece of data, it can lead to hard to find bugs!
@@ -60,13 +63,13 @@ class RealVector {
 - Technically, adding a const-interface only **limits** what `RealVector` objects marked `const` can do
 - Using types to enforce assumptions we make about function calls help us prevent programmer errors!
 
-## TYPE SAFETY
+## Type Safety
 
 **Def.**
 
 - **Type Safety**: The extent to which a language prevents typing errors and **guarantees the behavior of programs**
 
-### INTRODUCTION
+### Introduction
 
 Let's look at the code below:
 
@@ -100,7 +103,7 @@ void removeOddsFromEnd(vector<int>& vec) {
 
 It's the **programmers' job** to enforce the **precondition** that `vec` be non-empty, otherwise we get undefined behavior!
 
-### GO DEEP
+### Go Deep
 
 The problem here is, there may or may not be a "last element" in `vec`. How can `vec.back()` have deterministic behavior in either case?
 

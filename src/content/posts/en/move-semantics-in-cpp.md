@@ -7,10 +7,13 @@ categories:
 date: 2023-05-30 22:14:00
 tags:
 - cpp
+- cs106l
 - move-semantics
+- note
+- programming-language
 - r-value-reference
 - special-member-functions
-- programming-language
+- stanford
 title: Move Semantics in C++
 ---
 
@@ -18,9 +21,9 @@ This is a note for Lecture 13, [CS106L](https://web.stanford.edu/class/cs106l/in
 
 <!--more-->
 
-## DEFINITION
+## Definition
 
-### L-VALUE
+### L-Value
 
 **l-value** can appear on the **left** or **right** of an `=`.
 
@@ -35,7 +38,7 @@ int y = x;
 - l-values are **not temporary**
 - l-values live until the end of the **scope**
 
-### R-VALUE
+### R-Value
 
 **r-value** can ONLY appear on the **right** of an `=`
 
@@ -50,7 +53,7 @@ int y = x;
 - r-values are **temporary**
 - r-values live until the end of the **line**
 
-### EXAMPLES
+### Examples
 
 ```cpp
 int x = 3;                       // 3 is an r-value
@@ -65,7 +68,7 @@ MyClass obj;                     // obj is an l-value
 x = obj.public_member_variable;  // obj.public_member_variable is l-value
 ```
 
-## MOVE SEMANTICS
+## Move Semantics
 
 In our generic `vector` class, we have a vector copy assignment operator like this:
 
@@ -160,7 +163,7 @@ Answer: Overload `vector::operator=`!
 
 Introducing... the r-value reference using `&&`
 
-## R-VALUE REFERENCE
+## R-Value Reference
 
 By using r-value reference, we can do this:
 
@@ -325,7 +328,7 @@ int main() {
 - All `std::move(x)` does is cast `x` as an r-value
 - By wary of `std::move(x)` in main function code!
 
-## PHILOSOPHY about SMFs
+## Philosophy About SMFs
 
 ### The 6 Special Member Functions
 

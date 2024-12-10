@@ -6,11 +6,13 @@ categories:
 - C & Cpp
 date: 2023-05-30 15:44:00
 tags:
+- const
 - cpp
+- cs106l
+- note
 - programming-language
 - software-engineering
-- const-cast
-- static-cast
+- stanford
 title: static_cast and const_cast in C++
 ---
 
