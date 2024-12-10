@@ -15,7 +15,7 @@ title: Simple Git Tutorial
 updated: 2024-11-27 11:07:00
 ---
 
-This is mainly a simple tutorial of Git. Some info about GitHub also included. You may also read _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_.
+This is mainly a simple tutorial of Git. Some info about GitHub also included. You may also read _[Simple GitHub Tutorial](/en/posts/simple-github-tutorial)_.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ You may have learnt Git and GitHub before, and also may have confused them becau
 
 In short, [Git](https://git-scm.com/) is a **Version Control System (VCS)**, which enables you to create a repository of your codes, to track changes in your project and to manage your files efficiently. [GitHub](https://GitHub.com/) is a platform used to host remote Git repositories for collaboration and sharing projects.
 
-In this post, you will learn the basic usage of Git. If you are looking for info about working with GitHub, see _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_.
+In this post, you will learn the basic usage of Git. If you are looking for info about working with GitHub, see _[Simple GitHub Tutorial](/en/posts/simple-github-tutorial)_.
 
 ## Installing Git
 
@@ -114,7 +114,7 @@ This command will create a directory called `.git`.
 
 ### Cloning One from An Existing Repo
 
-See _[Simple GitHub Tutorial](/posts/simple-github-tutorial)_
+See _[Simple GitHub Tutorial](/en/posts/simple-github-tutorial)_
 
 ## Files' States in a Git Project
 

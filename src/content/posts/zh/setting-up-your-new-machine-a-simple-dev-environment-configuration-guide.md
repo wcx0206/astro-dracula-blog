@@ -161,7 +161,7 @@ padding = { x = 12, y = 12 }
 
 在终端中运行的程序称为 Shell，它是用户与系统内核之间的桥梁。在大多数 Linux 上，默认的 Shell 是 `bash`，而在 macOS 上是 `zsh`。在 Windows 上有两个 Shell，`cmd` 和 `PowerShell`。
 
-我推荐在所有系统上使用 `zsh`。您可以将其视为 bash 的超集，具有更多功能。这里是[我的配置](/posts/my-zsh-config)。在其中，我：
+我推荐在所有系统上使用 `zsh`。您可以将其视为 bash 的超集，具有更多功能。这里是[我的配置](/zh/posts/my-zsh-config)。在其中，我：
 
 - 使用 [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh) 框架使 `zsh` 配置更容易
 - 使用主题 [`powerlevel10k`](https://github.com/romkatv/powerlevel10k) 自定义命令提示符
@@ -268,7 +268,7 @@ chsh -s $(which zsh)
 
 我每天都使用 Vim 和 VS Code。我使用 Vim 进行快速和小的编辑，使用 VS Code 进行大型项目。即使在 VS Code 中，我也在使用 Vim 扩展来启用 Vim 键绑定。
 
-我的 Vim 配置在[这里](/posts/my-vim-config)。
+我的 Vim 配置在[这里](/zh/posts/my-vim-config)。
 
 要在 Ubuntu 上将 Vim 设置为默认编辑器，您可以以 root 身份运行以下命令：
 
@@ -282,7 +282,7 @@ update-alternatives --config editor # 并在菜单中选择 vim
 
 - Java: [`sdkman`](https://sdkman.io/) 等
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm) 等
-- Python: [`uv`](https://docs.astral.sh/uv/), [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/) 等（关于这个我也写了一篇[文章](/posts/managing-multiple-python-versions-with-pyenv-and-conda)）
+- Python: [`uv`](https://docs.astral.sh/uv/), [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/) 等（关于这个我也写了一篇[文章](/zh/posts/managing-multiple-python-versions-with-pyenv-and-conda)）
 
 除了上面提到的软件专用的版本控制工具，您还可以使用 [`asdf`](https://asdf-vm.com/zh-hans/) 或 [`mise`](https://mise.jdx.dev/) 这样的工具来管理多个软件的版本。下面是一个使用 `mise` 来管理多个 Node.js 版本的例子：
 

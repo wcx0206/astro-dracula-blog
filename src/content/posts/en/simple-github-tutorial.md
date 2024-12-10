@@ -15,7 +15,7 @@ title: Simple GitHub Tutorial
 updated: 2024-11-25 15:49:00
 ---
 
-I wrote a [tutorial on Git](/posts/simple-git-tutorial). In this post, I'd like to introduce the platform that is indispensable when it comes to Git: GitHub.
+I wrote a [tutorial on Git](/en/posts/simple-git-tutorial). In this post, I'd like to introduce the platform that is indispensable when it comes to Git: GitHub.
 
 <!--more-->
 

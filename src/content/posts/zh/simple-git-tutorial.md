@@ -109,7 +109,7 @@ git init
 
 ### 从现有的仓库克隆一个
 
-请参阅[《简明 GitHub 教程》](/posts/simple-github-tutorial)。
+请参阅[《简明 GitHub 教程》](/zh/posts/simple-github-tutorial)。
 
 ## Git 项目中的文件状态
 

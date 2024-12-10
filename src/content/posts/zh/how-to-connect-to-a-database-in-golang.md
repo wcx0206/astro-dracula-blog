@@ -16,7 +16,7 @@ updated: 2024-11-28 17:03:00
 
 您需要准备一个 MySQL 和/或一个 PostgreSQL。
 
-如果您安装了 Docker，可以使用以下命令快速创建即用即删的 MySQL 或 PostgreSQL 容器以供测试。我写了一篇[文章](/posts/docker-what-why-how)简单介绍了 Docker，如果您不清楚什么是 Docker，可以看一看。
+如果您安装了 Docker，可以使用以下命令快速创建即用即删的 MySQL 或 PostgreSQL 容器以供测试。我写了一篇[文章](/zh/posts/docker-what-why-how)简单介绍了 Docker，如果您不清楚什么是 Docker，可以看一看。
 
 下面的命令创建一个名为 `mysql-server` 的 MySQL 容器，用户名为 `root`，密码为 `password`，使用 `3306` 端口，并附带一个名为 `example_db` 的数据库：
 

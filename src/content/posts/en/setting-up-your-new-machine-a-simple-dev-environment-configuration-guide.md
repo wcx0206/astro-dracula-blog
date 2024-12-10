@@ -167,7 +167,7 @@ A theme is a set of configurations that change the appearance of an application.
 
 The program running in the terminal is called a shell. It is a bridge between the user and the system kernel. On most Linux, the default shell is `bash`, while on macOS, it is `zsh`. There are two shells on Windows, `cmd` and `PowerShell`.
 
-I recommend using `zsh` on all systems. You can view it as a super set of bash with more features. Here is [my configuration](/posts/3e5630f), in which I:
+I recommend using `zsh` on all systems. You can view it as a super set of bash with more features. Here is [my configuration](/en/posts/my-zsh-config/), in which I:
 
 - Use the [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh) framework to make `zsh` configuration easier
 - Use the theme [`powerlevel10k`](https://github.com/romkatv/powerlevel10k) to customize the command prompt
@@ -274,7 +274,7 @@ I recommend using the [`tealdeer`](https://github.com/dbrgn/tealdeer) client, wh
 
 I use Vim & VS Code every day. I use Vim for quick and small edits and VS Code for large projects. Even in VS Code, I'm using the Vim extension to enable the Vim key bindings.
 
-My Vim configuration is [here](/posts/96f7ff9f).
+My Vim configuration is [here](/en/posts/my-vim-config/).
 
 To make Vim the default editor on Ubuntu, you can run the following command as root:
 
@@ -288,7 +288,7 @@ Here I'm not talking about version control systems like `git`, but the version o
 
 - Java: [`sdkman`](https://sdkman.io/), etc.
 - Node.js: [`fnm`](https://github.com/Schniz/fnm), [`n`](https://github.com/tj/n), [`nvm`](https://github.com/nvm-sh/nvm), etc.
-- Python: [`uv`](https://docs.astral.sh/uv/), [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/posts/managing-multiple-python-versions-with-pyenv-and-conda) about this).
+- Python: [`uv`](https://docs.astral.sh/uv/), [`pyenv`](https://github.com/pyenv/pyenv), [`conda`](https://www.anaconda.com/), etc. (I also wrote a [blog post](/en/posts/managing-multiple-python-versions-with-pyenv-and-conda) about this).
 
 In addition to the software-specific version control tools mentioned above, you can also use tools like [`asdf`](https://asdf-vm.com/zh-hans/) or [`mise`](https://mise.jdx.dev/) to manage multiple software versions. Here is an example of using `mise` to manage multiple Node.js versions:
 

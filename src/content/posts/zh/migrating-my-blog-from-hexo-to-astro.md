@@ -20,7 +20,7 @@ updated: 2024-11-25 14:22:00
 
 我之前在 [fishg.top](https://fishg.top) 上的博客是用 [Hexo](https://hexo.io/) 构建的。Hexo 是一个专注于博客的框架，部署和使用都很方便。我在高中毕业后第一次接触到这个框架，并先后使用 [Icarus](https://ppoffice.github.io/hexo-theme-icarus/) 和 [NexT](https://theme-next.js.org/) 主题部署了两个博客。
 
-我写了一篇文章记录了[部署过程](/posts/4ef0ac98)，并为其写了一个[插件](/posts/55f9ebd1)。我大概用了两年这个博客，功能齐全，用起来也很顺手。
+我写了一篇文章记录了[部署过程](/zh/posts/set-up-a-blog-with-hexo/)，并为其写了一个[插件](https://github.com/BlockLune/hexo-blockquote2note)。我大概用了两年这个博客，功能齐全，用起来也很顺手。
 
 然而，这样的博客总让我觉得它不完全属于我 —— 它基于一个框架，并且使用了主题，这让我不可避免地受限于其中的条条框框。我总能感觉到框架带来的 “沉重感”，无法随心所欲地添加或移除功能。
 
