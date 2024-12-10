@@ -171,6 +171,10 @@
 /posts/1d122915.html /zh/posts/why-is-trinary-the-most-efficient-system 301
 /posts/dc298524 /zh/posts/my-rime-config 301
 /posts/dc298524.html /zh/posts/my-rime-config 301
+/posts/4f52bf7e /zh/posts/rlcraft-tutorial 301
+/posts/4f52bf7e.html /zh/posts/rlcraft-tutorial 301
+/posts/a1ada34d /zh/posts/rlcraft-tutorial 301
+/posts/a1ada34d.html /zh/posts/rlcraft-tutorial 301
 
 # This must be a force redirect because there is a `/` page.
 # See https://docs.netlify.com/routing/redirects/redirect-options/#force-redirects
