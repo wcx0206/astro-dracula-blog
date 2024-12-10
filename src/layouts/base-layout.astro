@@ -18,7 +18,7 @@ import GoTop from "@/components/ui/go-top.tsx";
 import { SITE } from "@/config";
 import { getLangFromUrl } from "@/utils/i18n";
 
-const { title, description, ogImageUrl } = Astro.props;
+const { title, description, ogImageUrl, headerAsH1 = true } = Astro.props;
 const [lang] = getLangFromUrl(Astro.url.pathname);
 const pageTitle = title
   ? `${title} | ${SITE.title[lang]}`
@@ -42,7 +42,7 @@ const pageTitle = title
   </head>
   <body class="bg-dracula-darker text-dracula-light">
     <div class="mx-4 md:mx-auto max-w-3xl py-12">
-      <Header lang={lang} />
+      <Header lang={lang} asH1={headerAsH1} />
       <main>
         <slot />
       </main>

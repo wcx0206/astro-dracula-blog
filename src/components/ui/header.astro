@@ -5,7 +5,7 @@ import LanguagePicker from "@/components/ui/language-picker.astro";
 import { SITE } from "@/config";
 import { type Lang, useTranslatedPath, useTranslations } from "@/utils/i18n";
 
-const { lang } = Astro.props;
+const { lang, asH1 = true } = Astro.props;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
@@ -20,9 +20,13 @@ const translatePath = useTranslatedPath(lang);
           text-dracula-light hover:text-dracula-pink transition"
     >
       <Moon />
-      <h1 class="font-black text-2xl">
-        {SITE.title[lang as Lang]}
-      </h1>
+      {
+        asH1 ? (
+          <h1 class="font-black text-2xl">{SITE.title[lang as Lang]}</h1>
+        ) : (
+          <p class="font-black text-2xl">{SITE.title[lang as Lang]}</p>
+        )
+      }
     </a>
     <a
       href="/rss.xml"
