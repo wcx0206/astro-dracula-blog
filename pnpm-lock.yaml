@@ -29,6 +29,9 @@ importers:
       '@fontsource-variable/fira-code':
         specifier: ^5.1.0
         version: 5.1.0
+      '@fontsource-variable/noto-sans-sc':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@resvg/resvg-js':
         specifier: ^2.6.2
         version: 2.6.2
@@ -623,6 +626,9 @@ packages:
 
   '@fontsource-variable/fira-code@5.1.0':
     resolution: {integrity: sha512-fwJbJLvyZ2BhgBSPYCNsrQ6IFQTpRu9GWXY8N20wHTpbhV0Ro5QJihiZV060Ay3kVR6IVH/oSVe/cr7Ube28gg==}
+
+  '@fontsource-variable/noto-sans-sc@5.1.0':
+    resolution: {integrity: sha512-PnnGFWTVyoSdiZU/QvH3w8NroJkBazLWEzrrfqdGX/S6txq6iDoNMG+bolTsAQ4dXbdvfKBTyX6kw/xg5bmdcg==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -3314,6 +3320,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/fira-code@5.1.0': {}
+
+  '@fontsource-variable/noto-sans-sc@5.1.0': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
