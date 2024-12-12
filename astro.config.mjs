@@ -31,6 +31,7 @@ export default defineConfig({
       rehypeGithubAlerts,
       rehypeMathjax,
     ],
+    smartypants: false,
   },
   integrations: [react(), sitemap(), tailwind(), partytown()],
   output: "static",
