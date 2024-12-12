@@ -29,7 +29,7 @@ export const ui = {
     goBackHome: "Go Back Home",
     publishedAt: "Published at",
     updatedAt: "Updated at",
-    "post.newlyUpdatedMsg": `Updated in ${MISC.dateTag.daysToBeGreen} days`,
+    "post.newlyUpdatedMsg": `Updated within ${MISC.dateTag.daysToBeGreen} days`,
     "post.oldPostWarningMsg": `Last update over ${MISC.dateTag.daysToBeRed} days ago`,
     "post.license": "Licensed under",
     "post.notSupportedLang": "Language not supported",
