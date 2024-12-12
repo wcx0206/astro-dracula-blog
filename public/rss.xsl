@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
+<!--
 The stylesheet for the RSS feed.
 See:
 - https://lepture.com/en/2019/rss-style-with-xsl
@@ -61,7 +61,7 @@ See:
                 </style>
             </head>
             <body class="background">
-                <div style="margin: 1rem auto; max-width: 48rem;">
+                <div style="margin: 1rem auto; max-width: 65ch;">
                     <header style="padding-bottom: 1rem;">
                         <h1 style="color: #ee81c3;">
                             <svg
