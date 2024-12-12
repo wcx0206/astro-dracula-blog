@@ -49,13 +49,13 @@ Greedy MST algorithm:
 
 $$
 \begin{aligned}
-\text{public class } &\text{Edge implements Comparable\<Edge\>}\\\\
-&\text{Edge(int v, int w, double weight)} &\text{create a weighted edge v-w} \\\\
-\text{int }&\text{either()} &\text{either endpoint} \\\\
-\text{int }&\text{other(int v)} &\text{the endpoint that's not v} \\\\
-\text{int }&\text{compareTo(Edge that)} &\text{compare this edge to that edge} \\\\
-\text{double }&\text{weight()} &\text{the weight} \\\\
-\text{String }&\text{toString()} &\text{string representation} \\\\
+\text{public class } & \text{Edge implements Comparable\langle Edge \rangle} \\
+& \text{Edge(int v, int w, double weight)} & \text{create a weighted edge v-w} \\
+\text{int } & \text{either()} & \text{either endpoint} \\
+\text{int } & \text{other(int v)} & \text{the endpoint that's not v} \\
+\text{int } & \text{compareTo(Edge that)} & \text{compare this edge to that edge} \\
+\text{double } & \text{weight()} & \text{the weight} \\
+\text{String } & \text{toString()} & \text{string representation} \\
 \end{aligned}
 $$
 
@@ -94,15 +94,15 @@ public class Edge implements Comparable<Edge> {
 
 $$
 \begin{aligned}
-\text{public class } &\text{EdgeWeightedGraph}\\\\
-&\text{EdgeWeightedGraph(int V)} &\text{create an empty graph with V vertices} \\\\
-&\text{EdgeWeightedGraph(In in)} &\text{create a graph from input stream} \\\\
-\text{void }&\text{addEdge(Edge e)} &\text{add weighted edge e to this graph} \\\\
-\text{Iterable\<Edge\> }&\text{adj(int v)} &\text{edges incident to v} \\\\
-\text{Iterable\<Edge\> }&\text{edges()} &\text{all edges in this graph} \\\\
-\text{int }&\text{V()} &\text{number of vertices} \\\\
-\text{int }&\text{E()} &\text{number of edges} \\\\
-\text{String }&\text{toString()} &\text{string representation} \\\\
+\text{public class } & \text{EdgeWeightedGraph} \\
+& \text{EdgeWeightedGraph(int V)} & \text{create an empty graph with V vertices} \\
+& \text{EdgeWeightedGraph(In in)} & \text{create a graph from input stream} \\
+\text{void } & \text{addEdge(Edge e)} & \text{add weighted edge e to this graph} \\
+\text{Iterable\langle Edge \rangle } & \text{adj(int v)} & \text{edges incident to v} \\
+\text{Iterable\langle Edge \rangle } & \text{edges()} & \text{all edges in this graph} \\
+\text{int } & \text{V()} & \text{number of vertices} \\
+\text{int } & \text{E()} & \text{number of edges} \\
+\text{String } & \text{toString()} & \text{string representation} \\
 \end{aligned}
 $$
 
@@ -136,10 +136,10 @@ public class EdgeWeightedGraph {
 
 $$
 \begin{aligned}
-\text{public class } &\text{MST}\\\\
-&\text{MST(EdgeWeightedGraph G)} &\text{constructor} \\\\
-\text{Iterable\<Edge\> }&\text{edges()} &\text{edges in MST} \\\\
-\text{double }&\text{weight()} &\text{weight of MST} \\\\
+\text{public class } & \text{MST} \\
+& \text{MST(EdgeWeightedGraph G)} & \text{constructor} \\
+\text{Iterable\langle Edge \rangle } & \text{edges()} & \text{edges in MST} \\
+\text{double } & \text{weight()} & \text{weight of MST} \\
 \end{aligned}
 $$
 
@@ -295,14 +295,14 @@ Associate an index between $0$ and $N-1$ with each key in a priority queue.
 
 $$
 \begin{aligned}
-\text{public class } &\text{IndexMinPQ\<Key extends Comparable\<Key\>\>}\\\\
-&\text{IndexMinPQ(int N)} &\text{create indexed priority queue with indices 0, 1, ..., N-1} \\\\
-\text{void }&\text{insert(int i, Key key)} &\text{associate key with index i} \\\\
-\text{void }&\text{decreaseKey(int i, Key key)} &\text{decrease the key associated with index i} \\\\
-\text{boolean }&\text{contains(int i)} &\text{is i an index on the priority queue} \\\\
-\text{int }&\text{delMin()} &\text{remove a minimal key and return its associated index} \\\\
-\text{boolean }&\text{isEmpty()} &\text{is the priority queue empty?} \\\\
-\text{int }&\text{size()} &\text{number of entries in the priority queue} \\\\
+\text{public class } & \text{IndexMinPQ\langle Key \text{ extends } Comparable\langle Key \rangle \rangle} \\
+& \text{IndexMinPQ(int N)} & \text{create indexed priority queue with indices 0, 1, \ldots, N-1} \\
+\text{void } & \text{insert(int i, Key key)} & \text{associate key with index i} \\
+\text{void } & \text{decreaseKey(int i, Key key)} & \text{decrease the key associated with index i} \\
+\text{boolean } & \text{contains(int i)} & \text{is i an index on the priority queue} \\
+\text{int } & \text{delMin()} & \text{remove a minimal key and return its associated index} \\
+\text{boolean } & \text{isEmpty()} & \text{is the priority queue empty?} \\
+\text{int } & \text{size()} & \text{number of entries in the priority queue} \\
 \end{aligned}
 $$
 
