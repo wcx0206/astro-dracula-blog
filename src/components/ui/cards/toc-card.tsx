@@ -12,7 +12,9 @@ export default function TocCard({
   lang: Lang;
 }) {
   const t = useTranslations(lang);
-  const filtered = headings.filter((heading) => heading.depth > 1 && heading.depth < 4);
+  const filtered = headings.filter(
+    (heading) => heading.depth > 1 && heading.depth < 4
+  );
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
@@ -43,12 +45,15 @@ export default function TocCard({
       <h2 className="text-2xl font-bold">{t("toc")}</h2>
       <ul className="space-y-2 max-h-96 overflow-y-auto">
         {filtered.map((heading) => (
-          <li key={heading.slug} style={{ marginLeft: `${heading.depth - 2}rem` }}>
+          <li
+            key={heading.slug}
+            style={{ marginLeft: `${heading.depth - 2}rem` }}
+          >
             <a
               href={`#${heading.slug}`}
               className={clsx(
-                "underline underline-offset-4 hover:text-dracula-pink transition",
-                activeId === heading.slug && "text-dracula-pink",
+                "ghost-link-underline",
+                activeId === heading.slug && "text-dracula-pink"
               )}
             >
               {heading.text}

@@ -3,40 +3,54 @@
 @import "@fontsource/noto-sans-sc/700.css";
 @import "@fontsource/noto-sans-sc/900.css";
 @import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-del {
-  @apply text-dracula-blue;
+@layer base {
+  del {
+    @apply text-dracula-blue;
+  }
+
+  code {
+    @apply font-code break-all;
+  }
+
+  pre {
+    @apply bg-dracula-dark/30 rounded-none !important;
+  }
+
+  .copy-code {
+    @apply absolute top-0 right-0 bg-dracula-dark/80 hover:bg-dracula-dark px-2 py-1 text-xs text-dracula-light;
+  }
+
+  ::selection {
+    @apply bg-dracula-blue;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: theme("colors.dracula-purple.400");
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: theme("colors.dracula-purple.DEFAULT");
+  }
 }
 
-code {
-  @apply font-code break-all;
-}
+@layer components {
+  .ghost-link {
+    @apply text-dracula-light hover:text-dracula-pink transition;
+  }
 
-pre {
-  @apply bg-dracula-dark/30 rounded-none !important;
-}
-
-.copy-code {
-  @apply absolute top-0 right-0 bg-dracula-dark/80 hover:bg-dracula-dark px-2 py-1 text-xs text-dracula-light;
-}
-
-::selection {
-  @apply bg-dracula-blue;
-}
-
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: theme("colors.dracula-purple.400");
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: theme("colors.dracula-purple.DEFAULT");
+  .ghost-link-underline {
+    @apply text-dracula-light hover:text-dracula-pink transition underline underline-offset-4;
+  }
 }

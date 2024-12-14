@@ -16,8 +16,7 @@ const translatePath = useTranslatedPath(lang);
   <div class="flex gap-2 itmes-center justify-center">
     <a
       href={translatePath("/")}
-      class="flex items-center justify-center md:justify-start gap-2 font-black text-2xl
-          text-dracula-light hover:text-dracula-pink transition"
+      class="ghost-link flex items-center justify-center md:justify-start gap-2 font-black text-2xl"
     >
       <Moon />
       {
@@ -36,25 +35,14 @@ const translatePath = useTranslatedPath(lang);
       <Rss class="w-6 h-6" />
     </a>
   </div>
-  <div
-    class="flex justify-center md:justify-end items-center gap-4 text-dracula-light"
-  >
-    <a
-      class="hover:text-dracula-pink transition underline underline-offset-4"
-      href={translatePath("/")}
-    >
+  <div class="flex justify-center md:justify-end items-center gap-4">
+    <a class="ghost-link-underline" href={translatePath("/")}>
       {t("nav.home")}
     </a>
-    <a
-      class="hover:text-dracula-pink transition underline underline-offset-4"
-      href={translatePath("/tags")}
-    >
+    <a class="ghost-link-underline" href={translatePath("/tags")}>
       {t("nav.tags")}
     </a>
-    <a
-      class="hover:text-dracula-pink transition underline underline-offset-4"
-      href={translatePath("/about")}
-    >
+    <a class="ghost-link-underline" href={translatePath("/about")}>
       {t("nav.about")}
     </a>
     |
