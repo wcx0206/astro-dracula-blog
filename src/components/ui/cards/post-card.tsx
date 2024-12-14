@@ -20,7 +20,7 @@ export default function PostCard({
   const component = (
     <a
       href={snapshot.href}
-      className="p-8 bg-dracula-dark/20 hover:bg-dracula-dark transition cursor-pointer text-pretty flex flex-col gap-4"
+      className="card-hoverable p-8 text-pretty flex flex-col gap-4"
     >
       <h2 className="font-bold text-3xl text-dracula-pink">{snapshot.title}</h2>
       <div className="flex flex-wrap gap-2">
@@ -29,11 +29,16 @@ export default function PostCard({
           <LabelTag lang={lang} label={tag} key={tag} />
         ))}
       </div>
-      <p className="overflow-ellipsis break-all line-clamp-3">{snapshot.description}</p>
+      <p className="overflow-ellipsis break-all line-clamp-3">
+        {snapshot.description}
+      </p>
     </a>
   );
   return animate ? (
-    <motion.div initial={{ opacity: initialOpacity, x: initialX }} whileInView={{ opacity: 1, x: 0 }}>
+    <motion.div
+      initial={{ opacity: initialOpacity, x: initialX }}
+      whileInView={{ opacity: 1, x: 0 }}
+    >
       {component}
     </motion.div>
   ) : (

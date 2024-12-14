@@ -29,8 +29,7 @@ export default function GoTop() {
           animate={{ opacity: 1 }}
           exit={{ opacity: initialOpacity }}
           whileHover={{ scale: 1.1 }}
-          className="size-8 flex items-center justify-center fixed bottom-5 right-5
-        bg-dracula-dark/20 hover:bg-dracula-dark transition"
+          className="card-hoverable size-8 flex items-center justify-center fixed bottom-5 right-5"
           onClick={handleScrollUp}
         >
           <UpIcon />

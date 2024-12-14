@@ -51,6 +51,18 @@
   }
 
   .ghost-link-underline {
-    @apply text-dracula-light hover:text-dracula-pink transition underline underline-offset-4;
+    @apply ghost-link underline underline-offset-4;
+  }
+
+  .card-static {
+    @apply bg-dracula-dark/20;
+  }
+
+  .card-hoverable {
+    @apply card-static hover:bg-dracula-dark transition cursor-pointer;
+  }
+
+  .card-input {
+    @apply card-hoverable cursor-text px-8 py-4 text-dracula-light placeholder-dracula-blue focus:outline-none focus:bg-dracula-dark;
   }
 }
