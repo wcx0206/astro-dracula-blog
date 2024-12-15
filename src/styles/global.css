@@ -3,40 +3,66 @@
 @import "@fontsource/noto-sans-sc/700.css";
 @import "@fontsource/noto-sans-sc/900.css";
 @import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-del {
-  @apply text-dracula-blue;
+@layer base {
+  del {
+    @apply text-dracula-blue;
+  }
+
+  code {
+    @apply font-code break-all;
+  }
+
+  pre {
+    @apply bg-dracula-dark/30 rounded-none !important;
+  }
+
+  ::selection {
+    @apply bg-dracula-blue;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: theme("colors.dracula-purple.400");
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: theme("colors.dracula-purple.DEFAULT");
+  }
 }
 
-code {
-  @apply font-code break-all;
-}
+@layer components {
+  .copy-code {
+    @apply absolute top-0 right-0 bg-dracula-dark/80 hover:bg-dracula-dark px-2 py-1 text-xs text-dracula-light;
+  }
 
-pre {
-  @apply bg-dracula-dark/30 rounded-none !important;
-}
+  .ghost-link {
+    @apply text-dracula-light hover:text-dracula-pink transition;
+  }
 
-.copy-code {
-  @apply absolute top-0 right-0 bg-dracula-dark/80 hover:bg-dracula-dark px-2 py-1 text-xs text-dracula-light;
-}
+  .ghost-link-underline {
+    @apply ghost-link underline underline-offset-4;
+  }
 
-::selection {
-  @apply bg-dracula-blue;
-}
+  .card-static {
+    @apply bg-dracula-dark/20;
+  }
 
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
+  .card-hoverable {
+    @apply card-static hover:bg-dracula-dark transition cursor-pointer;
+  }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: theme("colors.dracula-purple.400");
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: theme("colors.dracula-purple.DEFAULT");
+  .card-input {
+    @apply card-hoverable cursor-text px-8 py-4 text-dracula-light placeholder-dracula-blue focus:outline-none focus:bg-dracula-dark;
+  }
 }
