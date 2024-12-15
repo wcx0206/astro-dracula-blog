@@ -2,7 +2,7 @@ import clsx from "clsx";
 import type { MarkdownHeading } from "astro";
 import { MISC } from "@/config";
 import { type Lang, useTranslations } from "@/utils/i18n";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function TocCard({
   headings,
@@ -16,6 +16,7 @@ export default function TocCard({
     (heading) => heading.depth > 1 && heading.depth < 4
   );
   const [activeId, setActiveId] = useState<string>("");
+  const tocRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     const callback = (entries: IntersectionObserverEntry[]) => {
@@ -38,12 +39,33 @@ export default function TocCard({
     return () => observer.disconnect();
   }, [filtered]);
 
+  // auto scroll to active element
+  useEffect(() => {
+    if (activeId && tocRef.current) {
+      const activeElement = tocRef.current.querySelector(
+        `a[href="#${activeId}"]`
+      )?.parentElement;
+      if (activeElement) {
+        const container = tocRef.current;
+        const elementTop = activeElement.offsetTop;
+        const containerHeight = container.clientHeight;
+
+        const targetScroll = elementTop - containerHeight / 2;
+
+        container.scrollTo({
+          top: targetScroll,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [activeId]);
+
   if (filtered.length <= MISC.toc.minHeadings) return null;
 
   return (
     <div className="flex p-8 bg-dracula-dark/20 flex-col gap-4">
       <h2 className="text-2xl font-bold">{t("toc")}</h2>
-      <ul className="space-y-2 max-h-96 overflow-y-auto">
+      <ul ref={tocRef} className="space-y-2 max-h-96 overflow-y-auto">
         {filtered.map((heading) => (
           <li
             key={heading.slug}
