@@ -19,10 +19,6 @@
     @apply bg-dracula-dark/30 rounded-none !important;
   }
 
-  .copy-code {
-    @apply absolute top-0 right-0 bg-dracula-dark/80 hover:bg-dracula-dark px-2 py-1 text-xs text-dracula-light;
-  }
-
   ::selection {
     @apply bg-dracula-blue;
   }
@@ -46,6 +42,10 @@
 }
 
 @layer components {
+  .copy-code {
+    @apply absolute top-0 right-0 bg-dracula-dark/80 hover:bg-dracula-dark px-2 py-1 text-xs text-dracula-light;
+  }
+
   .ghost-link {
     @apply text-dracula-light hover:text-dracula-pink transition;
   }
