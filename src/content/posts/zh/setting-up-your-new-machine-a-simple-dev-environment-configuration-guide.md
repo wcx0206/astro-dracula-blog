@@ -9,7 +9,7 @@ tags:
 - configuration
 - tool
 date: 2024-11-09 16:23:00
-updated: 2024-11-30 13:43:00
+updated: 2024-12-20 10:23:00
 ---
 
 作为开发者，我们每天都会使用各种机器。一个配置良好的开发环境可以显著提高生产力，让编码变得更加愉快。本指南将指导您配置一个舒适且高效的工作空间。此文主要面向初学者，但经验丰富的开发者也可能受到启发。
@@ -171,26 +171,26 @@ padding = { x = 12, y = 12 }
 
 ```bash
 proxy() {
-  if [[ "$1" == "-d" || "$1" == "--disable" || "$1" == "-c" || "$1" == "--clear" ]]; then
+  if [[ "$1" == "--disable" ]]; then
     unset https_proxy http_proxy all_proxy
     echo "Proxy disabled"
   elif [[ "$1" == "--check" ]]; then
     if command -v wget &> /dev/null; then
       wget --spider --proxy=on http://google.com -q -T 10
       if [ $? -eq 0 ]; then
-        echo "Proxy is working."
+        echo "Proxy is working"
       else
-        echo "Proxy is not working."
+        echo "Proxy is not working"
       fi
     elif command -v curl &> /dev/null; then
       curl --proxy http://127.0.0.1:7890 http://google.com -s -m 10 --connect-timeout 10
       if [ $? -eq 0 ]; then
-        echo "Proxy is working."
+        echo "Proxy is working"
       else
-        echo "Proxy is not working."
+        echo "Proxy is not working"
       fi
     else
-      echo "Neither wget nor curl is installed, cannot check proxy."
+      echo "Neither wget nor curl is installed, cannot check proxy"
     fi
   else
     export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
@@ -232,6 +232,12 @@ proxy() {
 ```bash
 chsh -s $(which zsh)
 ```
+
+补充说明一下 PowerShell。Windows 上的 `PowerShell` 是一个强大的 Shell，但它的语法和 `bash` 有很大不同。如果您想使用 `PowerShell`，我建议您使用 `PowerShell Core`，它是一个更新的、跨平台的版本。您需要自行安装这个版本，参考下面的官方文档：
+
+- [在 Windows 上安装 PowerShell - Microsoft Learn](https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell-on-windows)
+
+然后，通过一些配置（例如参考[我的配置](https://github.com/BlockLune/dotfiles/blob/main/Microsoft.PowerShell_profile.ps1)），使其更加符合您的需求。
 
 ### 包管理器：开发者的应用商店
 

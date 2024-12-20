@@ -13,7 +13,7 @@ tags:
 - configuration
 - tool
 date: 2024-09-02 15:53:08
-updated: 2024-11-30 13:43:00
+updated: 2024-12-20 10:23:00
 ---
 
 As developers, we interact with all kinds of machines every day. A well-configured development environment can significantly boost productivity and make coding more enjoyable. This comprehensive guide will help you set up a comfortable and efficient workspace. It's mainly for beginners, but experienced developers may also find some useful tips.
@@ -177,26 +177,26 @@ For example, here is a simple function I use to enable or disable the proxy in `
 
 ```bash
 proxy() {
-  if [[ "$1" == "-d" || "$1" == "--disable" || "$1" == "-c" || "$1" == "--clear" ]]; then
+  if [[ "$1" == "--disable" ]]; then
     unset https_proxy http_proxy all_proxy
     echo "Proxy disabled"
   elif [[ "$1" == "--check" ]]; then
     if command -v wget &> /dev/null; then
       wget --spider --proxy=on http://google.com -q -T 10
       if [ $? -eq 0 ]; then
-        echo "Proxy is working."
+        echo "Proxy is working"
       else
-        echo "Proxy is not working."
+        echo "Proxy is not working"
       fi
     elif command -v curl &> /dev/null; then
       curl --proxy http://127.0.0.1:7890 http://google.com -s -m 10 --connect-timeout 10
       if [ $? -eq 0 ]; then
-        echo "Proxy is working."
+        echo "Proxy is working"
       else
-        echo "Proxy is not working."
+        echo "Proxy is not working"
       fi
     else
-      echo "Neither wget nor curl is installed, cannot check proxy."
+      echo "Neither wget nor curl is installed, cannot check proxy"
     fi
   else
     export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
@@ -238,6 +238,12 @@ After installing the shell you like, you can make it the default shell by runnin
 ```bash
 chsh -s $(which zsh)
 ```
+
+As a side note on PowerShell, `PowerShell` on Windows is a powerful shell, but its syntax is very different from `bash`. If you want to use `PowerShell`, I recommend you to use `PowerShell Core`, which is a newer, cross-platform version. You will need to install this version yourself, see the official documentation below:
+
+- [Installing PowerShell on Windows - Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows)
+
+Then, go through some configurations (e.g. refer to [My Configurations](https://github.com/BlockLune/dotfiles/blob/main/Microsoft.PowerShell_profile.ps1)) to make it more suitable for your needs.
 
 ### Package Managers: The App Store for Developers
 
