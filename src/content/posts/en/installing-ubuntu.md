@@ -5,12 +5,12 @@ categories:
 - Tools
 date: 2023-04-27 23:41:50
 tags:
-- software-engineering
-- unix
-- terminal
-- ubuntu-installation
+- installation
+- linux
 - linux-setup
-title: Installing Ubuntu
+- ubuntu
+- unix
+title: Ubuntu Installation Notes
 ---
 
 This is NOT a tutorial on how to install Ubuntu. I am just documenting some problems I encountered during my installation.
