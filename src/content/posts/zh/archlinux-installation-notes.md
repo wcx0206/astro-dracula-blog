@@ -177,11 +177,60 @@ pacman -S grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 ```
 
-## Hyprland
+## 后续配置
 
-后续我还尝试安装了 [Hyprland](https://hyprland.org/)。不同于我们日常使用的浮动式窗口管理器，它是一个平铺式窗口管理器。
+### 添加新用户
 
-（未完待续）
+让我们来添加一个 sudo 用户。运行下面的命令创建一个名为 `username` 的用户并将其添加进 [`wheel`](https://en.wikipedia.org/wiki/Wheel_(computing)) 组：
+
+```bash
+useradd -m -G wheel username
+```
+
+另一些有用的命令：
+
+```bash
+# 查看某用户所属的组
+groups username
+
+# 将现有用户加入 wheel 组
+usermod -aG wheel username
+```
+
+然后编辑 `/etc/sudoers` 文件，可以这样做：
+
+```bash
+EDITOR=vim visudo
+
+# 然后在打开的文件中找到并取消下面这一行的注释
+# %wheel ALL=(ALL:ALL) ALL
+```
+
+### 虚拟机工具
+
+我在 VMWare 中安装了 Arch Linux，配合虚拟机工具可以更方便地使用虚拟机。但我没有选择 VMWare 官方提供的版本，而是使用了 `open-vm-tools`。
+
+```bash
+# 安装 open-vm-tools
+pacman -S open-vm-tools
+
+# 如果你使用图形界面，还需要安装
+pacman -S gtkmm3 xf86-video-vmware xf86-input-vmmouse
+
+# 启用服务
+systemctl enable vmtoolsd
+systemctl start vmtoolsd
+
+# 如果需要共享文件夹功能，还要启用这个服务
+systemctl enable vmware-vmblock-fuse
+systemctl start vmware-vmblock-fuse
+```
+
+### Hyprland
+
+后续我还尝试安装了 [Hyprland](https://hyprland.org/)。不同于我们日常使用的浮动式窗口管理器，它是一个[平铺式窗口管理器](https://wiki.archlinuxcn.org/wiki/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8#%E5%B9%B3%E9%93%BA%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8)，这意味着，窗口会以方格的形式排列在屏幕上，永远不会重叠。
+
+此次安装我没有自行配置，而是使用了 [illogical-impulse](https://end-4.github.io/dots-hyprland-wiki/zh-cn/)。未来我可能会尝试自行配置。
 
 ## 参考资料
 
