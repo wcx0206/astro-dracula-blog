@@ -58,6 +58,10 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 > - [镜像模式网络 | 使用 WSL 访问网络应用程序 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/networking#mirrored-mode-networking)
 > - [自动代理 | 使用 WSL 访问网络应用程序 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/networking#auto-proxy)
 
+更多参考资料：
+
+- [代理服务器 - Arch Linux 中文维基](https://wiki.archlinuxcn.org/wiki/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8)
+
 ## 客户端配置：Windows、macOS 和 Linux
 
 当我说 “客户端” 时，我指的是您正在使用的本地机器，即您的 PC 或 Mac。
@@ -94,6 +98,9 @@ useradd -m username
 ```bash
 usermod -a -G sudo username
 ```
+
+> [!Tip]
+> 取决于发行版，默认的 sudo 用户组的名称并不相同。上文提到的 `sudo` 组是 Debian 系，而在 Arch Linux 中，这个用户组的名称是 [`wheel`](https://en.wikipedia.org/wiki/Wheel_(computing))。
 
 或者您可以通过运行 `visudo` 手动编辑 sudoers 文件。
 
@@ -270,7 +277,7 @@ chsh -s $(which zsh)
 
 ![tealdeer 的介绍图片](https://raw.githubusercontent.com/dbrgn/tealdeer/main/docs/src/screenshot-default.png)
 
-### Vim 和 VS Code：我的两个主要的编辑器
+### Vim 和 VS Code：我主要使用的两个编辑器
 
 我每天都使用 Vim 和 VS Code。我使用 Vim 进行快速和小的编辑，使用 VS Code 进行大型项目。即使在 VS Code 中，我也在使用 Vim 扩展来启用 Vim 键绑定。
 
@@ -328,7 +335,7 @@ python --version # -> Python 3.6.2
 
 我的 dotfiles 在[这里](https://github.com/blocklune/dotfiles)。
 
-## 服务器端配置：Linux 是您的好朋友
+## 服务器端配置
 
 在服务器上，Linux 是最流行的操作系统。因此，一般来说，您只需要将基于 Linux 的客户端配置复制到服务器端。
 

@@ -62,6 +62,10 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 > - [Mirrored mode networking | Accessing network applications with WSL | Microsoft Learn](https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking)
 > - [Auto Proxy | Accessing network applications with WSL | Microsoft Learn](https://learn.microsoft.com/en-us/windows/wsl/networking#auto-proxy)
 
+Also see:
+
+- [Proxy server - ArchWiki](https://wiki.archlinux.org/title/Proxy_server)
+
 ## Client-Side Configuration: Windows, macOS, and Linux
 
 When I say "client side", I mean the local machine you are using, i.e. your PC or Mac.
@@ -98,6 +102,9 @@ The `useradd` command is a POSIX-compliant command that creates a new user accou
 ```bash
 usermod -a -G sudo username
 ```
+
+> [!Tip]
+> Depending on your distribution, the name of the default sudo user group is not the same. The `sudo` group mentioned above is Debian-based, while in Arch Linux the name of this user group is [`wheel`](https://en.wikipedia.org/wiki/Wheel_(computing)).
 
 Or you can edit the sudoers file manually by running `visudo`.
 
