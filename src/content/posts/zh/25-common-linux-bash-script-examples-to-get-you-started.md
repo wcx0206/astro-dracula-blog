@@ -1,5 +1,5 @@
 ---
-title: 用 25 个例子带您入门 Linux Bash 脚本
+title: 用 25 个例子带您入门 Linux Bash 脚本（翻译）
 tags:
     - translation
     - bash

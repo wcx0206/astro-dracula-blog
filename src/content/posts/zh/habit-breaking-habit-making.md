@@ -1,5 +1,5 @@
 ---
-title: 打破坏习惯，养成好习惯
+title: 打破坏习惯，养成好习惯（翻译）
 tags:
 - vim
 - translation

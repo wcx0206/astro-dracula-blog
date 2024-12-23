@@ -1,10 +1,11 @@
 ---
-title: CommonJS 和 ES Modules
+title: CommonJS 和 ES Modules（翻译）
 tags:
  - commonjs
  - es-modules
  - javascript
  - nodejs
+ - translation
  - web
 date: 2024-12-23 13:13:58
 license: none
