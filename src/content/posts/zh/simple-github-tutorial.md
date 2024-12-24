@@ -232,7 +232,11 @@ git push -u origin main # 推送到名为 origin 的远程仓库的 main 分支
 
 ![Fork 得来的仓库](https://webp.blocklune.cc/sip/2024/11/18/nojpa-0f.webp)
 
-4. 使用 SSH 链接克隆该仓库到本地。
+4. 使用 SSH 链接克隆该仓库到本地，形式为：
+
+```bash
+git clone SSH_URL
+```
 
 5. 在终端中进入项目的根目录，输入下面的命令新建一个分支并切换到它。其中的 `BRANCH_NAME` 分支名一定是具有描述性的，并应该符合该项目的相关约定（例如如果您正希望为该项目添加一个打招呼的新功能，您的分支名可能是 `feature/greeting`）：
 
@@ -240,7 +244,7 @@ git push -u origin main # 推送到名为 origin 的远程仓库的 main 分支
 git checkout -b BRANCH_NAME
 ```
 
-6. 执行您的 Git 工作流。例如：编辑文件，并适时地使用 `git add` 和 `git commit` 保存更改，其中的 commit message 也需要注意描述性和符合项目约定。
+6. 执行您的 Git 工作流。例如：编辑文件，并适时地使用 `git add` 和 `git commit` 保存更改（其中的 commit message 也需要注意描述性和符合项目约定），然后使用 `git push` 将更改推送到您 Fork 得来的仓库。
 
 7. 在您认为您的更改已经完成后，回到 GitHub，并前往这个项目的公共仓库地址。点击上方的 `Pull requests` 进入拉取请求标签页，然后点击右侧的绿色 `New pull request` 按钮。
 

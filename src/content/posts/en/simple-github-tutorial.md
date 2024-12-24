@@ -237,7 +237,11 @@ The following example workflow assumes you want to contribute code to an open-so
 
 ![Forked Repository](https://webp.blocklune.cc/sip/2024/11/18/nojpa-0f.webp)
 
-4. Clone this repository to your local machine using the SSH link.
+4. Clone this repository to your local machine using the SSH link:
+
+```bash
+git clone SSH_URL
+```
 
 5. In your terminal, navigate to the project's root directory and run the following command to create a new branch and switch to it. The `BRANCH_NAME` should be descriptive and conform to the project's conventions (for example, if you want to add a new greeting feature, your branch name might be `feature/greeting`):
 
@@ -245,7 +249,7 @@ The following example workflow assumes you want to contribute code to an open-so
 git checkout -b BRANCH_NAME
 ```
 
-6. Execute your Git workflow. For example, edit files and use `git add` and `git commit` appropriately to save changes, ensuring that your commit messages are descriptive and conform to project conventions.
+6. Execute your Git workflow. For example, edit the file, save the changes using `git add` and `git commit` when appropriate (with a commit message that is also descriptive and conforms to the project's conventions), and then use `git push` to push the changes to the repository you Forked.
 
 7. When you believe your changes are complete, return to GitHub and navigate to the public repository address of the project. Click on `Pull requests` at the top to enter the pull request tab, then click the green `New pull request` button on the right.
 
