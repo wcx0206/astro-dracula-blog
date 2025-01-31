@@ -8,15 +8,16 @@ tags:
  - linux-setup
  - unix
 date: 2024-12-22 19:01:16
+updated: 2025-02-01 00:40:00
 ---
 
-最近在 VMWare 中安装了 Arch Linux。Arch Linux 的 [Wiki](https://wiki.archlinuxcn.org/) 写得非常好，而且中文资料很丰富，加之 AI Chatbot 的帮助，安装过程总体上还是很顺利的。这里记录一下在[安装指南](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)中没有直接提到的一些细节，以及后续的一些配置。
+之前我在 VMWare 中安装了 Arch Linux，最近又在实体机上尝试安装了 Windows 11 和 Arch Linux 双系统。Arch Linux 的 [Wiki](https://wiki.archlinuxcn.org/) 写得非常好，而且中文资料很丰富，加之 AI Chatbot 的帮助，安装过程总体上还是很顺利的。这里记录一下在[安装指南](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)中需要重点关注的内容、没有直接提到的一些细节、以及后续的一些配置。
 
 <!--more-->
 
 ## VMWare 的配置
 
-[VMWare WorkStation Pro 目前对个人用户是免费的](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)，您可以直接去官网下载安装。
+我使用的虚拟机软件是 VMWare WorkStation Pro，这款软件[目前对个人用户是免费的](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)，您可以直接去官网下载安装。
 
 安装完成后，创建一个新的虚拟机。然后按需求配置虚拟机硬件。两个特殊的配置是：我希望使用 UEFI 引导，所以需要在 `虚拟机设置 -> 选项 -> 高级 -> 固件类型` 中选择 UEFI；后续我希望安装 [Hyprland](https://hyprland.org/)，所以我还在 `虚拟机设置 -> 硬件 -> 显示屏 -> 3D 图形` 中勾选了 `加速 3D 图形`。
 
@@ -40,11 +41,15 @@ fdisk -l
 
 > 结果中以 rom、loop 或者airootfs结尾的设备可以被忽略。结果中以 rpbm、boot0 或者 boot1 结尾的 mmcblk* 设备也可以被忽略。
 
-我在此处看到的有效设备是 `/dev/sda`。
+下图展示了虚拟机安装时运行上述命令的结果，有效设备是 `/dev/sda`。
 
 ![lsblk 和 fdisk -l 的运行结果](https://webp.blocklune.cc/blog-imgs/archlinux-installation-notes/block-devices.png)
 
-接下来，我们就可以开始分区了。采用的是指南中的分区方案示例，具体如下：
+而在实体机双系统安装时，我有两块固态硬盘，分别是 `/dev/nvme0n1` 和 `/dev/nvme1n1`。
+
+接下来，我们就可以开始分区了。
+
+对于虚拟机安装，我采用的是指南中的分区方案示例，具体如下：
 
 - `/dev/sda1` 为 EFI 系统分区，大小为 1GB，文件系统为 `FAT32`；
 - `/dev/sda2` 为 Swap 分区，大小为 4GB；
@@ -54,7 +59,11 @@ fdisk -l
 
 `FAT32` 和 `ext4` 是文件系统。前者较老但兼容性较好，EFI 分区必须使用 `FAT32` 以确保 UEFI 固件可读；后者是 Linux 默认的文件系统，功能更多性能更好。
 
-我使用 `fdisk` 来进行分区。首先运行下面的命令来指定硬盘：
+对于实体机双系统，安装 Windows 时已经有了一块 EFI 分区（在我这里是一块大小为 260MB 的空间，使用 `lsblk` 看到的结果为 `nvme0n1p1`）。所以只需要准备 Swap 分区和根分区即可。我的物理内存大小为 8G，所以我准备了 8G 的 Swap 分区，以及 120G 的根分区。
+
+在虚拟机安装时，我使用了 `fdisk` 来进行分区。您也可以尝试使用 [`cfdisk`](https://wiki.archlinuxcn.org/wiki/Cfdisk)，它是 `fdisk` 的 TUI 版本。
+
+首先运行下面的命令来指定硬盘：
 
 ```bash
 fdisk /dev/sda
@@ -113,7 +122,7 @@ mkfs.ext4 /dev/sda3
 mount /dev/sda3 /mnt
 ```
 
-挂载 EFI 系统分区（指南中挂载到的位置是 `/mnt/boot`，但我查询了其他资料，似乎更建议挂载到 `/mnt/boot/efi`）：
+挂载 EFI 系统分区（指南中挂载到的位置是 `/mnt/boot`，但我查询了其他资料，似乎更建议挂载到 `/mnt/boot/efi`）。安装双系统时，把原来的引导 Windows 的 EFI 分区挂载到相应位置即可：
 
 ```bash
 mount --mkdir /dev/sda1 /mnt/boot/efi
@@ -144,7 +153,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 含义如下：
 
 - `genfstab` 是生成 fstab 文件的工具
-- `-U` 表示使用 UUID 来标识设备（比设备路径更可靠）
+- `-U` 表示使用 UUID 来标识设备（比设备路径更可靠，设备路径可能会变，比如在进行双系统安装时，我的两块实体固态硬盘的设备路径就在重启后出现了互换）
 - `/mnt` 是当前挂载的目标系统
 - `>>` 表示将输出追加到文件
 - `/mnt/etc/fstab` 是生成的 fstab 文件的位置
@@ -161,6 +170,12 @@ arch-chroot /mnt
 
 此处并没有直接使用 `chroot` 命令，而是使用了 [`arch-chroot`](https://wiki.archlinuxcn.org/wiki/Chroot#%E4%BD%BF%E7%94%A8_arch-chroot) 命令。这是 Arch Linux 提供的一个脚本，它会自动地进行包括挂载 `/proc`、`/sys`、`/dev` 和 `/run` 到新系统在内的一系列操作，使用起来更方便。
 
+进入新系统后，可以安装一些基础的网络工具，方便之后重启后进行联网操作：
+
+```bash
+pacman -S iw iwctl networkmanager
+```
+
 ### 安装引导程序
 
 接着跟随指南到 `3.8 安装引导程序`，我们来安装 [GRUB](https://wiki.archlinuxcn.org/wiki/GRUB)。
@@ -171,10 +186,60 @@ arch-chroot /mnt
 pacman -S grub efibootmgr
 ```
 
-然后安装 GRUB：
+如果是单系统安装，直接运行下面的命令安装 GRUB 即可：
 
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+```
+
+但在进行双系统安装时，我们需要安装 `os-prober`，以检测硬盘上的其他操作系统。
+
+```bash
+pacman -S os-prober
+```
+
+新版本的 GRUB 默认禁用 `os-prober`，需要编辑 `/etc/default/grub` 文件，取消注释下面这一行：
+
+```text
+GRUB_DISABLE_OS_PROBER=false
+```
+
+然后再运行与单系统安装相同的安装命令：
+
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+```
+
+安装完成后，运行下面的命令来生成主配置文件：
+
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+如果 `os-prober` 无法成功检测到已有的 Windows 11，就需要手动修改配置文件。
+
+首先，确定 EFI 分区的 UUID。例如，在实体机安装双系统时我的 EFI 分区是 `/dev/nvme0n1p1`，运行下面的命令：
+
+```bash
+blkid /dev/nvme0n1p1
+```
+
+得到输出如下：
+
+```text
+/dev/nvme0n1p1: LABEL_FATBOOT="SYSTEM" LABEL="SYSTEM" UUID="5A53-7DF3" ...
+```
+
+记住此处的 UUID，然后编辑刚刚生成的 `/boot/grub/grub.cfg` 文件，在 `### BEGIN /etc/grub.d/30_os-prober ###` 与 `### END /etc/grub.d/30_os-prober ###` 之间添加以下内容（记得使用上面得到的 UUID）：
+
+```text
+menuentry 'Microsoft Windows 11' {
+    insmod part_gpt
+    insmod fat
+    insmod chain
+    search --fs-uuid --no-floppy --set=root 5A53-7DF3
+    chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi
+}
 ```
 
 ## 后续配置
