@@ -7,7 +7,7 @@ categories:
   - Misc
 abbrlink: dc298524
 date: 2024-02-15 10:41:37
-updated: 2024-02-01 17:59:00
+updated: 2025-02-01 17:59:00
 ---
 
 [Rime](https://rime.im/) 是一款输入法引擎，有着开源、多平台、支持高度自定义等特点。这篇博文记录了我在 macOS 平台上基于鼠须管（[rime/squirrel](https://github.com/rime/squirrel)）、在 Arch Linux 基于 fcitx5，并使用雾凇拼音（[iDvel/rime-ice](https://github.com/iDvel/rime-ice)）的 Rime 配置。
