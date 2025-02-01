@@ -41,7 +41,14 @@ bash rime-install iDvel/rime-ice:others/recipes/full # 安装 「雾凇拼音」
 paru -S fcitx5 fcitx5-im fcitx5-rime rime-quick rime-ice-double-pinyin-flypy-git
 ```
 
-安装完成后，在您的任务栏上右键并单击 `Configure` 打开配置菜单，在其中搜索 `Rime` 并点击相应的箭头按钮将其添加到输入法列表中，最后点击右下角的 `Apply` 应用配置。
+安装完成后，启动 fcitx5，然后在您的任务栏上右键并单击 `Configure` 打开配置菜单，在其中搜索 `Rime` 并点击相应的箭头按钮将其添加到输入法列表中，最后点击右下角的 `Apply` 应用配置。
+
+> [!Tip]
+> 记得设置一下开机自启动，例如如果跟我一样使用 Hyprland，就需要在其配置文件中添加下面这行内容：
+>
+> ```text
+> exec-once = fcitx5 --replace -d
+> ```
 
 ### 自动安装
 
