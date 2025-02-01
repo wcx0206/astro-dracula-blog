@@ -291,14 +291,68 @@ systemctl enable vmware-vmblock-fuse
 systemctl start vmware-vmblock-fuse
 ```
 
+### AUR 助手
+
+[AUR](https://wiki.archlinuxcn.org/wiki/Arch_%E7%94%A8%E6%88%B7%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93_(AUR)) 是 Arch Linux 的软件仓库。我在后续的步骤中大量使用它来下载和安装软件。
+
+为了更好地使用 AUR，可以安装一个 [AUR 助手](https://wiki.archlinuxcn.org/wiki/AUR_%E5%8A%A9%E6%89%8B) 程序。最经典的是 [`yay`](https://wiki.archlinuxcn.org/wiki/Yay)，而一个新的选择是 [`paru`](https://github.com/Morganamilo/paru)。
+
+如果您希望使用 `yay`，可以运行以下命令：
+
+```bash
+pacman -S git base-devel
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+```
+
+之后，我们就可以使用 `yay` 来下载、安装和自动管理软件包了。
+
+### 代理服务器
+
+我使用的软件包是 [clash-nyanpasu-bin](https://aur.archlinux.org/packages/clash-nyanpasu-bin)。一般而言，可以直接运行下面的命令来安装此代理服务器软件：
+
+```bash
+yay -S clash-nyanpasu-bin
+```
+
+但由于网络原因，最后我只能尝试手动安装：
+
+```bash
+git clone https://aur.archlinux.org/clash-nyanpasu-bin.git
+cd clash-nyanpasu-bin
+makepkg -si
+```
+
 ### Hyprland
 
 后续我还尝试安装了 [Hyprland](https://hyprland.org/)。不同于我们日常使用的浮动式窗口管理器，它是一个[平铺式窗口管理器](https://wiki.archlinuxcn.org/wiki/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8#%E5%B9%B3%E9%93%BA%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8)，这意味着，窗口会以方格的形式排列在屏幕上，永远不会重叠。
 
-此次安装我没有自行配置，而是使用了 [illogical-impulse](https://end-4.github.io/dots-hyprland-wiki/zh-cn/)。未来我可能会尝试自行配置。
+第一次使用虚拟机安装时，我直接使用了预设配置 [illogical-impulse](https://end-4.github.io/dots-hyprland-wiki/zh-cn/)。
+
+进行双系统安装时，我尝试了手动配置。下面介绍手动配置的一些步骤和注意点。
+
+由于我的环境是 Nvidia 显卡，所以需要首先参考 [Hyprland 文档中有关 Nvidia 的说明](https://wiki.hyprland.org/Nvidia/) 安装好 Nvidia 驱动，并修改 Hyprland 的相关配置文件。具体请参考官方的 Wiki。
+
+在配置完成后，我的鼠标光标存在卡顿和延迟的问题。在 Hyprland 配置文件最后添加下面的内容可以解决这个问题：
+
+```text
+cursor {
+  no_hardware_cursors = true
+}
+```
+
+安装好 Hyprland 生成的默认配置中使用的终端模拟器是 [kitty](https://github.com/kovidgoyal/kitty)，使用的应用启动器是 [wofi](https://hg.sr.ht/~scoopta/wofi)。如果您没有修改默认配置，那么在启动 Hyprland 之前，记得安装它们。
+
+为了在系统启动时自动启动 Hyprland，您需要一个显示管理器。我使用的是 [SDDM](https://github.com/sddm/sddm)。
+
+由于我实际上有两张显卡（Intel 核显和 Nvidia 独显），所以我安装了 [optimus-manager](https://github.com/Askannz/optimus-manager) 来进行管理。
+
+我的任务栏应用是 [Waybar](https://github.com/Alexays/Waybar)，并且使用了 [mechabar](https://github.com/sejjy/mechabar) 这套自动配置。
 
 ## 参考资料
 
 - [Arch Linux Wiki](https://wiki.archlinuxcn.org/)
+- [Arch Linux 下 Hyprland 配置指北](https://www.bilibili.com/opus/778159722494689457)
 - [Hyprland Official Site](https://hyprland.org/)
 - [You NEED to try Hyprland on Linux RIGHT NOW | Hyprland for Newbs EP 1](https://youtu.be/2CP_9-jCV6A)
