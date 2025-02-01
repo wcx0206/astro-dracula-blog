@@ -7,13 +7,20 @@ categories:
   - Misc
 abbrlink: dc298524
 date: 2024-02-15 10:41:37
+updated: 2024-02-01 17:59:00
 ---
 
-[Rime](https://rime.im/) 是一款输入法引擎，有着开源、多平台、支持高度自定义等特点。这篇博文记录了我在 macOS 平台上基于鼠须管（[rime/squirrel](https://github.com/rime/squirrel)）和雾凇拼音（[iDvel/rime-ice](https://github.com/iDvel/rime-ice)）的 Rime 配置。
+[Rime](https://rime.im/) 是一款输入法引擎，有着开源、多平台、支持高度自定义等特点。这篇博文记录了我在 macOS 平台上基于鼠须管（[rime/squirrel](https://github.com/rime/squirrel)）、在 Arch Linux 基于 fcitx5，并使用雾凇拼音（[iDvel/rime-ice](https://github.com/iDvel/rime-ice)）的 Rime 配置。
 
 <!--more-->
 
 ## 下载和安装
+
+这里有多种下载和安装方式可供选择。下面列出：
+
+### 手动安装
+
+在 macOS 上的安装过程如下：
 
 ```bash
 # 安装 「鼠须管」
@@ -28,9 +35,21 @@ bash rime-install iDvel/rime-ice:others/recipes/full # 安装 「雾凇拼音」
 > [!Tip]
 > **在「添加输入法」中找不到 Rime？** 安装完成后，你可能需要登出（Log Out）你的当前 macOS 用户并重新登入后，才能在添加输入法中找到 Rime。
 
+在 Arch Linux 上的安装命令如下：
+
+```bash
+paru -S fcitx5 fcitx5-im fcitx5-rime rime-quick rime-ice-double-pinyin-flypy-git
+```
+
+安装完成后，在您的任务栏上右键并单击 `Configure` 打开配置菜单，在其中搜索 `Rime` 并点击相应的箭头按钮将其添加到输入法列表中，最后点击右下角的 `Apply` 应用配置。
+
+### 自动安装
+
+[Mark24Code/rime-auto-deploy](https://github.com/Mark24Code/rime-auto-deploy) 是一个自动的 Rime 部署脚本。借助它可以更方便地安装和使用 Rime。
+
 ## 我的自定义配置
 
-导航到 `~/Library/Rime`，通过修改 `default.yaml`、`squirrel.yaml` 等文件，可以对 Rime 进行高度的自定义。而比起直接修改这些文件，更建议的方法是[打补丁](https://dvel.me/posts/rime-ice/#%E4%BB%A5-patch-%E7%9A%84%E6%96%B9%E5%BC%8F%E6%89%93%E8%A1%A5%E4%B8%81)。下边是我的补丁文件：
+导航到配置文件的存储目录（macOS 上是 `~/Library/Rime`，Arch Linux 上是 `~/.local/share/fcitx5/rime`），通过修改 `default.yaml` 等配置文件，可以对 Rime 进行高度的自定义。而比起直接修改这些文件，更建议的方法是[打补丁](https://dvel.me/posts/rime-ice/#%E4%BB%A5-patch-%E7%9A%84%E6%96%B9%E5%BC%8F%E6%89%93%E8%A1%A5%E4%B8%81)。下边是我的补丁文件：
 
 ```yaml
 # default.custom.yaml
