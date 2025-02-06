@@ -1,162 +1,170 @@
 ---
+title: "Package Managers on Linux: A Simple Cheat Sheet"
 abbrlink: 4ee6ac78
 categories:
 - CS
 - Tools
-date: 2023-03-11 14:23:18
 tags:
-- unix
-- tool
-- package-manager
-- linux
 - apt
-title: Package managers on Linux (TBC)
-toc: true
+- linux
+- package-manager
+- pacman
+- tool
+- unix
+date: 2023-03-11 14:23:18
+updated: 2025-02-02 20:37:00
 ---
 
-This post tries to simply introduce some package managers and their basic usage.
+What are package managers? For beginners, you can think of them as "app stores for nerds". More specifically, they are tools for automating software installation, updates, and dependency resolution. Here's a simple cheat sheet for `apt` and `pacman`, which noting the most used commands.
 
 <!--more-->
 
-## pacman
+## Introduction
 
-The pacman package manager is the default package manager of Arch Linux. Learn more about pacman on the official wiki [here](https://wiki.archlinux.org/title/Pacman).
+[APT (Advanced Packaging Tool)](https://en.wikipedia.org/wiki/APT_(software)) is the default package manager for Debian and Debian-based operating systems (like Ubuntu). The [pacman](https://wiki.archlinux.org/title/Pacman) package manager is the default package manager of Arch Linux.
 
-### pacman - Changing to mirror
+In this post, I will introduce the most used commands for `apt` and `pacman`.
 
-Before you start to use pacman, changing its source to mirror source in your country might be greatly helpful.
+## Mirrors
 
-Firstly, find a mirror you need on [Mirror Overview of ArchLinux offical site](https://archlinux.org/mirrors/). Here I choose the mirror from my mother school, whose URL is `https://mirrors.njupt.edu.cn/archlinux/`.
+Before you start to use the package manager, changing its source to a mirror source in your country might be greatly helpful.
 
-Then, edit `/etc/pacman.d/mirrorlist` , and paste the string below into the file.
+### Quick way to change the source
 
-```text
-Server = https://mirrors.njupt.edu.cn/archlinux/$repo/os/$arch
-```
+A utility called [chsrc](https://chsrc.run) could help you change the source of `apt` and `pacman` easily. Go to its website, and follow the instructions to change the source.
 
-Last, save the file and run `sudo pacman -Syu` to update.
+### Manually changing the source
 
-> The file `/etc/pacman.d/mirrorlist` has already provided many mirrors in it. So you can just skip the first step above, just edit the mirrorlist file. Find the server you want, and delete the `#` at the begining of that line to uncomment it.
+If you want to change the source manually...
 
-For an easy copy, here are some mirrors in China:
-
-```text
-### China
-## Aliyun
-# Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
-## Netease
-# Server = https://mirrors.163.com/archlinux/$repo/os/$arch
-## Tsinghua
-# Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-## NJU
-# Server = https://mirrors.nju.edu.cn/archlinux/$repo/os/$arch
-## NJUPT
-# Server = https://mirrors.njupt.edu.cn/archlinux/$repo/os/$arch
-```
-
-### pacman - Upgrading packages
-
-Run the command below to upgrade packages.
-
-```bash
-sudo pacman -Syu
-```
-
-You are recommended to immediately run this command after changing to a mirror.
-
-### pacman - Querying package(s)
-
-To find the package you need in the sync database:
-
-```bash
-pacman -Ss <package_name>
-```
-
-The "s" in the small case means "search".
-
-To list the packages installed:
-
-```bash
-pacman -Qq  // list all the packages, ignore version (-q)
-pacman -Qqe // list explicitly installed packages (-e)
-pacman -Qqd // list the packages installed as dependencies (-d)
-pacman -Qqdt // list the packages which are no longer dependencies (-t), usually can be removed
-```
-
-### pacman - Installing package(s)
-
-This command helps install one or more packages.
-
-```bash
-sudo pacman -S <package_name1> <package_name2> ...
-```
-
-For example, to install *bat*, run:
-
-```bash
-sudo pacman -S bat
-```
-
-### pacman - Removing package(s)
-
-This command helps remove a single package, leaving all of its dependencies installed:
-
-```bash
-sudo pacman -R <package_name>
-```
-
-To remove a package and its dependencies that are not required by any other installed package:
-
-```bash
-sudo pacman -Rs <package_name>
-```
-
-Here I found a helpful article that provides more information: [《Arch Linux 软件包的查询及清理》](https://www.cnblogs.com/sztom/p/10652624).
-
-## APT
-
-The APT(Advanced Packaging Tools) is(Maybe "are"? Since it's "tools"?) widely used in Debian and Ubuntu etc. It mainly includes `apt-get` ,`apt-cache` and `apt-file`.
-
-### APT - Changing to mirror
-
-Take Tsinghua's mirror as an example:
+For `apt`, here is the [tsinghua tuna mirror](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/) in China. Edit the file `/etc/apt/sources.list`, and paste the string below into the file.
 
 ```text
 ## Tsinghua
 ## from https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu
-# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
-
-# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
-# # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
-
-deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
-# deb-src http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
-
-# 预发布软件源，不建议启用
-# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
-# # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
 ```
 
-### APT - Useful commands
+Save the file and run `sudo apt update` to update the source information.
+
+For `pacman`, you can find the mirror you need on [Mirror Overview of ArchLinux offical site](https://archlinux.org/mirrors/). Choose one or more mirrors, and edit the file `/etc/pacman.d/mirrorlist` to be like this:
+
+```text
+### China
+## Aliyun
+Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
+## Tsinghua
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+## NJU
+Server = https://mirrors.nju.edu.cn/archlinux/$repo/os/$arch
+## NJUPT
+Server = https://mirrors.njupt.edu.cn/archlinux/$repo/os/$arch
+```
+
+Save the file and run `sudo pacman -Syu` to synchronize and update all the packages.
+
+## Update packages
 
 ```bash
-sudo apt update // update the package info 
-sudo apt upgrade // upgrade all the packages installed
-apt list --upgradeable // list all the packages that can upgrade
+# apt
+sudo apt update # update the package info
+sudo apt upgrade # upgrade all the packages installed
 
-sudo apt install <package_name> // install a specific package
-sudo apt install -f // fix the dependencies
-
-sudo apt remove <package_name> // remove a specific package
-sudo apt autoremove // auto remove the packages that no longer needed
-
-apt show <package_name> // show the info about a specific package
+# pacman
+sudo pacman -Syu # synchronize and update all the packages
 ```
 
-## To be continued
+## Query packages
+
+To find the package you need in the repository:
+
+```bash
+# apt
+apt search PACKAGE_NAME
+
+# pacman
+pacman -Ss PACKAGE_NAME # The big "S" means "sync", and the small one means "search".
+```
+
+To list the packages installed:
+
+```bash
+# apt
+apt list --installed
+
+# pacman
+pacman -Qq  # list all the packages, ignore version (-q)
+pacman -Qqe # list explicitly installed packages (-e)
+pacman -Qqd # list the packages installed as dependencies (-d)
+pacman -Qqdt # list the packages which are no longer dependencies (-t), usually can be removed
+```
+
+## Install packages
+
+```bash
+# apt
+sudo apt install PACKAGE_NAME
+sudo apt install -y PACKAGE_NAME # auto answer "yes" to the prompt
+sudo apt install -f # fix the dependencies
+
+# pacman
+sudo pacman -S PACKAGE_NAME
+```
+
+## Remove packages
+
+```bash
+sudo apt remove PACKAGE_NAME
+sudo apt autoremove # auto remove the packages that no longer needed
+
+sudo pacman -R PACKAGE_NAME
+sudo pacman -Rs PACKAGE_NAME # remove the package and its dependencies that are not required by any other installed package
+```
+
+## Pacman only configurations
+
+To enable the color output for `pacman`, edit the file `/etc/pacman.conf`, and uncomment the `Color` line.
+
+```text
+Color
+```
+
+To enable the parallel download for `pacman`, edit the file `/etc/pacman.conf`, and uncomment the `ParallelDownloads` line.
+
+```text
+ParallelDownloads = 5
+```
+
+## AUR and AUR helpers
+
+[AUR (Arch User Repository)](https://aur.archlinux.org/) is a community-driven repository for Arch Linux users. You can find many packages that are not in the official repository.
+
+To install packages from AUR, you can clone the repository and build and install the package manually. Or you can use AUR helpers like [`yay`](https://github.com/Jguer/yay), [`paru`](https://github.com/Morganamilo/paru), etc to simplify the process. These helpers share a similar syntax with `pacman`. Actually, they use `pacman` behind the scenes.
+
+`yay` and `paru` themselves are also in AUR. Let's take `paru` as an example of how to install a package from AUR manually:
+
+```bash
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+```
+
+> [!info]
+> `makepkg` is a script to automate the building of packages. `-s` means to install the dependencies automatically, and `-i` means to install the package after building. It's provided by the `pacman` package.
+
+After you have installed an AUR helper like `paru`, you can use it to install packages from AUR. For example, the command below installs `visual-studio-code-bin` from AUR with `paru`:
+
+```bash
+paru -S visual-studio-code-bin
+```
+
+## Learn more
+
+- [APT (Advanced Packaging Tool)](https://en.wikipedia.org/wiki/APT_(software))
+- [Arch User Repository](https://aur.archlinux.org/)
+- [pacman(8) — Arch manual pages](https://man.archlinux.org/man/pacman.8)
+- [pacman](https://wiki.archlinux.org/title/Pacman)
+- [《Arch Linux 软件包的查询及清理》](https://www.cnblogs.com/sztom/p/10652624)
