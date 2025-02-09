@@ -12,36 +12,46 @@ tags:
 - tool
 - unix
 date: 2023-03-11 14:23:18
-updated: 2025-02-02 20:37:00
+updated: 2025-02-09 23:15:00
 ---
 
-What are package managers? For beginners, you can think of them as "app stores for nerds". More specifically, they are tools for automating software installation, updates, and dependency resolution. Here's a simple cheat sheet for `apt` and `pacman`, which noting the most used commands.
+What are package managers? For beginners, you can think of them as "app stores for nerds". More specifically, they are tools for automating software installation, updates, and dependency resolution. Here's a simple cheat sheet for `apt` (used in Debian/Ubuntu) and `pacman` (used in Arch Linux), which noting the most used commands.
 
 <!--more-->
 
-## Introduction
+## Understanding Package Managers
 
-[APT (Advanced Packaging Tool)](https://en.wikipedia.org/wiki/APT_(software)) is the default package manager for Debian and Debian-based operating systems (like Ubuntu). The [pacman](https://wiki.archlinux.org/title/Pacman) package manager is the default package manager of Arch Linux.
+[APT (Advanced Package Tool)](https://en.wikipedia.org/wiki/APT_(software)) and [Pacman](https://wiki.archlinux.org/title/Pacman) are two of the most widely used package managers in the Linux ecosystem:
 
-In this post, I will introduce the most used commands for `apt` and `pacman`.
+- **APT**: The default package manager for Debian-based distributions (Ubuntu, Linux Mint, etc.). Known for its stability and extensive package repository.
+- **Pacman**: Arch Linux's package manager, celebrated for its speed, simplicity, and rolling-release model.
 
-## Mirrors
+Both package managers handle:
 
-Before you start to use the package manager, changing its source to a mirror source in your country might be greatly helpful.
+- Software installation and removal
+- System updates
+- Dependency resolution
+- Package searching and information retrieval
 
-### Quick way to change the source
+## Optimizing Package Sources with Mirrors
 
-A utility called [chsrc](https://chsrc.run) could help you change the source of `apt` and `pacman` easily. Go to its website, and follow the instructions to change the source.
+Before diving into package management commands, it may be a great idea to configure your package sources to use mirrors. Mirrors are servers that host copies of package repositories, and using a geographically closer mirror can significantly improve download speeds and reliability.
 
-### Manually changing the source
+### Automated Mirror Configuration
 
-If you want to change the source manually...
+For Chinese users, the simplest way to optimize your package sources is using [chsrc](https://chsrc.run), a utility that automatically selects and configures optimal mirrors for a variety of software sources, including APT and Pacman. Visit their website for straightforward instructions on mirror configuration.
 
-For `apt`, here is the [tsinghua tuna mirror](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/) in China. Edit the file `/etc/apt/sources.list`, and paste the string below into the file.
+### Manual Mirror Configuration
+
+For those who prefer manual configuration or need specific mirrors:
+
+#### APT Mirror Configuration
+
+1. Edit the sources file: `sudo vim /etc/apt/sources.list`
+2. Replace the content with your preferred mirror. For example, using the [Tsinghua mirror](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/):
 
 ```text
 ## Tsinghua
-## from https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
@@ -49,7 +59,11 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted
 
 Save the file and run `sudo apt update` to update the source information.
 
-For `pacman`, you can find the mirror you need on [Mirror Overview of ArchLinux offical site](https://archlinux.org/mirrors/). Choose one or more mirrors, and edit the file `/etc/pacman.d/mirrorlist` to be like this:
+#### Pacman Mirror Configuration
+
+1. Find suitable mirrors on the [Arch Linux Mirror Status](https://archlinux.org/mirrors/) page
+2. Edit the mirror list: `sudo vim /etc/pacman.d/mirrorlist`
+3. Add your preferred mirrors, ordering them by priority. For example:
 
 ```text
 ### China
@@ -65,106 +79,145 @@ Server = https://mirrors.njupt.edu.cn/archlinux/$repo/os/$arch
 
 Save the file and run `sudo pacman -Syu` to synchronize and update all the packages.
 
-## Update packages
+## Updating Package Repositories
+
+After configuring your package sources, the next step is to update the package repositories to fetch the latest package information. After a repository update, you may also process package upgrades.
 
 ```bash
-# apt
-sudo apt update # update the package info
-sudo apt upgrade # upgrade all the packages installed
+# APT Update Commands
+sudo apt update     # Refresh package information
+sudo apt upgrade    # Upgrade installed packages
+sudo apt full-upgrade # Upgrade packages with dependency changes
 
-# pacman
-sudo pacman -Syu # synchronize and update all the packages
+# Pacman Update Commands
+sudo pacman -Sy    # Sync package databases
+sudo pacman -Syu   # Sync databases and update system
+sudo pacman -Syyu  # Force sync and update (useful when changing mirrors)
 ```
 
-## Query packages
+## Package Management Operations
 
-To find the package you need in the repository:
+### Searching and Querying Packages
+
+Finding and getting information about packages:
 
 ```bash
-# apt
-apt search PACKAGE_NAME
+# APT Search Commands
+apt search PACKAGE_NAME     # Search for packages
+apt show PACKAGE_NAME      # Show package details
+apt list --installed      # List installed packages
+apt list --upgradeable   # List packages that can be upgraded
 
-# pacman
-pacman -Ss PACKAGE_NAME # The big "S" means "sync", and the small one means "search".
+# Pacman Search Commands
+pacman -Ss PACKAGE_NAME   # Search for packages in repositories
+pacman -Si PACKAGE_NAME   # Show package information
+pacman -Qq               # List all installed packages
+pacman -Qqe              # List explicitly installed packages
+pacman -Qqd              # List packages installed as dependencies
+pacman -Qqdt             # List orphaned dependencies
 ```
 
-To list the packages installed:
+> [!note]
+> For Pacman, uppercase S is for sync operations with repositories, while lowercase s is for search operations.
+
+### Installing and Removing Packages
+
+Managing software on your system:
 
 ```bash
-# apt
-apt list --installed
+# APT Installation Commands
+sudo apt install PACKAGE_NAME          # Install a package
+sudo apt install -y PACKAGE_NAME       # Install without confirmation
+sudo apt install -f                    # Fix broken dependencies
+sudo apt install PACKAGE1 PACKAGE2     # Install multiple packages
 
-# pacman
-pacman -Qq  # list all the packages, ignore version (-q)
-pacman -Qqe # list explicitly installed packages (-e)
-pacman -Qqd # list the packages installed as dependencies (-d)
-pacman -Qqdt # list the packages which are no longer dependencies (-t), usually can be removed
+# Pacman Installation Commands
+sudo pacman -S PACKAGE_NAME            # Install a package
+sudo pacman -S --needed PACKAGE_NAME   # Install only if not already installed
+sudo pacman -S PACKAGE1 PACKAGE2       # Install multiple packages
 ```
 
-## Install packages
+### Package Removal and System Cleanup
+
+Safely removing packages and cleaning up the system:
 
 ```bash
-# apt
-sudo apt install PACKAGE_NAME
-sudo apt install -y PACKAGE_NAME # auto answer "yes" to the prompt
-sudo apt install -f # fix the dependencies
+# APT Removal Commands
+sudo apt remove PACKAGE_NAME           # Remove a package
+sudo apt purge PACKAGE_NAME           # Remove package and configuration
+sudo apt autoremove                   # Remove unused dependencies
+sudo apt clean                        # Clear package cache
 
-# pacman
-sudo pacman -S PACKAGE_NAME
+# Pacman Removal Commands
+sudo pacman -R PACKAGE_NAME           # Remove a package
+sudo pacman -Rs PACKAGE_NAME          # Remove package with dependencies
+sudo pacman -Rns PACKAGE_NAME         # Remove package, dependencies, and configs
+sudo pacman -Sc                       # Clear package cache
 ```
 
-## Remove packages
+> [!warning]
+> Always review the list of packages to be removed before confirming, especially when using commands that remove dependencies.
+
+## Advanced Pacman Configuration
+
+Enhance your Pacman experience with these optimizations:
+
+1. **Enable Colored Output**
+   Edit `/etc/pacman.conf` and uncomment or add:
+
+   ```conf
+   Color
+   ILoveCandy  # (Optional) This adds a fun progress bar
+   ```
+
+2. **Enable Parallel Downloads**
+   In `/etc/pacman.conf`, uncomment or add:
+
+   ```conf
+   ParallelDownloads = 5
+   ```
+
+## The Arch User Repository (AUR)
+
+The [Arch User Repository (AUR)](https://aur.archlinux.org/) is a community-driven repository that significantly extends Arch Linux's software availability. It contains package descriptions (PKGBUILDs) that allow you to compile packages from source and install them using Pacman.
+
+### AUR Helpers
+
+AUR helpers are tools that automate the process of building and installing packages from the AUR. Popular options include:
+
+- [**Paru**](https://github.com/Morganamilo/paru): A feature-rich AUR helper written in Rust
+- [**Yay**](https://github.com/Jguer/yay): User-friendly AUR helper with advanced features
+
+### Installing AUR Packages
+
+You can install AUR packages manually or use an AUR helper for a more streamlined experience. Let's take a look at both methods.
+
+Actually, `yay` and `paru` are also packages in the AUR. So, why not just take the installation of `paru` as an example of a manual installation?
 
 ```bash
-sudo apt remove PACKAGE_NAME
-sudo apt autoremove # auto remove the packages that no longer needed
+# Install prerequisites
+sudo pacman -S --needed base-devel git
 
-sudo pacman -R PACKAGE_NAME
-sudo pacman -Rs PACKAGE_NAME # remove the package and its dependencies that are not required by any other installed package
-```
-
-## Pacman only configurations
-
-To enable the color output for `pacman`, edit the file `/etc/pacman.conf`, and uncomment the `Color` line.
-
-```text
-Color
-```
-
-To enable the parallel download for `pacman`, edit the file `/etc/pacman.conf`, and uncomment the `ParallelDownloads` line.
-
-```text
-ParallelDownloads = 5
-```
-
-## AUR and AUR helpers
-
-[AUR (Arch User Repository)](https://aur.archlinux.org/) is a community-driven repository for Arch Linux users. You can find many packages that are not in the official repository.
-
-To install packages from AUR, you can clone the repository and build and install the package manually. Or you can use AUR helpers like [`yay`](https://github.com/Jguer/yay), [`paru`](https://github.com/Morganamilo/paru), etc to simplify the process. These helpers share a similar syntax with `pacman`. Actually, they use `pacman` behind the scenes.
-
-`yay` and `paru` themselves are also in AUR. Let's take `paru` as an example of how to install a package from AUR manually:
-
-```bash
-sudo pacman -S --needed base-devel
+# Clone and build Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 ```
 
-> [!info]
-> `makepkg` is a script to automate the building of packages. `-s` means to install the dependencies automatically, and `-i` means to install the package after building. It's provided by the `pacman` package.
-
-After you have installed an AUR helper like `paru`, you can use it to install packages from AUR. For example, the command below installs `visual-studio-code-bin` from AUR with `paru`:
+After installing `paru`, you can use this helper to install AUR packages more conveniently. Here are some basic commands:
 
 ```bash
-paru -S visual-studio-code-bin
+# Basic Paru usage
+paru -S PACKAGE_NAME     # Install a package
+paru -Sua               # Update AUR packages
+paru -Syu               # Update both repository and AUR packages
 ```
 
-## Learn more
+## Additional Resources
 
-- [APT (Advanced Packaging Tool)](https://en.wikipedia.org/wiki/APT_(software))
-- [Arch User Repository](https://aur.archlinux.org/)
-- [pacman(8) — Arch manual pages](https://man.archlinux.org/man/pacman.8)
-- [pacman](https://wiki.archlinux.org/title/Pacman)
-- [《Arch Linux 软件包的查询及清理》](https://www.cnblogs.com/sztom/p/10652624)
+For more detailed information about package management:
+
+- [Official APT Documentation](https://www.debian.org/doc/manuals/apt-guide/)
+- [Pacman Wiki Page](https://wiki.archlinux.org/title/Pacman)
+- [Arch User Repository Guide](https://wiki.archlinux.org/title/Arch_User_Repository)
+- [Pacman Tips and Tricks](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks)
