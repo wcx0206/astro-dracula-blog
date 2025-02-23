@@ -1,9 +1,11 @@
 ---
 title: udemy-go-structs
 tags:
+ - Golang
+date: 2024-11-8 10:33:07
 ---
 
-udemy-go-4-structs
+udemy-go-4-structs | Golang 中 struct 类型的特性
 
 <!--more-->
 
@@ -40,21 +42,21 @@ type User struct {
 - 在实例化结构体变量的时候，我们可以使用 `:=` 来简化代码，并且不需要为每一个字段赋予初始值
 
 ```go
-    var appUser user
-    appUser = user{
-        fistName:  firstName,
-        lastName:  lastname,
-        birthDate: birthDate,
-        createAt:  time.Now(),
-    }
+  var appUser user
+  appUser = user{
+      fistName:  firstName,
+      lastName:  lastname,
+      birthDate: birthDate,
+      createAt:  time.Now(),
+  }
 
-    var user User
-    user = User{
-        fistName,
-        lastName
-        birthDate
-        createAt
-    }
+  var user User
+  user = User{
+      fistName,
+      lastName
+      birthDate
+      createAt
+  }
 
 ```
 
@@ -72,7 +74,7 @@ func printUser(u User) {
     fmt.Println(u.createAt)
 }
 ```
-  
+
 ### Struct with Pointer 
 
 - 在函数中使用结构体指针作为参数的时候，我们需要指定结构体的指针类型
