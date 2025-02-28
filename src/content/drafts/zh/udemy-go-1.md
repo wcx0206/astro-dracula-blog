@@ -3,7 +3,7 @@ title: udemy-go-1
 tags:
 ---
 
-Udemy Go - The Complete Guide
+Golang 的基本知识（Udemy Go - The Complete Guide ）
 
 <!--more-->
 
@@ -13,7 +13,7 @@ Udemy Go - The Complete Guide
 
 #### package
 
- 一个 Go Module 可以 包含多个 Package，但是需要一个 main Package 作为 entry point (go build 时需要 Module)
+ 一个 `Go Module` 可以包含多个 ` Package`，但是需要一个 main Package 作为 entry point (go build 时需要 Module)
 
 一般一个简单的 Go 项目就是一个 Module
 
@@ -23,13 +23,13 @@ Udemy Go - The Complete Guide
 go mod init <path>
 ```
 
-一定需要一个 main 函数 设定你的代码从哪里开始运行，让 go 知道去执行哪些代码
+- **一定需要一个 main 函数** 设定你的代码从哪里开始运行，让 go 知道去执行哪些代码
+- go 是从 main 函数开始执行的 而不是文件的顶部
 
-go 是从 main 函数开始执行的 而不是文件的顶部
+- 同一个  Package 中只能有一个 main 函数
 
-同一个  Package 中只能有一个 main 函数
+- 但是如果构建一个第三方库不需要有 main 函数，构建可执行程序的时候一定需要 main 函数  
 
-但是如果构建一个第三方库不需要有 main 函数，构建可执行程序的时候一定需要 main 函数  
 
 ```go
 func main(){}
@@ -39,17 +39,18 @@ func main(){}
 
 ### Values & Types
 
-创建变量的时候可以给出该变量的类型
+- 创建变量的时候可以给出该变量的类型
 
-如果你不给出 Go 会自动推断这个变量的类型
+- 如果你不给出 **Go 会自动推断**这个变量的类型
 
-你显式给出的变量类型会覆盖 Go 自动推断的
+- 你**显式给出**的变量类型会**覆盖 Go 自动推断**的
 
-当然 Go 也是允许你进行类型转换的
+- 当然 Go 也是允许你进行类型转换的
 
-但是 `:=` 创建的变量不能够为其设定一个类型
+- 但是 `:=` 创建的变量不能够为其设定一个类型
 
-如果你在创建变量的时候没有给其赋予一个初始值，那么你一定需要在变量声明的时候声明类型。同时根据你声明的类型，Go 会赋予这些变量一个初始值
+- 如果你在创建变量的时候没有给其赋予一个初始值，那么你一定需要在变量声明的时候声明类型。同时根据你声明的类型，Go 会赋予这些变量一个初始值
+
 
 ```go
 var a = 100
@@ -70,7 +71,7 @@ Go 中变量（常量）的使用范围只在定义该变量的函数中，如�
 
 ### Constant
 
-与变量不同 Go 中的常量是无法被修改和重新分配的
+与变量不同 Go 中的常量是**无法被修改和重新分配的**
 
 ```go
 const inflationRate = 2.5
@@ -83,7 +84,7 @@ fmt.Scan(&inflationRate) //wrong
 
 #### 读入
 
-使用 Scan 时你需要传递的是一个变量的指针 
+使用 Scan 时你需要传递的是一个**变量的指针** 
 
 ```go
 var investmentAmount float64 = 1000
@@ -320,5 +321,4 @@ func getBalance() (float64, error) {
   return balance, nil
 }
 ```
-
 

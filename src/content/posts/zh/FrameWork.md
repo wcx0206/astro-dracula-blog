@@ -4,8 +4,10 @@ categories:
   - SE
   - SpringBoot
 abbrlink: bfb54384
-date: 2024-08-03 14:25:29
 tags:
+ - SE
+ - SpringBoot
+date: 2024-08-03 14:25:29
 ---
 
 SpringBoot 基本的一些类和接口的定义及其作用

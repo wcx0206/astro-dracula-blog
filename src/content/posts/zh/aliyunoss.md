@@ -1,10 +1,9 @@
 ---
 title: aliyunOss
-categories:
-  - SE
-  - SpringBoot
-date: 2024-10-23 21:02:46
 tags:
+ - SE
+ - SpringBoot
+date: 2024-10-23 21:02:46
 ---
 
 

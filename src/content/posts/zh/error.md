@@ -3,9 +3,11 @@ title: SpringBoot Error
 categories:
   - SE
   - SpringBoot
+tags:
+ - SE
+ - SpringBoot
 abbrlink: 5dddbc71
 date: 2024-08-04 14:28:48
-tags:
 ---
 
 SpringBoot 开发过程中遇到的部分问题归纳

@@ -4,8 +4,10 @@ categories:
   - SE
   - SpringBoot
 abbrlink: 1bb08f7a
-date: 2024-08-21 14:26:27
 tags:
+ - SE
+ - SpringBoot
+date: 2024-08-21 14:26:27
 ---
 
 关于 `JWT(Json Web Token)` 以及如何在 `SpringBoot` 中使用 `JWT` 进行身份验证

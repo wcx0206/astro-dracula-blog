@@ -4,6 +4,9 @@ categories:
   - SE
   - Go
 tags:
+ - SE
+ - Go
+date: 2024-11-8
 ---
 
 Kitex 是由字节跳动开源的高性能 RPC 框架，以 Golang 语言为基础，实现了高吞吐、高负载、高性能等特点

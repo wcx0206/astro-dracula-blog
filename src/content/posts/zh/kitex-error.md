@@ -3,8 +3,10 @@ title: kitex-error
 categories:
   - SE
   - Go
-date: 2024-10-23 16:24:27
 tags:
+ - SE
+ - Go
+date: 2024-10-23 16:24:27
 ---
 
 

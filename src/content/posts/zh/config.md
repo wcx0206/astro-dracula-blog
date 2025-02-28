@@ -4,8 +4,11 @@ categories:
   - SE
   - SpringBoot
 abbrlink: d48a2f7c
-date: 2024-08-03 15:00:33
 tags:
+ - SE
+ - SpringBoot
+date: 2024-08-03 15:00:33
+
 ---
 
 一些关于 SpringBoot 的配置

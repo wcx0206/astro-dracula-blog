@@ -1,11 +1,11 @@
 ---
 title: kitex-etcd
-categories:
-  - SE
-  - Go
-date: 2024-10-23 21:02:13
 tags:
+ - Golang
+date: 2024-10-23 21:02:13
 ---
+
+
 
 
 什么是 `etcd` 以及如何在 `Kitex` 微服务项目中使用 `etcd` 实现服务的注册和发现

@@ -3,10 +3,12 @@ title: CDN
 categories:
   - SE
   - Java
+tags:
+ - SE
+ - Java
 abbrlink: 88ec0c1d
 date: 2024-09-03 20:00:50
-tags:
-	- Java
+
 ---
 
 有关于 `Java` 高性能中的 `CDN Content Delivery Network` 
@@ -49,4 +51,3 @@ tags:
 
 - **Referer 防盗链 **HTTP 请求的头信息里面的 Referer 字段对请求进行限制
 - **时间戳防盗链 ** URL 通常会有两个参数一个是签名字符串，一个是过期时间
-- 

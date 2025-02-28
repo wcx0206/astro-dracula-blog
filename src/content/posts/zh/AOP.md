@@ -4,8 +4,11 @@ categories:
   - SE
   - SpringBoot
 abbrlink: af4c3ed6
-date: 2024-09-05 11:50:00
 tags:
+ - SE
+ - SpringBoot
+date: 2024-09-05 11:50:00
+
 ---
 
 关于 `AOP` 面向切面编程

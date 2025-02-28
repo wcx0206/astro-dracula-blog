@@ -3,9 +3,11 @@ title: SpringBoot 跨域配置
 categories:
   - SE
   - SpringBoot
+tags:
+ - SE
+ - SpringBoot
 abbrlink: ec2e5edd
 date: 2024-09-03 14:11:46
-tags:
 ---
 
 CORS 跨域资源共享 如何解决跨域问题

@@ -1,11 +1,13 @@
 ---
-title: 注解
+title: SpringBoot 注解
 categories:
   - SE
   - SpringBoot
+tags:
+ - SE
+ - SpringBoot
 abbrlink: ce0f97d2
 date: 2024-08-15 14:23:56
-tags:
 ---
 
 <!--more-->
