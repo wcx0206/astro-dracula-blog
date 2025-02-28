@@ -276,4 +276,3 @@ minikube unpause
 
 
 
-### [Kubernetes 常用命令速查](./k8s-order)
