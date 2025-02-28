@@ -35,7 +35,7 @@ MVC（Model-View-Controller）是一种软件设计模式，用于分离应用�
 5. 控制器将数据传递给视图。
 6. 视图将最终的用户界面呈现给用户。
 
-<img src="/Users/wcx/Library/Application Support/typora-user-images/image-20240927202113595.png" alt="image-20240927202113595" style="zoom:50%;" />
+<img src="https://wcx0206.oss-cn-nanjing.aliyuncs.com/image-20240927202113595.png" alt="image-20240927202113595" style="zoom:50%;" />
 
 ### Model
 
